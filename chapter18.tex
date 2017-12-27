@@ -1,0 +1,891 @@
+%%%%
+%%
+%%
+%%%%
+%%%% CHAPTER 18
+%%%% CHAPTER 18
+%%%%
+%%
+%%
+%%%%
+\section{Chapter 18 Solutions}
+\begin{center}\hyperref[toc]{\^{}\^{}}\end{center}
+\begin{center}\begin{tabular}{lllllllllllllllllllllllll}
+\hyperref[problem1chapter18]{P1} & \hyperref[problem2chapter18]{P2} & \hyperref[problem3chapter18]{P3} & \hyperref[problem4chapter18]{P4} & \hyperref[problem5chapter18]{P5} & \hyperref[problem6chapter18]{P6} & \hyperref[problem7chapter18]{P7} & \hyperref[problem8chapter18]{P8} & \hyperref[problem9chapter18]{P9} & \hyperref[problem10chapter18]{P10} & \hyperref[problem11chapter18]{P11} & \hyperref[problem12chapter18]{P12} & \hyperref[problem13chapter18]{P13} 
+\end{tabular}\end{center}
+\setcounter{problem}{0}
+\setcounter{solution}{0}
+\begin{problem}\label{problem1chapter18}
+For the Bernoulli polynomial of Section 153 show that
+
+$$x^n = \displaystyle\sum_{k=0}^n \dfrac{n! B_k(x)}{k! (n-k+1)!}.$$
+\end{problem}
+\begin{solution}
+By definition of $B_n(x)$ we have
+
+$$\dfrac{te^{xt}}{e^t-1} = \displaystyle\sum_{n=0}^{\infty} \dfrac{B_n(x) t^n}{n!}.$$
+
+Then
+
+$$e^{xt} = \dfrac{1}{t} (e^t-1) \displaystyle\sum_{n=0}^{\infty} \dfrac{B_n(x)t^n}{n!} = \left( \displaystyle\sum_{n=1}^{\infty} \dfrac{t^{n-1}}{n!} \right) \left( \displaystyle\sum_{n=0}^{\infty} \dfrac{B_n(x) t^n}{n!} \right),$$
+
+from which
+
+$$\begin{array}{ll}
+\displaystyle\sum_{n=0}^{\infty} \dfrac{x^n t^n}{n!} &= \left( \displaystyle\sum_{n=0}^{\infty} \dfrac{t^n}{(n+1)!} \right) \left( \displaystyle\sum_{n=0}^{\infty} \dfrac{B_n(x)t^n}{n!} \right) \\
+&= \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^n \dfrac{B_k(x) t^n}{k!( n+1-k)!}
+\end{array}$$
+
+Hence
+
+$$x^n = \displaystyle\sum_{k=0}^n \dfrac{n! B_k(x) }{k!(n+1-k)!}.$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem2chapter18}
+Let $B_n(x)$ and $B_n=B_n(0)$ denote the Bernoulli polynomials and numbers as t reated in Section 153. Define the differential operator $A(c,D)$ by 
+
+$$A(x,D) = \left( x - \dfrac{1}{2} \right)D - \displaystyle\sum_{k=1}^{\infty} \dfrac{B_{2k}D^{2k}}{(2k)!}.$$
+
+Prove that $A(x,D)B_n(x) = nB_n(x)$.
+\end{problem}
+\begin{solution}
+From
+
+$$\dfrac{te^{xt}}{e^t-1} = \displaystyle\sum_{n=0}^{\infty} \dfrac{B_n(x)t^n}{n!}$$
+
+we see that $\dfrac{B_n(x)}{n!}$ is of Sheffer $A$-type zero. We have, in the Shefer notation, $H(t)=t, J(t)=t, A(t) = \dfrac{t}{e^t-1}.$ 
+
+We wish to apply Theorem 74, page 391. Now 
+
+$$\log A(t) = \log t - \log(e^t-1)$$
+
+$$\dfrac{A'(t)}{A(t)} = \dfrac{1}{t} - \dfrac{e^t}{e^t-1} = \dfrac{1}{t} - 1 - \dfrac{1}{e^t-1}$$
+
+$$\dfrac{tA'(t)}{A(t)} = 1-t-\dfrac{t}{e^t-1} = 1-t-\displaystyle\sum_{n=0}^{\infty} \dfrac{B_n t^n}{n!}.$$
+
+We know that $B_0=1, B_1= -\dfrac{1}{2}, B_{2n+1}=0$ for $n \geq 1$. Hence
+
+$$\dfrac{tA'(t)}{A(t)} = -\dfrac{t}{2} - \displaystyle\sum_{k=1}^{\infty} \dfrac{B_{2k}t^{2k}}{(2k)!}.$$
+
+In the terminology of Theorem 74, since $u=J(t)=t$,
+
+$$\displaystyle\sum_{k=0}^{\infty} \mu_k t^{k=1} = -\dfrac{t}{2} - \displaystyle\sum_{k=1}^{\infty} \dfrac{B_{2k}t^{2k}}{(2k)!},$$
+
+$$\displaystyle\sum_{k=0}^{\infty} v_k t^{k+1} = t H'(t) = t.$$
+
+Therefore $v_0=1$, $v_k=0$ for $k\geq 1$, and $\mu_0 = -\dfrac{1}{2}, \mu_{2k}=0$ for $k\geq 1$, $\mu_{2k-1} = -\dfrac{B_{2k}}{(2k)!}$ for $k \geq 1$.
+
+The identity
+
+$$\displaystyle\sum_{k=0}^{\infty} (\mu_k + v_k) \mathscr{D}^{k+1} \phi_n(x) = n \phi_n(x)$$
+
+of Theorem 74 becomes
+
+$$\left[ \left( x - \dfrac{1}{2} \right) \mathscr{D} - \displaystyle\sum_{k=1}^{\infty} \dfrac{B_{2k} \mathscr{D}^{2k}}{(2k)!} \right] \dfrac{B_n(x)}{n!} = \dfrac{n B_n(x)}{n!}.$$
+
+Hence, with
+
+$$A(x,\mathscr{D}) = \left( x - \dfrac{1}{2} \right) \mathscr{D} - \displaystyle\sum_{k=1}^{\infty} \dfrac{B_{2k} \mathscr{D}^{2k}}{(2k)!},$$
+
+we may conclude that
+
+$$A(x ,\mathscr{D}) B_n(x) = n B_n(x).$$
+
+Note that in Theorem 74, since $\mathscr{D}^{k+1} \phi_n(x) =0$ f or $k \geq n$, 
+
+$$\displaystyle\sum_{k=0}^{n-1} (\mu_k+x v_k)\mathscr{D}^{k+1}$$
+
+may be replaced by
+
+$$\displaystyle\sum_{k=0}^{\infty} (\mu_k + x v_k) \mathscr{D}^{k+1}.$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem3chapter18}
+Consider the polynomials
+
+$$\psi_n(c,x,y) = \dfrac{(-1)^n (\frac{1}{2}+\frac{1}{2}x)_n}{(c)_n} {}_3F_2 \left[ \begin{array}{rlr}
+-n, \dfrac{1}{2} - \dfrac{1}{2}x, 1 -c-n; & & \\
+& & y \\
+c, \dfrac{1}{2} - \dfrac{1}{2}x - n; & & 
+\end{array} \right].$$
+
+Show that
+
+$${}_1F_1 \left( \dfrac{1}{2} - \dfrac{1}{2}x; c; yt \right) {}_1F_1 \left( \dfrac{1}{2} = \dfrac{1}{2}x; c;-t \right) = \displaystyle\sum_{n=0}^{\infty} \dfrac{\psi_n(c,x,y)t^n}{n!},$$
+
+$$(1-yt)^{-\frac{1}{2}+\frac{1}{2}x}(t+t)^{-\frac{1}{2}-\frac{1}{2}x} {}_2F_1 \left[ \begin{array}{rlr}
+\dfrac{1}{2} - \dfrac{1}{2}x, \dfrac{1}{2} + \dfrac{1}{2}x; & & \\
+& & \dfrac{-yt^2}{(1-yt)(1+t)} \\
+c; & & 
+\end{array} \right] = \displaystyle\sum_{n=0}^{\infty} \dfrac{(c)_n \psi_n(c,x,y)t^n}{n!},$$
+
+and that $\psi_n(1,x,1) = F_n(x)$, where $F_n$ is Bateman's polynomial of Section 148.
+\end{problem}
+\begin{solution}
+We define $\psi_n(c,x,y)$ by
+
+$$\psi_n(c,x,y) = \dfrac{(-1)^n (\frac{1+x}{2})_n}{(c)_n} {}_3F_2 \left[ \begin{array}{rlr}
+-n, \dfrac{1-x}{2}, 1-c-n; & & \\
+& & y \\
+c, \dfrac{1-x}{2}-n; & &
+\end{array} \right].$$
+
+Then
+
+$$\psi_n(c,x,y) = \displaystyle\sum_{k=0}^n \dfrac{(-1)^{n+k} n! (\frac{1+x}{2})_n (\frac{1-x}{2}) (c)_n (\frac{1+x}{2})_{n-k} y^k}{k! (n-k)! (c)_n (c)_k (c)_{n-k} (\frac{1+x}{2})_n}$$
+
+or
+
+$$\psi_n(c,x,y) = \displaystyle\sum_{k=0}^n \dfrac{(-1)^{n+k} n! (\frac{1-x}{2})_k (\frac{1+x}{2})_{n-k} y^k}{k! (n-k)! (c)_k (c)_{n-k}}.$$
+
+First consider the series
+
+$$\begin{array}{ll}
+\displaystyle\sum_{n=0}^{\infty} \dfrac{\psi_n(c,x,y)t^n}{n!} &= \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^n \dfrac{(-1)^{n-k} (\frac{1-x}{2})_k (\frac{1+x}{2})_{n-k} y^k t^n}{k! (n-k)! (c)_k (c)_{n-k}} \\
+&= {}_1F_1 \left( \dfrac{1-x}{2}; 0 ; yt \right) {}_1F_1 \left( \dfrac{1+x}{2}; c; -t \right),
+\end{array}$$
+
+as desired. The use of $c=1,y=1$ in the above generating relation yields
+
+$${}_1F_1 \left( \dfrac{1-x}{2};1;t \right) {}_1F_1 \left( \dfrac{1+x}{2}; 1 ; -t \right) = \displaystyle\sum_{n=0}^{\infty} \dfrac{\psi_n(1,x,1) t^n}{n!}.$$
+
+Brafman had
+
+$${}_1F_1 \left( \dfrac{1-x}{2};1;t \right) {}_1F_1 \left( \dfrac{1+x}{2};1;-t \right) = \displaystyle\sum_{n=0}^{\infty} \dfrac{F_n(x) t^n}{n!}.$$
+
+Hence
+
+$$\psi_n(1,x,1) = F_n(x).$$
+
+Next consider the series
+$$\begin{array}{ll}
+\displaystyle\sum_{n=0}^{\infty} \dfrac{(c)_n \psi_n(c,x,y) t^n}{n!} &= \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^n \dfrac{(-1)^{n+k} (c)_n (\frac{1-x}{2})_k (\frac{1+x}{2})_{n-k} y^k t^n}{k! (n-k)! (c)_k (c)_{n-k}} \\
+&= \displaystyle\sum_{n,k=0}^{\infty} \dfrac{(-1)^n (c)_{n+k} (\frac{1-x}{2})_k (\frac{1+x}{2})_n y^k t^{n+k}}{k! n! (c)_k (c)_n} \\
+&= \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^{\infty} \dfrac{(c+n)_k (\frac{1-x}{2})_k (yt)^k}{k! (c)_k} \dfrac{(-1)^n (\frac{1+x}{2})_n t^n}{n!} \\
+&= \displaystyle\sum_{n=0}^{\infty} {}_2F_1 \left[ \begin{array}{rlr}
+c+n, \dfrac{1-x}{2}; & & \\
+& & yt \\
+c; & & 
+\end{array} \right] \dfrac{(-1)^n (\frac{1+x}{2})_n t^n}{n!} \\
+&= \displaystyle\sum_{n=0}^{\infty} (1-yt)^{-\frac{1-x}{2}} {}_2F_1 \left[ \begin{array}{rlr}
+-n, \dfrac{1-x}{2}; & & \\
+& & \dfrac{-yt}{1-yt} \\
+c; & &
+\end{array} \right] \dfrac{(-1)^n (\frac{1+x}{2})_n t^n}{n!} \\
+&= (1-yt)^{-\frac{1-x}{2}} \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^n \dfrac{(-1)^k n! (\frac{1-x}{2})_k (-1)^k y^k t^k}{k! (n-k)! (c)_k (1-yt)^k} \dfrac{(-1)^n (\frac{1+x}{2})_n t^n}{n!} \\
+&= (1-yt)^{-\frac{1-x}{2}} \displaystyle\sum_{n,k=0}^{\infty} \dfrac{(\frac{1-x}{2})_k (\frac{1+x}{2})_{n+k} (-1)^{n+k} y^k t^{n+2k}}{k! n! (c)_k (1-yt)^k} \\
+&= (1-yt)^{-\frac{1-x}{2}} \displaystyle\sum_{k=0}^{\infty} \displaystyle\sum_{n=0}^{\infty} \dfrac{(\frac{1+x}{2}+k)_n (-t)^n}{n!} \dfrac{(-1)^K (\frac{1-x}{2})_k (\frac{1+x}{2})_k y^k t^{2k}}{k! (c)_k (1-yt)^k} \\
+&= (1-yt)^{-\frac{1-x}{2}}(1+t)^{-\frac{1+x}{2}} \displaystyle\sum_{k=0}^{\infty} \dfrac{(\frac{1-x}{2})_k (\frac{1+x}{2})_k (-1)^k y^k t^{2k}}{k! (c)_k (1+t)^k (1-yt)^k}
+\end{array}$$
+
+We thus arrive at
+
+$$\displaystyle\sum_{n=0}^{\infty} \dfrac{(c)_n \psi_n(c,x,y) t^n}{n!} = (1-yt)^{-\frac{1-x}{2}} (1+t)^{-\frac{1+x}{2}} {}_2F_1 \left[ \begin{array}{rlr}
+\dfrac{1-x}{2}, \dfrac{1+x}{2}; & & \\
+& & \dfrac{-yt^2}{(1-yt)(1+t)} \\
+c; & &
+\end{array} \right].$$
+
+Now put $c=1,y=1$ in the above. We get
+
+$$\begin{array}{ll}
+\displaystyle\sum_{n=0}^{\infty} \psi_n(1,x,1) t^n &= (1-t)^{-\frac{1-x}{2}} (1+t)^{-\frac{1+x}{2}} {}_1F_1 \left[ \begin{array}{rlr}
+\dfrac{1-x}{2}, \dfrac{1+x}{2}; & & \\
+& & \dfrac{-t^2}{1-t^2} \\
+1; & &
+\end{array} \right] \\
+&= (1-t)^{-\frac{1-x}{2}} (1+t)^{-\frac{1+x}{2}} (1-t^2)^{\frac{1+x}{2}} {}_2F_1 \left[ \begin{array}{rlr}
+\dfrac{1+x}{2}, \dfrac{1+x}{2}; & & \\
+& & t^2 \\
+1; & & 
+\end{array} \right] \\
+&= (1-t)^x {}_2F_1 \left[ \begin{array}{rlr}
+\dfrac{1+x}{2}, \dfrac{1+x}{2}; & & \\
+& & t^2 \\
+1; & & 
+\end{array} \right].
+\end{array}$$
+
+In Theorem 23, page 110, put $a = \dfrac{1+x}{2}, b=\dfrac{1}{2}$ to get
+
+$$F \left[ \begin{array}{rlr}
+\dfrac{1+x}{2}, \dfrac{1+x}{2}; & & \\
+& & (-t)^2 \\
+1; & &
+\end{array} \right] = (1-t)^{-1-x} {}_2F_1 \left[ \begin{array}{rlr}
+\dfrac{1+x}{2}, \dfrac{1}{2}; & & \\
+& & \dfrac{-4t}{(1-t)^2} \\
+1; & &
+\end{array} \right].$$
+
+We may therefore write
+
+$$\displaystyle\sum_{n=0}^{\infty} \psi_n(1,x,1) t^n = (1-t)^{-1} {}_2F_1 \left[ \begin{array}{rlr}
+\dfrac{1+x}{2}, \dfrac{1}{2}; & & \\
+& & \dfrac{-4t}{(1-t)^2} \\
+1; & &
+\end{array} \right] = \displaystyle\sum_{n=0}^{\infty} F_n(x) t^n,$$
+
+by $(2)$, page 505. Hence $\psi_n(1,x,1) = F_n(x),$ (again).
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem4chapter18}
+Sylvester (1879) studied polynomials,
+
+$$\psi_n(x) = \dfrac{x^n}{n!} {}_2F_0 \left( -n, x; -; -\dfrac{1}{x} \right).$$
+
+Show that
+$$(1-t)^{-x} e^{xt} = \displaystyle\sum_{n=0}^{\infty} \phi_n(x) t^n,$$
+
+$$(1-xt)^{-c} {}_2F_0 \left( c,x;-;\dfrac{t}{1-xt} \right) \cong \displaystyle\sum_{n=0}^{\infty} (c)_n \phi_n(x) t^n.$$
+\end{problem}
+\begin{solution}
+Consider
+
+$$\phi_n(x) = \dfrac{x^n}{n!} {}_2F_0 \left(-n,x;-;-\dfrac{1}{x} \right).$$
+
+Then
+
+$$\phi_n(x) = \displaystyle\sum_{k=0}^n \dfrac{(-1)^k n! x^n (x)_k (-1)^k x^{-k}}{k! (n-k)! n!} = \displaystyle\sum_{k=0}^n \dfrac{(x)_k x^{n-k}}{k! (n-k)!}.$$
+
+Hence
+
+$$\begin{array}{ll}
+\displaystyle\sum_{n=0}^{\infty} \phi_n(x) t^n &= \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^n \dfrac{(c)_k x^{n-k} t^n}{k! (n-k)!} \\
+&= \left( \displaystyle\sum_{n=0}^{\infty} \dfrac{(x)_n t^n}{n!} \right) \left( \displaystyle\sum_{n=0}^{\infty} \dfrac{x^n t^n}{n!} \right) \\
+&= (1-t)^{-x} e^{xt}.
+\end{array}$$
+
+Next consider
+
+$$\begin{array}{ll}
+\displaystyle\sum_{n=0}^{\infty} (c)_n \phi_n(x) t^n &= \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^n \dfrac{(c)_n (x)_k x^{n-k} t^n}{k! (n-k)!} \\
+&= \displaystyle\sum_{n,k=0}^{\infty} \dfrac{(c)_{n+k} (x)_k x^n t^{n+k}}{k! n!} \\
+&= \displaystyle\sum_{k=0}^{\infty} \displaystyle\sum_{n=0}^{\infty} \dfrac{(c+k)_n (xt)^n}{n!} \dfrac{(c)_k (x)_k t^k}{k!} \\
+&= \displaystyle\sum_{k=0}^{\infty} \dfrac{(c)_k (x)_k t^k}{k! (1-xt)^{c+k}}.
+\end{array}$$
+
+Therefore
+
+$$\displaystyle\sum_{n=0}^{\infty} (c)_n \phi_n(x) t^n = (1-xt)^{-c} {}_2F_0 \left(c,x;-;\dfrac{t}{1-xt} \right).$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem5chapter18}
+For Sylvester's polynomials of Exercise \ref{problem4chapter18} find what properties you can from the fact that $\phi_n(x)$ is of Sheffer $A$-type zero.
+\end{problem}
+\begin{solution}
+For the $\phi_n(x)$ of Exercise~\ref{problem4chapter18} recall that
+
+$$(1-t)^{-x} e^{xt} = \displaystyle\sum_{n=0}^{\infty} \phi_n(x) t^n.$$
+
+Now $(1-t)^{-x} = \exp[-x \log(1-t)].$ Hence
+
+$$\displaystyle\sum_{n=0}^{\infty} \phi_n(x) t^n = \exp[x \{t-\log(1-t)\}].$$
+
+Therefore $\phi_n(x)$ are of Sheffer $A$-type zero with $A(t)=1, H(t)=t-\log(1-t).$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem6chapter18}
+Show that Bateman's $Z_n(x)$, the Legendre plynomial $P_n(x)$, and the Laguerre polynomial $L_n(x)$ are related symbolically by
+
+$$Z_n(x) \doteqdot P_n(2L(x)-1).$$
+\end{problem}
+\begin{solution}
+We know that Bateman's $Z_n(x)$ has the generating relation
+
+$$(1) \hspace{30pt} \displaystyle\sum_{n=0}^{\infty} Z_n(x) t^n = (1-t)^{-1} {}_1F_1 \left( \dfrac{1}{2}; 1 ; \dfrac{-4xt}{(1-t)^2} \right)$$
+
+and that the Laguerre polynomial satisfies
+
+$$(1-t)^{-c} {}_1F_1 \left( c;1; \dfrac{-xt}{1-t} \right) = \displaystyle\sum_{n=0}^{\infty} \dfrac{(c)_n \mathscr{L}_n(x) t^n}{n!},$$
+
+including the special case
+
+$$(2) \hspace{30pt} (1-v)^{-\frac{1}{2}} {}_1F_1 \left( \dfrac{1}{2}; 1; \dfrac{-xv}{1-v} \right) = \displaystyle\sum_{n=0}^{\infty} \dfrac{(\frac{1}{2})_n \mathscr{L}_n(x) v^n}{n!}.$$
+
+In $(2)$ put $v = \dfrac{4t}{(1+t)^2}$. Then $1-v = \left( \dfrac{1-t}{1+t} \right)^2 \dfrac{-v}{1-v} \dfrac{-4t}{(1-t)^2}$
+
+and $(2)$ becomes
+
+$$(3) \hspace{30pt} (1-t)^{-1} (1+t) {}_1F_1 \left( \dfrac{1}{2}; 1 ; \dfrac{-4xt}{(1-t)^2} \right) = \displaystyle\sum_{k=0}^{\infty} \dfrac{(\frac{1}{2})_k \mathscr{L}_k(x) 2^{2k} t^k}{k! (1+t)^{2k}},$$
+
+or
+
+$$(1-t)^{-1} {}_1F_1 \left( \dfrac{1}{2}; 1 ; \dfrac{-4xt}{(1-t)^2} \right) = \displaystyle\sum_{k=0}^{\infty} \dfrac{(\frac{1}{2})_k 2^{2k} \mathscr{L}_k(x) t^k}{k! (1+t)^{1+2k}}.$$
+
+Therefore we have
+
+$$\begin{array}{ll}
+\displaystyle\sum_{n=0}^{\infty} Z_n(x) t^n &= \displaystyle\sum_{n.k=0}^{\infty} \dfrac{(-1)^n 2^{2k} (\frac{1}{2})_k (1+2k)_n \mathscr{L}_k(x)t^{n+k}}{k! n!} \\
+&= \displaystyle\sum_{n,k=0}^{\infty} \dfrac{(-1)^n (n+2k)! \mathscr{L}_k(x) t^{n+k}}{(k!)^2 n!} \\
+&= \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^n \dfrac{(-1)^{n+k} (n+k)! \mathscr{L}_k(x)}{(k!)^2 (n-k)!} t^n.
+\end{array}$$
+
+We know from $(3)$, page 285 that
+
+$$P_n(x) = (-1)^n {}_2F_1 \left[ \begin{array}{rlr}
+-n. n+1; & & \\
+& & \dfrac{1+x}{2} \\
+1; & & 
+\end{array} \right].$$
+
+Hence
+
+$$\begin{array}{ll}
+P_n(2y-1) &= (-1)^n {}_2F_1 \left[ \begin{array}{rlr}
+-n. n+1; & & \\
+& & y \\
+1; & & 
+\end{array} \right] \\
+&= \displaystyle\sum_{k=0}^n \dfrac{(-1)^{n+k} (n+k)! y^k}{(k!)^2 (n-k)!}.
+\end{array}$$
+
+We therefore have, from
+
+$$Z_n(x) = \displaystyle\sum_{k=0}^n \dfrac{(-1)^{n+k} (n+k)! \mathscr{L}_k(x)}{(k!)^2 (n-k)!} = (-1)^n \displaystyle\sum_{k=0}^n \dfrac{(-n)_k (n+1)_k \mathscr{L}_k(x)}{k! k!}$$
+
+the symbolic result
+
+$$Z_n(x) \doteqdot P_n(2 \mathscr{L}(x) -1).$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem7chapter18}
+Show that Sister Celine's polynomial
+
+$$f_n(x) = {}_2F_2 \left(-n,n+1;1, \dfrac{1}{2};x \right)$$
+
+of equation (16), page 292, is such that
+
+$$\displaystyle\int_0^{\infty} e^{-x} f_n(x) dx = (-1)^n (2n+1).$$
+\end{problem}
+\begin{solution}
+We know that
+
+$$f_n(x) = {}_2F_2 \left( -n, n+1; 1, \dfrac{1}{2}; x \right).$$
+
+Then
+
+$$\displaystyle\sum_{n=0}^{\infty} f_n(x) t^n = \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{s=0}^n \dfrac{(-1)^s (n+s)! x^s t^n}{s! s! (\frac{1}{2})_s (n-s)!}.$$
+
+We also know from $(19)$, page 373, that
+
+$$\dfrac{x^s}{(s!)^2} = \displaystyle\sum_{k=0}^s \dfrac{(-1)^s \mathscr{L}_k(x)}{k! (s-k)!}.$$
+
+Hence,
+
+$$\begin{array}{ll}
+\displaystyle\sum_{n=0}^{\infty} f_n(x) t^n &= \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{s=0}^n \displaystyle\sum_{k=0}^s \dfrac{(-1)^{k+s} (n+s)! \mathscr{L}_k(x) t^n}{(\frac{1}{2})_s k! (s-k)! (n-s)!} \\
+&= \displaystyle\sum_{n,s=0}^{\infty} \displaystyle\sum_{k=0}^s \dfrac{(-1)^{k+s} (n+2s)! \mathscr{L}_k(x) t^{n+s}}{(\frac{1}{2})_s k! (s-k)! n!} \\
+&= \displaystyle\sum_{n,k,s=0}^{\infty} \dfrac{(-1)^s (n+2k+2s)! \mathscr{L}_k(x) t^{n+k+s}}{s! k! n! (\frac{1}{2})_{s+k}} \\
+&= \displaystyle\sum_{n,k=0}^{\infty} \displaystyle\sum_{s=0}^n \dfrac{(-1)^s (n+2k+s)! \mathscr{L}_k(x) t^{n+k}}{s! (\frac{1}{2})_{k+s} (n-s)! k!} \\
+&= \displaystyle\sum_{n,k=0}^{\infty} F \left[ \begin{array}{rlr}
+-n, 1+n+2k; & & \\
+& & 1 \\
+\dfrac{1}{2} + k ; & & 
+\end{array} \right] \dfrac{(n+2k)! \mathscr{L}_k(x) t^{n+k}}{k! (\frac{1}{2})_k n!}.
+\end{array}$$
+
+By Example 5, page 119, we get
+
+$${}_2F_1 \left[ \begin{array}{rlr}
+-n, 1+n+2k; & & \\
+& & 1 \\
+\dfrac{1}{2} + k; & & 
+\end{array} \right] = \dfrac{(-1)^n (1+1+2k-\frac{1}{2}-k)_n}{(\frac{1}{2}+k)_n} = \dfrac{(-1)^n (\frac{3}{2}+k)_n}{(\frac{1}{2}+k)_n} = \dfrac{(-1)^n (\frac{3}{2})_{n+k} (\frac{1}{2})_k}{(\frac{3}{2})_k (\frac{1}{2})_{n+k}}.$$
+
+Then
+
+$$\begin{array}{ll}
+\displaystyle\sum_{n=0}^{\infty} f_n(x) t^n &= \displaystyle\sum_{n,k=0}^{\infty} \dfrac{(-1)^n (\frac{3}{2})_{n+k} (\frac{1}{2})_k (n+2k)! \mathscr{L}_k(x)t^{n+k}}{(\frac{3}{2})_k (\frac{1}{2})_{n+k} k! (\frac{1}{2})_k n!} \\
+&= \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^n \dfrac{(-1)^{n-k} (\frac{3}{2})_n (n+k)! \mathscr{L}_k(x) t^n}{(\frac{3}{2})_k (\frac{1}{2})_n k! (n-k)!}.
+\end{array}$$
+
+Therefore, since 
+
+$$\dfrac{(\frac{3}{2})_n}{(\frac{1}{2})_n} = \dfrac{(n+\frac{1}{2})}{(\frac{1}{2})} = 2n+1,$$
+
+$$(1) \hspace{30pt} f_n(x) = (-1)^n (2n+1) \displaystyle\sum_{k=0}^n \dfrac{(-n)_k (n+1)_k \mathscr{L}_k(x)}{k! (\frac{3}{2})_k}.$$
+
+Equation $(1)$ will also be of use to us in later work. We now note that
+
+$$\displaystyle\int_0^{\infty} e^{-x} f_n(x) dx = (-1)^n (2n+1) \displaystyle\sum_{k=0}^n \dfrac{(-n)_k (n+1)_k}{k! (\frac{3}{2})_k} \displaystyle\int_0^{\infty} e^{-x} \mathscr{L}_k(x) dx.$$
+
+The integral in the sum is zero except for $k=0$ and $\displaystyle\int_0^{\infty} e^{-x} \mathscr{L}_0(x) dx = 1.$
+
+Hence
+
+$$\displaystyle\int_0^{\infty} e^{-x} f_n(x) dx = (-1)^n (2n+1).$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem8chapter18}
+For Sister Celine's $f_n(x)$ of Exercise~\ref{problem7chapter18} show that
+
+$$\displaystyle\int_0^{\infty} e^{-x} f_n(x) f_m(x)dx = (-1)^{n+m}(2n+1)(2m+1){}_4F_3 \left[ \begin{array}{rlr}
+-n,n+1,-m,m+1; & & \\
+& & 1 \\
+1, \dfrac{3}{2}, \dfrac{3}{2}; & & 
+\end{array} \right],$$
+
+$$\displaystyle\int_0^{\infty} e^{-x} L_k(x) f_n(x) dx = \left\{ \begin{array}{ll}
+\dfrac{(-1)^n (2n+1)(-n)_k(n+1)_k}{k! (\frac{3}{2})_k} &; 0 \leq k \leq n, \\
+0 &; k>n,
+\end{array} \right.$$
+
+$$\displaystyle\int_0^{\infty} e^{-x} f_n(x) Z_k(x) dx = (-1)^{n+k} (2n+1) {}_4F_3 \left[ \begin{array}{rlr}
+-n, n+1, -k, k+1; & & \\
+& & 1 \\
+1,1, \dfrac{3}{2}; & & 
+\end{array} \right].$$
+\end{problem}
+\begin{solution}
+Again we use $f_n(x) = {}_2F_2 \left( -n, n+1; 1, \dfrac{1}{2};x \right)$ as in Exercise~\ref{problem7chapter18}.
+
+Recall that
+
+$$(1) \hspace{30pt} f_n(x) = (-1)^n (2n+1) \displaystyle\sum_{k=0}^n \dfrac{(-n)_k (n+1)_k \mathscr{L}_k(x)}{k! (\frac{3}{2})_k}$$
+
+and, from Exercise~\ref{problem6chapter18}, that
+
+$$(2) \hspace{30pt} Z_n(x) = (-1)^n \displaystyle\sum_{k=0}^n \dfrac{(-n)_k (n+1)_k \mathscr{L}_k(x)}{k! k!}.$$
+
+At once
+
+\begin{eqnarray*}
+\lefteqn{\displaystyle\int_0^{\infty} e^{-x} f_n(x) f_m(x) \mathrm{d}x}\\
+&& = (-1)^{n+m} (2n+1)(2m+1) \displaystyle\sum_{k=0}^n \displaystyle\sum_{s=0}^m \dfrac{(-n)_k (n+1)_k (-m)_s (m+1)_s}{k! (\frac{3}{2})_k s! (\frac{3}{2})_s} \displaystyle\int_0^{\infty} e^{-x} \mathscr{L}_k(x) \mathscr{L}_s(x) \mathrm{d}x.
+\end{eqnarray*}
+
+Now, by the orthogonality property of Laguerre polynomials, and the fact that $\displaystyle\int_0^{\infty} e^{-x} \mathscr{L}_n^2(x) dx =1$, we get
+
+$$\begin{array}{ll}
+\displaystyle\int_0^{\infty} e^{-x} f_n(x) f_m(x) dx &= (-1)^{n+m} (m+1)(2m+1) \displaystyle\sum_{k=0}^{\min(n,m)} \dfrac{(-n)_k (n+1)_k (-m)_k (m+1)_k}{k! (\frac{3}{2})_k k! (\frac{3}{2})_k} \\
+&= (-1)^{n+m} (2n+1)(2m+1) {}_4F_3 \left[ \begin{array}{rlr}
+-n, n+1, -m, m+1; & & \\
+& & 1 \\
+1, \dfrac{3}{2}, \dfrac{3}{2}; & & 
+\end{array} \right].
+\end{array}$$
+
+Next consider 
+
+$$\displaystyle\int_0^{\infty} e^{-x} \mathscr{L}_k(x) f_n(x) dx.$$
+
+At once
+
+$$\displaystyle\int_0^{\infty} e^{-x} \mathscr{L}_k(x) f_n(x) dx = 0; k>n,$$
+
+from the orthogonality property of $\mathscr{L}_k(x)$.
+
+If $0 \leq k \leq n,$
+
+$$\begin{array}{ll}
+\displaystyle\int_0^{\infty} e^{-x} \mathscr{L}_k(x) f_n(x) dx &= (-1)^n (2n+1) \displaystyle\sum_{s=0}^n \dfrac{(-n)_s (n+1)_s}{s! (\frac{3}{2})_s} \displaystyle\int_0^{\infty} e^{-x} \mathscr{L}_k(x) \mathscr{L}_s(x) dx \\
+&= \dfrac{(-1)^n (2n+1)(-n)_k (n+1)_k}{k! (\frac{3}{2})_k}.
+\end{array}$$
+
+Finally, using $(1)$ and $(2)$ above we get
+
+$$\begin{array}{ll}
+\displaystyle\int_0^{\infty} e^{-x} f_N(x) Z_k(x) dx &= (-1)^{n+k} (2n+1) \displaystyle\sum_{s=0}^n \displaystyle\sum_{i=0}^k \dfrac{(-n)_s (n+1)_s (-k)_i (k+1)_i}{s! (\frac{3}{2})_s i! i!} \displaystyle\int_0^{\infty} e^{-x} \mathscr{L}_s(x) \mathscr{L}_i(x)dx \\
+&= (-1)^{n+k} (2n+1) \displaystyle\sum_{s=0}^{\min(n,k)} \dfrac{(-n)_s (n+1)_s (-k)_s (k+1)_s}{s! (\frac{3}{2})_s s! s!} \\
+&= (-1)^{n+k} (2n+1) {}_4F_3 \left[ \begin{array}{rlr} 
+-n, n+1, -k, k+1; & & \\
+& & 1 \\
+1, 1, \dfrac{3}{2}; & & 
+\end{array} \right].
+\end{array}$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem9chapter18}
+Show that
+
+$$\displaystyle\int_0^{\infty} e^{-x} Z_n(x) Z_k(x) dx = (-1)^{n+k} {}_4F_3 \left[ \begin{array}{rlr}
+-n, n+1, -k, k+1; & & \\
+& & 1 \\
+1, 1, 1,; & &
+\end{array} \right].$$
+\end{problem}
+\begin{solution}
+Using equation $(2)$ of Exercise~\ref{problem8chapter18} above, we get
+
+$$\begin{array}{ll}
+\displaystyle\int_0^{\infty} e^{-x} Z_n(x) Z_k(x) dx &= (-1)^{n+k} \displaystyle\sum_{s=0}^n \displaystyle\sum_{i=0}^k \dfrac{(-n)_s (n+1)_s (-k)_i (k+1)_i}{s! s! i! i!} \displaystyle\int_0^{\infty} e^{-x} \mathscr{L}_s(x) \mathscr{L}_i(x) dx \\
+&= (-1)^{n+k} \displaystyle\sum_{s=0}^{\min(n,k)} \dfrac{(-n)_s (n+1)_s (-k)_s (k+1)_s}{s! s! s! s!} \\
+&= (-1)^{n+k} {}_4F_3 \left[ \begin{array}{rlr} 
+-n, n+1, -k, k+1; & & \\
+& & 1 \\
+1,1,1; & & 
+\end{array} \right].
+\end{array}$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem10chapter18}
+Gottlieb introduced the polynomials
+
+$$\phi_n(x;\lambda) = e^{-n\lambda} {}_2F_1(-n, -x;1;1-e^{\lambda}).$$
+
+Show that
+
+$$(i) \displaystyle\sum_{n=0}^{\infty} \dfrac{\phi_n(x;\lambda)t^n}{n!} = e^t {}_1F_1(1+x;1;-t(1-e^{-\lambda})),$$
+
+$$(ii) \phi_n(x,\lambda+\mu) = \dfrac{(e^{\mu}-1)^n}{e^{\mu n}(1 - e^{\lambda})^n} \displaystyle\sum_{k=0}^n \dfrac{n! (1-e^{\lambda + \mu})^k \phi_k(x;\lambda)}{k! (n-k)! (e^{\mu}-1)^k},$$
+
+$$(iii) \displaystyle\int_0^{\infty} e^{-st} \phi_n(x;-t) dt = \dfrac{\Gamma(s-n) \Gamma(s+x+1)}{\Gamma(s+1) \Gamma(s+x-n+1)},$$
+
+$$(iv) (x-n)\phi_n(x;\lambda) = x \phi_n(x-1;\lambda) - ne^{-\lambda} \phi_{n-1}(x;\lambda),$$
+
+$$(v) n[\phi_n(x;\lambda)-\phi_{n-1}(x;\lambda)] = (x+1)[\phi_n(x+1;\lambda) - \phi_n(x;\lambda)],$$
+
+$$(vi) (x+n+1)\phi_n(x;\lambda) = xe^{\lambda}\phi_n(x-1;\lambda) + (n+1)e^{\lambda}\phi_{n+1}(x;\lambda),$$
+
+and see Gottlieb for many other results on $\phi_n(x;\lambda)$.
+\end{problem}
+\begin{solution} The following proof is by Leon Hall except for the proof of (ii) which was done by Donald Myers. First we prove $(i)$. By Kummer's first formula (see Theorem 42),
+$${}_1F_1 \left(a;b;z \right)=e^z {}_1F_1 (b-a;b;-z)$$
+and so
+$${}_1F_1(1+x;1;z)=e^z {}_1F_1(-x;1;-z).$$
+If 
+$$z=-t(1-e^{-\lambda})=t e^{-\lambda}(1-e^{\lambda}),$$
+then
+$e^t e^z = e^{te^{-\lambda}}$ and $\dfrac{z}{1-e^{\lambda}}=te^{-\lambda}$, making
+$$\begin{array}{ll}
+e^t {}_1F_1 (1+x;1;z) &= e^t e^z {}_1F_1(-x;1;-z) \\
+&= \exp \left( \dfrac{z}{1-e^{\lambda}} \right){}_1F_1(-x;1;-z) \\
+&= \left( \displaystyle\sum_{n=0}^{\infty} \dfrac{z^n}{n!(1-e^{\lambda})^n} \right) \left( \displaystyle\sum_{n=0}^{\infty} \dfrac{(-x)_n (-1)^n}{n! n!} z^n \right) \\
+&= \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^n \dfrac{(-x)_k(-1)^k}{k!k! (n-k)! (1-e^{\lambda})^{n-k}} z^n.
+\end{array}$$
+Substituting for $z$ and noting that $\dfrac{1}{(n-k)!}=\dfrac{(-1)^k (-n)_k}{n!}$,
+$$\begin{array}{ll}
+e^t {}_1F_1 \left(1+x;1;-t(1-e^{-\lambda}) \right) &= \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^n \dfrac{(-x)_k(-n)_k (1-e^{\lambda})^nt^n}{k!k! n!(1-e^{\lambda})^{n-k}e^{n\lambda}} \\
+&= \displaystyle\sum_{n=0}^{\infty} \dfrac{e^{-n\lambda}}{n!} \displaystyle\sum_{k=0}^n \dfrac{(-x)_k (-n)_k}{k!k!} (1-e^{\lambda})^k t^n \\
+&= \displaystyle\sum_{n=0}^{\infty} \dfrac{e^{-n\lambda}{}_2F_1(-n,-x;1;1-e^{\lambda})}{n!} t^n \\
+&= \displaystyle\sum_{n=0}^{\infty} \dfrac{\phi_n(x;\lambda)}{n!} t^n,
+\end{array}$$
+proving $(i)$. To prove $(ii)$, first recall that ${n \choose k}=\dfrac{n!}{k!(n-k)!}$ and for convenience define 
+$$G_n(x,\lambda,\mu)=\dfrac{(e^{\mu}-1)^n}{e^{n\mu}(1-e^{\lambda})^n} \displaystyle\sum_{k=0}^n {n \choose k} \dfrac{(1-e^{\lambda+\mu})^k}{(e^{\mu}-1)^k} \phi_k(x,\lambda),$$
+which is the right-hand-side of $(ii)$. We must prove 
+$$(*) \quad G_n(x,\lambda,\mu)=\phi_n(x,\lambda+\mu).$$
+The presence of the term ${n \choose k}$ and the range of the summation index $k$ suggests the binomial theorem may be useful in reducing the complexity of $G_n$. We also notice in $(*)$ that a constant factor of $e^{-n(\mu+\lambda)}$ will appear. Our first goals are to try to write $G_n$ in terms of a sum of the form $\displaystyle\sum_{k=0}^n {n \choose k} a^k b^{n-k}$ and to force the factor $e^{-n(\mu+\lambda)}$ to appear. To begin, we use the definition of $G_n$ and push the constant $(e^{\mu}-1)^n$ through the sum. This yields
+$$\begin{array}{ll}
+G_n(x,\lambda,\mu) &= \dfrac{(e^{\mu}-1)^n}{e^{n\mu}(1-e^{\lambda})^n} \displaystyle\sum_{k=0}^n {n \choose k} \dfrac{(1-e^{\lambda+\mu})^k}{(e^{\mu}-1)^k} e^{-k\lambda} {}_2F_1(-k,-x;1;1-e^{\lambda}) \\
+&= \dfrac{e^{-n(\mu+\lambda)}}{(1-e^{\lambda})^n} \displaystyle\sum_{k=0}^n {n \choose k} (1-e^{\lambda+\mu})^k (e^{\mu}-1)^{n-k} e^{(n-k)\lambda} {}_2F_1(-k,-x;1;1-e^{\lambda}).
+\end{array}$$
+Multiply and divide by $e^{n\lambda}$ forces the constant factor $e^{-n(\mu+\lambda)}$ to appear, and allows us to simplify $G_n$. The end result is
+$$(**) \hspace{35pt} G_n(x,\lambda,\mu)=\dfrac{e^{-n(\mu+\lambda)}}{(1-e^{\lambda})^n} \displaystyle\sum_{k=0}^n {n \choose k} (1-e^{\lambda+\mu})^k (e^{\mu+\lambda}-e^{\lambda})^{n-k} {}_2F_1(-k,-x;1;1-e^{\lambda}).$$
+The presence of the hypergeometric polynomial ${}_2F_1(-k,-x;1;1-e^{\lambda})$ prevents us from using the binomial theorem. We also need to push the factor $\dfrac{1}{(1-e^{\lambda})^n}$ through the sum. To do this, note that
+$${}_2F_1(-k,-x;1;1-e^{\lambda})=\displaystyle\sum_{l=0}^k (-1)^k {k \choose l} \dfrac{(-x)_l}{(1)_l} (1-e^{\lambda})^{l-n}.$$
+Substituting into $(**)$ yields
+$$G_n(x,\lambda,\mu)=e^{-n(\mu+\lambda)} \displaystyle\sum_{k=0}^n {n \choose k} (1-e^{\lambda+\mu})^k (e^{\mu+\lambda}-e^{\lambda})^{n-k} \displaystyle\sum_{l=0}^k (-1)^l {k \choose l} \dfrac{(-x)_l}{(1)_l} (1-e^{\lambda})^{l-n}.$$
+To interchange the order of summation we use the elementary result
+$$\displaystyle\sum_{l=0}^n \displaystyle\sum_{k=l}^n a_{lk} = \displaystyle\sum_{k=0}^n \displaystyle\sum_{l=0}^n a_{lk}.$$
+(note: A source for this result is ``Concrete Mathematics" (1989) by Ronald Graham and Donald Knuth, pg.36) \\
+Using this we obtain
+$$\begin{array}{ll}
+(\dagger) G_n(x,\lambda,\mu) &= e^{-n(\mu+\lambda)} \displaystyle\sum_{l=0}^n (-1)^l \dfrac{(-x)_l}{(1)_l} (1-e^{\lambda})^{l-n} \displaystyle\sum_{k=l}^n {n \choose k}{k \choose l} (1-e^{\lambda+\mu})^k (e^{\mu+\lambda}-e^{\lambda})^{n-k} \\
+&=e^{-n(\mu+\lambda)} \displaystyle\sum_{l=0}^n (-1)^l {n \choose l} \dfrac{(-x)_l}{(1)_l} (1-e^{\lambda})^{l-n} \displaystyle\sum_{k=l}^n {{n-l} \choose {k-l}} (1-e^{\lambda+\mu})^k (e^{\mu+\lambda}-e^{\lambda})^{n-k}
+\end{array}$$
+because ${n \choose k}{k \choose l}={n \choose l}{{n-l} \choose {k-l}}$. We will now show that 
+$$(***) \hspace{35pt} \displaystyle\sum_{k=l}^n {{n-l} \choose {k-l}} (1-e^{\lambda+\mu})^k (e^{\mu+\lambda}-e^{\lambda})^{n-k}=(1-e^{\lambda+\mu})^l (1-e^{\lambda})^{n-l}.$$
+To see this rewrite $(***)$ in the following way:
+$$\begin{array}{ll}
+\displaystyle\sum_{k=l}^n {{n-l} \choose {k-l}} (1-e^{\lambda+\mu})^k (e^{\mu+\lambda}-e^{\lambda})^{n-k} &= (1-e^{\lambda+\mu})^l \displaystyle\sum_{k=l}^n {{n-l} \choose {k-l}} (1-e^{\lambda+\mu})^{k-l} (e^{\mu+\lambda}-e^{\lambda})^{n-l-(k-l)} \\
+&= (1-e^{\lambda+\mu})^l \displaystyle\sum_{r=0}^{n-l} {{n-l} \choose r} (1-e^{\lambda+\mu})^r (e^{\mu+\lambda}-e^{\lambda})^{n-l-r},
+\end{array}$$
+where $r=k-l$. Apply the binomial theorem to see
+$$\displaystyle\sum_{k=l}^n {{n-l} \choose {k-l}} (1-e^{\lambda+\mu})^k (e^{\mu+\lambda}-e^{\lambda})^{n-k} = (1-e^{\lambda+\mu})^l (1-e^{\lambda})^{n-l},$$
+as desired. Substitute into the right hand side of $(\dagger)$ to get 
+$$\begin{array}{ll}
+G_n(x,\lambda,\mu) &= e^{-n(\mu+\lambda)} \displaystyle\sum_{l=0}^n (-1)^l {n \choose l} \dfrac{(-x)_l}{(1)_l} (1-e^{\lambda})^{l-n}(1-e^{\lambda+\mu})^l (1-e^{\lambda})^{n-l} \\
+&= e^{-n(\mu+\lambda)} \displaystyle\sum_{l=0}^n (-1)^l {n \choose l} \dfrac{(-x)_l}{(1)_l} (1-e^{\lambda+\mu})^l \\
+&= e^{-n(\mu+\lambda)} {}_2F_1(-k,-x;1;1-e^{\lambda+\mu}) \\
+&= \phi_n(x,\lambda+\mu),
+\end{array}$$
+as was to be shown. To show $(iii)$, first note that
+$$\phi_n(x;-t)=e^{nt} {}_2F_1(-n,-x;1;1-e^{-t}),$$
+so
+$$e^{-st} \phi_n(x;-t) = e^{(n-s)t} {}_2F_1(-n,-x;1;1-e^{-t}).$$
+From Chapter~$4$ number $16$:
+$$\displaystyle\int_0^{\infty} e^{-st} {}_2F_1(z,b;1;z(1-e^{-t}))=\dfrac{1}{s} {}_2F_1(a,b;s+1;z).$$
+With $z=1$,
+$$\mathscr{L}\{{}_2F_1(a,b;1;1-e^{-t})\}=\dfrac{1}{s} {}_2F_1(a,b;s+1;1)=f(s),$$
+so using Theorem~18,
+$$\begin{array}{ll}
+\mathscr{L}\{e^{nt} {}_2F_1(-n,-x;1;1-e^{-t})\} &= f(s-n) \\
+&= \dfrac{1}{s-n} {}_2F_1(-n,-x;s-n+1;1) \\
+&= \dfrac{1}{s-n} \dfrac{\Gamma(s-n+1)\Gamma(s+x+1)}{\Gamma(s+1)\Gamma(s-n+x+1)} \\
+&= \dfrac{\Gamma(s-n)\Gamma(s+x+1)}{\Gamma(s+1)\Gamma(s+x-n+1)},
+\end{array}$$
+as was to be shown. To show $(iv)$, compute
+$$\begin{array}{ll}
+x \phi_n(x-1;\lambda) &= e^{-n\lambda} \displaystyle\sum_{k=0}^n \dfrac{(-n)_k x (-x+1)_k}{(k!)^2} (1-e^{\lambda})^k \\
+&= e^{-n\lambda} \displaystyle\sum_{k=0}^n \dfrac{(-n)_k (-x)_k (x-k)}{(k!)^2} (1-e^{\lambda})^k.
+\end{array}$$
+Now compute
+$$\begin{array}{ll}
+-n e^{-\lambda} \phi_{n-1}(x;\lambda) &= e^{-\lambda} e^{-(n-1)\lambda} \displaystyle\sum_{k=0}^{n-1} \dfrac{(-n)(-n+1)_k(-x)_k}{(k!)^2} (1-e^{\lambda})^k \\
+&= e^{-n\lambda} \displaystyle\sum_{k=0}^{n-1} \dfrac{(-n)_k (-x)_k (n-k)}{(k!)^2} (1-e^{\lambda})^k,
+\end{array}$$
+so
+$$\begin{array}{ll}
+x\phi_n(x-1;\lambda) -ne^{-\lambda}\phi_{n-1}(x;\lambda) &= e^{-n\lambda} \displaystyle\sum_{k=0}^n \dfrac{(-n)_k (-x)_k}{(k!)^2} [(x-k)-(n-k)] (1-e^{\lambda})^k \\
+&= (x-n) \phi_n(x;\lambda),
+\end{array}$$
+as was to be shown. To prove $(v)$, note that
+$$\phi_n(x;\lambda)=e^{-n\lambda} {}_2F_1(-n,-x;1;1-e^{\lambda}),$$
+$$\phi_{n-1}(x;\lambda) = e^{\lambda} e^{-n\lambda} F(-n=1,-x;1;1-e^{\lambda}) = e^{\lambda}e^{-n\lambda} F(-n+),$$
+and
+$$\phi_n9x+1;\lambda) = e^{-n\lambda} F(-n,-x-1;1;1-e^{\lambda}) = e^{-n\lambda} F(-x-).$$
+From the contiguous relation with $F(a+)$ and $F(b-$:
+$$(7),\mathrm{pg.}71: \quad (a+b-c)F=a(1-z)F(a+)-(c-b)F(b-).$$
+With $a=-n, b=-x,c=1,$ and $z=1-e^{\lambda}$,
+$$(-n-x-1)F = -ne^{\lambda}F(a+) - (1+x)F(b-),$$
+$$(x+1)F+nF = ne^{\lambda} F(a+) + (x+1)F(b-),$$
+$$n(F-e^{\lambda}F(a+)) = (x+1)[F(b-)-F].$$
+Multiply by $e^{-n\lambda}$ to get back to the $\phi_n$'s:
+$$n[e^{-n\lambda}F-e^{\lambda}e^{-n\lambda} F(-n+)] = (x+1) [e^{-n\lambda} F(-x-)-F],$$
+or
+$$n[\phi_n(x;\lambda)-\phi_{n-1}(x;\lambda)]=(x+1)[\phi_n(x+1);\lambda)-\phi_n(x;\lambda)],$$
+as was to be shown. Finally, to prove $(vi)$, we make use of the contiguous relations for ${}_2F_1$:
+$$\phi_{n+1}(x;\lambda) = e^{-\lambda}e^{-n\lambda} F(-n-1,-x;1;1-e^{\lambda})=e^{-\lambda}e^{-n\lambda}F(a-),$$
+so using $e^{\lambda}\phi_{n+1}(x;\lambda)=e^{-n\lambda}F(a-)$ compute
+$$\phi_n(x-1;\lambda) = e^{-n\lambda} F(-n,-x+1;1;1-e^{\lambda})=e^{-n\lambda} F(b+).$$
+From $(8)$, pg.71 Exercise~21 and $a,b,c,z$ as in part $(v)$,
+$$(c-a-b)F=(c-a)F(a-)-b(1-z)F(b+)$$
+$$(1+n+x)F = (1+n)F(a-)+xe^{\lambda}F(b+).$$
+Multiply by $e^{-n\lambda}$ to get
+$$(x+n+1)e^{-n\lambda}F = (n+1)F(a-)e^{-n\lambda} + xe^{\lambda} e^{-n\lambda} F(b+)$$
+and we get
+$$(x+n+1)\phi_n(x;\lambda)=xe^{\lambda}\phi_n(x-1;\lambda)+(n+1)e^{\lambda} \phi_{n+1}(x;\lambda),$$
+as was to be shown.
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem11chapter18}
+With $f_n$ denoting Sister Celine's polynomials of Section 149, show that
+
+$$\displaystyle\int_0^t x^{\frac{1}{2}}(t-x)^{\frac{1}{2}}f_n(-;-;x)dx = \pi Z_n(t),$$
+
+$$\displaystyle\int_0^t x^{\frac{1}{2}}(t-x)^{\frac{1}{2}} f_n(-;-;x(t-x))dx = \pi Z_n \left( \dfrac{1}{4} t^2 \right),$$
+
+and
+
+$$\displaystyle\int_0^t x^{\frac{1}{2}}(t-x)^{\frac{1}{2}} f_n \left( -; \dfrac{1}{2};x(t-x) \right) dx = \pi L_n(t) L_n(-t).$$
+\end{problem}
+\begin{solution}
+We shall use Theorem~37, page (??), to evaluate the integrals in question.
+
+Recall that $f_n(-;-;x) = {}_2F_2 \left( -n, n+1; 1, \dfrac{1}{2};x \right).$
+
+Then use $\alpha = \dfrac{1}{2}, \beta = \dfrac{1}{2}, p=2, q=2, a_1=-n, a_2=n+1, b_1=1, b_2 = \dfrac{1}{2}, c=1, k=1, s=0$ in Theorem~37 to get
+
+$$\begin{array}{ll}
+\displaystyle\int_0^t x^{\frac{1}{2}} (t-x)^{-\frac{1}{2}} f_n(-;-;x) dx &= B\left( \dfrac{1}{2}, \dfrac{1}{2} \right) F \left[ \begin{array}{rlr} 
+-n, n+1, \dfrac{1}{2}; & & \\
+& & t \\
+1, \dfrac{1}{2}, 1; & & 
+\end{array} \right] \\
+&= \dfrac{\Gamma(\frac{1}{2}) \Gamma(\frac{1}{2})}{\Gamma(1)} {}_2F_2 \left[ \begin{array}{rlr} 
+-n, n+1; & & \\
+& & t \\
+1,1; & & 
+\end{array} \right] \\
+&= \pi Z_n(t).
+\end{array}$$
+
+Next, make the same substitution except that $s=1$ instead of $s=0$. We thus get
+
+$$\begin{array}{ll}
+\displaystyle\int_0^t x^{-\frac{1}{2}} (t-x)^{-\frac{1}{2}} f_n(-;-;-x(t-x))dx &= \pi F \left[ \begin{array}{rlr} 
+-n, n+1, \dfrac{1}{2}, \dfrac{1}{2}; & & \\
+& & \dfrac{t^2}{4} \\
+1, \dfrac{1}{2}, \dfrac{1}{2}, \dfrac{2}{2}; & & 
+\end{array} \right] \\
+&= \pi {}_2F_2 \left[ \begin{array}{rlr} 
+-n, n+1; & & \\
+& & \dfrac{t^2}{4} \\
+1,1; & & 
+\end{array} \right] \\
+&= \pi Z_n \left( \dfrac{1}{4} t^2 \right).
+\end{array}$$
+
+Finally, consider
+
+$$f_n \left( -; \dfrac{1}{2}; z \right) = {}_2F_3 \left[ \begin{array}{rlr} 
+-n, n+1; & & \\
+& & z \\
+1, \dfrac{1}{2}, \dfrac{1}{2};  & & 
+\end{array} \right].$$
+
+In Theorem~37 we now use $\alpha = \dfrac{1}{2}, \beta = \dfrac{1}{2}, p=2, q=2, a_1=-n, a_2=n+1, b_1=1, b_2=1, b-3 = \dfrac{1}{2}, c=1, k=1, s=1,$ to get
+
+$$\begin{array}{ll}
+\displaystyle\int_0^t x^{\frac{1}{2}} (t-x)^{\frac{1}{2}} f_n \left( -; \dfrac{1}{2}; x(t-x) \right) dx \\
+&= \dfrac{\Gamma(\frac{1}{2}) \Gamma(\frac{1}{2})}{\Gamma(1)} F \left[ \begin{array}{rlr} 
+-n, n+1; & & \\
+& & \dfrac{t^2}{4} \\
+1,1, \dfrac{1}{2}; & & 
+\end{array} \right] \\
+&= \pi \mathscr{L}_n(t) \mathscr{L}_n(-t),
+\end{array}$$
+
+by equation $(9)$, page 509.
+
+Recall Ramanujan's theorem, Example 5, page 180,
+
+$${}-1F_1(\alpha; \beta; x) {}_1F_1(\alpha;\beta;-x) = {}_2F_3 \left( \alpha, \beta-\alpha; \beta, \dfrac{\beta}{2}, \dfrac{\beta}{2}+\dfrac{1}{2}; \dfrac{x^2}{4} \right).$$
+
+Use $\alpha=-n, \beta=1, x=t$ to get
+
+$${}_1F_1(-n;1;t) {}_1F_1(-n;1;-t) = {}_2F_3 \left( -n, 1+n; 1, \dfrac{1}{2}, 1 ; \dfrac{t^2}{4} \right),$$
+
+which is the result we used from page 509.
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem12chapter18}
+Define polynomials $\phi_n(x)$ by
+
+$$\phi_n(x) = \dfrac{(c)_n}{n!} {}_2F_2(-n,c+n;1,1;x).$$
+
+Show that
+
+$$\phi_n(x) = \displaystyle\sum_{k=0}^n \dfrac{(-1)^{n-k} (c-1)_{n-k} (c)_{n+k} (2k+1)Z_k(x)}{(n-k)! (n+k+1)!}.$$
+\end{problem}
+\begin{solution}
+Let us define $\phi_n(x)$ by
+
+$$\phi_n(x) = \dfrac{(c)_n}{n!} {}_2F_2 (-n,c+n;1,1;x).$$
+
+Then
+
+$$\phi_n(x) = \displaystyle\sum_{k=0}^n \dfrac{(-1)^k (c)_{n+k} x^k}{k! (n-k)! (k!)^2},$$
+
+so
+
+$$\begin{array}{ll}
+\displaystyle\sum_{n=0}^{\infty} \phi_n(x) t^n &= \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{s=0}^n \dfrac{(-1)^s (c)_{n+s} x^s t^n}{(s!)^3 (n-s)!} \\
+&= \displaystyle\sum_{n,s=0}^{\infty} \dfrac{(-1)^s (c)_{n+2s} x^s t^{n+s}}{(s!)^3 n!}.
+\end{array}$$
+
+We know (page 199) that
+
+$$x^s = (s!)^2 \displaystyle\sum_{k=0}^s \dfrac{(-s)_k (2k+1) Z_k(x)}{(s+k+1)!}.$$
+
+Then
+
+$$\begin{array}{ll}
+\displaystyle\sum_{n=0}^{\infty} \phi_n(x) t^n &= \displaystyle\sum_{n,s=0}^{\infty} \displaystyle\sum_{k=0}^s \dfrac{(-1)^{s+k} (c)_{n+2s} (2k+1) Z_k(x) t^{n+s}}{n! (s-k)! (s+k+1)!} \\
+&= \displaystyle\sum_{n,k,s=0}^{\infty} \dfrac{(-1)^s (c)_{n+2k+2s}(2k+1)Z_k(x) t^{n+k+s}}{n! s! (s+2k+1)!} \\
+&= \displaystyle\sum_{n,k=0}^{\infty} \displaystyle\sum_{s=0}^n \dfrac{(-1)^s (c)_{n+2k+s} (2k+1) Z_k(x) t^{n+k}}{s! (n-s)! (s+2k+1)!}.
+\end{array}$$
+
+We now have
+
+$$\begin{array}{ll}
+\displaystyle\sum_{n=0}^{\infty} \phi_n(x) t^n &= \displaystyle\sum_{n,k=0}^{\infty} {}_2F_1 \left[ \begin{array}{rlr} 
+-n, c+n+2k; & & \\
+& & 1 \\
+2+2k; & &
+\end{array} \right] \dfrac{(c)_{n+2k} (2k+1) Z_k(x) t^{n+k}}{n! (2k+1)!} \\
+&= \displaystyle\sum_{n,k=0}^{\infty} \dfrac{\Gamma(2+2k) \Gamma(2-c)}{\Gamma(2+2k+n) \Gamma(2-c-n)} \dfrac{(c)_{n+2k} (2k+1) Z_k9x) t^{n+k}}{n! (2k+1)!} \\
+&= \displaystyle\sum_{n,k=0}^{\infty} \dfrac{(-1)^n (c-1)_n (c)_{n+2k} (2k+1)! Z_k(x) t^{n+k}}{(n+2k+1)! n!} \\
+&= \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^n \dfrac{(-1)^{n-k} (c)_{n+k} (c-1)_{n-k} (2k+1) Z_k(x)}{(n-k)! (n+k+1)!} t^n.
+\end{array}$$
+
+Hence
+
+$$\phi_n(x) = \displaystyle\sum_{k=0}^n \dfrac{(-1)^{n-k} (c-1)_{n-k} (c)_{n+k} (2k+1) Z_k(x)}{(n-k)! (n+k+1)!}.$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem13chapter18}
+Show that the $F(t)$ of equation (10), page 286, can be put in the form
+
+$$F(t) = t^b e^{-t} (1-z)^{-2v} {}_1F_1 \left[ \begin{array}{rlr}
+v; & & \\
+& & \dfrac{-4zt}{(1-z)^2} \\
+b+1; & & 
+\end{array} \right].$$
+\end{problem}
+\begin{solution}
+From equation $(10)$, page 500, we get
+
+$$\begin{array}{ll}
+F(t) &= t^b e^{-t} \displaystyle\sum_{n=0}^{\infty} \dfrac{(2v)_n z^n}{n!} {}_2F_2 \left[ \begin{array}{rlr} 
+-n, 2v+n; & &\\
+& & t \\
+v + \dfrac{1}{2}, b+1; & & 
+\end{array} \right] \\
+&= t^b e^{-t} \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^n \dfrac{(-1)^k n! (2v)_n(2v+n)_k t^k z^n}{k! (n-k)! n! (v + \frac{1}{2})_k (b+1)_k} \\
+&= t^b e^{-t} \displaystyle\sum_{n,k=0}^{\infty} \dfrac{(-1)^k (2v)_{n+2k} t^k z^{n+k}}{k! n! (v + \frac{1}{2})_k (b+1)_k} \\
+&= t^b e^{-t} \displaystyle\sum_{k=0}^{\infty} \displaystyle\sum_{n=0}^{\infty} \dfrac{(2v+2k)_n z^n}{n!} \dfrac{(-1)^k (2v)_{2k} t^k z^k}{k! (v+\frac{1}{2})_k (b+1)_k} \\
+&= t^b e^{-t} \displaystyle\sum_{k=0}^{\infty} \dfrac{(-1)^k t^k z^k 2^{2k} (v)_k (v + \frac{1}{2})_k}{k! (v+\frac{1}{2})_k (b+1)_k (1-z)^{2v+2k}} \\
+&= t^b (1-z)^{-2v} e^{-t} \displaystyle\sum_{k=0}^{\infty} \dfrac{(-1)^k 2^{2k} (v)_k t^k z^k}{k! (b+1)_k (1-z)^{2k}} \\
+&= t^b (1-z)^{-2v} e^{-t} {}_1F_1 \left( v; b+1; \dfrac{-4tz}{(1-z)^2} \right).
+\end{array}$$
+\end{solution}

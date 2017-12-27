@@ -1,0 +1,162 @@
+%%%%
+%%
+%%
+%%%%
+%%%% CHAPTER 21
+%%%% CHAPTER 21
+%%%%
+%%
+%%
+%%%%
+\section{Chapter 21 Solutions}
+\begin{center}\hyperref[toc]{\^{}\^{}}\end{center}
+\begin{center}\begin{tabular}{lllllllllllllllllllllllll}
+\hyperref[problem1chapter21]{P1} & \hyperref[problem2chapter21]{P2} & \hyperref[problem3chapter21]{P3} & \hyperref[problem4chapter21]{P4} & \hyperref[problem5chapter21]{P5} & \hyperref[problem6chapter21]{P6} 
+\end{tabular}\end{center}
+\setcounter{problem}{0}
+\setcounter{solution}{0}
+\begin{problem}\label{problem1chapter21}
+Derive the preceding addition theorem $(7)$ by the method of Section 179. You may use results from the exercises at the end of Chapter 20.
+\end{problem}
+\begin{solution}
+We seek an addition theorem for $\mathrm{cn}(u)$.
+Now
+$$\mathrm{cn}(u) = \dfrac{\theta_4}{\theta_2} \dfrac{\theta_2(u\theta_3^{-2})}{\theta_4(u\theta_3^{-2})}.$$
+At the end of Exercise~5, Chapter~20 we obtained
+$$\theta_4^2 \theta_4(x+4) \theta_4(x-y) = \theta_4^2(x) \theta_4^2(y) - \theta_1^2(x) \theta_1^2(y).$$
+The next to last equation in Exercise~10, Chapter 20, is 
+$$\theta_2 \theta_4 \theta_2(x+y) \theta_4(x-y) = \theta_2(x) \theta_4(x) \theta_2(y) \theta_4(y) - \theta_1(x) \theta_3(x) \theta_1(y) \theta_3(y).$$
+We divide the last equation above by the one preceding it to get
+$$\begin{array}{ll}
+\dfrac{\theta_2(x+y)}{\theta_4(x+y)} &= \dfrac{\theta_2(x) \theta_4(x) \theta_2(y) \theta_4(y) - \theta_1(x) \theta_3(x) \theta_1(y) \theta_3(y)}{\theta_4^2(x) \theta_4^2(y) - \theta_1^2(x) \theta_1^2(y)} \\
+&=\dfrac{\frac{\theta_2(x)}{\theta_4(x)} \frac{\theta_2(y)}{\theta_4(y)} - \frac{\theta_1(x)}{\theta_4(x)} \frac{\theta_3(x)}{\theta_4(x)} \frac{\theta_1(y)}{\theta_4(y)} \frac{\theta_3(y)}{\theta_4(y)}}{1 - \frac{\theta_1^2(x)}{\theta_4^2(x)} \frac{\theta_2^2(y)}{\theta_4^2(y)}}.
+\end{array}$$
+Now use $x = u\theta_3^{-2}$ and $y = v\theta_3^{-2}$ to obtain
+$$\dfrac{\theta_2}{\theta_4} \dfrac{\theta_2}{\theta_4} \mathrm{cn}(u+v) = \dfrac{\frac{\theta_2}{\theta_4} \mathrm{cn}(u) \frac{\theta_2}{\theta_4} \mathrm{cn}(v) - \frac{\theta_2}{\theta_3} \mathrm{\mathrm{sn}}(u) \frac{\theta_3}{\theta_4} \mathrm{dn}(u) \frac{\theta_2}{\theta_3} \mathrm{\mathrm{sn}}(v)\frac{\theta_3}{\theta_4} \mathrm{dn}(v)}{1 -\ \frac{\theta_2^2}{\theta_3^2} \mathrm{\mathrm{sn}}^2(u) \frac{\theta_2^2}{\theta_3^2}\mathrm{\mathrm{sn}}^2(v)}$$
+or
+$$\mathrm{cn}(u+v) = \dfrac{\mathrm{cn}(u)\mathrm{cn}(v) - \mathrm{\mathrm{sn}}(u)\mathrm{dn}(u) \mathrm{\mathrm{sn}}(v) \mathrm{dn}(v)}{1 - k^2 \mathrm{\mathrm{sn}}^2(u) \mathrm{\mathrm{sn}}^2(v)},$$
+as desired.
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem2chapter21}
+Derive preceding $(8)$ by the method of Section 179, with the aid of results from the exercises at the end of Chapter 20.
+\end{problem}
+\begin{solution}
+We know that 
+$$\mathrm{dn}(u) = \dfrac{\theta_4}{\theta_3} \dfrac{\theta_3(u\theta_3^{-2})}{\theta_4(u\theta_3^{-2})}, k = \dfrac{\theta_2}{\theta_3^2}.$$
+From the last equation of Exercise~10, Chapter 20 we get
+$$\theta_3 \theta_4 \theta_3(x+y) \theta_4(x-y) = \theta_3(x) \theta_4(x) \theta_3(y) \theta_4(y) - \theta_1(x) \theta_2(x) \theta_1(y) \theta_2(y)$$
+and from the last equation of Exercise~8 Chapter 20 we get
+$$\theta_4^2 \theta_4(x+y)\theta_4(x-y) = \theta_4^2(x) \theta_4^2(y) - \theta_1^2(x) \theta_1^2(y).$$
+The two equations about at once yield
+$$\begin{array}{ll}
+\dfrac{\theta_3}{\theta_4} \dfrac{\theta_3}{\theta_4} \mathrm{dn}(u+v) &= \dfrac{\frac{\theta_3}{\theta_4} \mathrm{dn}(u) \frac{\theta_3}{\theta_4} \mathrm{dn}(v) - \frac{\theta_2}{\theta_3} \mathrm{\mathrm{sn}}(u)) \frac{\theta_2}{\theta_4} \mathrm{cn}(u) \frac{\theta_2}{\theta_3} \mathrm{\mathrm{sn}}(v) \frac{\theta_2}{\theta_4} \mathrm{\mathrm{sn}}(v)}{1 - \frac{\theta_2^2}{\theta_3^2} \mathrm{\mathrm{sn}}^2(u) \frac{\theta_2^2}{\theta_3^2} \mathrm{\mathrm{sn}}^2(v)}.
+\end{array}$$
+Hence we arrive at the desired result,
+$$\mathrm{dn}(u+v) = \dfrac{\mathrm{dn}(u) \mathrm{dn}(v) - k^2 \mathrm{\mathrm{sn}}(u) \mathrm{cn}(u) \mathrm{\mathrm{sn}}(v) \mathrm{cn}(v)}{1 - k^2 \mathrm{\mathrm{sn}}^2(u) \mathrm{\mathrm{sn}}^2(v)}.$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem3chapter21}
+Show that $\displaystyle\int \mathrm{cn}^3(x) \mathrm{dn}(x) dx = \mathrm{\mathrm{sn}}(x) - \dfrac{1}{3} \mathrm{\mathrm{sn}}^3(x) + c.$
+\end{problem}
+\begin{solution}
+We wish to evaluate 
+$$\displaystyle\int \mathrm{cn}^3(x) \mathrm{dn}(x) dx.$$
+We know that
+$$\dfrac{\mathrm{d}}{\mathrm{dx}} \mathrm{dn}(x) = \mathrm{cn}(x) \mathrm{dn}(x)$$
+and that
+$$\mathrm{cn}^2(x) =1-\mathrm{\mathrm{sn}}^2(x).$$
+Hence
+$$\begin{array}{ll}
+\displaystyle\int \mathrm{cn}^3(x) \mathrm{dn}(x) dx &= \displaystyle\int [1-\mathrm{\mathrm{sn}}^2(x)] \mathrm{cn}(x) \mathrm{dn}(x) dx \\
+&= \mathrm{\mathrm{sn}}(x) - \dfrac{1}{3} \mathrm{\mathrm{sn}}^2(x) +c.
+\end{array}$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem4chapter21}
+Show that if $g(x)$ and $h(x)$ are any two different ones of the three functions $\mathrm{\mathrm{sn}}(x), \mathrm{cn}(x), \mathrm{dn}(x),$ and if $m$ is a non-negative integer, you can perform the integration
+$$\displaystyle\int g^{2m+1}(x) h(x) dx.$$
+\end{problem}
+\begin{solution}
+Consider
+$$A = \displaystyle\int g^{2m+1}(x) h(x) dx.$$
+We know that
+$$\dfrac{\mathrm{d}}{\mathrm{dx}} \mathrm{\mathrm{sn}}(x) = \mathrm{cn}(x)\mathrm{dn}(x);$$
+$$\dfrac{\mathrm{d}}{\mathrm{dx}} \mathrm{cn}(x) = -\mathrm{\mathrm{sn}}(x) \mathrm{dn}(x);$$
+$$\dfrac{\mathrm{d}}{\mathrm{dx}} \mathrm{dn}(x) = -k^2 \mathrm{\mathrm{sn}}(x) \mathrm{cn}(x).$$
+Now let $g(x)$ and $h(x)$ be any two different ones of $\mathrm{\mathrm{sn}}(x), \mathrm{cn}(x), \mathrm{dn}(x)$. Let $\psi(x)$ be the other of the three functions. Then
+$$g(x) h(x) dx = c_1 d[\psi(x)],$$
+in which $c_1=1, -1$ or $-K^{-2}$ according to whether $\psi(x)$ is $\mathrm{\mathrm{sn}}(x), \mathrm{cn}(x),$ or $\mathrm{dn}(x).$
+Now we also know that
+$$\mathrm{\mathrm{sn}}^2(x) + \mathrm{cn}^2(x) = 1,$$
+$$k^2 \mathrm{\mathrm{sn}}^2(x) + \mathrm{dn}^2(x)=1,$$
+$$\mathrm{dn}^2(x) - k^2 \mathrm{cn}^2(x) = x^2.$$
+Therefore the square of any one of $\mathrm{\mathrm{sn}}(x), \mathrm{cn}(x), \mathrm{dn}(x)$ is a linear function of the square of any other one of them. Hence we may write
+$$g^2(x) = a_1+b_1 \psi^2(x).$$
+We know have
+$$\begin{array}{ll}
+\displaystyle\int g^{2m+1}(x) h(x) dx &= \displaystyle\int [g^2(x)]^m g(x) h(x) dx \\
+&= c_1 \displaystyle\int [a_1 + b_1 \psi^2(x)]^m d \psi(x),
+\end{array}$$
+which is integrable as a sum of powers.
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem5chapter21}
+Obtain the result 
+$$\displaystyle\int \mathrm{\mathrm{sn}}(x) dx = \dfrac{1}{k} \log[\mathrm{dn}(x) - k \mathrm{cn}(x)] + c.$$
+\end{problem}
+\begin{solution}
+Consider $\displaystyle\int \mathrm{\mathrm{sn}}(x) dx$. We may write
+$$\begin{array}{ll}
+\displaystyle\int \mathrm{\mathrm{sn}}(x) dx &= \displaystyle\int \dfrac{\mathrm{\mathrm{sn}}(x)[\mathrm{dn}(x)-k\mathrm{cn}(x)]}{\mathrm{dn}(x)-k\mathrm{cn}(x)} dx \\ 
+&= \displaystyle\int \dfrac{\mathrm{\mathrm{sn}}(x) \mathrm{dn}(x) - k\mathrm{\mathrm{sn}}(x) \mathrm{cn}(x)}{\mathrm{dn}(x) - k\mathrm{cn}(x)} dx \\
+&= \displaystyle\int \dfrac{-d[\mathrm{dn}(x)] + \frac{1}{k} d[\mathrm{dn}(x)]}{\mathrm{dn}(x) - k\mathrm{cn}(x)} \\
+&= \dfrac{1}{k} \displaystyle\int \dfrac{d[\mathrm{dn}(x)]-k[\mathrm{cn}(x)]}{\mathrm{dn}(x) -k \mathrm{cn}(x)} \\
+&= \dfrac{1}{k} \log[\mathrm{dn}(x) -k\mathrm{cn}(x)]+c.
+\end{array}$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem6chapter21}
+Show that
+$$\mathrm{dn}(2x) - k \mathrm{cn}(2x) = \dfrac{(1-k)[1+k \mathrm{\mathrm{sn}}^2(x)]}{1-k \mathrm{\mathrm{sn}}^2(x)}.$$
+\end{problem}
+\begin{solution}
+We wish to show that
+$$\mathrm{dn}(2x) - k \mathrm{cn}(2x) = \dfrac{(1-k) [1+k \mathrm{\mathrm{sn}}^2(x)]}{1-k \mathrm{\mathrm{sn}}^2(x)}.$$
+Now from the addition formulas of Exercises~\ref{problem1chapter21} and \ref{problem2chapter21} we obtain
+$$\mathrm{dn}(2x) = \dfrac{\mathrm{dn}^2(x) - k^2 \mathrm{\mathrm{sn}}^2(x) \mathrm{dn}^2(x)}{1 - k^2 \mathrm{\mathrm{sn}}^4(x)}$$
+and
+$$\mathrm{cn}(2x) = \dfrac{\mathrm{cn}^2(x) - \mathrm{\mathrm{sn}}^2(x) \mathrm{dn}^2(x)}{1 - k^2 \mathrm{\mathrm{sn}}^4(x)}.$$
+Let us put each of the above in terms of $\mathrm{\mathrm{sn}}(x)$. We get
+$$\mathrm{dn}(2x) = \dfrac{1-k^2 \mathrm{\mathrm{sn}}^2(x) - k^2 \mathrm{\mathrm{sn}}^2(x) [1-\mathrm{\mathrm{sn}}^2(x)]}{1 - k^2 \mathrm{\mathrm{sn}}^4(x)} = \dfrac{1 - 2k^2 \mathrm{\mathrm{sn}}^2(x) + k^2 \mathrm{\mathrm{sn}}^4(x)}{1 - k^2 \mathrm{\mathrm{sn}}^4(x)}.$$
+$$\mathrm{cn}(2x) = \dfrac{1 - \mathrm{\mathrm{sn}}^2(x) - \mathrm{\mathrm{sn}}^2(x) [1-x^2 \mathrm{\mathrm{sn}}^2(x)]}{1 -k^2\mathrm{\mathrm{sn}}^4(x)} = \dfrac{1-2k^2\mathrm{\mathrm{sn}}^2(x) + k^2\mathrm{\mathrm{sn}}^4(x)}{1-k^2 \mathrm{\mathrm{sn}}^4(x)}$$
+Then
+$$\begin{array}{ll}
+\mathrm{dn}(2x) - k \mathrm{cn}(2x) &= \dfrac{1 - k^2 \mathrm{\mathrm{sn}}^2(x) - k^2 \mathrm{\mathrm{sn}}^2(x) + k^2\mathrm{\mathrm{sn}}^4(x) - k + k \mathrm{\mathrm{sn}}^2(x) + k \mathrm{\mathrm{sn}}^2(k) - k^3 \mathrm{\mathrm{sn}}^4(x)}{1 - k^2 \mathrm{\mathrm{sn}}^4(x)} \\
+&= \dfrac{1 + k\mathrm{\mathrm{sn}}^2(x) + k \mathrm{\mathrm{sn}}^2(x)[1+k \mathrm{\mathrm{sn}}^2(x)] - k[1+k \mathrm{\mathrm{sn}}^2(x)] - k^2 \mathrm{\mathrm{sn}}^2(x) [1+k\mathrm{\mathrm{sn}}^2(x)]}{[1-k\mathrm{\mathrm{sn}}^2(x)][1+k\mathrm{\mathrm{sn}}^2(x)]} \\
+&= \dfrac{1 + k \mathrm{\mathrm{sn}}^2(x) - k - k^2 \mathrm{\mathrm{sn}}^2(x)}{1 - k \mathrm{\mathrm{sn}}^2(x)} \\
+&= \dfrac{1 - k + k (1-k)\mathrm{\mathrm{sn}}^2(x)}{1-k\mathrm{\mathrm{sn}}^2(x)}.
+\end{array}$$
+Hence
+$$\mathrm{dn}(2x)-k\mathrm{cn}(2x) = \dfrac{(1-k)[1+k\mathrm{\mathrm{sn}}^2(x)]}{1-k\mathrm{\mathrm{sn}}^2(x)}.$$
+\end{solution}
+\end{document}

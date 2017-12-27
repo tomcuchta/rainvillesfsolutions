@@ -1,0 +1,547 @@
+%%%%
+%%
+%%
+%%%%
+%%%% CHAPTER 5
+%%%% CHAPTER 5
+%%%%
+%%
+%%
+%%%%
+\section{Chapter 5 Solutions}
+\begin{center}\hyperref[toc]{\^{}\^{}}\end{center}
+\begin{center}\begin{tabular}{lllllllllllllllllllllllll}
+\hyperref[problem1chapter5]{P1} & \hyperref[problem2chapter5]{P2} & \hyperref[problem3chapter5]{P3} & \hyperref[problem4chapter5]{P4} & \hyperref[problem5chapter5]{P5} & \hyperref[problem6chapter5]{P6} & \hyperref[problem7chapter5]{P7} & \hyperref[problem8chapter5]{P8} & \hyperref[problem9chapter5]{P9} & \hyperref[problem10chapter5]{P10} & \hyperref[problem11chapter5]{P11} & \hyperref[problem12chapter5]{P12} & \hyperref[problem13chapter5]{P13} 
+\end{tabular}\end{center}
+\setcounter{problem}{0}
+\setcounter{solution}{0}
+\begin{problem}\label{problem1chapter5}
+Show that 
+$$_0F_1 \left[ \begin{array}{rlr}
+-; & & \\
+& & x \\
+a; & &
+\end{array} \right] {}_0F_1 \left[ \begin{array}{rlr}
+-; & & \\
+& & x \\
+b; & &
+\end{array} \right] = {}_2F_3 \left[ \begin{array}{rlr}
+\dfrac{1}{2}a + \dfrac{1}{2}b, \dfrac{1}{2}a + \dfrac{1}{2}b - \dfrac{1}{2}; & & \\
+& & 4x \\
+a,b,a+b-1; & &
+\end{array} \right].$$
+\end{problem}
+\begin{solution}
+Consider the product
+$$\begin{array}{ll}
+{}_0F_1(-;a;x) {}_0F_1(-;b;x) &= \displaystyle\sum_{n,k=0}^{\infty} \dfrac{x^{n+k}}{(a)_k (b)_n k! n!} \\
+&= \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^{n} \dfrac{x^n}{(a)_k (b)_{n-k} k! (n-k)!} \\
+&= \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^n \dfrac{(1-b-n)_k (-n)_k}{(a)_k k!} \cdot \dfrac{x^n}{(b)_n n!} \\
+&= \displaystyle\sum_{n=0}^{\infty} F \left[ \begin{array}{rlr}
+-n, 1-b-n; & & \\
+& & 1 \\
+a; & &
+\end{array} \right] \dfrac{x^n}{(b)_n n!}.
+\end{array}$$
+We then use the result in Exercise 6, page 69, to get
+$$\begin{array}{ll}
+{}_0F_1(-;a;x) {}_0F_1(-;b;x) &= \displaystyle\sum_{n=0}^{\infty} \dfrac{(a+b-1)_{2n} x^n}{(b)_n (a)_n (a+b-1)_n n!} \\
+&= \displaystyle\sum_{n=0}^{\infty} \dfrac{\left( \dfrac{a+b-1}{2} \right)_n}{\left( \dfrac{a+b}{2} \right)_n 2^{2n} x^n}{(a)_n (b)_n (a+b-1)_n n!} \\
+&= {}_2F_3 \left[ \begin{array}{rlr}
+\dfrac{a+b}{2}, \dfrac{a+b-1}{2}; & & \\
+& & 4x \\
+a,b,a+b-1; & &
+\end{array} \right].
+\end{array}$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem2chapter5}
+Show that 
+$$\displaystyle\int_0^t x^{\frac{1}{2}} (t-x)^{-\frac{1}{2}}[1 - x^2(t-x)^2]^{-\frac{1}{2}} \mathrm{d}x = \dfrac{\pi t}{2} {}_2F_1 \left[ \begin{array}{rlr}
+\dfrac{1}{4}, \dfrac{3}{4}; & & \\
+& & \dfrac{t^4}{16} \\
+1; & &
+\end{array} \right].$$
+\end{problem}
+\begin{solution}
+We use Chapter~5, Theorem~37 on the integral
+$$A = \displaystyle\int_0^t x^{\frac{1}{2}} (t-x)^{-\frac{1}{2}} [1 - x^2(t-x)^2]^{-\frac{1}{2}} \mathrm{d}x.$$
+Now
+$$A = \displaystyle\int_0^t x^{\frac{1}{2}} (t-x)^{-\frac{1}{2}} {}_1F_0 \left( \dfrac{1}{2}; - ; x^2(t-x)^2 \right) \mathrm{d}x,$$
+so in Chapter~5, Theorem~37 we put $\alpha = \dfrac{3}{2}$, $\beta = \dfrac{1}{2}$, $p=1,
+q=0$, $a_1 = \dfrac{1}{2}, c=1, k=2, s=2.$ The result is
+$$A = B \left( \dfrac{3}{2}, \dfrac{1}{2} \right)t {}_5F_4 \left[ \begin{array}{rlr}
+\dfrac{1}{2}, \dfrac{3}{4}, \dfrac{5}{4}, \dfrac{1}{4}, \dfrac{3}{4}; & & \\
+& & \dfrac{2^2 2^2 t^{2+2}}{4^4} \\
+\dfrac{2}{4}, \dfrac{3}{4}, \dfrac{4}{4}, \dfrac{5}{4}; 
+\end{array} \right],$$
+or
+$$A = \dfrac{\Gamma \left( \dfrac{3}{2} \right) \Gamma \left( \dfrac{1}{2} \right)}{\Gamma(2)}t {}_2F_1 \left[ \begin{array}{rlr}
+\dfrac{1}{4}, \dfrac{3}{4}; & & \\
+& & \dfrac{t^4}{16} \\
+1, 1; & &
+\end{array} \right] = \dfrac{\pi}{2} t {}_2F_1 \left[ \begin{array}{rlr}
+\dfrac{1}{4}, \dfrac{3}{4}; & & \\
+& & \dfrac{t^4}{16} \\
+1; & &
+\end{array} \right],$$
+as desired.
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem3chapter5}
+With the aid of Chapter~5, Theorem~8, show that
+$$\dfrac{\Gamma(1+\frac{1}{2}a)}{\Gamma(1+a)} = \dfrac{\cos \frac{1}{2}\pi a \Gamma(1-a)}{\Gamma(1 - \frac{1}{2}a)}$$
+and that
+$$\dfrac{\Gamma(1+a-b)}{\Gamma(1 + \frac{1}{2}a - b)} = \dfrac{\sin \pi(b-\frac{1}{2}a) \Gamma(b- \frac{1}{2}a)}{\sin \pi (b-a) \Gamma(b-a)}.$$
+Thus put Dixon's theorem (Chapter~5, Theorem~33) in the form
+\begin{eqnarray*}
+\lefteqn{{}_3F_2 \left[ \begin{array}{rlr}
+a,b,c; & & \\
+& & 1 \\
+1+a-b,1+a-c; & &
+\end{array} \right]}\\
+& & = \dfrac{\cos \frac{1}{2}\pi a \sin \pi(b-\frac{1}{2}a)}{\sin \pi(b-a)} \cdot \dfrac{\Gamma(1-a)\Gamma(b-\frac{1}{2}a) \Gamma(1+a-c) \Gamma(1 + \frac{1}{2}a - b - c)}{\Gamma(1 - \frac{1}{2}a) \Gamma(b-a) \Gamma(1 + \frac{1}{2}a-c) \Gamma(1+a-b-c)}.
+\end{eqnarray*}
+\end{problem}
+\begin{solution}
+We first note that, since $\Gamma(z)\Gamma(1-z) = \dfrac{\pi}{\sin \pi z},$
+$$\begin{array}{ll}
+\dfrac{\Gamma \left( 1 + \dfrac{1}{2}a \right) \Gamma \left( 1 - \dfrac{1}{2}a \right)}{\Gamma \left( 1+a \right) \Gamma(1-a)} &= \dfrac{\dfrac{1}{2}a \Gamma \left( \dfrac{1}{2} a \right) \gamma \left( 1 - \dfrac{1}{2}a \right)}{a \Gamma(a) \Gamma(1-a)} \\
+&= \dfrac{\sin \pi a \cdot \pi}{2 \pi \sin \dfrac{\pi a}{2}} \\
+&= \dfrac{2 \cos \dfrac{\pi}{2}a \sin \dfrac{\pi}{2}a}{2 \sin \dfrac{\pi}{2}a} \\
+&= \cos \dfrac{\pi a}{2}.
+\end{array}$$
+\begin{eqnarray*}
+\lefteqn{{}_3F_2 \left[ \begin{array}{rlr}
+a,b,c; & & \\
+& & 1 \\
+1+a-b, 1+a-c; & &
+\end{array} \right]} \\
+& & =\!\!\dfrac{\cos \dfrac{\pi a}{2} \sin \pi \left(b- \dfrac{1}{2}a \right)\Gamma(1-a) \Gamma \left( b- \dfrac{1}{2}a \right) \Gamma(1+a-c) \Gamma \left( 1 + \dfrac{1}{2}a - b - c \right)}{\sin \pi (b-a)\Gamma \left( 1 - \dfrac{1}{2}a \right) \Gamma(b-a) \Gamma \left(1 + \dfrac{1}{2}a - c \right) \Gamma(1+a-b-c)}\dfrac{}{},
+\end{eqnarray*}
+so long as $a, \dfrac{1}{2}a, b-a, b-\dfrac{1}{2}a$ are not integers and the gamma functions involved have no poles.
+
+But now we have arrived at an identity (for non-integral values of certain parameters) which has the property that both members are well-behaved if $a$ is a negative integer or zero. It follows that the identity continues to be valid for $a = -n$, $n$ a nonnegative integer. 
+If $a = -(2n+1)$, an odd negativer integer, $\cos \dfrac{\pi a}{2}=0$.
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem4chapter5}
+Use the result in Exercise~\ref{problem3chapter5} to show that if $n$ is a non-negative integer,
+$$_3F_2\left[ \begin{array}{rlr}
+-2n,\alpha,1- \beta - 2n; & & \\
+& & 1 \\
+1- \alpha - 2n, \beta; & &
+\end{array} \right] = \dfrac{(2n)!(\alpha)_n (\beta - \alpha)_n}{n! (\alpha)_{2n}(\beta)_n}.$$
+\end{problem}
+\begin{solution}
+If $a=-2n$ in the identity of Exercise~\ref{problem3chapter5} above, and if we chose $b = \alpha, c=1-\beta^{-2n}$, we obtain
+\begin{eqnarray*}
+\lefteqn{{}_3F_2 \left[ \begin{array}{rlr}
+-2n, \alpha, 1-\beta-2n; & & \\
+& & 1 \\
+1- \alpha - 2n, \beta; & &
+\end{array} \right]} \\
+& &= \dfrac{\cos(- \pi n) \sin \pi(\alpha+n)}{\sin \pi(\alpha+2n)} \\
+& & \phantom{=}\cdot\dfrac{\Gamma(1+2n)\Gamma(\alpha+n) \Gamma(1-2n-1+\beta+2n)\Gamma(1-n-\alpha-1+\beta+2n)}{\Gamma(1+n) \Gamma(\alpha + 2n)\Gamma(1-n-1+\beta+2n) \Gamma(1-2n-\alpha-1+\beta+2n)} \\
+& &= \dfrac{(-1)^n (-1)^n \sin \pi \alpha}{\sin \pi \alpha} \dfrac{(2n)! (\alpha)_n \Gamma(\beta) \Gamma(\beta - \alpha + n)}{n! (\alpha)_{2n} \Gamma(\beta + n) \Gamma(\beta - \alpha)} \\
+& &= \dfrac{(2n)! (\alpha)_n (\beta - \alpha)_n}{n! (\alpha)_{2n} (\beta)_n},
+\end{eqnarray*}
+as desired.
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem5chapter5}
+With the aid of the formula in Exercise~\ref{problem4chapter5} prove Ramanujan's theorem:
+$$_1F_1\left[ \begin{array}{rlr}
+\alpha; & & \\
+& & x \\
+\beta; & & 
+\end{array} \right] _1F_1 \left[ \begin{array}{rlr}
+\alpha; & & \\
+& & -x \\
+\beta; & &
+\end{array} \right] = _2F_3 \left[ \begin{array}{rlr}
+\alpha, \beta - \alpha; & & \\
+& & \dfrac{x^2}{4} \\
+\beta, \dfrac{1}{2}\beta, \dfrac{1}{2}\beta + \dfrac{1}{2};
+\end{array} \right].$$
+\end{problem}
+\begin{solution}
+Consider the product
+$$\begin{array}{ll}
+{}_1F_1(\alpha; \beta; x) {}_1F_1(\alpha; \beta; -x) &= \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^{n} \dfrac{(-1)^k (\alpha)_k (\alpha)_{n-k} x^n}{(\beta)_k (\beta)_{n-k} k! (n-k)!} \\
+&= \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^n \dfrac{(-n)_k (\alpha)_k (1 - \beta - n)_k}{k! (\beta)_k (1 - \alpha - n)_k} \dfrac{(\alpha)_n x^n}{n! (\beta)_n} \\
+&= \displaystyle\sum_{n=0}^{\infty} {}_3F_2 \left[ \begin{array}{rlr}
+-n, \alpha, 1-\beta-n; & & \\
+& & 1 \\
+\beta, 1-\alpha - n; & &
+\end{array} \right] \dfrac{(\alpha)_n x^n}{n! (\beta)_n}.
+\end{array}$$
+Since the product of the two ${}_1F_1's$ is an even function of $x$, we may conclude that
+$${}_3F_2 \left[ \begin{array}{rlr}
+-2n-1, \alpha, 1-\beta-2n-1; & & \\
+& & 1 \\
+\beta, 1-\alpha-2n-1; & & 
+\end{array} \right] = 0$$
+and that 
+$$\begin{array}{ll}
+{}_1F_1(\alpha;\beta;x) {}_1F_1(\alpha; \beta; -x) &= \displaystyle\sum_{n=0}^{\infty} {}_3F_2 \left[ \begin{array}{rlr}
+-2n, \alpha, 1-\beta-2n; & & \\
+& & 1 \\
+\beta, 1-\alpha-2n; & & 
+\end{array} \right] \dfrac{(\alpha)_{2n} x^{2n}}{(2n)!(\beta)_{2n}} \\
+&= \displaystyle\sum_{n=0}^{\infty} \dfrac{(2n)! (\alpha)_n (\beta - \alpha)_n}{n! (\alpha)_{2n} (\beta)_n} \dfrac{(\alpha)_{2n} x^{2n}}{(2n)! (\beta)_{2n}},
+\end{array}$$
+by Exercise~\ref{problem4chapter5}. Hence we get Ramanujan's theorem
+$${}_1F_1(\alpha;\beta;x) {}_1F_1(\alpha; \beta; -x) = {}_2F_3 \left[ \begin{array}{rlr}
+\alpha, \beta - \alpha; & & \\
+& & \frac{x^2}{4} \\
+\beta, \dfrac{1}{2} \beta, \dfrac{1}{2} \beta + \dfrac{1}{2};
+\end{array} \right].$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem6chapter5}
+Let $\gamma_n = _3F_2(-n,1-a-n,1-b-n;a,b;1).$ Use the result in Exercise~\ref{problem3chapter5} to show that $\gamma_{2n+1} = 0$ and 
+$$\gamma_{2n} = \dfrac{(-1)^n (2n)! (a+b-1)_{3n}}{n!(a)_n(b)_n(a+b-1)_{2n}}.$$
+\end{problem}
+\begin{solution}
+From Exercise~\ref{problem3chapter5}, we get
+\begin{eqnarray*}
+\lefteqn{{}_3F_2 \left[ \begin{array}{rlr}
+\alpha, \beta, \gamma; & & \\
+& & 1 \\
+1+\alpha-\beta, 1+\alpha-\gamma ;
+\end{array} \right]} \\
+& & = \dfrac{\cos \frac{\pi a}{2} \sin \pi(\beta - \frac{\alpha}{2})}{\sin \pi(\beta - \alpha)} \dfrac{\Gamma(1-\alpha) \Gamma(\beta - \frac{\alpha}{2})\Gamma(1 + \alpha - \gamma) \Gamma(1 + \frac{\alpha}{2} - \beta - \gamma)}{\Gamma(1 - \frac{\alpha}{2})\Gamma(\beta - \alpha) \Gamma(1 + \frac{\alpha}{2} - \gamma)\Gamma(1 + \alpha - \beta - \gamma)}.
+\end{eqnarray*}
+Consider $\gamma_n ={}_3F_2(-n, 1-a-n, 1-b-n; a,b;1).$ We wish to use $\alpha = -n$, but $\cos \left( \dfrac{\pi n}{2} \right) = 0$ for $n$ odd. Hence $\gamma_{2n+1}=0$ and 
+$$\gamma_{2n} = {}_3F_2(-2n, 1-a-2n,1-b-2n;a,b;1).$$
+Therefore in the result from Exercise~\ref{problem3chapter5} we put $\alpha = -2n$, $\beta = 1-a-2n$, $\gamma=1-b-2n$, and thus obtain
+$$\begin{array}{ll}
+\gamma_n &= \dfrac{\cos(n \pi)\sin \pi(1-a-n)}{\sin \pi(1-a)} \dfrac{\Gamma(1+2n)\Gamma(1-a-n) \Gamma(b) \Gamma(-1+a+b+3n)}{\Gamma(1+n) \Gamma(1-a) \Gamma(b+n) \Gamma(-1+a+b+2n)} \\
+&= \dfrac{\cos^2(n \pi) \sin \pi(1-a)}{\sin \pi(1-a)} \dfrac{(2n)! (-1)^n (a+b-1) 3n}{n! (a)_n (b)_n (a+b-1)_{2n}},
+\end{array}$$
+so that 
+$$\gamma_n = \dfrac{(-1)^n (2n)! (a+b-1)_{3n}}{n! (a)_n (b)_n (a+b-1)_{2n}}.$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem7chapter5}
+With the aid of the result in Exercise~\ref{problem6chapter5} show that
+\begin{eqnarray*}
+\lefteqn{{}_0F_2(-;a,b;t) _0F_2(-;a,b;-t)} \\
+& &  = _3F_8 \left[ \begin{array}{rlr}
+\dfrac{1}{3}(a+b-1), \dfrac{1}{3}(a+b), \dfrac{1}{3}(a+b+1); & & \\
+& & \dfrac{-27t^2}{64} \\
+a,b,\dfrac{1}{2}a+\dfrac{1}{2}, \dfrac{1}{2}b, \dfrac{1}{2}b + \dfrac{1}{2}, \dfrac{1}{2}(a+b-1), \dfrac{1}{2}(a+b); & &
+\end{array} \right].
+\end{eqnarray*}
+\end{problem}
+\begin{solution}
+Let us consider the product
+$$\begin{array}{ll}
+\psi(t) &= {}_0F_2(-;a,b;t) {}_0F_2(-;a,b;-t) \\
+&= \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^n \\
+&= \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{n=0}^n \dfrac{(-n)_k (1-a-n)_k (1-b-n)_k}{k! (a)_k (b)_k} \dfrac{t^n}{n! (a)_n (b)_n} \\
+&= \displaystyle\sum_{n=0}^{\infty} \gamma_n \dfrac{t^n}{n! (a)_n (b)_n} \\
+&= \displaystyle\sum_{n=0}^{\infty} \dfrac{\gamma_{2n} t^{2n}}{(2n)! (a)_{2n} (b)_{2n}},
+\end{array}$$
+in terms of the $\gamma_n$ of Exercise~\ref{problem6chapter5} above. We already knew that $\gamma_{2n+1}=0$ which checks with the fact that $\Psi(t)$ is an even function of $t$.
+Since, by Exercise~\ref{problem6chapter5},
+$$\gamma_n = \dfrac{(-1)^n(2n)!(a+b-1)_{3n}}{n!(a)_n(b)_n(a+b-1)_{2n}},$$
+we have
+$$\begin{array}{ll}
+\psi(t) &= \displaystyle\sum_{n=0}^{\infty} \dfrac{(-1)^n(a+b-1)_{3n}t^{2n}}{n! (a)_n (b)_n (a)_{2n} (a+b-1)_{2n}} \\
+&= \displaystyle\sum_{n=0}^{\infty} \dfrac{(-1)^n 3^{3n} \left(\frac{a+b-1}{3} \right)_n \left( \frac{a+b}{3} \right)_n \left( \frac{a+b+1}{3} \right)_n t^{2n}}{n! (a)_n (b)_n 2^{2n} \left( \frac{a}{2} \right)_n \left( \frac{a+1}{2} \right)_n 2^{2n} \left( \frac{b}{2} \right)_n \left( \frac{b+1}{2} \right)_n 2^{2n} \left( \frac{a+b-1}{2} \right)_n \left( \frac{a+b}{2} \right)_n},
+\end{array}$$
+or
+\begin{eqnarray*}
+\lefteqn{{}_0F_2(-1,a,b;x){}_0F_2(-;a,b;-x)} \\
+& & = {}_3F_8 \left[ \begin{array}{rlr}
+\frac{1}{3} (a+b-1), \dfrac{1}{3}(a+b), \dfrac{1}{3} (a+b+1) ; & & \\
+& & -\dfrac{27t^2}{64} \\
+a,b, \dfrac{a}{2}, \dfrac{a+1}{2},\dfrac{b}{2}, \dfrac{b+1}{2}, \dfrac{a+b-1}{2}, \dfrac{a+b}{2}; & & 
+\end{array} \right].
+\end{eqnarray*}
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem8chapter5}
+Prove that
+$$\displaystyle\sum_{k=0}^n\!\!\dfrac{(-1)^{n-k}(\gamma - b -c)_{n-k} (\gamma - b)_k (\gamma-c)_k x^{n-k}}{k! (n-k)! (\gamma)_k} {}_3F_2 \left[ \begin{array}{rlr}
+-k, b, c; \\
+& & \!\!\!\!x \\
+\!\!\!1\!-\!\gamma\!+\!b\!-\!k\!,\!1\!-\!\gamma\!+\!c\!-\!k\!; & & 
+\end{array} \right]$$
+$$= \dfrac{(\gamma-b)_n(\gamma-c)_n(1-x)^n}{n!(\gamma)_n} {}_3F_2 \left[ \begin{array}{rlr}
+-\dfrac{1}{2}n, -\dfrac{1}{2}n+ \dfrac{1}{2}, 1-\gamma-n; & & \\
+& & \dfrac{-4x}{(1-x)^2} \\
+1 - \gamma + b - n, 1 - \gamma + c - n; & & 
+\end{array} \right]$$
+and note the special case $\gamma = b+c$, Whipple's theorem.
+\end{problem}
+\begin{solution}
+Let $\psi = {}_2F_1 \left[ \begin{array}{rlr}
+\gamma - b, \gamma-c; & & \\
+& & t(1-x+xt) \\
+\gamma; & & 
+\end{array} \right].$
+Then
+$$\begin{array}{ll}
+\psi &= \displaystyle\sum_{n=0}^{\infty} \dfrac{(\gamma - b)_n (\gamma - c)_n t^n [(1-x)+xt]^n}{(\gamma)_n n!} \\
+&= \displaystyle\sum_{k=0}^{\infty} \displaystyle\sum_{k=0}^{n} \dfrac{(\gamma-b)_n (\gamma-c)_n (1-x)^{n-k}x^k t^{n+k}}{k! (n-k)! (\gamma)_n} \\
+&= \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^{[\frac{n}{2}]} \dfrac{(\gamma-b)_{n-k} (\gamma -c)_{n-k} (1-x)^{n-2k}x^kt^n}{k! (n-2k)! (\gamma)_{n-k}} \\
+&= \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{n=0}^{[\frac{n}{2}]} \dfrac{(-n)_{2n} (1-\gamma-n)_k (-1)^k x^k (\gamma-b)_n (\gamma-c)_n (1-x)^n t^n}{k! (1-\gamma+c-n)_k (1-\gamma+b-n)_k (1-x)^{2k}n! (\gamma)_n},
+\end{array}$$
+or
+$$\psi\!=\!\displaystyle\sum_{n=0}^{\infty}\!{}_3F_2\!\left[\!\!\! \begin{array}{rlr}
+\!-\!\dfrac{n}{2}\!,\!-\dfrac{n-1}{2}\!,\!1\!-\!\gamma\!-\!n; & & \\
+& & \dfrac{-4x}{(1-x)^2} \\
+\!1\!-\!\gamma\!+\!b\!-\!n\!,\!1\!-\!\gamma\!+\!c\!-\!n\!; & & 
+\end{array} \right] \dfrac{(\gamma-b)_n (\gamma-c)_n (1-x)^n t^n}{n! (\gamma)_n}.$$
+But also, since $1-t(1-x+x\epsilon) = (1-t)(1+xt),$
+$$\Psi = (1-t)^{b+c-\gamma} (1+xt)^{b+c-\gamma} {}_2 F_1 \left[ \begin{array}{rlr}
+b, c; & & \\
+& & t(1-x+xt) \\
+\gamma; & &
+\end{array} \right].$$
+Hence
+$$\begin{array}{ll}
+\psi &= (1-t)^{b+c-\gamma} (1+xt)^{b+c-\gamma} \displaystyle\sum_{n=0}^{\infty} \dfrac{(b)_n (c)_n t^n [1-x(1-t)]^n}{n! (\gamma)_n} \\
+&= (1-t)^{b+c-1} (1+xt)^{b+c-\gamma} \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^n \dfrac{(-1)^k (b)_n (c)_n x^k (1-t)^k t^n}{k! (n-k)! (\gamma)_n},
+\end{array}$$
+or
+$$\begin{array}{ll}
+\psi &= (1-t)^{b+c-\gamma}(1+xt)^{b+c-\gamma} \displaystyle\sum_{n,k=0}^{\infty} \dfrac{(-1)^k (b)_{n+k} (c)_{n+k} x^k (1-t)^x t^{n+k}}{k! n! (\gamma)_{n+k}} \\
+&= (1+xt)^{b+c-\gamma} (1-t)^{b+c-\gamma} \displaystyle\sum_{k=0}^{\infty} {}_2F_1 \left[ \begin{array}{rlr}
+b+k, c+k; & & \\
+& & 1 \\
+\gamma + k; & &
+\end{array} \right]
+\end{array}$$
+Now
+$${}_2F_1 \left[ \begin{array}{rlr}
+b+k, c+k; & & \\
+& & t \\
+\gamma + k; & &
+\end{array} \right] = (1-t)^{\gamma -b -c -k} {}_2F_1 \left[ \begin{array}{rlr}
+\gamma-b, \gamma-c; & & \\
+& & t \\
+\gamma + k; & &
+\end{array} \right].$$
+Therefore
+$$\begin{array}{ll}
+\psi &= (1+xt)^{b+c-\gamma} \displaystyle\sum_{k=0}^{\infty} {}_2F_1 \left[ \begin{array}{rlr}
+\gamma -b, \gamma-c ; & & \\
+& & t \\
+\gamma + k; & &
+\end{array} \right] \dfrac{(-1)^k (b)_k (c)_k (xt)^k}{k! (\gamma)_k} \\
+&= (1+xt)^{b+c-\gamma} \displaystyle\sum_{n,k=0}^{\infty} \dfrac{(-1)^k (b)_k (c)_k (\gamma-b)_n (\gamma-c)_n x^k t^{n+k}}{k! n! (\gamma)_{n+k}} \\
+&= (1+xt)^{b+c-\gamma} \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{s=0}^n \dfrac{(-1)^s (b)_s (c)_s (\gamma-b)_{n-s} (\gamma-c)_{n-s}x^st^n}{s! (n-s)! (\gamma)_n} \\
+&=\!\left(\!\displaystyle\sum_{n=0}^{\infty}\!\dfrac{(-1)^n\!(\!\gamma\!-\!b\!-\!c\!)_n x^n\!t^n}{n!}\!\right)\!\!\left(\!\displaystyle\sum_{n=0}^{\infty}\!{}_3F_2\!\left[\!\begin{array}{rlr}
+-n, b, c; & & \\
+& & x \\
+\!1\!-\!\gamma\!+\!b\!-\!n\!,\!1\!-\!\gamma\!+\!c\!-\!n; & &
+\end{array} \right] \right),
+\end{array}$$
+or
+\begin{eqnarray*}
+\psi &= \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^n {}_3F_2 \left[ \begin{array}{rlr}
+-k, b,c; & & \\
+& & x \\
+1-\gamma+c-b, 1-\gamma+c-x; & &
+\end{array} \right] \\ 
+& \cdot \left( \dfrac{(-1)^{n-k} (\gamma-b-c)_{n-k} (\gamma-b)_k (\gamma-c)_k x^{n-k}}{k! (\gamma)_k (n-k)!}t^n \right).
+\end{eqnarray*}
+By equating coefficients of $t^n$ in the two expansions we obtain the desired identity
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+Exercises 9-11 below use the notation of the Laplace transform as in Exercise 16, page 71.
+\begin{problem}\label{problem9chapter5}
+Show that
+$$L \left\{ t^c _pF_q \left[ \begin{array}{rlr}
+a_1, \ldots, a_p; & & \\
+& & zt \\
+b_1, \ldots, b_q; & &
+\end{array} \right] \right\} = \dfrac{\Gamma(1+c)}{s^{1+c}} _{p+1}F_q \left[ \begin{array}{rlr}
+1+c,a_1,\ldots,a_p; & & \\
+& & \dfrac{z}{s} \\
+b_1, \ldots, b_q; & &
+\end{array} \right].$$
+\end{problem}
+\begin{solution}
+We know that $\mathscr{L} \{ t^m \} = \dfrac{\Gamma(m+1)}{s^{m+1}}.$ Then,
+\begin{eqnarray*}
+\lefteqn{\mathscr{L} \left\{ t^c {}_pF_q \left[ \begin{array}{rlr}
+a_1, \ldots, a_p; & & \\
+& & zt \\
+b_1, \ldots, b_q; & & 
+\end{array} \right] \right\}} \\
+& &= \displaystyle\sum_{n=0}^{\infty} \dfrac{(a_1)_n \ldots (a_p)_n z^n}{(b_1)_n \ldots (b_q)_n n!} \mathscr{L} \{t^{n+k} \} \\
+&&= \displaystyle\sum_{n=0}^{\infty} \dfrac{(a_1)_n \ldots (a_p)_n z^n}{(b_1)_n \ldots (b_p)_n n! s^{n+k+1}} \dfrac{(1+c)_n \Gamma(1+c)}{1} \\
+&&= \dfrac{F(1+c)}{s^{1+c}} {}_{p+1}F_q \left[ \begin{array}{rlr}
+1+c, a_1, \ldots, a_p; & & \\
+& & \dfrac{z}{5} \\
+b_1, \ldots, b_q; & &
+\end{array} \right].
+\end{eqnarray*}
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem10chapter5}
+Show that
+\begin{eqnarray*}
+\lefteqn{L^{-1} \left\{ \dfrac{1}{s} _pF_{q+1} \left[ \begin{array}{rlr}
+a_1,\ldots,a_p; & & \\
+& & z \\
+s+1,b_1,\ldots,b_q; & &
+\end{array} \right] \right\}} \\
+& & = _pF_{q+1} \left[ \begin{array}{rlr}
+a_1,\ldots,a_p; & & \\
+& & z(1-e^{-1}) \\
+1, b_1, \ldots, b_q; & & 
+\end{array} \right].
+\end{eqnarray*}
+\end{problem}
+\begin{solution}
+In Chapter 4, Exercise 16 we found that
+$$\mathscr{L}^{-1} \left\{ \dfrac{1}{s(s+1)_n} \right\} = \dfrac{(1-e^{-t})^n}{n!}.$$
+It follows that
+\begin{eqnarray*}
+\lefteqn{\mathscr{L}^{-1} \left\{ \dfrac{1}{s} {}_pF_{q+1} \left[ \begin{array}{rlr}
+a_1, \ldots, a_p; & & \\
+& & z \\
+1+s, b_1, \ldots, b_q; & &
+\end{array} \right] \right\}} \\
+& & = {}_p F_{q+1} \left[ \begin{array}{rlr}
+a_1, \ldots, a_p; & & \\
+& & z(1-e^{-t}) \\
+1, b_1, \ldots, b_q; & &
+\end{array} \right].
+\end{eqnarray*}
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem11chapter5}
+Show that
+$$L^{-1} \left\{ \dfrac{s^k}{(s-z)^{k+1}} \right\} = {}_1F_1 \left[ \begin{array}{rlr}
+k+1; & & \\
+& & zt \\
+1; & &
+\end{array} \right] $$
+\end{problem}
+\begin{solution}
+Consider 
+$$\dfrac{s^k}{(s-z)^{k+1}} = \dfrac{1}{s} \dfrac{1}{(1 - \frac{4}{5})^{k+1}} = \dfrac{1}{s} {}_1F_0 \left[ \begin{array}{rlr}
+k+1; & & \\
+& & \dfrac{z}{5} \\
+-; & &
+\end{array} \right].$$
+By Exercise~\ref{problem9chapter5} with $c=0$,
+$$\begin{array}{ll}
+\mathscr{L}^{-1} \left\{ \dfrac{\Gamma(1)}{s} {}_1 F_0 \left[ \begin{array}{rlr}
+k+1; & & \\
+& & \dfrac{z}{s} \\
+-; & &
+\end{array} \right] \right\} &= \mathscr{L}^{-1} \left\{ \dfrac{\Gamma(1)}{s} {}_2F_1 \left[ \begin{array}{rlr}
+1, k+1; & & \\
+& & \dfrac{z}{s} \\
+1; & &
+\end{array} \right] \right\} \\
+&= t^0 F \left[ \begin{array}{rlr}
+k+1; & & \\
+& & zt \\
+1; & &
+\end{array} \right] \\
+&= F \left[ \begin{array}{rlr}
+k+1; & & \\
+& & zt \\
+1; & & 
+\end{array} \right].
+\end{array}$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem12chapter5}
+Show that
+$$\dfrac{\mathrm{d}}{\mathrm{d}z} {}_pF_q \left[ \begin{array}{rlr}
+a_1,\ldots,a_p; & & \\
+& & z \\
+b_1,\ldots,b_q; & &
+\end{array} \right] = \dfrac{\displaystyle\prod_{m=1}^p a_m}{\displaystyle\prod_{j=1}^q b_j} {}_pF_q \left[ \begin{array}{rlr}
+a_1+1, \ldots, a_p+1; & & \\
+& & z \\
+b_1+1, \ldots, b_q+1; & &
+\end{array} \right].$$
+\end{problem}
+\begin{solution}
+$$\begin{array}{ll}
+\dfrac{\mathrm{d}}{\mathrm{d}z} {}_pF_q \left[ \begin{array}{rlr}
+a_1, \ldots, a_p; & & \\
+& & z \\
+b_1, \ldots, b_q; & & 
+\end{array} \right] &= \displaystyle\sum_{n=1}^{\infty} \dfrac{(a_1)_n \ldots (a_p)_n z^{n-1}}{(b_1)_n \ldots (b_q)_n (n-1)!} \\
+&= \displaystyle\sum_{n=0}^{\infty} \dfrac{(a_1)_{n+1} \ldots (a_0)_{n+1} z^n}{ (b_1)_{n+1} \ldots (b_q)_{n+1} n!} \\
+&= \dfrac{a_1 \ldots a_p}{b-1 \ldots b_q} {}_p F_q \left[ \begin{array}{rlr}
+a_1+1, \ldots, a_p+1; & & \\
+& & z \\
+b_1+1, \ldots, b_q+1; & &
+\end{array} \right].
+\end{array}$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem13chapter5}
+In Exercise 19 page 71, we found that the complete elliptic integral of the first kind is given by
+$$K(k) = \dfrac{\pi}{2}  {}_2F_1 \left( \dfrac{1}{2}, \dfrac{1}{2}; 1; k^2 \right).$$
+Show that
+$$\displaystyle\int_0^t K(\sqrt{x(t-x)}) dx = \pi \arcsin \left( \dfrac{1}{2} t \right).$$
+\end{problem}
+\begin{solution}
+We are given that
+$$K(k) = \dfrac{1}{2} \pi {}_2F_1 \left( \dfrac{1}{2}, \dfrac{1}{2}; 1; k^2 \right).$$
+Now consider
+$$A = \displaystyle\int_0^t K(\sqrt{x(t-x)}) dx.$$
+By the integral of Section 56, (i.e. Theorem 57) with $\alpha=1, \beta=1, k=1, s=1,$ etc.
+$$\begin{array}{rl}
+A &= \dfrac{\pi}{2} \displaystyle\int_0^t {}_2F_1 \left( \dfrac{1}{2}, \dfrac{1}{2}; 1; x(t-x) \right) dx \\
+&= \dfrac{\pi}{2} B(1,1) t^{2-1} {}_4F_3 \left[ \begin{array}{rlr}
+\dfrac{1}{2}, \dfrac{1}{2}, \dfrac{1}{1}, \dfrac{1}{1}; & & \\
+& & 1 \cdot \dfrac{1 \cdot 1 t^2}{2^2} \\
+1, \dfrac{2}{2}, \dfrac{3}{2}; & &
+\end{array} \right] \\
+&= \dfrac{\pi}{2} \dfrac{\Gamma(1) \Gamma(1)}{\Gamma(2)} t {}_2F_1 \left( \dfrac{1}{2}, \dfrac{1}{2}; \dfrac{3}{2}; \dfrac{t^2}{4} \right) \\
+&= \pi \left( \dfrac{t}{2} \right) {}_2F_1 \left( \dfrac{1}{2}, \dfrac{1}{2}; \dfrac{3}{2}; \left( \dfrac{t}{2} \right)^2 \right) \\
+&= \pi \arcsin \left( \dfrac{t}{2} \right),
+\end{array}$$
+by Exercise 18, Chapter 4.
+\end{solution}

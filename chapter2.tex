@@ -1,0 +1,364 @@
+%%%%
+%%
+%%
+%%%%
+%%%% CHAPTER 2
+%%%% CHAPTER 2
+%%%%
+%%
+%%
+%%%%
+\section{Chapter 2 Solutions}
+\begin{center}\hyperref[toc]{\^{}\^{}}\end{center}
+\begin{center}\begin{tabular}{lllllllllllllllllllllllll}
+\hyperref[problem1chapter2]{P1} & \hyperref[problem2chapter2]{P2} & \hyperref[problem3chapter2]{P3} & \hyperref[problem4chapter2]{P4} & \hyperref[problem5chapter2]{P5} & \hyperref[problem6chapter2]{P6} & \hyperref[problem7chapter2]{P7} & \hyperref[problem8chapter2]{P8} & \hyperref[problem9chapter2]{P9} & \hyperref[problem10chapter2]{P10} & \hyperref[problem11chapter2]{P11} & \hyperref[problem12chapter2]{P12} & \hyperref[problem13chapter2]{P13} & \hyperref[problem14chapter2]{P14} & \hyperref[problem15chapter2]{P15} & 
+\end{tabular}\end{center}
+\setcounter{problem}{0}
+\setcounter{solution}{0}
+\begin{problem}\label{problem1chapter2} %Problem 1
+Start with 
+$$(\dagger) \dfrac{\Gamma'(z)}{\Gamma(z)} = -\gamma - \dfrac{1}{z} - \displaystyle\sum_{n=1}^{\infty} \left( \dfrac{1}{z+n} - \dfrac{1}{n} \right),$$
+prove that
+$$\dfrac{2 \Gamma'(2z)}{\Gamma(2z)} - \dfrac{\Gamma'(z)}{\Gamma(z)} - \dfrac{\Gamma'(z+\frac{1}{2})}{\Gamma(z+\frac{1}{2})} = 2 \log 2,$$
+and thus derive Legendre's duplication formula, page 24.
+\end{problem}
+\begin{solution}
+Applying $(\dagger)$ three times and simplifying yields
+\begin{eqnarray*}
+\lefteqn{\dfrac{2 \Gamma'(2z)}{\Gamma(2z)} - \dfrac{\Gamma'(z)}{\Gamma(z)} - \dfrac{\Gamma'(z+\frac{1}{2})}{\Gamma(z+\frac{1}{2})}} \\
+& &= -2 \gamma - \dfrac{2}{2z} + \gamma + \dfrac{1}{z} + \gamma + \dfrac{1}{z+\frac{1}{2}} - \displaystyle\sum_{n=1}^{\infty} \left( \dfrac{2}{2z+n} - \dfrac{2}{n} \right) + \displaystyle\sum_{n=1}^{\infty} \left( \dfrac{1}{z+n} - \dfrac{1}{n} \right) \\
+& & \phantom{=}+ \displaystyle\sum_{n=1}^{\infty} \left( \dfrac{1}{z+\frac{1}{2}+n} - \dfrac{1}{n} \right) \\
+& &= \dfrac{2}{2z+1} - \displaystyle\lim_{n \rightarrow \infty} \displaystyle\sum_{k=1}^{2n} \left( \dfrac{2}{2z+k} - \dfrac{2}{k} \right) + \displaystyle\lim_{n \rightarrow \infty} \displaystyle\sum_{k=1}^n \left( \dfrac{1}{z+k} - \dfrac{1}{k} \right) \\
+& & \phantom{=}+ \displaystyle\lim_{n \rightarrow \infty} \displaystyle\sum_{k=1}^n \left( \dfrac{2}{2z+1+2k} - \dfrac{1}{k} \right) \\
+& &= \dfrac{2}{2z+1} + \displaystyle\lim_{n \rightarrow \infty} \left[ \displaystyle\sum_{k=1}^{2n} \dfrac{-2}{2z+k} + 2 H_{2n} + \displaystyle\sum_{k=1}^n \dfrac{2}{2z+2k} - H_n \right. \\
+& & \phantom{=} \left. + \displaystyle\sum_{k=1}^n \dfrac{2}{2z+2k+1} - H_n \right] \\
+& &= \dfrac{2}{2z+1} + \displaystyle\lim_{n \rightarrow \infty} \left[ \displaystyle\sum_{k=1}^{2n} \dfrac{-2}{2z+k} + \displaystyle\sum_{k=2}^{2n+1} \dfrac{2}{2z+k} + 2 H_{2n} - 2 H_n \right] \\
+& &= \dfrac{2}{2z+1} + \dfrac{-2}{2z+1} + \displaystyle\lim_{n \rightarrow \infty} \dfrac{2}{2z+2n+1} + \displaystyle\lim_{n \rightarrow \infty} (2 H_{2n} - 2 H_n) \\
+& &= 0 + 0 + 2 \displaystyle\lim_{n \rightarrow \infty} \left[ (H_{2n}- \log 2n) - (H_n - \log n) + \log 2n - \log n \right] \\
+& &= 2 [ \gamma - \gamma + \log 2 ] \\
+& &= 2 \log 2. \qed
+\end{eqnarray*}
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem2chapter2}
+Show that $\Gamma' \left(\dfrac{1}{2} \right) = -(\gamma + 2 \log 2) \sqrt{\pi}$.
+\end{problem}
+\begin{solution}
+By Problem $\ref{problem1chapter2}$, we know that
+$$\dfrac{2 \Gamma'(2z)}{\Gamma(2z)} - \dfrac{\Gamma'(z)}{\Gamma(z)} - \dfrac{\Gamma'(z+\frac{1}{2})}{\Gamma(z+\frac{1}{2})} = 2 \log 2.$$
+Now let $z=\dfrac{1}{2}$ to get
+$$2 \dfrac{\Gamma'(1)}{\Gamma(1)} - \dfrac{\Gamma' \left(\frac{1}{2} \right)}{\Gamma \left(\frac{1}{2} \right)} - \frac{\Gamma'(1)}{\Gamma(1)} = 2 \log 2,$$
+and so, algebra yields
+$$\dfrac{\Gamma'(\frac{1}{2})}{\Gamma(\frac{1}{2})} =\dfrac{\Gamma'(1)}{\Gamma(1)} - 2 \log 2.$$
+But $\Gamma(1)=1, \Gamma'(1)=-\gamma, \Gamma(\frac{1}{2}) = \sqrt{\pi}$, hence
+$$\dfrac{\Gamma'(\frac{1}{2})}{\sqrt{\pi}} = - \dfrac{\gamma}{1} - 2 \log 2,$$
+and by rearrangement,
+$$\Gamma'\left(\frac{1}{2} \right) = -(\gamma + 2 \log 2) \sqrt{\pi}. \qed$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem3chapter2}
+Use Euler's integral form $\Gamma(z) = \displaystyle\int_0^{\infty} e^{-t} t^{z-1} \mathrm{d}t$ to show that 
+$$\Gamma(z+1) = z \Gamma(z).$$
+\end{problem}
+\begin{solution}
+From $\Gamma(z) = \displaystyle\int_0^{\infty} e^{-t} t^{z-1} \mathrm{d}t$, for $\mathrm{Re}(z) > 0$, integration by parts yields
+$$\begin{array}{ll|ll}
+u = t^z & \mathrm{d}v = e^{-t} \mathrm{d}t  & \Gamma(z+1) &= \displaystyle\int_0^{\infty} e^{-t}t^z \mathrm{d}t \\
+\mathrm{d}u = zt^{z-1} & v=-e^{-t} & &= \left[-t^z e^{-t} \right]_0^{\infty} + z \displaystyle\int_0^{\infty} e^{-t} t^{z-1} \mathrm{d}t \\
+& & &= 0 + z \Gamma(z),
+\end{array}$$
+where $\displaystyle\lim_{t \rightarrow \infty} -t^z e^{-t}$ converges for $\Re(z) > 0 \qed$.
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem4chapter2}
+Show that $\Gamma(z) = \displaystyle\lim_{n \rightarrow \infty} n^z B(z,n)$.
+\end{problem}
+\begin{solution}
+From page 28 (1), we know
+$$\Gamma(z) = \displaystyle\lim_{n \rightarrow \infty} \dfrac{(n-1)! n^z}{
+(z)_n},$$
+but
+$$B(z,n) = \dfrac{\Gamma(z)\Gamma(n)}{\Gamma(z+n)} = \dfrac{\Gamma(z)(n-1)!}{(z)_n \Gamma(z)} = \dfrac{(n-1)!}{(z)_n}.$$
+Hence 
+$$\Gamma(z) = \displaystyle\lim_{n \rightarrow \infty} n^z B(z,n). \qed$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem5chapter2}
+Derive the following properties of the beta function: 
+\begin{enumerate}[(a)]
+\item $pB(p,q+1) = qB(p+1,q)$;
+\item $B(p,q) = B(p+1,q) + B(p,q+1)$;
+\item $(p+q)B(p,q+1) = qB(p,q)$;
+\item $B(p,q)B(p+q,r) = B(q,r)B(q+r,p)$.
+\end{enumerate}
+\end{problem}
+\begin{solution}
+\begin{enumerate}[(a)]
+\item We know $B(p,q) = \dfrac{\Gamma(p)\Gamma(q)}{\Gamma(p+q)}$, so
+$$pB(p,q+1) = \dfrac{p \Gamma(p)\Gamma(q+1)}{\Gamma(p+q+1)} = \dfrac{\Gamma(p+1) q \Gamma(q)}{\Gamma(p+1+q)} = qB(p+1,q).$$
+(note: $p \rightarrow q$ and $q \rightarrow p$ -- is this the symmetric property?)
+\item
+$$\begin{array}{ll}
+B(p,q) &= \dfrac{\Gamma(p)\Gamma(q)}{\Gamma(p+q)} \\
+&= \dfrac{\Gamma(p)\Gamma(q)}{\dfrac{\Gamma(p+q+1)}{p+q}} \\
+&= \dfrac{(p+q)\Gamma(p)\Gamma(q)}{\Gamma(p+q+1)} \\
+&= \dfrac{p \Gamma(p)\Gamma(q)}{\Gamma(p+q+1)} + \dfrac{q \Gamma(p) \Gamma(q)}{\Gamma(p+q+1)} \\
+&= \dfrac{\Gamma(p+1) \Gamma(q)}{\Gamma(p+q+1) + \dfrac{\Gamma(p) \Gamma(q+1)}{\Gamma(p+q+1)}} \\
+&= B(p+1,q) + B(p,q+1).
+\end{array}$$
+\item $$\begin{array}{ll}
+(p+q)B(p,q+1) &= \dfrac{(p+q)\Gamma(p))\Gamma(q+1)}{\Gamma(p+q+1} \\
+&= \dfrac{(p+q)\Gamma(p) \Gamma(q+1)}{(p+q) \Gamma(p+q)} \\
+&= \dfrac{\Gamma(p) \Gamma(q+1)}{\Gamma(p+q)} \\
+&= \dfrac{\Gamma(p) q \Gamma(q)}{\Gamma(p+q)} \\
+&= qB(p,q).
+\end{array}$$
+\item $$\begin{array}{ll}
+B(p,q)B(p+q,n) &= \dfrac{\Gamma(p)\Gamma(q)}{\Gamma(p+q)} \dfrac{\Gamma(p+q)\Gamma(n)}{\Gamma(p+q+n)} \\
+&= \dfrac{\Gamma(p)\Gamma(q)\Gamma(n)}{\Gamma(p+q+n)} \\
+&= \dfrac{\Gamma(q)\Gamma(n)}{\Gamma(q+n)} \dfrac{\Gamma(p)\Gamma(q+n)}{\Gamma(p+q+n)} \\
+&= B(q,n) B(q+n,p). \qed
+\end{array}$$
+\end{enumerate}
+\end{solution}%
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem6chapter2}
+Show that for positive integral $n$, $B(p,n+1) = \dfrac{n!}{(p)_{n+1}}$.
+\end{problem}
+\begin{solution}
+For integer $n$ and using Theorem 9 (pg. 23),
+$$\begin{array}{ll}
+B(p,n+1) &= \dfrac{\Gamma(p) \Gamma(n+1)}{\Gamma(p+n+1)} \\
+&= \dfrac{\Gamma(p) \Gamma(n+1)}{(p+1)_n \Gamma(p+1)} \\
+&= \dfrac{\Gamma(p) n!}{(p+1)_n p \Gamma(p)} \\
+&= \dfrac{n!}{p(p+1)_n} \\
+&= \dfrac{n!}{(p)_{n+1}}. \qed
+\end{array}$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem7chapter2}
+Evaluate $\displaystyle\int_{-1}^1 (1+x)^{p-1}(1-x)^{q-1} \mathrm{d}x$.
+\end{problem}
+\begin{solution}
+Let $A = \displaystyle\int_{-1}^1(1+x)^{p-1}(1-x)^{q-1} \mathrm{d}x$. Now let 
+$$y = \dfrac{1+x}{2},$$
+$$x=2y-1,$$ 
+and
+$$1-x=2-2y=2(1-y).$$
+Hence
+$$\begin{array}{ll}
+A &= \displaystyle\int_0^1 2^{p-1} y^{p-1} 2^{q-1} (1-y)^{q-1} 2 \mathrm{d}y \\
+&= 2^{p+q-1} \displaystyle\int_0^1 y^{p-1}(1-y)^{q-1} \mathrm{d}y \\
+&= 2^{p+q-1} B(p,q). \qed
+\end{array}$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem8chapter2}
+Show that for $0 \leq k \leq n$, 
+$$(\alpha)_{n-k} = \dfrac{(-1)^k (\alpha)_n}{(1-\alpha-n)_k}.$$
+Note particularly the special case $\alpha=1$.
+\end{problem}
+\begin{solution}
+Consider $(\alpha)_{n-k}$ for $0 \leq k \leq n$. Then
+$$\begin{array}{ll}
+(\alpha)_{n-k} &= \alpha(\alpha+1) \ldots (\alpha+n-k-1) \\
+&= \dfrac{\alpha(\alpha+1) \ldots (\alpha+n-k-1)[(\alpha+n-k)(\alpha+n-k+1)\ldots(\alpha+n-1)]}{(\alpha+n-1)(\alpha+n-2)\ldots(\alpha+n-k)} \\
+&= \dfrac{(\alpha)_n}{(\alpha+n-k)_k} \\
+&= \dfrac{(\alpha)_n}{(-1)^k(1-\alpha-n)_k} \\
+&= \dfrac{(-1)^k (\alpha)_n}{(1-\alpha-n)_k}.
+\end{array}$$
+Note for $\alpha=1$, that $(n-k)! = \dfrac{(-1)^kn!}{(-n)_k}$. $\qed$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\newpage
+\begin{problem}\label{problem9chapter2}
+Show that if $\alpha$ is not an integer,
+$$\dfrac{\Gamma(1-\alpha-n)}{\Gamma(1-\alpha)} = \dfrac{(-1)^n}{(\alpha)_n}.$$
+\end{problem}
+\begin{solution}
+Consider for $\alpha$ not equal to an integer
+$$\begin{array}{ll}
+\dfrac{\Gamma(1-\alpha-n)}{\Gamma(1-\alpha)} &= \dfrac{\Gamma(1-\alpha-n)}{-\alpha\Gamma(-\alpha)} \\
+&= \dfrac{\Gamma(1-\alpha-n)}{(-\alpha)(-\alpha-1)\Gamma(-\alpha-1)} \\
+&= \dfrac{\Gamma(1-\alpha-n)}{(-\alpha)(-\alpha-1)\ldots(-\alpha-n+1)\Gamma(1-\alpha-n)} \\
+&= \dfrac{1}{(-1)^n(\alpha)_n},
+\end{array}$$
+as desired. $\qed$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+In the following problems, the function $P(x) := x - \lfloor x \rfloor - \dfrac{1}{2}$. 
+\begin{problem}\label{problem10chapter2}
+Evaluate $\displaystyle\int_0^x P(y) \mathrm{d}y$.
+\end{problem}
+\begin{solution}
+To evaluate $\displaystyle\int_0^x P(y) \mathrm{d}y$ when $P(y)=y- \lfloor y \rfloor -\dfrac{1}{2}$. Let $m$ be an integer so that $m \geq 0$. If $m \leq x < m+1$, then $\lfloor x \rfloor=m$ and
+$$\begin{array}{ll}
+\displaystyle\int_0^x P(y) \mathrm{d}y &= \displaystyle\int_m^x P(y) \mathrm{d}y \\
+&= \displaystyle\int_m^x \left(y-m-\dfrac{1}{2} \right) \mathrm{d}y \\
+&= \dfrac{1}{2}\left[\left(y-m-\dfrac{1}{2} \right)^2 \right]_m^x \\
+&= \dfrac{1}{2} \left[ \left(x-m-\dfrac{1}{2} \right)^2 - \left(\dfrac{1}{2}\right)^2 \right] \\
+&= \dfrac{1}{2} \left[ P^2(x)-\dfrac{1}{4} \right] \\
+&= \dfrac{1}{2} P^2(x)-\dfrac{1}{8}. \qed
+\end{array}$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem11chapter2}
+Use integration by parts and the result of the above exercise to show that
+$$\left| \displaystyle\int_n^{\infty} \dfrac{P(x)dx}{1+x} \mathrm{d}x \right| \leq \dfrac{1}{8(1+n)}.$$
+\end{problem}
+\begin{solution}
+Consider $\displaystyle\int_n^{\infty} \dfrac{P(x)}{1+x} \mathrm{d}x$ and use integration by parts 
+$$\left\{ \begin{array}{llll}
+\mathrm{d}v=P(x)\mathrm{d}x & u=(1+x)^{-1} &  \\
+v=\dfrac{1}{2} P^2(x)-\dfrac{1}{8} & du=-(1+x)^{-2} \mathrm{d}x & &
+\end{array} \right.$$
+$$\displaystyle\int_n^{\infty} \dfrac{P(x)}{1+x} \mathrm{d}x = \dfrac{1}{2} \left[ \dfrac{P^2(x)-\dfrac{1}{4}}{1+x} \right]_n^{\infty} + \dfrac{1}{2} \displaystyle\int_n^{\infty} \dfrac{P^2(x)-\dfrac{1}{4}}{(1+x)^2} \mathrm{d}x.$$
+Now ${\mathrm max} \left\{ \left|P^2(x)-\dfrac{1}{4} \right| \right\} = \dfrac{1}{4}$ and $P^2(n)=\dfrac{1}{4}$ implies
+$$\displaystyle\int_n^{\infty} \dfrac{P(x)}{1+x} \mathrm{d}x = 0 - 0 + \dfrac{1}{2} \displaystyle\int_n^{\infty} \dfrac{P^2(x)-\dfrac{1}{4}}{(1+x)^2} \mathrm{d}x$$
+and
+$$\left| \displaystyle\int_n^{\infty} \dfrac{P(x)}{1+x} \mathrm{d}x\right| \leq \dfrac{1}{2} \displaystyle\int_n^{\infty} \dfrac{\dfrac{1}{4}}{(1+x)^2} \mathrm{d}x = -\dfrac{1}{8} \left[ \dfrac{1}{1+x} \right]_n^{\infty}$$
+or
+$$\left| \displaystyle\int_n^{\infty} \dfrac{P(x)}{1+x} \mathrm{d}x \right| \leq \dfrac{1}{8} \left[ \dfrac{1}{1+n} \right]. \qed$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem12chapter2}
+With the aid of the above problem, prove the convergence of 
+$$\displaystyle\int_0^{\infty} \dfrac{P(x) \mathrm{d}x}{1+x}.$$
+\end{problem}
+\begin{solution}
+$\displaystyle\int_0^{\infty} \dfrac{P(x)}{1+x} \mathrm{d}x$ converges $\longleftrightarrow \displaystyle\lim_{n \rightarrow \infty} \int_n^{\infty} \dfrac{P(x)}{1+x} \mathrm{d}x = 0$
+but from Exercise $\ref{problem11chapter2}$,
+$$\displaystyle\lim_{n \rightarrow \infty} \left| \displaystyle\int_n^{\infty} \dfrac{P(x)}{1+x} \mathrm{d}x \right| \leq \displaystyle\lim_{N \rightarrow \infty} \dfrac{1}{8(1+n)} = 0.$$
+Hence $\displaystyle\int_0^{\infty} \dfrac{P(x)}{1+x} \mathrm{d}x < \infty$. 
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem13chapter2}
+Show that
+$$\displaystyle\int_0^{\infty} \dfrac{P(x) \mathrm{d}x}{1+x} = \displaystyle\sum_{n=0}^{\infty} \displaystyle\int_n^{n+1} \dfrac{P(x) \mathrm{d}x}{1+x} = \displaystyle\sum_{n=0}^{\infty} \displaystyle\int_0^1 \dfrac{(y - \frac{1}{2}) \mathrm{d}y}{1+n+y}.$$
+Then prove that
+$$\displaystyle\lim_{n \rightarrow \infty} n^2 \displaystyle\int_0^1 \dfrac{(y-\frac{1}{2}) \mathrm{d}y}{1+n+y} = - \dfrac{1}{12}$$
+and thus conclude that $\displaystyle\int_0^{\infty} \dfrac{P(x) \mathrm{d}x}{1+x}$ is convergent.
+\end{problem}
+\begin{solution}
+(Solution by Leon Hall)
+Because $P(x)$ is periodic with period $1$, it is clear that
+$$\displaystyle\int_0^{\infty} \dfrac{P(x)}{1+x} \mathrm{d}x = \displaystyle\sum_{n=0}^{\infty} \displaystyle\int_n^{n+1} \dfrac{P(x)}{1+x} \mathrm{d}x.$$
+Let $x = n+y$. Then
+$$\begin{array}{ll}
+\displaystyle\int_n^{n+1} \dfrac{P(x)}{1+x} \mathrm{d}x &= \displaystyle\int_0^1 \dfrac{P(n+y)}{1+n+y} \mathrm{d}y \\
+&= \displaystyle\int_0^1 \dfrac{P(y)}{1+n+y}\mathrm{d}y \\
+&= \displaystyle\int_0^1 \dfrac{y - \frac{1}{2}}{1+n+y} \mathrm{d}y.
+\end{array}$$
+This establishes the first set of equalities. 
+$$\begin{array}{ll}
+\displaystyle\int_0^1 \dfrac{y - \frac{1}{2}}{y+n+1} \mathrm{d}y &= \displaystyle\int_0^1 \left[ 1 - \left( n + \dfrac{3}{2} \right) \dfrac{1}{y+n+1} \right] \mathrm{d}y \\
+&= \left[ y - \left( n + \dfrac{3}{2} \right) \log(y+n+1) \right]_0^1 \\
+&= 1 - \left( n + \dfrac{3}{2} \right) \log \dfrac{n+2}{n+1} \\
+&= 1 - \left( n + \dfrac{3}{2} \right) \log \left( 1 + \dfrac{1}{n+1} \right) \\
+&= 1\!-\!\left(\!n\!+\!\dfrac{3}{2}\!\right)\!\left(\!\dfrac{1}{n+1}\!-\!\dfrac{1}{2(n+1)^2}\!+\!\dfrac{1}{3(n+1)^3}\!-\!\dfrac{1}{4(n+1)^4}\!+\!\ldots\!\right)%
+\end{array}$$
+To determine the convergence of $\displaystyle\sum_{n=0}^{\infty} \displaystyle\int_0^1 \dfrac{(y - \frac{1}{2})}{y+n+1} \mathrm{d}y$, we compare with the known convergent series $\displaystyle\sum_{n=1}^{\infty} \dfrac{1}{n^2}$ using the limit comparison test:
+\begin{eqnarray*}
+\lefteqn{\dfrac{\displaystyle\int_0^1 \dfrac{(y - \frac{1}{2})}{y+n+1} \mathrm{d}y}{\frac{1}{n^2}}} \\
+& &= n^2 - n^2 \left( n + \dfrac{3}{2} \right) \displaystyle\sum_{k=1}^{\infty} \dfrac{1}{k(n+1)^k} \\
+& &= n^2 - n^2 \left( n + \dfrac{3}{2} \right) \left[ \dfrac{1}{n+1} - \dfrac{1}{2(n+1)^2} + \dfrac{1}{3(n+1)^3} \right] + \mathcal{O} \left( \dfrac{1}{n+1} \right) \\
+& &= \dfrac{6n^2(n+1)^3 - n^2 ( n + \frac{3}{2}) [6(n+1)^2 - 3(n+1)+2]}{6(n+1)^3} + \mathcal{O} \left( \dfrac{1}{n+1} \right) \\
+& &= \dfrac{6n^5 + 18n^4 + 18n^3 + 6n^2 - [6n^5 + 18n^4 + \frac{37}{2} n^3 + \frac{15}{2} n^2]}{6(n+1)^3} + \mathcal{O} \left( \dfrac{1}{n+1} \right) \\
+& &= \dfrac{-\frac{1}{2} n^3}{6(n+1)^3} + \mathcal{O} \left( \dfrac{1}{n+1} \right).
+\end{eqnarray*}
+Thus,
+$$\displaystyle\lim_{n \rightarrow \infty} n^2 \displaystyle\int_0^1 \dfrac{(y - \frac{1}{2})}{y+n+1} \mathrm{d}y = -\dfrac{1}{12},$$
+and
+$$\displaystyle\sum_{n=0}^{\infty} \displaystyle\int_0^1 \dfrac{(y-\frac{1}{2})}{y+n+1} \mathrm{d}y = \displaystyle\int_0^{\infty} \dfrac{P(x)}{1+x} \mathrm{d}x$$
+converges.
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem14chapter2}
+Apply Theorem 11, page 27, to the function $f(x) = (1+x)^{-1}$; let $n \rightarrow \infty$ and thus conclude that
+$$\gamma = \dfrac{1}{2} - \displaystyle\int_1^{\infty} y^{-2} P(y) \mathrm{d}y.$$
+\end{problem}
+\begin{solution}(Solution by Leon Hall)
+Let $f(x) = \dfrac{1}{1+x}$. Theorem 11, page 27 gives with $p=0, q=n$, 
+$$\displaystyle\sum_{k=0}^n \dfrac{1}{1+k} = \displaystyle\int_0^n \dfrac{1}{1+x} \mathrm{d}x + \dfrac{1}{2} + \dfrac{1}{2} \left( \dfrac{1}{1+n} \right) + \displaystyle\int_0^n f'(x) B_1(x) \mathrm{d}x.$$
+So,
+$$\begin{array}{ll}
+\displaystyle\sum_{k=0}^n \dfrac{1}{1+k} - \log(1+n) &= \dfrac{1}{2} + \dfrac{1}{2} \left( \dfrac{1}{1+n} \right) + \displaystyle\int_0^n - \dfrac{B_1(x)}{(1+x)^2} \mathrm{d}x \\
+y:=x+1 &= \dfrac{1}{2} + \dfrac{1}{2} \left( \dfrac{1}{1+n} \right) + \displaystyle\int_1^{n+1} - \dfrac{B_1(y+1)}{y^2} \mathrm{d}y \\
+&= \dfrac{1}{2} + \dfrac{1}{2} \left( \dfrac{1}{1+n} \right) - \displaystyle\int_1^{n+1} \dfrac{B_1(y)}{y^2} \mathrm{d}y
+\end{array}$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem15chapter2}
+Use the relation $\Gamma(z) \Gamma(1-z) = \dfrac{\pi}{\sin \pi z}$ and the elementary result 
+$$\sin(x)\sin(y) = \dfrac{1}{2} [ \cos (x-y) - \cos(x+y) ]$$
+to prove that
+\begin{eqnarray*}
+\lefteqn{1 - \dfrac{\Gamma(c)\Gamma(1-c)\Gamma(c-a-b)\Gamma(a+b+1-c)}{\Gamma(c-a)\Gamma(a+1-c)\Gamma(c-b)\Gamma(b+1-c)}} \\
+& &= \dfrac{\Gamma(2-c)\Gamma(c-1)\Gamma(c-a-b)\Gamma(a+b+1-c)}{\Gamma(a)\Gamma(1-a)\Gamma(b)\Gamma(1-b)}.
+\end{eqnarray*}
+\end{problem}
+\begin{solution}
+Note that
+$$1-(c-a-b)=a+b+1-c,$$
+$$1-(c-a)=a+1-c,$$
+and
+$$1-(c-b)=b=1-c,$$
+so we can use the gamma function relation four times to get
+\begin{eqnarray*}
+\lefteqn{1 - \dfrac{\Gamma(c)\Gamma(1-c)\Gamma(c-a-b)\Gamma(a+b+1-c)}{\Gamma(c-a)\Gamma(a+1-c)\Gamma(c-b)\Gamma(b+1-c)}} \\
+& &= 1 - \dfrac{\pi^2 \sin(\pi(c-a)) \sin(\pi(c-b))}{\pi^2 \sin(\pi c) \sin (\pi(c-a-b))} \\
+& &= \dfrac{\sin(\pi c) \sin (\pi(c-a-b)) - \sin (\pi(c-a)) \sin (\pi(c-b))}{\sin(\pi c)\sin \pi(c-a-b)}.
+\end{eqnarray*}
+Use the trigonometric identity and continue the equality:
+$$\begin{array}{ll}
+&=\!\dfrac{\frac{1}{2}[\cos(\pi(a+b))\!-\!\cos(\pi(2c-a-b))]\!-\!\frac{1}{2}[\cos(\pi(b-a))\!-\!\cos(\pi(2c-a-b))]}{\frac{1}{2}[\cos(\pi(a+b))\!-\!\cos(\pi(2c-a-b))]} \\
+&= \dfrac{-\frac{1}{2} [ \cos(\pi (b-a)) - \cos(\pi (a+b))]}{\frac{1}{2}[\cos(\pi(a+b)) - \cos(\pi(2c-a-b))]} \\
+&= \dfrac{-\sin (\pi a) \sin(\pi b)}{\sin (\pi c) \sin(\pi(c-a-b))} \\
+&= \dfrac{-\sin(\pi a) \sin(\pi b)}{-\sin(\pi(c-1)) \sin(\pi(c-a-b))}.
+\end{array}$$
+Canceling minus signs and multiplying and dividing by $\pi^2$ yields
+$$= \dfrac{\Gamma(c-1)\Gamma(2-c)\Gamma(c-a-b)\Gamma(a+b+1-c)}{\Gamma(a)\Gamma(1-a)\Gamma(b)\Gamma(1-b)}$$
+as desired.
+\end{solution}

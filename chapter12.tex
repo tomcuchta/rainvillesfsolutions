@@ -1,0 +1,357 @@
+%%%%
+%%
+%%
+%%%%
+%%%% CHAPTER 12
+%%%% CHAPTER 12
+%%%%
+%%
+%%
+%%%%
+\section{Chapter 12 Solutions}
+\begin{center}\hyperref[toc]{\^{}\^{}}\end{center}
+\begin{center}\begin{tabular}{lllllllllllllllllllllllll}
+\hyperref[problem1chapter12]{P1} & \hyperref[problem2chapter12]{P2} & \hyperref[problem3chapter12]{P3} & \hyperref[problem4chapter12]{P4} & \hyperref[problem5chapter12]{P5} & \hyperref[problem6chapter12]{P6} & \hyperref[problem7chapter12]{P7} & \hyperref[problem8chapter12]{P8} & \hyperref[problem9chapter12]{P9} & \hyperref[problem10chapter12]{P10} & \hyperref[problem11chapter12]{P11} & \hyperref[problem12chapter12]{P12}
+\end{tabular}\end{center}
+\setcounter{problem}{0}
+\setcounter{solution}{0}
+\begin{problem}\label{problem1chapter12}
+Show that
+
+$$H_{2n}(x) = (-1)^n 2^{2n} n! L_n^{-\frac{1}{2}}(x^2),$$
+
+$$H_{2n+1}(x) = (-1)^n 2^{2n+1} n! x L_n^{\frac{1}{2}}(x^2).$$
+\end{problem}
+\begin{solution}
+From $H_n(x) = \displaystyle\sum_{k=0}^{[\frac{n}{2}]} \dfrac{(-1)^k n! (2x)^{n-2k}}{k! (n-2k)!}$ we get
+
+$$\begin{array}{ll}
+H_{2n}(x) &= \displaystyle\sum_{k=0}^n \dfrac{(-1)^k (2n)! (2x)^{2n-2k}}{k! (2n-2k)!} \\
+&= \displaystyle\sum_{k=0}^n \dfrac{(-1)^{n-k} (2n)! (2x)^{2k}}{(2k)! (n-k)!} \\
+&= \displaystyle\sum_{k=0}^n \dfrac{(-1)^n (2n)! (-n)_k x^{2k}}{k! (\frac{1}{2})_k n!} \\
+&= (-1)^n 2^{2k} \left( \dfrac{1}{2} \right)_n {}_1F_1 \left(-n; \dfrac{1}{2}; x^2 \right) \\
+&= (-1)^n 2^{2n} \left( \dfrac{1}{2} \right)_n \dfrac{n!}{(\frac{1}{2})_n} L_n^{(-\frac{1}{2})}(x^2).
+\end{array}$$
+Hence
+$$H_{2n}(x) = (-1)^n 2^{2n}n! L_n^{(-\frac{1}{2})}(x^2).$$
+In the same way
+$$\begin{array}{ll}
+H_{2n+1}(x) &= \displaystyle\sum_{k=0}^n \dfrac{(-1)^k (2n+1)! (2x)^{2n+1-2k}}{k! (2n+1-2k)!} \\
+&= \displaystyle\sum_{k=0}^n \dfrac{(-1)^{n-k} (2n+1)! (2x)^{2k+1}}{(n-k)! (2k+1)!} \\
+&= \displaystyle\sum_{k=0}^n \dfrac{(-1)^n (-n)_k 2^{2n} n! ( \frac{3}{2})_n 2^{2k+1} x^{2k+1}}{n! 2^{2k} k! (\frac{3}{2})_k} \\
+&= (-1)^n 2^{2n} (\frac{3}{2})_n (2x) {}_1F_1 \left(-n; \dfrac{3}{2};x^2 \right) \\
+&= (-1)^n 2^{2n} n! (2x) L_n^{(\frac{1}{2})}(x^2).
+\end{array}$$
+Hence
+$$H_{2n+1}(x) = (-1)^n 2^{2n+1} n! x L_n^{(\frac{1}{2})}(x^2).$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem2chapter12}
+Use Theorem 65, page 181, and the method of Section 118 above to derive the result
+\begin{eqnarray*}
+\lefteqn{P_n^{(\alpha)}(x)}\\
+&& \!\!\!\!\!\!\!\!\!\!= \displaystyle\sum_{k=0}^n {}_2F_3 \left[ \begin{array}{rlr}
+-\dfrac{1}{2}(n-k), -\dfrac{1}{2}(n-k-1); & & \\
+& & \dfrac{1}{4} \\
+\!\dfrac{3}{2}\!+\!k,\!\dfrac{1}{2}(\!1\!+\!\alpha\!+\!k),\!\dfrac{1}{2} (\!2\!+\!\alpha\!+\!k\!); & & 
+\end{array} \right] \dfrac{(-1)^k (1 + \alpha)_n (2k+1) P_k(x)}{2^k (n-k)! (\frac{3}{2})_k (1+ \alpha)_k}.
+\end{eqnarray*}
+\end{problem}
+\begin{solution}
+We know that
+$$\dfrac{(2x)^n}{n!} = \displaystyle\sum_{k=0}^{[\frac{n}{2}]} \dfrac{(2n-4k+1)P_{n-2k}(x)}{k! (\frac{3}{2})_{n-k}}.$$
+Then
+\begin{eqnarray*}
+\lefteqn{\displaystyle\sum_{n=0}^{\infty} L_n^{(\alpha)}(x) t^n} \\
+& &= \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{s=0}^n \dfrac{(-1)^s (1+\alpha)_n x^s t^n}{s! (n-s)! (1+\alpha)_s} \\
+& &= \displaystyle\sum_{n,s=0}^{\infty} \dfrac{(-1)^s (1+\alpha)_{n+s} x^s t^{n+s}}{s! n! (1 + \alpha)_s} \\
+& &= \displaystyle\sum_{n,s=0}^{\infty} \displaystyle\sum_{k=0}^{[\frac{s}{2}]} \dfrac{(-1)^s (1+\alpha)_{n+s} (2s-4k+1) P_{s-2k}(x) t^{n+s}}{2^s n! (1+\alpha)_s k! (\frac{3}{2})_{s-k}} \\
+& &= \displaystyle\sum_{n,k,s=0}^{\infty} \dfrac{(-1)^s (1+\alpha)_{n+s+2k}(2s+1)P_s(x)t^{n+s+2k}}{2^{s+2k} k! n! (1+\alpha)_{s+2k} (\frac{3}{2})_{s+k}} \\
+& &\stackrel{\mathrm{change \hspace{3pt} letters}}{=} \displaystyle\sum_{n,k,s=0}^{\infty} \dfrac{(-1)^k (1+\alpha)_{n+k+2s} (2k+1)P_k(x) t^{n+k+2s}}{2^{k+2s} s! n! (1+\alpha)_{k+2s} (\frac{3}{2})_{k+s}} \\
+& &= \displaystyle\sum_{n,k=0}^{\infty} \displaystyle\sum_{s=0}^{[\frac{n}{2}]} \dfrac{(-1)^k (1+\alpha)_{n+k} (2k+1) P_k(x) t^{n+k}}{s! (n-2s)! (1+\alpha)_{k+2s} (\frac{3}{2})_{k+s} 2^{k+2s}} \\
+& &= \displaystyle\sum_{n,k=0}^{\infty} \displaystyle\sum_{s=0}^{[\frac{n}{2}]} \dfrac{(-n)_{2s} 2^{-2s}}{s! (1+\alpha+k)_{2s} (\frac{3}{2}+k)_s} \dfrac{(-1)^k (1+\alpha)_{n+k} (2k+1) P_k(x) t^{n+k}}{(1+\alpha)_k (\frac{3}{2})_k 2^k n!} \\
+& &=\!\!\displaystyle\sum_{n,k=0}^{\infty}\!\!\!{}_2F_3\!\!\left[ \begin{array}{rlr}
+-\dfrac{n}{2}, -\dfrac{n-1}{2}; & & \\
+& & \dfrac{1}{4} \\
+\!\!\dfrac{3}{2}\!+\!k, \dfrac{1\!+\!\alpha\!+\!k}{2}, \dfrac{2\!+\!\alpha\!+\!k}{2}; & &
+\end{array} \right]\!\!\dfrac{(-1)^k (1\!+\!\alpha)_{n+k} (2k\!+\!1)P_k\!(x) t^{n\!+\!k}}{2^k (1+\alpha)_k (\frac{3}{2})_k n!}.
+\end{eqnarray*}
+We thus get
+\begin{eqnarray*}
+\lefteqn{\displaystyle\sum_{n=0}^{\infty} L_n^{(\alpha)}(x) t^n} \\
+&& \!\!=\!\!\displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^n \!{}_2F_3\!\! \left[ \begin{array}{rlr}
+- \dfrac{n-k}{2}, -\dfrac{n-k-1}{2}; & & \\
+& & \dfrac{1}{4} \\
+\!\!\dfrac{3}{2}\!+\!k,\! \dfrac{1\!+\!\alpha\!+\!k}{2},\!\dfrac{2\!+\!\alpha\!+\!k}{2}; & & 
+\end{array} \right] \dfrac{(-1)^k (1+\alpha)_n (2k+1)P_k(x)t^n}{2^k (1+\alpha)_k (\frac{3}{2})_k (n-k)!}.
+\end{eqnarray*}
+Hence
+\begin{eqnarray*}
+\lefteqn{L_n^{(\alpha)}(x)} \\
+&&\!\!=\!\!\displaystyle\sum_{k=0}^n\! {}_2F_3\! \left[ \begin{array}{rlr}
+-\dfrac{n-k}{2}, - \dfrac{n-k-1}{2}; & & \\
+& & \dfrac{1}{4} \\
+\!\!\dfrac{3}{2}\!+\!k, \dfrac{1\!+\!\alpha\!+\!k}{2}, \dfrac{2\!+\!\alpha\!+\!k}{2}; & &
+\end{array} \right] \dfrac{(-1)^k (1+\alpha)_n (2k+1) P_k(x)}{2^k (1+\alpha)_k (\frac{3}{2})_k (n-k)!}.
+\end{eqnarray*}
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem3chapter12}
+Use formula (4), page 194, and the method of Section 118 to derive the result
+
+$$L_n^{(\alpha)}(x) = \displaystyle\sum_{k=0}^n {}_2F_2 \left[ \begin{array}{rlr}
+-\dfrac{1}{2}(n-k), -\dfrac{1}{2}(n-k-1); & & \\
+& & \dfrac{1}{4} \\
+\dfrac{1}{2}(1 + \alpha + k), \dfrac{1}{2}(2+\alpha+k); & &
+\end{array} \right] \dfrac{(-1)^k (1+ \alpha)_n H_k(x)}{k! (n-k)! 2^k (1+\alpha)_k}.$$
+\end{problem}
+\begin{solution}
+From 
+$$\dfrac{(2x)^n}{n!} = \displaystyle\sum_{s=0}^{[\frac{n}{2}]} \dfrac{H_{n-2s}(x)}{s! (n-2s)!}$$
+we obtain
+$$\begin{array}{ll}
+\displaystyle\sum_{n=0}^{\infty} L_n^{(\alpha)}(x) t^n &= \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^n \dfrac{(-1)^k (1+\alpha)_n x^k t^n}{k! (n-k)! (1+\alpha)_k} \\
+&= \displaystyle\sum_{n,k=0}^{\infty} \dfrac{(-1)^k (1+\alpha)_{n+k} x^k t^{n+k}}{k! n! (1+\alpha)_k} \\
+&= \displaystyle\sum_{n,k=0}^{\infty} \displaystyle\sum_{s=0}^{[\frac{k}{2}]} \dfrac{(-1)^k (1+\alpha)_{n+k} H_{k-2s}(x) t^{n+k}}{n! (1+\alpha)_k 2^k s! (k-2s)!} \\
+&= \displaystyle\sum_{n,k,s=0}^{\infty} \dfrac{(-1)^{k+2s} (1+\alpha)_{n+k+2s} H_k(x) t^{n+k+2s}}{n! (1+\alpha)_{k+2s} 2^{k+2s} s! k!} \\
+&= \displaystyle\sum_{n,k=0}^{\infty} \displaystyle\sum_{s=0}^{[\frac{n}{2}]} \dfrac{(-1)^k (1+\alpha)_{n+k} H_k(x) t^{n+k}}{s! (n-2s)! (1+\alpha)_{k+2s} 2^{k+2s}k!}.
+\end{array}$$
+Thus we obtain
+\begin{eqnarray*}
+\lefteqn{\displaystyle\sum_{n=0}^{\infty} L_n^{(\alpha)}(x)t^n} \\
+& &= \displaystyle\sum_{n,k=0}^{\infty} \displaystyle\sum_{s=0}^{[\frac{n}{2}]} \dfrac{(-n)_{2s} 2^{-2s}}{s! (1+\alpha+k)_{2s}} \dfrac{(-1)^k (1+\alpha)_{n+k} H_k(x) t^{n+k}}{n! (1+\alpha)_k 2^k k!} \\
+&&= \displaystyle\sum_{n,k=0}^{\infty} {}_2F_2 \left[ \begin{array}{rlr}
+-\dfrac{n}{2}, - \dfrac{n-1}{2}; & & \\
+& & \dfrac{1}{4} \\
+\dfrac{1+\alpha+k}{2}, \dfrac{2+\alpha+k}{2}; & &
+\end{array} \right] \dfrac{(-1)^k (1+\alpha)_{n+k} H_k(x) t^{n+k}}{k! n! 2^k (1+\alpha)_k} \\
+&&= \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^n {}_2F_2 \left[ \begin{array}{rlr}
+-\dfrac{n-k}{2}, -\dfrac{n-k-1}{2}; & & \\
+& & \dfrac{1}{4} \\
+\dfrac{1+\alpha+k}{2}, \dfrac{2+\alpha+k}{2}; & & 
+\end{array} \right] \dfrac{(-1)^k (1+\alpha)_n H_k(x) t^n}{2^k k! (n-k)! (1+\alpha)_k}.
+\end{eqnarray*}
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem4chapter12}
+Use the results in Section 56, page 102, to show that
+$$\displaystyle\int_0^t L_n[x(t-x)] \mathrm{d}x = \dfrac{(-1)^n H_{2n+1}(\frac{t}{2})}{2^{2n} (\frac{3}{2})_n}.$$
+\end{problem}
+\begin{solution}
+We use Theorem~37 to evaluate
+$$\displaystyle\int_0^t L_n[x(t-x)] \mathrm{d}x = \displaystyle\int_0^t {}_1F_1(-n;1;x(t-x))\mathrm{d}x.$$
+In Theorem 37 we use $\alpha=1$, $\beta=1$, $p=1$, $q=1$, $a_1=-n$, $b_1=1$, $k=1$, $s=1$, $c=1$ to get
+$$\begin{array}{ll}
+\displaystyle\int_0^t L_n[x(t-x)] \mathrm{d}x &= B(1,1) t {}_3F_3 \left[ \begin{array}{rlr}
+-n, 1 , 1; & & \\
+& & \dfrac{t^2}{4} \\
+1, \dfrac{2}{2}, \dfrac{3}{2}; & & 
+\end{array} \right] \\
+&= t {}_1F_1 \left(-n; \dfrac{3}{2}; \dfrac{t^2}{4} \right) \\
+&= \dfrac{n!}{(\frac{3}{2})_n} L_n^{(\frac{1}{2})} \left( \dfrac{1}{4} t^2 \right).
+\end{array}$$
+By Exercise~\ref{problem1chapter12} above we have
+$$L_n^{(\frac{1}{2})} \left( \dfrac{1}{4} t^2 \right) = \dfrac{(-1)^n H_{2n+1}(\frac{1}{2} t)}{2^{2n} t n!}.$$
+Hence
+$$\displaystyle\int_0^t L_n[x(t-x)] \mathrm{d}x = \dfrac{(-1)^n}{2^{2n} (\frac{3}{2})_n} H_{2n+1} \left( \dfrac{t}{2} \right).$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem5chapter12}
+Use the results in Section 56, page 102, to show that
+$$\displaystyle\int_0^t \dfrac{H_{2n} (\sqrt{x(t-x)})\mathrm{d}x}{\sqrt{x(t-x)}} = (-1)^n \pi 2^{2n} \left( \dfrac{1}{2} \right)_n L_n \left( \dfrac{1}{4} t^2 \right).$$
+\end{problem}
+\begin{solution}
+Since 
+$$H_{2n}(x) = (-1)^n 2^{2n} \left( \dfrac{1}{2} \right)_n {}_1F_1 \left( -n; \dfrac{1}{2}; x^2 \right),$$
+by Exercise~\ref{problem1chapter12}, we may write
+\begin{eqnarray*}
+\lefteqn{\displaystyle\int_0^t H_{2n}(\sqrt{x(t-x)}){\sqrt{x(t-x)}} \mathrm{d}x} \\
+& & = (-1)^n 2^{2n} \left(\frac{1}{2} \right)_n \displaystyle\int_0^t x^{-\frac{1}{2}} (t-x)^{-\frac{1}{2}} {}_1F_1 \left( -n; \dfrac{1}{2}; x(t-x) \right)\mathrm{d}x.
+\end{eqnarray*}
+We then apply Theorem 37 with $\alpha = \dfrac{1}{2}$, $\beta= \dfrac{1}{2}$, $p=1$,$q=1$, $a_1=-n$, $b_1 = \dfrac{1}{2}$, $c=1$, $k=1$, $s=1,$ to get
+$$\begin{array}{ll}
+\displaystyle\int_0^t \dfrac{H_{2n}(\sqrt{x(t-x)})}{\sqrt{x(t-x)}} \mathrm{d}x &= (-1)^n 2^{2n} (\frac{1}{2})_n B \left( \dfrac{1}{2}, \dfrac{1}{2} \right) t^0 {}_3F_3 \left[ \begin{array}{rlr}
+-n, \dfrac{1}{2}, \dfrac{1}{2}; & & \\
+& & \dfrac{t^2}{4} \\
+\dfrac{1}{2}, \dfrac{1}{2}, \dfrac{2}{2}; & & 
+\end{array} \right] \\
+&= (-1)^n 2^{2n} (\frac{1}{2})_n \dfrac{\Gamma(\frac{1}{2}) \Gamma(\frac{1}{2})}{\Gamma(1)} {}_1F_1 \left[ \begin{array}{rlr}
+-n; & & \\\
+& & \dfrac{t^2}{4} \\
+1; & &
+\end{array} \right] \\
+&= (-1)^n 2^{2n} (\frac{1}{2})_n \pi L_n \left( \dfrac{1}{4} t^2 \right).
+\end{array}$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem6chapter12}
+Show that if $m$ is a non-negative integer and $\alpha$ is not a negative integer,
+
+$$L_n^{(\alpha)}(x) = \dfrac{(1+\alpha)_n}{(1 + \frac{1}{2}\alpha+ \frac{1}{2}m)_n} \displaystyle\sum_{k=0}^n \dfrac{(-m)_k L_k^{(\alpha)}(-x) L_{n-k}^{(\alpha+2m)}(x)}{(1+\alpha)_k}.$$
+\end{problem}
+\begin{solution}
+On page 366 we had
+$$(1) \hspace{20pt} L_n^{(\alpha)}(x) = \dfrac{(1+\alpha)_n}{(c)_n} \displaystyle\sum_{k=0}^n \dfrac{(1+\alpha-c)_k L_k^{(\alpha)}(-x) L_{n-k}^{(2c-\alpha-2)}(x)}{(1+\alpha)_k}.$$
+In $(1)$ choose $c= 1 + \dfrac{1}{2} \alpha + \dfrac{1}{2}m$. Then $2c-\alpha-2=m$ and $1 + \alpha-c = \dfrac{1}{2}\alpha - \dfrac{1}{2}m.$ Hence
+$$L_n^{(\alpha)}(x) = \dfrac{(1+\alpha)_n}{(1 + \frac{1}{2}\alpha + \frac{1}{2}m)_n} \displaystyle\sum_{k=0}^n \dfrac{(\frac{\alpha-m}{2})_k L_k^{(\alpha)}(-x) L_{n-k}^{(m}(x)}{(1+\alpha)_k}.$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem7chapter12}
+Show that if $m$ is a non-negative integer and $\alpha$ is not a negative integer,
+
+$$L_n^{(\alpha)}(x) = \dfrac{(1+\alpha)_n (1 + \alpha)_m}{(1 + \alpha)_{m+n}} \displaystyle\sum_{k=0}^{\infty} \dfrac{(-m)_k L_k^{(\alpha)} (-x) L_{n-k}^{(\alpha+2m)}(x)}{(1 + \alpha)_k}.$$
+\end{problem}
+\begin{solution}
+In equation (1) of Exercise~\ref{problem6chapter12} above choose $c = 1 + \alpha + m$. Thus we get
+$$\begin{array}{ll}
+L_n^{(\alpha)}(x) &= \dfrac{(1+\alpha)_n}{(1+\alpha+m)_n} \displaystyle\sum_{k=0}^n \dfrac{(-m)_k L_k^{(\alpha)}(-x) L_{n-k}^{(\alpha+2m)}(x)}{(1+\alpha)_k} \\
+&= \dfrac{(1+\alpha)_n (1+\alpha)_m}{(1+\alpha)_{m+n}} \displaystyle\sum_{k=0}^n \dfrac{(-m)_k L_k^{(\alpha)}(-x) L_{n-k}^{(\alpha+2m)}(x)}{(1+\alpha)_k}.
+\end{array}$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem8chapter12}
+Use integration by parts and equation (2), page 202, to show that
+
+$$\displaystyle\int_x^{\infty} e^{-y} L_n^{(\alpha)}(y) \mathrm{d}y = e^{-x}[L_n^{(\alpha)}(x) - L_{n-1}^{(\alpha)}(x)].$$
+\end{problem}
+\begin{solution}
+From $(2)$, page 350, we get
+$$L_n^{(\alpha)}(x) = \mathscr{D} L_n^{(\alpha)}(x) - \mathscr{D} L_{n+1}^{(\alpha)}(x).$$
+Now put 
+$$A_n = \displaystyle\int_x^{\infty} e^{-y} L_n^{(\alpha)}(y)\mathrm{d}y$$
+and integrate by parts with $u= e^{-y}$ and $\mathrm{d}v=L_n^{(\alpha)}(y)\mathrm{d}y \longrightarrow \mathrm{d}u = -e^{-y} \mathrm{d}y$ and $v = L_n^{(\alpha)}(x)-L_{n+1}^{(\alpha)}(x)$ to get
+$$A_n = \left[ e^{-y} \left\{ L_n^{(\alpha)}(y) - L_{n+1}^{(\alpha)}(y) \right\} \right]_{x}^{\infty} + \displaystyle\int_x^{\infty} e^{-y} \left[ L_n^{(\alpha)}(y) - L_{n+1}^{(\alpha)}(y) \right] \mathrm{d}y.$$
+$$A_n = e^{-x} \left[ L_{n+1}^{(\alpha)}(x) - L_n^{(\alpha)}(x) \right] + A_n - A_{n+1}.$$
+Hence
+$$A_{n+1} = e^{-x} \left[ L_{n+1}^{(\alpha)}(x) - L_n^{(\alpha)}(x) \right],$$
+so that, by a shift of index, we get
+$$A_n = \displaystyle\int_x^{\infty} e^{-y} L_n^{(\alpha)}(y) \mathrm{d}y = e^{-x} \left[ L_n^{(\alpha)}(x) - L_{n-1}^{(\alpha)}(x) \right].$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem9chapter12}
+Show that
+$$\displaystyle\int_0^t x^{\alpha} (t-x)^{\beta - 1} L_n^{(\alpha)}(x) \mathrm{d}x = \dfrac{\Gamma(1 + \alpha) \Gamma(\beta)}{\Gamma(1 + \alpha + \beta)} \dfrac{(1 + \alpha)_n t^{\alpha + \beta}}{(1 + \alpha+ \beta)_n} L_n^{(\alpha + \beta)}(t).$$
+\end{problem}
+\begin{solution}
+Let us use Theorem~37 to evaluate
+$$\displaystyle\int_0^t x^{\alpha} (t-x)^{\beta - 1} L_n^{(\alpha)}(x) \mathrm{d}x = \dfrac{(1+\alpha)_n}{n!} \displaystyle\int_0^t x^{\alpha} (t-x)^{\beta - 1} {}_1F_1(-n; 1+\alpha;x)\mathrm{d}x.$$
+In Theorem~37 use $\alpha=\alpha+1$, $\beta=\beta$, $p=1$, $q=1$, $a_1=-n$, $b_1=1+\alpha$, $c=1$, $k=1$, $s=0$ to arrive at
+\begin{eqnarray*}
+\lefteqn{\displaystyle\int_0^t x^{\alpha} (t-x)^{\beta - 1} L_n^{(\alpha)}(x) \mathrm{d}x} \\
+& &= \dfrac{(1+\alpha)_n}{n!} B(\alpha+1,\beta) t^{\alpha+\beta} {}_2F_2 \left[ \begin{array}{rlr}
+-n, \dfrac{\alpha+1}{1}; & & \\
+& & t \\
+1+\alpha, \alpha+\beta+1; & &
+\end{array} \right] \\
+& &= \dfrac{(1+\alpha)_n}{n!} \dfrac{\Gamma(1+\alpha) \Gamma(\beta)}{\Gamma(\alpha+\beta+1)} t^{\alpha+\beta} {}_1F_1(-n; \alpha+\beta+1; t) \\
+& &= \dfrac{\Gamma(1+\alpha+n)}{n! \Gamma(1+\alpha)} \dfrac{\Gamma(1+\alpha) \Gamma(\beta) t^{\alpha+\beta}}{\Gamma(1+\alpha+\beta)} \dfrac{n!}{(1+\alpha+\beta)_n} L_n^{(\alpha+\beta)}(t) \\
+& &= \dfrac{(1+\alpha)_n}{(1+\alpha+\beta)_n} \dfrac{(\Gamma(1+\alpha)\Gamma(\beta)}{\Gamma(1+\alpha+\beta)} t^{\alpha+\beta} L_n^{(\alpha+\beta)}(t).
+\end{eqnarray*}
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem10chapter12}
+Show that the Laplace transform of $L_n(t)$ is 
+$$\displaystyle\int_0^{\infty} e^{-st} L_n(t) \mathrm{d}t = \dfrac{1}{s} \left( 1 - \dfrac{1}{2} \right)^n.$$
+\end{problem}
+\begin{solution}
+$$\begin{array}{ll}
+\displaystyle\int_0^{\infty} e^{-st} L_n(t) \mathrm{d}t &= \displaystyle\int_0^{\infty} e^{-st} \displaystyle\sum_{k=0}^n \dfrac{(-1)^k n! t^k }{(k!)^2 (n-k)!} \mathrm{d}t \\
+&= \displaystyle\sum_{k=0}^n \dfrac{(-1)^k n!}{k! (n-k)! s^{k+1}} \\
+&= \dfrac{1}{s} \left( 1 - \dfrac{1}{s} \right)^n.
+\end{array}$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem11chapter12}
+Show by the convolution theorem for Laplace transforms, or otherwise, that
+$$L_n(t-x)L_m(x) = \displaystyle\int_0^t L_{m+n}(x) \mathrm{d}x = L_{m+n}(t) - L_{m+n+1}(t).$$
+\end{problem}
+\begin{solution}
+We know that $\mathscr{L}^{-1} \left\{ \dfrac{1}{s} \left( 1 - \dfrac{1}{s} \right)^n \right\} = L_n(t).$ (where $\mathscr{L}$ denotes Laplace transform and $L_n$ denotes the Laguerre polynomial).
+Then by the convolution theorem,
+$$\begin{array}{ll}
+\mathscr{L} \displaystyle\int_0^t L_n(t-x) L_m(x) \mathrm{d}x &= \dfrac{1}{s} \left( 1 - \dfrac{1}{s} \right)^n \dfrac{1}{s} \left( 1 - \dfrac{1}{s} \right)^m \\
+&= \dfrac{1}{s} \left[ \dfrac{1}{s} \left( 1 - \dfrac{1}{s} \right)^{n+m} \right].
+\end{array}$$
+Hence
+$$\displaystyle\int_0^t L_n(t-x) L_m(x) \mathrm{d}x = \mathscr{L}^{-1} \left\{ \dfrac{1}{s} \left[ \dfrac{1}{s} \left( 1 - \dfrac{1}{s} \right)^{n+m} \right] \right\}.$$
+But
+$$\mathscr{L}^{-1} \left\{ \dfrac{1}{s} \left( 1- \dfrac{1}{s} \right)^{n+m} \right\} = L_{n+m}(t).$$
+Hence
+$$\displaystyle\int_0^t L_n(t-x) L_m(x) \mathrm{d}x = \displaystyle\int_0^t L_{n+m}(\beta) \mathrm{d} \beta.$$
+But, by $(2)$, page 350,
+$$L_n(x) = \mathscr{D} L_n(x) - \mathscr{D} L_{n+1}(x),$$
+so that
+$$\begin{array}{ll}
+\displaystyle\int_0^t L_n(t-x) L_m(x) \mathrm{d}x &= \left[ L_{n+m}(\beta) - L_{n+m+1}(\beta) \right]_0^t \\
+&= L_{n+m}(t) - L_{n+m+1}(t).
+\end{array}$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem12chapter12}
+Evaluate the integral
+$$\displaystyle\int_0^{\infty} x^{\alpha} e^{-x} [L_n^{(\alpha)}(x)]^2 \mathrm{d}x$$
+of (7), page 206, by the following method. From (4), Section~113, show that
+\begin{eqnarray*}
+\lefteqn{\displaystyle\sum_{n=0}^{\infty} t^{2n}\displaystyle\int_0^{\infty} x^{\alpha} e^{-x} [L_n^{(\alpha)}(x)]^2 \mathrm{d}x } \\
+& &= (1-t)^{-2-2\alpha} \displaystyle\int_0^{\infty} x^{\alpha} \exp \left[ \dfrac{-x(1+t)}{1-t} \right] \mathrm{d}x \\
+&&= (1-t^2)^{-1-\alpha} \Gamma(1+\alpha) \\
+&&= \displaystyle\sum_{n=0}^{\infty} \dfrac{\Gamma(1+\alpha+n)t^{2n}}{n!}.
+\end{eqnarray*}
+\end{problem}
+\begin{solution}
+We know that
+$$(1-t)^{-1 - \alpha} \exp \left( \dfrac{-xt}{1-t} \right) = \displaystyle\sum_{n=0}^{\infty} L_n^{(\alpha)}(x) t^n.$$
+Then
+$$(1-t)^{-2-2\alpha} \exp \left( \dfrac{-2xt}{1-t} \right) = \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^n L_k^{(\alpha)}(x) L_{n-k}^{(\alpha)}(x) t^n.$$
+Then, because of the orthogonality property of $L_n^{(\alpha)}(x)$ we get
+\begin{eqnarray*}
+\lefteqn{\displaystyle\int_0^{\infty} x^{\alpha} e^{-x} \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^{\infty} L_k^{(\alpha)}(x) L_{n-k}^{(\alpha)}(x) t^n \mathrm{d}x} \\
+& = (1-t)^{-2-2 \alpha} \displaystyle\int_0^{\infty} x^{\alpha} \exp \left[ -x - \dfrac{2xt}{1-t} \right] \mathrm{d}t,
+\end{eqnarray*}
+or
+$$\displaystyle\sum_{n=0}^{\infty} t^{2n}\displaystyle\int_0^{\infty} x^{\alpha} e^{-x} \left[ \mathscr{L}_n^{(\alpha)}(x) \right]^2 \mathrm{d}x  = (1-t)^{-2-2\alpha} \displaystyle\int_0^{\infty} x^{\alpha} \exp \left[ \dfrac{-x(1+t)}{1-t} \right] \mathrm{d}x.$$
+In the last integral put $x \dfrac{1+t}{1-t} = \beta$ and thus obtain
+$$\displaystyle\int_0^{\infty} x^{\alpha} \exp \left[ \dfrac{-x(1+t)}{1-t} \right] \mathrm{d}x = \left( \dfrac{1-t}{1+t} \right)^{\alpha+1} \displaystyle\int_0^{\infty} \beta^{\alpha} e^{-\beta} \mathrm{d} \beta = \Gamma(1+\alpha) \left( \dfrac{1-t}{1+t} \right)^{\alpha+1}.$$
+Therefore we have
+$$\begin{array}{ll}
+\displaystyle\sum_{n=0}^{\infty} t^{2n}\displaystyle\int_0^{\infty} x^{\alpha} e^{-x} \left[ \mathscr{L}_n^{(\alpha)}(x) \right]^2 \mathrm{d}x &= (1-t)^{-1-\alpha} (1+t)^{-1-\alpha} \Gamma(1+\alpha) \\
+&= \Gamma(1+\alpha) (1-t^2)^{-1-\alpha} \\
+&= \displaystyle\sum_{n=0}^{\infty} \dfrac{(1+\alpha)_n \Gamma(1+\alpha) t^{2n}}{n!} \\
+&= \displaystyle\sum_{n=0}^{\infty} \dfrac{\Gamma(1+\alpha+n) t^{2n}}{n!}.
+\end{array}$$
+Hence
+$$\displaystyle\int_0^{\infty} x^{\alpha} e^{-x} \left[ L_n^{(\alpha)}(x) \right]^2 \mathrm{d}x = \dfrac{\Gamma(1+\alpha+n)}{n!}.$$
+\end{solution}

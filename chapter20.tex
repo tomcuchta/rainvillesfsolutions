@@ -1,0 +1,774 @@
+%%%%
+%%
+%%
+%%%%
+%%%% CHAPTER 20
+%%%% CHAPTER 20
+%%%%
+%%
+%%
+%%%%
+\section{Chapter 20 Solutions}
+\begin{center}\hyperref[toc]{\^{}\^{}}\end{center}
+\begin{center}\begin{tabular}{lllllllllllllllllllllllll}
+\hyperref[problem1chapter20]{P1} & \hyperref[problem2chapter20]{P2} & \hyperref[problem3chapter20]{P3} & \hyperref[problem4chapter20]{P4} & \hyperref[problem5chapter20]{P5} & \hyperref[problem6chapter20]{P6} & \hyperref[problem7chapter20]{P7} & \hyperref[problem8chapter20]{P8} & \hyperref[problem9chapter20]{P9} & \hyperref[problem10chapter20]{P10} & \hyperref[problem11chapter20]{P11} & \hyperref[problem12chapter20]{P12}
+\end{tabular}\end{center}
+\setcounter{problem}{0}
+\setcounter{solution}{0}
+\begin{problem}\label{problem1chapter20}
+Show that $\theta_1'=2q^{\frac{1}{4}}G^3.$
+\end{problem}
+\begin{solution}
+We know that
+
+$$\theta_1' = 2 p^{\frac{1}{4}} G \displaystyle\prod_{n=1}^{\infty} (1 - q^{2n})^2$$
+
+and that
+
+$$G = \displaystyle\prod_{n=1}^{\infty} (1-q^{2n}).$$
+
+Hence
+
+$$\theta_1' = 2q^{\frac{1}{4}} G^3.$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem2chapter20}
+The following formulas are drawn from Section 168. Derive $(9)$ and $(10)$:
+
+$$(8) \hspace{30pt} \theta_4^2\theta_1^2(z) + \theta_3^2 \theta_2^2(z) = \theta_2^2\theta_3^2(z),$$
+$$(9) \hspace{30pt} \theta_3^2 \theta_1^2(z) + \theta_4^2\theta_2^2(z) = \theta_2^2\theta_4^2(z),$$
+$$(10) \hspace{30pt} \theta_2^2\theta_1^2(z) + \theta_4^2\theta_3^2(z) = \theta_3^2\theta_4^2(z),$$
+$$(11) \hspace{30pt} \theta_2^2\theta_2^2(z) + \theta_4^2 \theta_4^2(z) = \theta_3^2\theta_3^2(z).$$
+\end{problem}
+\begin{solution}
+We are given
+
+$$(8) \hspace{30pt} \theta_4^2\theta_1^2(z) + \theta_3^2 \theta_2^2(z) = \theta_2^2\theta_3^2(z).$$
+
+Use the basic table with $z || z + \dfrac{\pi}{2}$ to obtain
+
+$$\theta_4^2 \theta_2^2(z) + \theta_3^2 \theta_1^2(z) = \theta_2^2 \theta_4^2(z)$$
+
+or
+
+$$(9) \hspace{30pt} \theta_3^2 \theta_1^2(z) + \theta_4^2\theta_2^2(z) = \theta_2^2\theta_4^2(z).$$
+
+In $(9)$ use the basic table with $z || z + \dfrac{1}{2} \pi \tau$ to get
+
+$$-\theta_3^2 q^{-\frac{1}{2}} e^{-2iz} \theta_4^2(z) + \theta_4^2 q^{-\frac{1}{2}} e^{-2it} \theta_3^2(z) = -\theta_2^2 q^{-\frac{1}{2}} e^{-2iz} \theta_1^2(z)$$
+
+or
+
+$$\theta_3^2 \theta_4^2(z) - \theta_4^2\theta_3^2(z) = \theta_2^2 \theta_1^2(z)$$
+
+from which we get
+
+$$(10) \hspace{30pt} \theta_2^2 \theta_1^2(z) + \theta_4^2 \theta_3^2(z) = \theta_3^2 \theta_4^2(z).$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem3chapter20}
+Use $(8)$ and $(10)$ of Exercise~\ref{problem2chapter20} and the equation $\theta_2^4+\theta_4^4=\theta_3^4$ to show that
+
+$$\theta_1^4(z) + \theta_3^4(z)=\theta_2^4(z)+\theta_4^4(z).$$
+\end{problem}
+\begin{solution}
+We may write $(8)$ and $(10)$ of Exercise~\ref{problem2chapter20} in the form
+
+$$(8) \hspace{30pt} \theta_4^2 \theta_1^2(z) - \theta_2^2 \theta_3^2(z) = -\theta_3^2 \theta_2^2(z),$$
+
+$$(10) \hspace{30pt} \theta_2^2 \theta_1^2(z) + \theta_4^2 \theta_3^2(z) = \theta_3^2 \theta_4^2(z).$$
+
+We square each member and add to obtain
+
+$$(\theta_4^4 + \theta_2^4) [\theta_1^4(z) + \theta_3^4(z)] = \theta_3^4[\theta_2^4(z) + \theta_4^4(z)].$$
+
+But
+
+$$\theta_2^4 + \theta_3^4 = \theta_3^4,$$
+
+so we get
+
+$$\theta_1^4(z) + \theta_3^4(z) = \theta_2^4(z) + \theta_4^4(z).$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem4chapter20}
+The first of the following relations was derived in Section 169. Obtain the other three by using appropriate changes of variable and the basic table, page 319. For example, change $x$ to $\left(x + \dfrac{1}{2} \pi \right),$ or $x$ to $\left( x + \dfrac{1}{2} \pi \tau \right),$ etc.
+
+$$\theta_2^2\theta_1(x+y)\theta_1(x-y) = \theta_1^2(x)\theta_2^2(y) - \theta_2^2(x)\theta_1^2(y),$$
+
+$$\theta_2^2\theta_2(x+y)\theta_2(x-y) = \theta_2^2(x)\theta_2^2(y) - \theta_1^2(x) \theta_1^2(y),$$
+
+$$\theta_2^2\theta_3(x+y)\theta_3(x-y) = \theta_3^2(x)\theta_2^2(y) + \theta_4^2(x) \theta_1^2(y),$$
+
+$$\theta_2^2\theta_4(x+y)\theta_4(x-y) = \theta_4^2(x)\theta_2^2(y) + \theta_3^2(x) \theta_1^2(y).$$
+\end{problem}
+\begin{solution}
+We are given from Section~169 that
+
+$$(A) \hspace{30pt} \theta_2^2 \theta_1(x+y) \theta_1(x-y) = \theta_1^2(x) \theta_2^2(y) - \theta_2^2(x) \theta_1^2(y).$$
+
+In $(A)$ change $x$ to $\left(x + \dfrac{\pi}{2} \right)$ and use the basic table to get
+
+$$\theta_2^2 \theta_2(x+y) \theta_2(x-y) = \theta_2^2(x) \theta_2^2(y) - \theta_1^2(x) \theta_1^2(y).$$
+
+Now in last equation above change $x$ to $x + \dfrac{\pi \tau}{2}$ to obtain
+
+$$\theta_2^2 q^{-\frac{1}{2}} e^{-2ix} \theta_2(x+y) \theta_3(x-y) = q^{-\frac{1}{2}} e^{-2ix} \theta_3^2(x) \theta_2^2(y) + q^{-\frac{1}{2}} e^{-2ix} \theta_4^2(x) \theta_1^2(y),$$
+
+or
+
+$$\theta_2^2 \theta_3(x+y) \theta_3(x-y) = \theta_3^2(x) \theta_2^2(y) + \theta_4^2(x) \theta_1^2(y).$$
+
+In last equation above change $x$ to $\left( x + \dfrac{\pi}{2} \right)$ to arrive at
+
+$$\theta_2^2 \theta_4(x+y)\theta_4(x-y) = \theta_4^2(x) \theta_2^2(y) + \theta_3^2(x) \theta_1^2(y).$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem5chapter20}
+Use the identities in Exercise~\ref{problem2chapter20} and the relation $\theta_2^4 + \theta_4^4=\theta_3^4$ to transform the first relation of Exercise~\ref{problem4chapter20} into the first relation below. Then obtain the remaining three relations with the aid of the basic table, page 319.
+
+$$\theta_2^2\theta_1(x+y)\theta_1(x-y)=\theta_4^2(x)\theta_3^2(y)-\theta_3^2(x)\theta_4^2(y),$$
+
+$$\theta_2^2\theta_2(x+y)\theta_2(x-y)=\theta_3^2(x)\theta_3^2(y)-\theta_4^2(x)\theta_4^2(y),$$
+
+$$\theta_2^2\theta_3(x+y)\theta_3(x-y)=\theta_2^2(x)\theta_3^2(y)+\theta_1^2(x)\theta_4^2(y),$$
+
+$$\theta_2^2\theta_4(x+y)\theta_4(x-y)=\theta_1^2(x)\theta_3^2(y)+\theta_2^2(x)\theta_4^2(y).$$
+\end{problem}
+\begin{solution}
+From Exercise~\ref{problem4chapter20} we obtain
+
+$$\theta_2^2 \theta_1(x+y) \theta_1(x-y) = \theta_1^2(x) \theta_2^2(y) - \theta_2^2(x) \theta_1^2(y).$$
+
+From $(10)$ and $(11)$ of Exercise~\ref{problem2chapter20} we  get
+
+$$\theta_1^2(x) = \theta_2^{-2} \left[ \theta_3^2 \theta_4^2(x) - \theta_4^2 \theta_3^2(x) \right]$$
+
+$$\theta_2^2(y) = \theta_2^{-2} \left[ \theta_3^2 \theta_3^2(y) - \theta_4^2 \theta_4^2(y) \right].$$
+
+Hence we obtain
+
+$$\begin{array}{ll}
+\theta_2^2 \theta_1(x+y) \theta_1(x-y) &= \theta_2^{-4} \left[ \theta_3^4 \theta_4^2(x) \theta_3^2(y) + \theta_4^4 \theta_3^2 (x) \theta_4^2(y) - \theta_3^2 \theta_4^4 \left\{ \theta_3^2(x) \theta_3^2(y) + \theta_4^2(x) \theta_4^2(y) \right\} \right] \\
+&- \theta_2^{-2} \left[ \theta_3^4 \theta_4^2(y) \theta_3^2(x) + \theta_4^4 \theta_3^2(y) \theta_4^2(x) - \theta_2^2 \theta_4^2 \left\{ \theta_3^2(y) \theta_3^2(x) + \theta_4^2(y) \theta_4^2(x) \right\} \right] \\
+&= \theta_2^{-4} \left[ (\theta_3^4 - \theta_4^4) \{ \theta_4^2(x) \theta_3^2(y) - \theta_3^2(x) \theta_4^2(y) \} \right].
+\end{array}$$
+
+Now $\theta_3^4 - \theta_4^4 = \theta_2^4$ so that we may conclude that
+
+$$(A) \hspace{30pt} \theta_2^2 \theta_1(x+y) \theta_1(x-y) = \theta_4^2(x) \theta_3^2(y) - \theta_3^2(y) - \theta_3^2(x) \theta_4^2(y).$$
+
+We shall now transform $(A)$ by means of the basic table. Note that $(A)$ is the first of the required results in Exercise~\ref{problem5chapter20}.
+
+In $(A)$ replace $x$ by $\left( x + \dfrac{\pi}{2} \right)$ to get
+
+$$(B) \hspace{30pt} \theta_2^2 \theta_2(x+y) \theta_2(x-y) = \theta_3^2(x) \theta_3^2(y) - \theta_4^2(x) \theta_4^2(y).$$
+
+In $(B)$ replace $x$ by $\left( x + \dfrac{\pi \tau}{2} \right)$ to obtain
+
+$$q^{-\frac{1}{2}} e^{-2ix} \theta_2^2 \theta_3(x+y) \theta_3(x-y) = q^{-\frac{1}{2}} e^{-2ix} \theta_2^2(x) \theta_3^2(y) + q^{-\frac{1}{2}} e^{-2ix} \theta_1^2(x) \theta_4^2(y),$$
+
+or
+
+$$(C) \hspace{30pt} \theta_2^2\theta_3(x+y) \theta_3(x-y) = \theta_2^2(x) \theta_3^2(y) + \theta_1^2(x) \theta_4^2(y).$$
+
+In $(C)$ replace $x$ by $\left( x + \dfrac{\pi}{2} \right)$ to arrive at
+
+$$(D) \hspace{30pt} \theta_2^2 \theta_4(x+y) \theta_4(x-y) = \theta_1^2(x) \theta_3^2(y) + \theta_2^2(x) \theta_4^2(y).$$
+
+Equations $(A), (B), (C), (D)$ are those required.
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem6chapter20}
+Use equation $(10)$ of Exercise~\ref{problem2chapter20} and the first relation of Exercise~\ref{problem5chapter20} to obtain the first relation below; then use the basic table to get the remaining three results.
+
+$$\theta_3^2\theta_1(x+y)\theta_1(x-y)=\theta_1^2(x)\theta_3^2(y)-\theta_3^2(x)\theta_1^2(y),$$
+
+$$\theta_3^2\theta_2(x+y)\theta_2(x-y)\theta_2^2(x)\theta_3^2(y) -\theta_4^2(x)\theta_1^2(y),$$
+
+$$\theta_3^2\theta_3(x+y)\theta_3(x-y)=\theta_3^2(x)\theta_3^2(y)+\theta_1^2(x)\theta_1^2(y),$$
+
+$$\theta_3^2\theta_4(x+y)\theta_4(x-y)=\theta_4^2(x)\theta_3^2(y)+\theta_2^2(x)\theta_1^2(y).$$
+\end{problem}
+\begin{solution}
+From Exercise~\ref{problem5chapter20} we use
+
+$$\theta_2^2 \theta_1(x+y) \theta_1(x-y) = \theta_4^2(x) \theta_3^2(y) - \theta_3^2(x) \theta_4^2(y).$$
+
+From Exercise~\ref{problem2chapter20} we use equation $(10)$ in the form
+
+$$(10) \hspace{30pt} \theta_4^2(x) = \theta_3^{-2} [\theta_2^2 \theta_1^2(x) + \theta_4^2 \theta_3^2(x)].$$
+
+Thus we obtain
+
+$$\theta_2^2 \theta_1(x+y)\theta_1(x-y) = \theta_3^{-2} [\theta_2^2 \theta_1^2(x) \theta_3^2(y) + \theta_4^2 \theta_3^2(x) \theta_3^2(y) - \theta_2^2 \theta_3^2 (x) \theta_1^2(y) - \theta_4^2 \theta_3^2(x) \theta_3^2(x)].$$
+
+Two terms drop out and we are left with
+
+$$(A) \hspace{30pt} \theta_3^2 \theta_1(x+y) \theta_1(x-y) = \theta_1^2(x) \theta_3^2(y) - \theta_3^2(x) \theta_1^2(y),$$
+
+which was desired.
+
+In $(A)$ replace $x$ by $\left( x + \dfrac{\pi}{2} \right)$ to get
+
+$$(B) \hspace{30pt} \theta_3^2 \theta_2(x+y) \theta_2(x-y) = \theta_2^2(x) \theta_3^2(y) - \theta_4^2(x) \theta_1^2(y).$$
+
+In $(B)$ replace $x$ by $\left( x + \dfrac{\pi \tau}{2} \right)$ to get
+
+$$(C) \theta_3^2 \theta_3(x+y) \theta_3(x-y) = \theta_3^2(x) \theta_3^2(y) + \theta_1^2(x) \theta_1^2(y),$$
+
+from which we have removed the common factor $q^{-\frac{1}{2}} e^{-2ix}$.
+
+In $(C)$ replace $x$ by $\left( x + \dfrac{\pi}{2} \right)$ to get
+
+$$(D) \hspace{30pt} \theta_3^2 \theta_4(x+y) \theta_4(x-y) = \theta_4^2(x) \theta_3^2(y) + \theta_2^2(x) \theta_1^2(y).$$
+
+Equations $(A), (B), (C), (D)$ are the required ones.
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem7chapter20}
+Use the first relation of Exercise~\ref{problem6chapter20} and the identities from Exercise~\ref{problem2chapter20} to obtain the frist relation below. Derive the other three relations from the first one.
+
+$$\theta_3^2\theta_1(x+y)\theta_1(x-y) = \theta_4^2(x)\theta_2^2(y)-\theta_2^2(x)\theta_4^2(y),$$
+
+$$\theta_3^2\theta_2(x+y)\theta_2(x-y)=\theta_3^2(x)\theta_2^2(y)-\theta_1^2(x)\theta_4^2(y),$$
+
+$$\theta_3^2\theta_3(x+y)\theta_3(x-y)=\theta_2^2(x)\theta_2^2(y)+\theta_4^2(x)\theta_4^2(y),$$
+
+$$\theta_3^2\theta_4(x+y)\theta_4(x-y)=\theta_1^2(x)\theta_2^2(y)+\theta_3^2(x)\theta_4^2(y).$$
+\end{problem}
+\begin{solution}
+From $(9)$ and $(11)$ of Exercise~\ref{problem2chapter20} we may write
+
+$$\theta_1^2(x) = \theta_3^{-2} [\theta_2^2 \theta_4^2(x) - \theta_4^2 \theta_2^2(x)]$$
+
+and
+
+$$\theta_3^2(y) = \theta_3^{-2} [\theta_2^2 \theta_2^2(y) + \theta_4^2 \theta_4^2(y)],$$
+
+which we substitute into equation $(A)$ of Exercise~\ref{problem5chapter20} above.
+
+The result is
+
+$$\begin{array}{ll}
+\theta_3^2 \theta_1(x+y) \theta_1(x-y) &= \theta_3^{-4} [\theta_2^4 \theta_4^2(x) \theta_2^2(y) - \theta_4^4 \theta_2^2 (x) \theta_4^2(y) + \theta_2^2 \theta_4^2 \{  \theta_4^2(x) \theta_4^2(y) - \theta_2^2 (x) \theta_2^2(y) \} ] \\
+&- \theta_3^{-4} [\theta_2^4 \theta_4^2(y) \theta_2^2(x) -\theta_4^4 \theta_2^2(y) \theta_4^2(x) + \theta_2^2\theta_4^2\{\theta_4^2(y) \theta_4^2(x) - \theta_2^2(y) \theta_2^2(x) \} ]. 
+\end{array}$$
+
+We thus obtain
+
+$$\theta_3^2 \theta_1(x+y) \theta_1(x-y) = \theta_3^{-4} [(\theta_2^4+\theta_4^4) \{ \theta_4^2(x) \theta_2^2(y) - \theta_2^2(x) \theta_4^2(x) \theta_4^2(y) \} ].$$
+
+Since $\theta_2^4 + \theta_4^4 = \theta_3^4$, we arrive at the desired result
+
+$$(A) \hspace{30pt} \theta_3^2\theta_1(x+y) \theta_1(x-y) = \theta_4^2(x) \theta_2^2(y) - \theta_2^2(x) \theta_4^2(y).$$
+
+In $(A)$ replace $x$ by $\left( x + \dfrac{\pi}{2} \right)$ to obtain
+
+$$(B) \hspace{30pt} \theta_3^2 \theta_2(x+y) \theta_2(x-y) = \theta_3^2(x) \theta_2^2(y) -\theta_1^2(x) \theta_4^2(y).$$
+
+In $(B)$ replace $x$ by $\left( x + \dfrac{\pi \tau}{2} \right)$ and remove the factor $q^{-\frac{1}{2}} e^{-2ix}$ to get
+
+$$(C) \hspace{30pt} \theta_3^2 \theta_3(x+y) \theta_3(x-y) = \theta_2^2(x) \theta_2^2(y) + \theta_4^2(x) \theta_4^2(y).$$
+
+In $(C)$ replace $x$ by $\left( x + \dfrac{\pi}{2} \right)$ to obtain the formula of the requires results:
+
+$$(C) \hspace{30pt} \theta_3^2 \theta_4(x+y) \theta_4(x-y) = \theta_1^2(x) \theta_2^2(y) + \theta_3^2(x) \theta_4^2(y).$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem8chapter20}
+Use equation $(10)$ of Exercise~\ref{problem2chapter20} and the first relation of Exercise~\ref{problem6chapter20} to obtain the first relation below. Derive the others with the aid of the basic table, page 319.
+
+$$\theta_4^2\theta_1(x+y)\theta_1(x-y) = \theta_1^2(x)\theta_4^2(y)-\theta_4^2(x)\theta_1^2(y),$$
+
+$$\theta_4^2\theta_2(x+y)\theta_2(x-y)=\theta_2^2(x)\theta_4^2(y)-\theta_3^2(x)\theta_1^2(y),$$
+
+$$\theta_4^2\theta_3(x+y)\theta_3(x-y)=\theta_3^2(x)\theta_4^2(y) - \theta_2^2(x)\theta_1^2(y),$$
+
+$$\theta_4^2\theta_4(x+y)\theta_4(x-y)=\theta_4^2(x)\theta_4^2(y)-\theta_1^2(x)\theta_1^2(y).$$
+\end{problem}
+\begin{solution}
+From $(10)$ of Exercise~\ref{problem2chapter20} we g et
+
+$$\theta_3^2(y) = \theta_4^{-2} [\theta_3^2 \theta_4^2(y) - \theta_2^2 \theta_1^2(y)]$$
+
+and a similar result in $x$. The first equation in Exercise~\ref{problem6chapter20} is
+
+$$\theta_3^2 \theta_1(x+y) \theta_1(x-y) = \theta_1^2(x) \theta_3^2(y) - \theta_3^2(x) \theta_1^2(y).$$
+
+Then two applications of $(10)$ yield
+
+$$\theta_3^2 \theta_1(x+y) \theta_1(x-y) = \theta_4^{-2} [\theta_3^2 \theta_1^2(x) \theta_4^2(y) - \theta_2^2 \theta_1^2(x) \theta_1^2(y)] - \theta_4^{-2} [\theta_3^2 \theta_4^2(x) \theta_1^2(y) - \theta_2^2 \theta_1^2(x) \theta_1^2(y) ]$$
+
+In the above, two terms drop out and $\theta_3^2$ cancels out to yield
+
+$$(A) \hspace{30pt} \theta_4^2 \theta_1(x+y) \theta_1(x-y) = \theta_1^2(x) \theta_4^2(y) - \theta_4^2(x) \theta_1^2(y).$$
+
+In $(A)$ replace $x$ by $\left( x + \dfrac{\pi}{2} \right)$ and see the basic table to get
+
+$$(B) \hspace{30pt} \theta_4^2\theta_2(x+y) \theta_2(x-y) = \theta_2^2(x) \theta_4^2(y) - \theta_3^2(x) \theta_1^2(y).$$
+
+In $(B)$ replace $x$ by $\left( x + \dfrac{\pi \tau}{2} \right)$ and remove the common factor $q^{-\frac{1}{2}} e^{-2ix}$ to obtain
+
+$$(C) \hspace{30pt} \theta_4^2 \theta_3(x+y) \theta_3(x-y) = \theta_3^2(x) \theta_4^2(y) - \theta_2^2(x) \theta_1^2(y).$$
+
+In $(C)$ replace $x$ by $\left( x + \dfrac{\pi}{2} \right)$ and thus arrive at
+
+$$(D) \hspace{30pt} \theta_4^2 \theta_4(x+y) \theta_4(x-y) = \theta_4^2(x) \theta_4^2(y) - \theta_1^2(x) \theta_1^2(y).$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem9chapter20}
+The first relation below was derived in Section 169. Obtain the other three.
+
+$$\theta_4^2\theta_1(x+y)\theta_1(x-y)=\theta_3^2(x)\theta_2^2(y)-\theta_2^2(x)\theta_3^2(y),$$
+
+$$\theta_4^2\theta_2(x+y)\theta_2(x-y)=\theta_4^2(x)\theta_2^2(y)-\theta_1^2(x)\theta_3^2(y),$$
+
+$$\theta_4^2\theta_3(x+y)\theta_3(x-y) = \theta_4^2(x)\theta_3^2(y) -\theta_1^2(x)\theta_2^2(y),$$
+
+$$\theta_4^2\theta_4(x+y)\theta_4(x-y)=\theta_3^2(x)\theta_3^2(y)-\theta_2^2(x)\theta_2^2(y).$$
+\end{problem}
+\begin{solution}
+From Section 169, equation $(7)$, page 371, we obtain
+
+$$(A) \hspace{30pt} \theta_4^2 \theta_1(x+y) \theta_1(x-y) = \theta_3^2(x) \theta_2^2(y) - \theta_2^2(x) \theta_3^2(y).$$
+
+In $(A)$ replace $x$ by $\left( x + \dfrac{\pi}{2} \right)$ to get
+
+$$(B) \hspace{30pt} \theta_4^2 \theta_2(x+y) \theta_2(x-y) = \theta_4^2(x) \theta_2^2(y) - \theta_1^2(x) \theta_3^2(y).$$
+
+In $(B)$ replace $x$ by $\left( x + \dfrac{\pi \tau}{2} \right)$ and remove the factor $q^{-\frac{1}{2}} e^{-2ix}$ to arrive at
+
+$$(C) \hspace{30pt} \theta_4^2 \theta_3(x+y) \theta_2(x-y) = \theta_4^2(x) \theta_3^2(y) - \theta_1^2(x) \theta_2^2(y).$$
+
+In $(C)$ replace $x$ by $\left( x + \dfrac{\pi}{2} \right)$ to obtain
+
+$$(D) \hspace{30pt} \theta_4^2  \theta_4(x+y) \theta_4(x-y) = \theta_3^2(x) \theta_3^2(y) - \theta_2^2(x) \theta_2^2(y).$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem10chapter20}
+Use the method of Section 169 together with the basic table, page 319, to derive the following results, one of which was obtain in Section 169.
+
+$$\theta_3\theta_4\theta_1(x+y)\theta_2(x-y)=\theta_1(x)\theta_2(x)\theta_3(y)\theta_4(y)+\theta_1(y)\theta_2(y)\theta_3(x)\theta_4(x),$$
+
+$$\theta_2\theta_4\theta_1(x+y)\theta_3(x-y)=\theta_1(x)\theta_2(y)\theta_3(x)\theta_4(y)+\theta_1(y)\theta_2(x)\theta_3(y)\theta_4(x),$$
+
+$$\theta_2\theta_3\theta_3(x+y)\theta_4(x-y)=\theta_1(x)\theta_2(y)\theta_3(y)\theta_4(x)+\theta_1(y)\theta_2(x)\theta_3(x)\theta_4(y),$$
+
+$$\theta_2\theta_3\theta_2(x+y)\theta_3(x-y)=\theta_2(x)\theta_3(x)\theta_2(y)\theta_3(y)-\theta_1(x)\theta_4(x)\theta_1(y)\theta_4(y),$$
+
+$$\theta_2\theta_4\theta_2(x+y)\theta_4(x-y)=\theta_2(x)\theta_4(x)\theta_2(y)\theta_4(x)-\theta_1(x)\theta_3(x)\theta_1(y)\theta_3(y),$$
+
+$$\theta_3\theta_4\theta_3(x+y)\theta_4(x-y)=\theta_3(x)\theta_4(x)\theta_3(y)\theta_4(y)-\theta_1(x)\theta_2(x)\theta_1(y)\theta_2(y).$$
+\end{problem}
+\begin{solution}
+For brevity, since we know how to discover such formulas, let us consider the function
+
+$$\phi_1(x) = \dfrac{\theta_1(x) \theta_2(x) \theta_3(y) \theta_4(y) + \theta_1(y) \theta_2(y) \theta_3(x) \theta_4(y)}{\theta_1(x+y) \theta_2(x-y)}.$$
+
+we shall show that $\phi_1(x)$ is an elliptic function of order less than two, and then obtain its constant value.
+
+Let $N_1(x) =$ the numerator of $\phi_1(t)$ and $D_1(x)$ be the denominator of $\phi_1(x)$. Then at once the basic table yields
+
+$$N_1(x+\pi \tau) = \theta_2(x) \theta_1(x) \theta_3(y) \theta_4(y) + \theta_1(y) \theta_2(y) \theta_4(x) \theta_3(x) = N_1(x)$$
+
+and
+
+$$D_1(x+\pi \tau) = -\theta_1(x+y)[-\theta_2(x-y)]=D_1(x).$$
+
+Hence
+
+$$\phi_1(x+\pi \tau) = \phi_1(x).$$
+
+The periods $\pi$ and $\pi \tau$ are also those of the zeros of the four theta functions. Hence the only poles of $\phi_1(x)$ in a cell are simple ones at $x=y=0$ and $x-y =\dfrac{\pi}{2}$. But $x=-y$ is also a zero of the numerator because
+
+$$N_1(-y) = -\theta_1(y)\theta_2(x)\theta_3(y)\theta_4(y)+\theta_1(y) \theta_2(y)\theta_3(y)\theta_4(y)=0.$$
+
+Hence $\phi_1(x)$ is an elliptic function order less than two and is constant. Now
+
+$$\phi_1(0) = \dfrac{0 + \theta_1(y) \theta_2(y) \theta_3 \theta_4}{\theta_1(y) \theta_2(-y)} = \theta_3 \theta_4,$$
+
+since $\theta_2(y)$ is an even function. Thus we obtain the first of the derived relations,
+
+$$(A) \hspace{30pt} \theta_3\theta_4\theta_1(x+y) \theta_2(x-y) = \theta_1(x) \theta_2(x) \theta_3(y) \theta_4(y) + \theta_1(y) \theta_2(y) \theta_3(x) \theta_4(x).$$
+
+Next let us consider
+
+$$\phi_2(x) = \dfrac{\theta_1(x) \theta_2(y) \theta_3(x) \theta_4(y) + \theta_1(y) \theta_2(x) \theta_3(y) \theta_4(x)}{\theta_1(x+y) \theta_3(x-y)}.$$
+
+Let as usual the numerator be $N_2(x)$, the denominator $D_2(x).$ Then
+
+$$N_2(x+\pi) = \theta_1(x) \theta_2(y) \theta_3(x) \theta_4(y) - \theta_1(y) \theta_2(x) \theta_3(x) \theta_4(x),$$
+
+$$N_2(x+\pi) = -N-2(x).$$
+
+Also
+
+$$D_2(x+\pi) = -\theta_1(x+y) \theta_3(x-y) = -D_2(x+\pi).$$
+
+Hence
+
+$$\theta_2(x+\pi) = \theta_2(x).$$
+
+Next
+
+$$N_2(x+\pi \tau) = -q^{-2} e^{-4ix} N_2(x)$$
+
+and
+
+$$D_2(x+ \pi \tau) = -q^{-2} e^{-2i(x+y)} e^{-2i(x-y)} D_2(x) = -q^{-2} e^{-4ix} D_2(x).$$
+
+Hence also
+
+$$\phi_2(x+\pi \tau) = \phi_2(x).$$
+
+In a cell, with periods $\pi, \pi \tau, D_2(x)$ has simple zeros at $x+y=0$ and $x-y = \dfrac{\pi}{2} + \dfrac{\pi \tau}{2}$. But, for $x= -y$,
+
+$$N_2(-y) = -\theta_1(y) \theta_2(y) \theta_3(y) \theta_4(y) + \theta_1(y) \theta_2(y) \theta_3(y) \theta_4(y)=0.$$
+
+Therefore $\phi_2(x)$ is an elliptic function of order less than two. The constant value of $\phi_2(x)$ is
+
+$$\phi_2(0) = \dfrac{0 + \theta_1(y)\theta_3(y)\theta_4}{\theta_1(y) \theta_3(-y)} = \theta_2 \theta_4.$$
+
+We may now conclude the validity of the equation
+
+$$(B) \hspace{30pt} \theta_2 \theta_4 \theta_1(x+y) \theta_3(x-y) = \theta_1(y) \theta_2(y) \theta_3(x) \theta_4(y) + \theta_1(y) \theta_2(x) \theta_3(y) \theta_4(x).$$
+
+From Section~169 we quote
+
+$$(C) \hspace{30pt} \theta_2\theta_3\theta_1(x+y)\theta_4(x-y) = \theta_1(x) \theta_2(y) \theta_3(y) \theta_4(x) + \theta_1(y) \theta_2(x) \theta_3(x) \theta_4(y).$$
+
+Equations $(A), (B),$ and $(C)$ are the first three of our desired results. In $(C)$ replace $x$ by $\left( x + \dfrac{\pi}{2} \right)$ to get
+
+$$(D) \hspace{30pt} \theta_2 \theta_3 \theta_2(x+y) \theta_3(x-y) = \theta_2(x) \theta_2(y) \theta_3(y) \theta_3(x) - \theta_1(y) \theta_1(x) \theta_4(x) \theta_4(y),$$
+
+which is the fourth equation, slightly rewritten, of the desired results. In $(B)$ replace $x$ by $\left( x + \dfrac{\pi}{2} \right)$ to find that
+
+$$(E) \hspace{30pt} \theta_2 \theta_4 \theta_2(x+y) \theta_4(x-y) = \theta_2(x) \theta_2(y) \theta_4(x) \theta_4(y) - \theta_1(y) \theta_1(x) \theta_3(y) \theta_3(x),$$
+
+which is a rewritten form of a desired result. Finally, turn to $(A)$ and replace $x$ by $\left( x + \dfrac{\pi \tau}{2} \right)$ to get
+
+\begin{eqnarray*}
+\lefteqn{\theta_3\theta_4 iq^{-\frac{1}{2}}e^{-i(x+y)}e^{-i(x-y)} \theta_4(x+y) \theta_3(x-y)} \\
+&& = i q^{-\frac{1}{2}} e^{-2ix} \theta_4(x) \theta_3(x) \theta_3(y) \theta_4(y) + iq^{-\frac{1}{2}} e^{-2ix} \theta_1(y) \theta_2(y) \theta_2(x) \theta_1(x),
+\end{eqnarray*}
+
+or
+
+$$\theta_3 \theta_4 \theta_4(x+y) \theta_3(x-y) = \theta_3(x) \theta_4(x) \theta_3(y) \theta_4(y) + \theta_1(x) \theta_2(x) \theta_1(y) \theta_2(y).$$
+
+Now change $y$ to $(-y)$ to arrive at the desired result
+
+$$(F) \hspace{30pt} \theta_3 \theta_4 \theta_3(x+y) \theta_4(x-y) = \theta_4(x) \theta_4(x) \theta_3(y) \theta_4(y) - \theta_1(x) \theta_2(x) \theta_1(y) \theta-2(y).$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem11chapter20}
+Use the results in Exercises~\ref{problem4chapter20}-\ref{problem10chapter20} above to show that 
+
+$$\theta_2^3\theta_2(2x)=\theta_2^4(x)-\theta_1^4(x)=\theta_3^4(x)-\theta_4^4(x),$$
+
+$$\theta_3^3\theta_3(2x) = \theta_1^4(x) + \theta_3^4(x) = \theta_2^4(x) + \theta_4^4(x),$$
+
+$$\theta_4^3\theta_4(2x) = \theta_4^4(x) - \theta_1^4(x) = \theta_3^4(x) - \theta_2^4(x),$$
+
+$$\theta_3^2 \theta_2 \theta_2(2x) = \theta_2^2(x) \theta_3^2(x) - \theta_1^2(x) \theta_4^2(x),$$
+
+$$\theta_4^2\theta_2 \theta_2(2x) = \theta_2^2(x) \theta_4^2(x) - \theta_1^2(x) \theta_3^2(x),$$
+
+$$\theta_2^2\theta_3\theta_3(2x) = \theta_2^2(x) \theta_3^2(x) + \theta_1^2(x) \theta_4^2(x),$$
+
+$$\theta_4^2\theta_3\theta_3(2x) = \theta_3^2(x) \theta_4^2(x) - \theta_1^2(x) \theta_2^2(x),$$
+
+$$\theta_2^2 \theta_4 \theta_4(2x) = \theta_1^2(x) \theta_3^2(x) + \theta_2^2(x) \theta_4^2(x).$$
+
+$$\theta_3^2\theta_4 \theta_4(2x) = \theta_1^2(x) \theta_2^2(x) + \theta_3^2(x) \theta_4^2(x).$$
+\end{problem}
+\begin{solution}
+We shall use $y=x$ in various equations of Exercises~\ref{problem4chapter20}-\ref{problem10chapter20}. From Exercise~\ref{problem4chapter20}, second equation, we get
+
+$$\theta_2^2 \theta_2(2x) = \theta_2^4(x) - \theta_1^4(x).$$
+
+From Exercise~\ref{problem4chapter20} third equation, we get
+
+$$\theta_2^2 \theta_3 \theta_3(2x) = \theta_2^2(x) \theta_3^2(x) + \theta_1^2(x) \theta_4^2(x).$$
+
+From Exercise~\ref{problem4chapter20}, fourth equation, we get
+
+$$\theta_2^2 \theta_4 \theta_4(2x) = \theta_2^2(x) \theta_4^2(x) + \theta_1^2(x) \theta_3^2(x).$$
+
+From Exercise~\ref{problem5chapter20}, equations 1,2,3 in order, we obtain
+
+$$\theta_2^3 \theta_2(2x) = \theta_3^4(x) - \theta_4^4(x),$$
+
+$$\theta_2^2\theta_3\theta_3(2x) = \theta_2^2(x) \theta_3^2(x) - \theta_1^2(x) \theta_4^2(x),$$
+
+$$\theta_2^2 \theta_4 \theta_4(2x) = \theta_1^2(x) \theta_3^2(x) + \theta_2^2(x) \theta_4^2(x).$$
+
+Next from Exercise~\ref{problem6chapter20}, equations 2,3,4, we get
+
+$$\theta_2\theta_3^2\theta_2(2x) = \theta_2^2(x) \theta_3^2(x) - \theta_1^2(x) \theta_4^2(x),$$
+
+$$\theta_3^3\theta_3(2x) = \theta_3^4(x) + \theta_1^4(x),$$
+
+$$\theta_3^2 \theta_4 \theta_4(2x) = \theta_3^2(x) \theta_4^2(x) + \theta_1^2(x) \theta_2^2(x).$$
+
+From equations 2,3,4 of Exercise~\ref{problem7chapter20} we obtain
+
+$$\theta_2\theta_3^2 \theta_2(2x) = \theta_2^2(x) \theta_3^2(x) - \theta_1^2(x) \theta_4^2(x),$$
+
+$$\theta_3^3 \theta_3(2x) = \theta_2^4(x) + \theta_4^4(x),$$
+
+$$\theta_3^2 \theta_4 \theta_4(2x) = \theta_1^2(x) \theta_2^2(x) + \theta_3^2(x) \theta_4^2(x).$$
+
+From equations 2,3,4 of Exercise~\ref{problem8chapter20} we get
+
+$$\theta_2 \theta_4^2 \theta_2(2x) = \theta_2^2(x) \theta_4^2(x) - \theta_1^(x) \theta_3^2(x),$$
+
+$$\theta_3 \theta_4^2 \theta_3(2x) = \theta_3^2(x) \theta_4^2(x) - \theta_1^2(x) \theta_2^2(x),$$
+
+$$\theta_4^3 \theta_4(2x) = \theta_4^4(x) - \theta_1^4(x).$$
+
+From equations 2,3,4 of Exercise~\ref{problem9chapter20} we get
+
+$$\theta_2 \theta_4^2 \theta_2(2x) = \theta_2^2(x) \theta_4^(x) - \theta_1^2(x) \theta_3^2(x),$$
+
+$$\theta_3 \theta_4^2\theta_3(2x) = \theta_3^2(x) \theta_4^2(x) - \theta_1^2(x) \theta_2^2(x),$$
+
+$$\theta_4^3 \theta_4(2x) = \theta_3^4(x) - \theta_2^4(x).$$
+
+We have now derived all 12 equations of Exercise~\ref{problem11chapter20}, but we try Exercise~\ref{problem10chapter20} to see whether from each of the first three equations
+
+$$\theta_2\theta_3\theta_4 \theta_1(2x) = 2 \theta_1(x) \theta_2(x) \theta_3(x) \theta_4(x),$$
+
+(which we had in text), and
+
+$$\theta_2^2 \theta_3 \theta_2(2x) = \theta_2^2(x) \theta_3^2(x) - \theta_1^2(x) \theta_4^2(x),$$
+
+$$\theta_2 \theta_4^2 \theta_2(2x) = \theta_2^2(x) \theta_4^2(x) - \theta_1^2(x) \theta_3^2(x),$$
+
+and
+
+$$\theta_3 \theta_4^2 \theta_3(2x) = \theta_3^2(x) \theta_4^2(x) - \theta_1^2(x) \theta_2^2(x).$$
+
+The last two appear as answers to Exercise~\ref{problem11chapter20}, parts 5 and 7.
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem12chapter20}
+Use the method of Section 168 to show that
+
+$$\theta_3(z|\tau) = (-i \tau)^{-\frac{1}{2}} \exp \left( \dfrac{z^2}{\pi i \tau} \right) \theta_3 \left( \left. \dfrac{z}{\tau} \right| \dfrac{-t}{\tau} \right).$$
+
+From the above identity, obtain corresponding ones for the other theta functions with the aid of the basic table, page 319.
+\end{problem}
+\begin{solution}
+Consider the function
+$$\psi(z) = \dfrac{\theta_3(z | \tau)}{\exp \left( \frac{z^2}{\pi | \tau} \right) \theta_3(\frac{z}{\tau} | \frac{-1}{\tau})}.$$
+
+First the theta functions are analytic for all finite $z$ since $Im(\tau) > 0$ implies $Im\left( -\dfrac{1}{\tau} \right) > 0.$ 
+
+To get the zeros of the denominator, recall that $\theta_3(y|t)$ has its zeros all simple ones located at
+
+$$y = \dfrac{\pi}{2} + \dfrac{\pi t}{2} + n \pi + m \pi t$$
+
+for integral $n$ and $m$. Then $\theta_3 \left( \left. \dfrac{z}{\tau} \right| -\dfrac{1}{\tau} \right)$ has its zeros all simple ones located at
+
+$$\dfrac{z}{\tau} = \dfrac{\pi}{2} - \dfrac{\pi}{2 \tau} + n \pi - \dfrac{m \pi}{\tau}$$
+
+or at
+
+$$z = \dfrac{\pi \tau}{2} - \dfrac{\pi}{2} + n \pi \tau - m \pi,$$
+
+which is equivalent to 
+
+$$z = \dfrac{\pi}{2} + \dfrac{\pi \tau}{2} + n_1 \pi + m_1 \pi \tau,$$
+
+for integral $n_1$ and $m_1$. Therefore the zeros of $\theta_3 \left( z | \tau \right)$ and those of $\theta_3 \left( \left. \dfrac{z}{\tau} \right| -\dfrac{1}{\tau} \right)$ coincide. Hence the function $\psi(z0$ has no singular points in the finite plane.
+
+To show that $\psi(z)$ has the desired two periods, consider $\psi(z+\pi)$ and $\psi(z+\pi \tau).$
+
+$$\psi(z+\pi) = \dfrac{\theta_3(z+\pi | \tau)}{\exp \left(\frac{(z+ \pi)^2}{\pi i \tau} \right) \theta_3 \left( \frac{z+\pi}{\tau} | -\frac{1}{\tau} \right)}.$$
+
+Recall that (basic table) $\theta_3(y+\pi,t) = \theta_3(y|t)$ and that
+
+$$\theta_3(y+\pi t| t) = e^{-i \pi t} e^{-2iy} \theta_3(y|t).$$
+
+Since $\theta_3(z)$ is an even function of $z$, we may now write
+
+$$\begin{array}{ll}
+\psi(z+\pi) &= \dfrac{\theta_3(z|\tau)}{\exp \left( \frac{z^2}{\pi i \tau} \right) \exp \left( \frac{2z}{i \tau} \right) \exp \left( \frac{\pi}{i \tau} \right) \theta_3 \left( -\frac{z}{\tau} - \frac{\pi}{\tau} | - \frac{1}{\tau} \right)} \\
+&= \dfrac{\theta_3(z|\tau)}{\exp \left( \frac{z^2}{\pi i \tau} \right) \exp \left( - \frac{2 i z}{\tau} \right) \exp \left( - \frac{\pi i}{\tau} \right) \exp \left( \frac{i \pi}{\tau} \right) \exp \left( \frac{2i z}{\tau} \right) \theta_3 \left( - \frac{z}{\tau} | - \frac{1}{\tau} \right)} \\
+&= \dfrac{\theta_3(z | \tau)}{\exp \left( \frac{z^2}{\pi i \tau} \right) \theta_3 \left( \frac{z}{\tau} | - \frac{1}{\tau} \right)} \\
+&= \psi(z).
+\end{array}$$
+
+Thus $\psi(z)$ has a period $\pi$ in $z$. Next consider $\psi(z+\pi \tau):$
+
+$$\psi(z+\pi \tau) = \dfrac{\theta_3(z+\pi \tau | \tau)}{\exp \left( \frac{(z+\pi \tau)^2}{\pi i \tau} \right) \theta_3 \left( \frac{z+\pi \tau}{\tau} | - \frac{1}{\tau} \right)} = \dfrac{e^{-i \pi \tau} e^{-2iz} \theta_3(z | \tau)}{\exp \left( \frac{z^2}{\pi i \tau} \exp \left( \frac{\pi \tau}{i} \right) \theta_3 \left( \frac{z}{\tau} + \pi | - \frac{1}{\tau} \right) \right)}.$$
+
+We thus obtain
+
+$$\psi(z+\pi \tau) = \dfrac{\theta_3(z | \tau)}{\exp \left( \frac{z^2}{\pi i \tau} \right) \theta_3 \left( \frac{z}{\tau} | - \frac{1}{\tau} \right)} = \psi(z).$$
+
+Therefore $\psi(\tau)$ also has the period $\pi \tau$ in $z$. 
+
+We can now conclude that $\psi(z)$ is an elliptic function of order less than two. It is a constant with the value
+
+$$c = \psi(z) = \psi(0) = \dfrac{\theta_3(0|\tau)}{e^0 \theta_3(0|-\frac{1}{\tau})} = \dfrac{\theta_3(0|\tau)}{\theta_3(0|-\frac{1}{\tau})}.$$
+
+We shall evaluate $c$ later. At present we have
+
+$$(A) \hspace{30pt} \theta_3(z|\tau) = c \exp \left( \dfrac{z^2}{\pi i \tau} \right) \theta_3 \left( \left. \dfrac{z}{\tau} \right| -\dfrac{1}{\tau} \right),$$
+
+upon which we shall use our basic table.
+
+In $(A)$ replace $z$ by $\left( z + \dfrac{\pi \tau}{2} \right)$ to get
+
+$$\theta_3 \left( \left. z + \dfrac{\pi \tau}{2} \right| \tau \right) = c \exp \left( \dfrac{(z + \frac{\pi \tau}{2})^2}{\pi i \tau} \right) \theta_3 \left( \left. \dfrac{z}{\tau} + \dfrac{\pi}{2} \right| - \dfrac{1}{\tau} \right).$$
+
+We conclude that
+
+$$(B) \hspace{30pt} \theta_2(z|\tau) = c \exp \left( \dfrac{z^2}{\pi i \tau} \right) \theta_4 \left( \left. \dfrac{z}{\tau} \right| -\dfrac{1}{\tau} \right).$$
+
+Return to $(A)$ and replace $z$ by $\left( z + \dfrac{\pi}{2} \right)$ to get
+
+$$\theta_3 \left( \left. z + \dfrac{\pi}{2} \right| \tau \right) = c \exp \dfrac{(z + \frac{\pi}{2})^2}{\pi i \tau} \theta_3 \left( \left. \dfrac{z}{\tau} + \dfrac{\pi}{2 \tau} \right| - \dfrac{1}{\tau} \right)$$
+
+or
+
+$$\begin{array}{ll}
+\theta_4(z | \tau) &= c \exp \left( \dfrac{z^2}{\pi i \tau} \right) \exp \left( \dfrac{z}{i \tau} \right) \exp \left( \dfrac{\pi}{4 i \tau} \right) \theta_3 \left( \left. -\dfrac{z}{\tau} + \dfrac{\pi}{2}\left( - \dfrac{1}{\tau} \right) \right| - \dfrac{1}{\tau} \right) \\
+&= c \exp \left( \dfrac{z^2}{\pi i \tau} \right) \exp \left( \dfrac{z}{i \tau} \right) \exp \left( \dfrac{\pi}{4 i \tau} \right) \exp \left( \dfrac{\pi i }{4 \tau} \right) \exp \left( \dfrac{iz}{\tau} \right) \theta_2 \left( \left. -\dfrac{z}{\tau} \right| -\dfrac{1}{\tau} \right) \\
+&= c \exp \left( \dfrac{z^2}{\pi i \tau} \right) \theta_2 \left( \left. \dfrac{z}{\tau} \right| -\dfrac{1}{\tau} \right).
+\end{array}$$
+
+Hence we arrive at
+
+$$(C) \hspace{30pt} \theta_4(z | \tau) = c \exp \left( \dfrac{z^2}{\pi i \tau} \right) \theta_2 \left( \left. \dfrac{z}{\tau} \right| - \dfrac{1}{\tau} \right).$$
+
+Now in $(C)$ replace $z$ by $\left( z + \dfrac{\pi \tau}{2} \right).$ We thus obtain
+
+$$\theta_4 \left( \left. z + \dfrac{\pi \tau}{2} \right| \tau \right) = c \exp \dfrac{(z+\frac{\pi \tau}{2} )^2}{\pi i \tau } \theta_2 \left( \left. \dfrac{z}{\tau} + \dfrac{\pi}{2} \right| - \dfrac{1}{\tau} \right),$$
+
+or
+
+$$i \exp \left( - \dfrac{\pi i \tau}{4} \right) \exp (-iz) \theta_1(z|\tau) = c \exp \left( \dfrac{z^2}{\pi i \tau} \right) \exp \left( \dfrac{z}{c} \right) \exp \left( \dfrac{\pi \tau}{4 i} \right) (-1) \theta_1 \left( \left. \dfrac{z}{\tau} \right| - \dfrac{1}{\tau} \right).$$
+
+we arrive in this way at
+
+$$(D) \hspace{30pt} \theta_1(z | \tau) = ic \theta_1 \left( \left. \dfrac{z}{\tau} \right| - \dfrac{1}{\tau} \right).$$
+
+We still need to find the value of $c$. From $(D)$ we get
+
+$$(E) \hspace{30pt} \theta_1'(z| \tau) = \dfrac{ic}{\tau} \theta_1' \left( \left. \dfrac{z}{\tau} \right| - \dfrac{1}{\tau} \right).$$
+
+We wish to put $z=0$ in $(E)$ and use the known result that $\theta_1'=\theta_2\theta_3\theta_4$. From $(E)$ we thus get
+
+$$\theta_2(0|\tau) \theta_3(0|\tau) \theta_4(0|\tau) = \dfrac{ic}{\tau} \theta_2 \left( \left. 0 \right| -\dfrac{1}{\tau} \right) \theta_3 \left( \left. 0 \right| -\dfrac{1}{\tau} \right) \theta_4 \left( \left. 0 \right| - \dfrac{1}{\tau} \right),$$
+
+or
+
+$$\dfrac{\theta_2(0|\tau)}{\theta_4(0|-\frac{1}{\tau})} \cdot \dfrac{\theta_3(0|\tau)}{\theta_3(0|-\frac{1}{\tau})} \cdot \dfrac{\theta_4(0|\tau)}{\theta_2(0|-\frac{1}{\tau})} = \dfrac{ic}{\tau}.$$
+
+With the aid of $(A), (B), (C),$ we may conclude that
+
+$$ccc = \dfrac{ic}{\tau},$$
+
+or
+
+$$c^2 = \dfrac{-1}{i \tau}.$$
+
+Hence $c = (-i \tau)^{-\frac{1}{2}}$ or $c = -(-i \tau)^{-\frac{1}{2}}$. 
+
+Now $\theta_3(z)$ was defined by 
+
+$$\theta_3(z | \tau) = 1 + 2 \displaystyle\sum_{n=1}^{\infty} e^{-i \pi n^2 \tau} \cos(2nz).$$
+
+It follows that, if $\tau$ is pure imaginary, then
+
+$$\theta_3(0|\tau) = 1+ 2 \displaystyle\sum_{n=0}^{\infty} e^{\pi n^2(-i \tau)} > 0$$
+
+and, since $-1 | \tau$ is also then pure imaginary,
+
+$$\theta_3 \left( \left. 0 \right| -\dfrac{1}{\tau} \right) > 0.$$
+
+We may therefore conclude that $c = (-i \tau)^{-\frac{1}{2}}$. 
+
+Final result of our work is that the set of identities
+
+$$\theta_3(z| \tau) = (-i \tau)^{-\frac{1}{2}} \exp \left( \dfrac{z^2}{\pi i \tau} \right) \theta_3 \left( \left. \dfrac{z}{\tau} \right| -\dfrac{1}{\tau} \right),$$
+
+$$\theta_2(z | \tau) = (-i \tau)^{-\frac{1}{2}} \exp \left( \dfrac{z^2}{\pi i \tau} \right) \theta_4 \left( \left. \dfrac{z}{\tau} \right| -\dfrac{1}{\tau} \right),$$
+
+$$\theta_4(z | \tau) = i(-i \tau)^{-\frac{1}{2}} \exp \left( \dfrac{z^2}{\pi i \tau} \right) \theta_2 \left( \left. \dfrac{z}{\tau} \right| -\dfrac{1}{\tau} \right),$$
+
+$$\theta_1(z|\tau) = i(-i\tau)^{-\frac{1}{2}} \exp \left( \dfrac{z^2}{\pi i \tau} \right) \theta_1 \left( \left. \dfrac{z}{\tau} \right| -\dfrac{1}{\tau} \right).$$
+
+With regard to the usefulness of these formulas, note that $q = \exp(\pi i \tau)$ so that $|q| = \exp[-Im(\tau)].$ For $Im(\tau)>0, |q|<1$ and we have convergence of the series definitions of the theta functions but that convergence is slow if $Im(\tau)$ is small so that $|q|$ is near unity.
+
+Since
+
+$$Im \left( - \dfrac{1}{\tau} \right) = \dfrac{Im(\tau)}{|\tau|^2},$$
+
+the parameter $(-\tau^{-1})$ will be useful in computations with $Im(t)$ small and positive.
+\end{solution}

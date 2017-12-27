@@ -1,0 +1,1172 @@
+%%%%
+%%
+%%
+%%%%
+%%%% CHAPTER 10
+%%%% CHAPTER 10
+%%%%
+%%
+%%
+%%%%
+\section{Chapter 10 Solutions}
+\begin{center}\hyperref[toc]{\^{}\^{}}\end{center}
+\begin{center}\begin{tabular}{lllllllllllllllllllllllll}
+\hyperref[problem1chapter10]{P1} & \hyperref[problem2chapter10]{P2} & \hyperref[problem3chapter10]{P3} & \hyperref[problem4chapter10]{P4} & \hyperref[problem5chapter10]{P5} & \hyperref[problem6chapter10]{P6} & \hyperref[problem7chapter10]{P7} & \hyperref[problem8chapter10]{P8} & \hyperref[problem9chapter10]{P9} & \hyperref[problem10chapter10]{P10} & \hyperref[problem11chapter10]{P11} & \hyperref[problem12chapter10]{P12} & \hyperref[problem13chapter10]{P13} \\
+\hyperref[problem14chapter10]{P14} & \hyperref[problem15chapter10]{P15} & \hyperref[problem16chapter10]{P16} & \hyperref[problem17chapter10]{P17} & \hyperref[problem18chapter10]{P18} & \hyperref[problem19chapter10]{P19} & \hyperref[problem20chapter10]{P20} & \hyperref[problem21chapter10]{P21} 
+\end{tabular}\end{center}
+\setcounter{problem}{0}
+\setcounter{solution}{0}
+\begin{problem}\label{problem1chapter10}
+Start with the defining relation for $P_n(x)$ at the beginning of this chapter. Use the fact that
+
+$$(1-2xt+t^2)^{-\frac{1}{2}} = [1 - (x + \sqrt{x^2-1})t]^{-\frac{1}{2}} [1-(x-\sqrt{x^2-1})t]^{-\frac{1}{2}}$$
+
+and thus derive the result
+
+$$P_n(x) = \displaystyle\sum_{k=0}^n \dfrac{(\frac{1}{2})_k (\frac{1}{2})_{n-k} (x + \sqrt{x^2-1})^{n-k}(x - \sqrt{x^2-1})^k}{k! (n-k)!}$$
+\end{problem}
+\begin{solution}
+We know that
+
+$$(1-2xt+t^2)^{-\frac{1}{2}} = \displaystyle\sum_{n=0}^{\infty} P_n(x) t^n.$$
+
+Now
+
+$$[1 - (x+\sqrt{x^2-1})t][1-(x-\sqrt{x^2-1})t] = (1-xt)^2 - (x^2-1)t^2 = 1-2xt+t^2.$$
+
+Hence
+
+$$\begin{array}{ll}
+\displaystyle\sum_{n=0}^{\infty} P_n(x) t^n &= [1-(x+\sqrt{x^2-1})t]^{-\frac{1}{2}} [1- (x-\sqrt{x^2-1})t]^{-\frac{1}{2}} \\
+&= \left( \displaystyle\sum_{n=0}^{\infty} \dfrac{(\frac{1}{2})_n (x + \sqrt{x^2-1})^n t^n}{n!} \right) \left( \displaystyle\sum_{n=0}^{\infty} \dfrac{(\frac{1}{2})_n (x - \sqrt{x^2-1})^n t^n}{n!} \right) \\
+&= \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^{n} \dfrac{(\frac{1}{2})_k (\frac{1}{2})_{n-k} (x + \sqrt{x^2-1})^{n-k} (x - \sqrt{x^2-1})^k t^n}{k! (n-k)!}.
+\end{array}$$
+
+Hence we obtain
+
+$$P_n(x) = \displaystyle\sum_{k=0}^{\infty} \dfrac{(\frac{1}{2})_k (\frac{1}{2})_{n-k} (x + \sqrt{x^2-1})^{n-k} (x - \sqrt{x^2-1})^k}{k! (n-k)!}.$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem2chapter10}
+Use the result in Exercise~\ref{problem1chapter10} to show that
+
+$$P_n(x) = \dfrac{(\frac{1}{2})_n (x + \sqrt{x^2-1})^n}{n!} {}_2F_1 \left[ \begin{array}{rlr}
+-n; \dfrac{1}{2}; & & \\
+& & (x - \sqrt{x^2-1})^2 \\
+\dfrac{1}{2}-n; & & 
+\end{array} \right].$$
+\end{problem}
+\begin{solution}
+From Exercise~\ref{problem1chapter10} we get, since $x + \sqrt{x^2-1} = (x - \sqrt{x^2-1})^{-1},$
+
+$$\begin{array}{ll}
+P_n(x) &= \displaystyle\sum_{k=0}^n \dfrac{(\frac{1}{2})_k (-n)_k (\frac{1}{2})_n (x + \sqrt{x^2-1})^n (x - \sqrt{x^2-1})^{2k}}{k! n! (1 - \frac{1}{2} - n)_k} \\
+&= \dfrac{(\frac{1}{2})_n (x + \sqrt{x^2-1})^n}{n!} {}_2F_1 \left[ \begin{array}{rlr}
+-n, \dfrac{1}{2}; & & \\
+& & (x - \sqrt{x^2-1})^2 \\
+\dfrac{1}{2} - n; & & 
+\end{array} \right.
+\end{array}$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem3chapter10}
+In Section 93, equation (4), page 166, is
+
+$$P_n(x) = \dfrac{(\frac{1}{2})_n (2x)^n}{n!} {}_2F_1 \left[ \begin{array}{rlr}
+-\dfrac{1}{2}n, -\dfrac{1}{2}n+\dfrac{1}{2}; & & \\
+& & \dfrac{1}{x^2} \\ 
+\dfrac{1}{2}-n; & &
+\end{array} \right].$$
+
+We know from Section 34 that the ${}_2F_1$ equation has two linearly independent solution:
+
+$${}_2F_1(a,b;c;z)$$
+
+and
+
+$$z^{1-c}F(a+1-c,b+1-c;2-c;z).$$
+
+Combine these facts to conclude that the differential equation
+
+$$(1-t^2)y'' - 2ty' + n(n+1)y=0$$
+
+has the two linearly independent solutions $y_1=P_n(t)$ and $y_2 = Q_n(t)$, where $Q_n(t)$ is as given in equation (4) of Section 102.
+\end{problem}
+\begin{solution}
+We know that
+
+$$P_n(x) = \dfrac{(\frac{1}{2})_n (2x)^n}{n!} {}_2F_1 \left[ \begin{array}{rlr}
+-\dfrac{n}{2}, \dfrac{-n-1}{2}; & & \\
+& & \dfrac{1}{x^2} \\ 
+\dfrac{1}{2}-n; & &
+\end{array} \right],$$
+
+from which $w = x^{-n}P_n(x)$ is a solution of the ${}_2F_1$ differential equation with $a = -\dfrac{n}{2}, b = - \dfrac{n-1}{2}, c = \dfrac{1}{2}-n, z = x^{-2}$. 
+
+Then consider
+
+$$z(1-z) \dfrac{\mathrm{d}^2w}{\mathrm{d}z^2} + \left[ \dfrac{1}{2} - n - \left( \dfrac{3}{2} - n \right)z \right] \dfrac{\mathrm{d}w}{\mathrm{d}z} - \dfrac{n(n-1)}{4}w = 0$$
+
+and put $z = x^{-2}$. Then, $\dfrac{\mathrm{d}z}{\mathrm{d}x} = -2x^{-3}, \dfrac{\mathrm{d}x}{\mathrm{d}z} = -\dfrac{1}{2} x^3,$
+
+$$\dfrac{\mathrm{d}w}{\mathrm{d}z} = \dfrac{\mathrm{d}x}{\mathrm{d}z} \dfrac{\mathrm{d}w}{\mathrm{d}x} = -\dfrac{1}{2} x^3 \dfrac{\mathrm{d}w}{\mathrm{d}x}$$
+
+$$\dfrac{\mathrm{d}^2w}{\mathrm{d}z^2} = \dfrac{1}{4} x^6 \dfrac{\mathrm{d}^2w}{\mathrm{d}x^2} - \dfrac{3}{2} x^2 \left( -\dfrac{1}{2} x^3 \right) \dfrac{\mathrm{d}w}{\mathrm{d}x} = \dfrac{1}{4} x^6 w'' + \dfrac{3}{4} x^5 w^1.$$
+
+The equation in $w$ and $x$ becomes
+
+\begin{eqnarray*}
+\lefteqn{x^{-2}(1-x^{-2}) \dfrac{1}{4} x^6 w'' + \dfrac{3}{4} x^5 x^{-2}(1-x^{-2})w'} \\
+& & - \dfrac{1}{2} x^3 \left[ \dfrac{1}{2} - n - \left( \dfrac{3}{2} - n \right) x^{-2} \right]w' - \dfrac{n(n-1)}{4}w = 0,
+\end{eqnarray*}
+
+or
+
+$$x^2 (x^2-1) w'' + 3x(x^2-1)w' - x[(1-2n)x^2 - (3-2n)]w' - n(n-1)w = 0,$$
+
+or
+
+$$x^2(x^2-1)w'' + x[(2+2n)x^2-2n]w' - n(n-1)w = 0.$$
+
+Now put
+
+$$\begin{array}{ll}
+w = x^{-n}y \\
+w' = x^{-n}y' -nx^{-n-1}y \\
+w'' = x^{-n} y'' - 2nx^{-n-1}y' + n(n+1) x^{-n-2}y
+\end{array}$$
+
+or
+
+$$\begin{array}{ll}
+x^n w = y \\
+x^n w' = y' - nx^{-1}y \\
+x^n w'' = y'' - 2nx^{-1}y^1 + n(n+1)x^{-2}y
+\end{array}$$
+
+and the differential equation becomes
+
+\begin{eqnarray*}
+\lefteqn{x^2(x^2-1)y'' - 2nx(x^2-1)y' + n(n+1)(x^2-1)y } \\ 
+& & + x[(2+2n)x^2-2n]y' - n[(2+2n)x^2-2n]y - n(n-1)y = 0,
+\end{eqnarray*}
+
+or
+
+$$x^2(x^2-1)y'' + x[2x^2]y' + [n(n+1)x^2(1-2)-n^2-n+2n^2-n^2+n]y = 0,$$
+
+or
+
+$$(1) \hspace{30pt} (1-x^2)y'' - 2xy' + n(n+1)y = 0.$$
+
+Since the differential equation for $w$ has the two linearly independent solutions $w_1 =x^{-n}P_n(x)$ and
+
+\begin{eqnarray*}
+\lefteqn{w_2 = z^{1 - \frac{1}{2} + n} {}_2F_1 \left[ \begin{array}{rlr}
+-\dfrac{n}{2} + \dfrac{1}{2} + n; - \dfrac{n-1}{2} + \dfrac{1}{2} + n; & & \\
+& & z \\
+\dfrac{3}{2} + n; & &
+\end{array} \right]} \\
+&& = x^{-1-2n} {}_2F_1 \left[ \begin{array}{rlr}
+\dfrac{1+n}{2}, \dfrac{2+n}{2}; & & \\
+& & x^{-2} \\
+\dfrac{3}{2} + n; & &
+\end{array} \right].
+\end{eqnarray*}
+
+Then the differential equation $(1)$ for $y$ has the linearly independent solutions $y_1=P_n(x)$ and
+
+$$y_2 = x^{-1-n} {}_2F_1 \left[ \begin{array}{rlr}
+\dfrac{1+n}{2}, \dfrac{2+n}{2}; & & \\
+& & \dfrac{1}{x^2} \\
+\dfrac{3}{2} + n; & &
+\end{array} \right],$$
+
+which is a constant multiple of $Q_n(x)$ as given on page 314.
+
+Note that the whole thing could have been done much more simply by using the properties of the Riemann P-symbol.
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem4chapter10}
+Show that
+
+$$\displaystyle\sum_{n=0}^{\infty} [xP_n'(x) - nP_n(x)]t^n = t^2 (1-2xt+t^2)^{-\frac{3}{2}}$$
+
+and
+
+$$\displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^{[\frac{n}{2}]} (2n-4k+1) P_{n-2k}(x)t^n = (1-2xt+t^2)^{-\frac{3}{2}}.$$
+
+Thus conclude that 
+
+$$xP_n'(x) - nP_n(x) = \displaystyle\sum_{k=0}^{[\frac{n-2}{2}]} (2n-4k-3) P_{n-2-2k}(x).$$
+\end{problem}
+\begin{solution}
+We know that 
+
+$$(1-2xt+t^2)^{-\frac{1}{2}} = \displaystyle\sum_{n=0}^{\infty} P_n(x)t^n.$$
+
+Put
+
+$$F = (1-2xt+t^2)^{-\frac{1}{2}}.$$
+
+Then
+
+$$\dfrac{\partial F}{\partial x} = t(1-2xt+t^2)^{-\frac{3}{2}}$$
+
+and
+
+$$\dfrac{\partial F}{\partial t} = (x-t) (1- 2xt+t^2)^{-\frac{3}{2}}.$$
+
+Hence
+
+$$x \dfrac{\partial F}{\partial x} - t \dfrac{\partial F}{\partial t} = t^2 (1-2xt+t^2)^{-\frac{3}{2}},$$
+
+from which it follows that
+
+$$(1) \hspace{30pt} \displaystyle\sum_{n=0}^{\infty} [x P_n'(x) - nP(x)] t^n = t^2 (1-2xt+t^2)^{-\frac{3}{2}}.$$
+
+Next we form the series
+
+$$\begin{array}{ll}
+\displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^{[\frac{n}{2}]} (2n-4k+1)P_{n-2k}(x) t^n &= \displaystyle\sum_{n,k=0}^{\infty} (2n+1)P_n(x) t^{n+2k} \\
+&= (1-t^2)^{-1} \displaystyle\sum_{n=0}^{\infty} (2n+1)P_n(x)t^n.
+\end{array}$$
+
+By equation $(5)$, page 271, we get
+
+$$(2n+1)P_n(x) = P_{n+1}'(x) - P_{n-1}'(x), n \geq 1.$$
+
+Hence
+
+\begin{eqnarray*}
+\lefteqn{\displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^{[\frac{n}{2}]} (2n-4k+1) P_{n-2k}(x)t^n} \\
+& &= (1-t^2)^{-1} \left[ 1 + \displaystyle\sum_{n=1}^{\infty} P_{n+1}'(x)t^n - \displaystyle\sum_{n=1}^{\infty} P_{n-1}'(x)t^n \right] \\
+& &= (1-t^2)^{-1} \left[ 1 + \displaystyle\sum_{n=2}^{\infty} P_N'(x) t^{n-1} - \displaystyle\sum_{n=0}^{\infty} P_n'(x) t^{n+1} \right].
+\end{eqnarray*}
+
+Now $P_1'(x) = 1$ and $P_0'(x)=0$. Hence we have
+
+$$\begin{array}{ll}
+\displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^{[\frac{n}{2}]} (2n - 4k+1)P_{n-2k}(x)t^n &= (1-t^2)^{-1} \left[ \displaystyle\sum_{n=0}^{\infty} P_n'(x) t^{n-1} - \displaystyle\sum_{n=0}^{\infty} P_n'(x) t^{n+1} \right] \\
+&= (1-t^2)^{-1} \left[ \dfrac{1}{t} \dfrac{\partial F}{\partial x} - t \dfrac{\partial F}{\partial x} \right] \\
+&= \dfrac{1}{t} \dfrac{\partial F}{\partial x} \\
+&= (1 - 2xt+t^2)^{-\frac{3}{2}}.
+\end{array}$$
+
+Now we use $(1)$ to conclude that
+
+$$\begin{array}{ll}
+\displaystyle\sum_{n=0}^{\infty} [xP_n'(x) - nP_n(x)]t^n &= \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^{[\frac{n}{2}]} (2n-4k+1) P_{n-2k}(x)t^{n+2} \\
+&= \displaystyle\sum_{n=2}^{\infty} \displaystyle\sum_{k=0}^{[\frac{n-2}{2}]} (2n-4k-3) P_{n-2-2k}(x)t^n.
+\end{array}$$
+
+Hence, for $n\geq 2$, 
+
+$$x P_n'(x) - nP_n(x) = \displaystyle\sum_{k=0}^{[\frac{n-2}{2}]} (2n-4k-3)P_{n-2-2k}(x).$$
+
+There are many other methods of obtaining this result.
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem5chapter10}
+Use Bateman's generating function (3), page 163, with $x=0$ and $t=2y$ to conclude that
+
+$${}_0F_1(-;t;y) {}_0F_1(-;1;-y) = {}_0F_3 \left( -;1,1,\dfrac{1}{2};  - \dfrac{1}{4}y^2 \right).$$
+\end{problem}
+\begin{solution}
+We have, from Bateman,
+
+$${}_0F_1 \left(-;1; \dfrac{t(x-1)}{2} \right) {}_0F_1 \left(-;1;\dfrac{t(x+1)}{2} \right) = \displaystyle\sum_{n=0}^{\infty} \dfrac{P_n(x)t^n}{(n!)^2}.$$
+
+Use $x=0, t=2y$ to obtain
+
+$${}_0F_1(-;1;-y) {}_0F_1(-;1;y) = \displaystyle\sum_{n=0}^{\infty} \dfrac{2^n P_n(0) y^n}{(n!)^2}.$$
+
+now $P_{2k+1}(0)=0$ and $P_{2k}(0) = \dfrac{(-1)^k (\frac{1}{2})_k}{k!}.$ Therefore
+
+$$\begin{array}{ll}
+{}_0F_1(-;1;-y) {}_0F_1(-;1;y) &= \displaystyle\sum_{k=0}^{\infty} \dfrac{2^{2k} (-1)^k (\frac{1}{2})_k y^{2k}}{k! [(2k)!]^2} \\
+&= \displaystyle\sum_{k=0}^{\infty} \dfrac{(-1)^k 2^{2k} (\frac{1}{2})_k y^{2k}}{k! 2^{2k} k! (\frac{1}{2})_k 2^{2k} k! (\frac{1}{2})_k} \\
+&= \displaystyle\sum_{k=0}^{\infty} \dfrac{(-1)^k y^{2k}}{2^{2k} (k!)^3 (\frac{1}{2})_k} \\
+&= {}_0F_3 \left(-;1,1,\dfrac{1}{2}; - \dfrac{1}{4} y^2 \right),
+\end{array}$$
+
+as desired.
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem6chapter10}
+Use Brafman's generating function, page 168, to conclude that
+
+$$\begin{array}{ll}
+{}_2F_1 \left[ \begin{array}{rlr}
+c, 1-c; & & \\
+& & \dfrac{1-t-\sqrt{1+t^2}}{2}
+\end{array} \right] {}_2F_1 \left[ \begin{array}{rlr}
+c, 1-c; & & \\
+& & \dfrac{1+t-\sqrt{1+t^2}}{2} \\
+1; & & 
+\end{array} \right] \\
+={}_4F_3 \left[ \begin{array}{rlr}
+\dfrac{1}{2}c, \dfrac{1}{2}c+\dfrac{1}{2}, \dfrac{1}{2} - \dfrac{1}{2}c, 1 - \dfrac{1}{2}c; & & \\
+& & -t^2 \\
+1, 1, \dfrac{1}{2}; & & 
+\end{array} \right]
+\end{array}$$
+\end{problem}
+\begin{solution}
+Brafman's generating relation, page 287, is
+\begin{eqnarray*}
+\lefteqn{\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!{}_2F_1 \left[ \begin{array}{rlr}
+c, 1-c; & & \\
+& & \dfrac{1-t-p}{2} \\
+1; & &
+\end{array} \right] {}_2F_1 \left[ \begin{array}{rlr}
+c, 1-c; & & \\
+& & \dfrac{1+t-p}{2} \\
+1; & &
+\end{array} \right]} \\
+& = \displaystyle\sum_{n=0}^{\infty} \dfrac{(c)_n (1-c)_n p_n(x) t^n}{(n!)^2},
+\end{eqnarray*}
+with $p=(1-2xt+t^2)^{\frac{1}{2}}$. We use $x=0$. Note that $P_{2n+1}(0)=0$ and $P_{2n}(0) = \dfrac{(-1)^n (\frac{1}{2})_n}{n!}.$ Then
+\begin{eqnarray*}
+\lefteqn{\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!{}_2F_1 \left[ \begin{array}{rlr}
+c, 1-c; & & \\
+& & \dfrac{1-t-\sqrt{1+t^2}}{2} \\
+1; & & 
+\end{array} \right] {}_2F_1 \left[ \begin{array}{rlr}
+c, 1-c; & & \\
+& & \dfrac{1+t-p}{2} \\
+1; & &
+\end{array} \right]} \\
+& &= \displaystyle\sum_{n=0}^{\infty} \dfrac{(c)_{2n} (1-c)_{2n} (-1)^n (\frac{1}{2})_n t^{2n}}{n! [(2n)!]^2} \\
+&&= \displaystyle\sum_{n=0}^{\infty} \dfrac{(\frac{c}{2})_n (\frac{c+1}{2})_n (\frac{1-c}{2})_n (\frac{2-c}{2})_n (-1)^n t^{2n}}{n! n! (\frac{1}{2})_n n!} \\
+&&= {}_4F_3 \left[ \begin{array}{rlr}
+\dfrac{c}{2}, \dfrac{c+1}{2}, \dfrac{1-c}{2}, \dfrac{2-c}{2}; & & \\
+& & -t^2 \\
+1, 1, \dfrac{1}{2}; & &
+\end{array} \right],
+\end{eqnarray*}
+
+as desired.
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem7chapter10}
+Use equation (5), page 168, to obtain the results
+
+$$\sin^n \beta P_n(\sin \beta) = \displaystyle\sum_{k=0}^n (-1)^k C_{n,k} \cos^k (\beta) P_k(\cos \beta),$$
+
+$$P_n(x) = \displaystyle\sum_{k=0}^n (-1)^k C_{n,k} (2x)^{n-k} P_k(x),$$
+
+$$P_n(1-2x^2) = \displaystyle\sum_{k=0}^n (-2x)^k C_{n,k} P_k(x).$$
+\end{problem}
+\begin{solution}
+We are given
+
+$$(1) \hspace{30pt} P_n(\cos \alpha) = \left( \dfrac{\sin \alpha}{\sin \beta} \right)^n \displaystyle\sum_{k=0}^n C_{n,k} \left[ \dfrac{\sin(\beta - \alpha)}{\sin \alpha} \right]^{n-k} P_k(\cos \beta).$$
+
+First use $\alpha = \beta - \dfrac{\pi}{2}$. Then $\cos \alpha = \sin \beta, \sin \alpha = - \cos \beta, \sin(\beta - \alpha) =1.$
+
+Thus $(1)$ leads to 
+
+$$P_n(\sin \beta) = \left( -\dfrac{\cos \beta}{\sin \beta} \right)^n = \displaystyle\sum_{k=0}^n C_{n,k} \left[ \dfrac{1}{-\cos \beta} \right]^{n-k} P_k(\cos \beta),$$
+
+or
+
+$$(2) \hspace{30pt} (\sin \beta)^n P_n(\sin \beta) = \displaystyle\sum_{k=0}^n (-1)^k C_{n,k} \cos^k \beta P_k(\cos \beta).$$
+
+Next let us use $\beta = -\alpha$ in $(1)$. We thus obtain
+
+$$\begin{array}{ll}
+P_n(\cos \alpha) &= \left( \dfrac{\sin \alpha}{- \sin \alpha} \right)^n \displaystyle\sum_{k=0}^n C_{n,k} \left[ \dfrac{-2\sin \alpha \cos \alpha}{\sin \alpha} \right]^{n-k} P_k(\cos \alpha) \\
+&= (-1)^n \displaystyle\sum_{k=0}^n (-1)^{n-k} C_{n,k} (2 \cos \alpha)^{n-k} P_k(\cos \alpha) \\
+&= \displaystyle\sum_{k=0}^n (-1)^k C_{n,k} (2 \cos \alpha)^{n-k} P_k(\cos \alpha).
+\end{array}$$
+
+With $\cos \alpha = x$ we get
+
+$$(3) \hspace{30pt} P_n(x) = \displaystyle\sum_{k=0}^n (-1)^k C_{n,k} (2x)^{n-k} P_k(x).$$
+
+Finally put $\alpha = 2 \beta$ in $(1)$. The result is
+
+$$P_n(\cos(2\beta)) = \left( \dfrac{2 \sin \beta \cos \beta}{\sin \beta} \right)^n \displaystyle\sum_{k=0}^n C_{n,k} \left[ \dfrac{- \sin \beta}{2 \sin \beta \cos \beta} \right]^{n-k} P_k(\cos \beta),$$
+
+or
+
+$$\begin{array}{ll}
+P_n(\cos 2 \beta) &= (2 \cos \beta)^n \displaystyle\sum_{k=0}^n (-1)^{n-k} C_{n,k} (2 \cos \beta)^{k-n} P_k(\cos \beta) \\
+&= \displaystyle\sum_{k=0}^n (-1)^{n-k} C_{n,k} (2 \cos \beta)^k P_k( \cos \beta).
+\end{array}$$
+
+Put $\cos \beta = x$. Then $\cos(2 \beta) = 2 \cos^2(\beta) - 1 = 2x^2-1$ and 
+
+$$P_n(2x^2-1) = (-1)^n P_n(1-2x^2).$$
+
+Hence we have
+
+$$(4) \hspace{30pt} P_n(1-2x^2) = \displaystyle\sum_{k=0}^n (-1)^k C_{n,k} (2x)^k P_k(x).$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem8chapter10}
+Use the technique of Section 96 to derive other generating function relations for $P_n(x)$. For instance, obtain the results
+
+$$\begin{array}{ll}
+\displaystyle\sum_{n=0}^{\infty} {}_1F_2(-n;1,1;y)P_n(x)t^n \\
+= \rho^{-1}{}_0F_1 \left[ \begin{array}{rlr}
+-; & & \\
+& & \dfrac{-yt(x-t-\rho)}{2\rho^2} \\
+1; & &
+\end{array} \right] {}_0F_1 \left[ \begin{array}{rlr}
+-; & & \\
+& & \dfrac{-yt(x-t+\rho)}{2\rho^2} \\
+1; & & 
+\end{array} \right]
+\end{array}$$
+
+in which $\rho = (1-2xt+t^2)^{\frac{1}{2}}$, and
+
+$$\begin{array}{ll}
+\displaystyle\sum_{n=0}^{\infty} {}_2F_1(-n,c;1;y) P_n(x)t^n \\
+= \rho^{2c-1}(\rho^2+xyt-yt^2)^{-c} {}_2F_1 \left[ \begin{array}{rlr}
+\dfrac{1}{2}c, \dfrac{1}{2}c+\dfrac{1}{2}; & & \\
+& & \dfrac{y^2 t^2(x^2-1)}{(\rho^2 + xyt - yt^2)^2}
+\end{array} \right].
+\end{array}$$
+
+Also sum the series
+
+$$\displaystyle\sum_{n=0}^{\infty} {}_3F_2(-n,c,1-c;1,1;y) P_n(x)t^n.$$
+\end{problem}
+\begin{solution}
+We start with
+
+$$(1) \hspace{30pt} p^{-n-1} P_n \left( \dfrac{x-t}{p} \right) = \displaystyle\sum_{k=0}^{\infty} \dfrac{(n+k)! P_{n+k}(x)t^k}{k!n!}, p=(1-2xt+t^2)^{\frac{1}{2}}.$$
+
+In the generating relation
+
+$${}_0F_1 \left(-;1;\dfrac{t(x-1)}{2} \right) {}_0F_1 \left( -; 1; \dfrac{t(x+1)}{2} \right) = \displaystyle\sum_{n=0}^{\infty} \dfrac{P_n(x)t^n}{(n!)^2},$$
+
+we replace $x$ by $\dfrac{x-t}{p}$ and $t$ by $\dfrac{-yt}{p}$ to get
+
+\begin{eqnarray*}
+\lefteqn{\!\!\!\!\!p^{-1}{}_0F_1 \left( -; 1; \dfrac{-yt}{2p} \left( \dfrac{x-t}{p} -1 \right) \right) {}_0F_1 \left( -; 1; \dfrac{-yt}{2p} \left( \dfrac{x-t}{p}+1 \right) \right)} \\
+& &= \displaystyle\sum_{n=0}^{\infty} \dfrac{(-1)^n p^{-n-1} P_n (\frac{x-t}{p}) y^n t^n}{(n!)^2} \\
+&&= \displaystyle\sum_{n,k=0}^{\infty} \dfrac{(-1)^n (n+k)! P_{n+k}(x) y^n t^{n+k}}{k! n! (n!)^2} \\
+&&= \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^{n} \dfrac{n! (-1)^{n-k} P_n(x) y^{n-k} t^n}{k! [(n-k)!]^3} \\
+&&= \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^n \dfrac{(-1)^k n! y^k}{(k!)^3 (n-k)!} P_n(x)t^n,
+\end{eqnarray*}
+
+or
+
+\begin{eqnarray*}
+\lefteqn{p^{-1} {}_0F_1 \left( -; 1 ; \dfrac{-yt(x-t-p)}{2p^2} \right) {}_0F_1 \left( -; 1; \dfrac{-yt(x-t+p)}{2p^2} \right)} \\
+&& = \displaystyle\sum_{n=0}^{\infty} {}_1F_2 \left[ \begin{array}{rlr} 
+-n; & & \\
+& & y \\
+1,1; & & 
+\end{array} \right] P_n(x) t^n.
+\end{eqnarray*}
+
+Next let us apply the same process to the known generating relation
+
+$$(1-xt)^{-c} {}_2F_1 \left[ \begin{array}{rlr} 
+\dfrac{c}{2}, \dfrac{c+1}{2}; & & \\
+& & \dfrac{t^2(x^2-1)}{(1-xt)^2} \\
+1; & &
+\end{array} \right] = \displaystyle\sum_{n=0}^{\infty} \dfrac{(c)_n P_n(x) t^n}{n!}.$$
+
+We replace $x$ by $\dfrac{x-t}{p}$, $t$ by $\dfrac{-yt}{p}$ and note that $(1-xt)$ becomes 
+
+$$1 + \dfrac{yt(x-t)}{p^2} = p^{-2} [p^2 + xyt - yt^2]$$
+
+while $t^2(x^2-1)$ becomes
+
+$$\dfrac{y^2t^2}{p^2} \left[ \left( \dfrac{x-t}{p} \right)^2 - 1 \right] = \dfrac{y^2 t^2}{p^4} [ x^2-2xt+t^2-t+2xt-t^2] = \dfrac{y^2 t^2 (x^2-1)}{p^4}.$$
+
+We thus obtain 
+
+\begin{eqnarray*}
+\lefteqn{\!\!\!\!\!\!\!\!\!\!p^{2c-1} [p^2+xyt-yt^2]^{-c} {}_2F_1 \left[ \begin{array}{rlr} 
+\dfrac{c}{2}, \dfrac{c+1}{2}; & & \\
+& & \dfrac{y^2t^2(x^2-1)}{(p^2+xyt-yt^2)^2}
+\end{array} \right]} \\
+& &= \displaystyle\sum_{n=0}^{\infty} \dfrac{(-1)^n (c)_n p^{-n-1} P_n (\frac{x-t}{p}) y^n t^n}{n!} \\
+&&= \displaystyle\sum_{n,k=0}^{\infty} \dfrac{(-1)^n (c)_n (n+k)! P_{n+k}(x) y^n t^{n+k}}{k! n! n!} \\
+&&= \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^n \dfrac{(-1)^{n-k} (c)_{n-k} n! P_n(x) y^{n-k} t^n}{k! [(n-k)!]^2} \\
+&&= \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^n \dfrac{(-1)^k (c)_k n! y^k P_n(x)t^n}{(k!)^2 (n-k)!}.
+\end{eqnarray*}
+
+We have thus obtained
+
+\begin{eqnarray*}
+\lefteqn{\!\!\!\!\!\!\!\!\!\!p^{2c-1}[p^2+xyt-yt^2]^{-c} {}_2F_1 \left[ \begin{array}{rlr} 
+\dfrac{c}{2}, \dfrac{c+1}{2}; \\
+& & \dfrac{y^2 t^2 (x^2-1)}{(p^2+xyt-yt^2)^2}
+\end{array} \right]} \\
+&& = \displaystyle\sum_{n=0}^{\infty} {}_2F_1 \left[ \begin{array}{rlr} 
+-n, c; & & \\
+& & y \\
+1; & & 
+\end{array} \right] P_n(x) t^n.
+\end{eqnarray*}
+
+Finally let us sum the series
+
+\begin{eqnarray*}
+\lefteqn{\displaystyle\sum_{n=0}^{\infty} {}_3F_2(-n, c, 1-c;1,1;y) P_n(x) t^n} \\
+& &= \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^n \dfrac{(-1)^k n! (c)_k (1-c)_k P_n(x) y^k t^n}{(k!)^3 (n-k)!} \\
+& &= \displaystyle\sum_{n,k=0}^{\infty} \dfrac{(-1)^k (n+k)! (c)_k (1-c)_k P_{n+k}(x) y^k t^{n+k}}{(k!)^3 n!} \\
+& &= \displaystyle\sum_{k=0}^{\infty} \displaystyle\sum_{n=0}^{\infty} \dfrac{(n+k)!P_{n+k}(x)t^n}{k!n!} \dfrac{(-1)^k (c)_k (1-c)_k (yt)^k}{(k!)^2}
+\end{eqnarray*}
+
+With the aid of $(1)$ we get
+
+$$\begin{array}{ll}
+\phantom{=}\displaystyle\sum_{n=0}^{\infty} {}_3F_2(-n,c,1-c;1,1;y)P_n(x)t^n \\
+= \displaystyle\sum_{k=0}^{\infty} \dfrac{p^{-k-1} P_k(\frac{x-t}{p}) (-1)^k (c)_k (1-c)_k (yt)^k}{(k!)^2} \\
+= p^{-1} \displaystyle\sum_{k=0}^{\infty} \dfrac{(c)_k (1-c)_k P_k(\frac{x-t}{p}) (-\frac{yt}{p})^k}{(k!)^2} \\
+= p^{-1} {}_2F_1 \left[ \begin{array}{rlr}
+c,1-c; & & \\
+& & \frac{1 + \frac{yt}{p} - \sqrt{1 + \frac{2y(x-t)t}{p^2} + \frac{y^2t^2}{p^2}}}{2} \\
+1 & &
+\end{array} \right] \\
+\phantom{=}\cdot {}_2F_1 \left[ \begin{array}{rlr}
+c, 1-c; & & \\
+& & \frac{1 - \frac{yt}{p} - \frac{1}{p} \sqrt{p^2 + 2yt(x-t)+y^2t^2}}{2}
+\end{array} \right] \\
+= p^{-1} {}_2F_1 \left[ \begin{array}{rlr}
+c, 1-c; & & \\
+& & \frac{p + yt - \sqrt{1 - 2xt(1-y)+(1-y)^2t^2}}{2p} \\
+1; & &
+\end{array} \right] \\
+\phantom{=}\cdot {}_2F_1 \left[ \begin{array}{rlr}
+c, 1-c; & & \\
+& & \frac{p - yt - \sqrt{1 - 2xt(1-y) + t^2(1-y)^2}}{2} \\
+1; & &
+\end{array} \right].
+\end{array}$$
+
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem9chapter10}
+With $\rho = (1-2xt+t^2)^{\frac{1}{2}}$, show that
+
+$$\rho^n P_n \left( \dfrac{1-xt}{\rho} \right) = \displaystyle\sum_{k=0}^n (-1)^k C_{n,k} t^k P_k(x).$$
+\end{problem}
+\begin{solution}
+Consider
+
+$$\begin{array}{ll}
+\displaystyle\sum_{n=0}^{\infty} p^n P_n \left( \dfrac{1-xt}{p} \right)y^n &= [1-2 \frac{1-xt}{p} yp + y^2p^2]^{-\frac{1}{2}} \\
+&= [1-2y(1-xt)+y^2p^2]^{-\frac{1}{2}} \\
+&= [1-2y+2xyt+y^2-2xy^2t+y^2t^2]^{-\frac{1}{2}} \\
+&= [(1-y)^2+2xyt(1-y)+y^2t^2]^{-\frac{1}{2}} \\
+&= (1-y)^{-1} [1 - 2x (\frac{-yt}{1-y}) + (\frac{-yt}{1-y})^2]^{-\frac{1}{2}} \\
+&= \displaystyle\sum_{k=0}^{\infty} \dfrac{(-1)^k P_k(x) y^kt^k}{(1-y)^{k+1}} \\
+&= \displaystyle\sum_{n,k=0}^{\infty} \dfrac{(-1)^k P_k(x) (n+k)! t^k y^{n+k}}{n! k!} \\
+&= \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^n \dfrac{(-1)^k P_k(x) n! t^k y^n}{k! (n-k)!} \\
+&= \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^n (-1)^k C_{n,k} P_k(x)t^k y^n.
+\end{array}$$
+
+It follows that
+
+$$p^n P_n \left( \dfrac{1-xt}{p} \right) = \displaystyle\sum_{k=0}^n (-1)^k C_{n,k} t^k P_k(x)$$
+
+as desired.
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem10chapter10}
+With the aid of the result in Example 7 pg. 31, show that
+
+\begin{eqnarray*}
+\lefteqn{\displaystyle\int_{-1}^1 (1+x)^{\alpha-1}(1-x)^{\beta-1} P_n(x) \mathrm{d}x} \\
+& & = 2^{\alpha + \beta -1}B(\alpha, \beta) {}_3F_2 \left[ \begin{array}{rlr}
+-n, n+1, \beta; & & \\
+& & 1 \\
+1, \alpha + \beta; & & 
+\end{array} \right].
+\end{eqnarray*}
+
+Investigate the three special cases $\alpha=1, \beta=1, \alpha+\beta=n+1$.
+\end{problem}
+\begin{solution}
+We know that
+
+$$P_n(x) = {}_2F_1 \left(-n,n+1;1;\dfrac{1-v}{2} \right).$$
+
+Then
+
+\begin{eqnarray*}
+\lefteqn{\displaystyle\int_{-1}^1 (1+x)^{\alpha-1} (1-x)^{\beta - 1} P_n(x) \mathrm{d}x} \\
+&& = \displaystyle\int_{-1}^1 (1+x)^{\alpha-1} (1-x)^{\beta - 1} \displaystyle\sum_{k=0}^n \dfrac{(-n)_k (n+1)_k (1-x)^k}{2^k (k!)^2} \mathrm{d}x.
+\end{eqnarray*}
+
+But, by Ex.7, page ? we have
+
+$$\displaystyle\int_{-1}^1 (1+x)^{\alpha-1}(1-x)^{\beta + k-1} \mathrm{d}x = 2^{\alpha+\beta+k-1} B(\alpha, \beta+k) = \dfrac{2^{\alpha+\beta+k-1} \Gamma(\alpha) \Gamma(\beta + k)}{\Gamma(\alpha + \beta + k)}.$$
+
+Hence
+
+$$\begin{array}{ll}
+\displaystyle\int_{-1}^1 (1+x)^{\alpha-1}(1-x)^{\beta - 1} P_n(x) \mathrm{d}x &= \displaystyle\sum_{k=0}^n \dfrac{(-n)_k (n+1)_k 2^{\alpha + \beta + k-1} \Gamma(\alpha) \Gamma(\beta + k)}{2^k (k!)^2 P(\alpha+\beta+k)} \\
+&= \dfrac{2^{\alpha+\beta-1} \Gamma(\alpha) \Gamma(\beta)}{\Gamma(\alpha + \beta)} \displaystyle\sum_{k=0}^n \dfrac{(-n)_k (n+1)_k (\beta)_k}{(k!)^2 (\alpha + \beta)_k}.
+\end{array}$$
+
+Therefore
+
+$$(A) \hspace{10pt} \displaystyle\int_{-1}^1 (1+x)^{\alpha-1} (1-x)^{\beta - 1} P_n(x) \mathrm{d}x = 2^{\alpha + \beta -1} B(\alpha, \beta) {}_3F_2 \left[ \begin{array}{rlr}
+-n, n+1, \beta; & & \\
+& & 1 \\
+1, \alpha + \beta; & &
+\end{array} \right].$$
+
+Let use choose $\alpha = 1$ in $(A)$. We get
+
+$$\displaystyle\int_{-1}^1 (1-x)^{\beta-1} P_n(x) \mathrm{d}x = \dfrac{2^{\beta} \Gamma(1) \Gamma(\beta)}{\Gamma(\beta + 1)} F \left[ \begin{array}{rlr}
+-n, n+1, \beta; & & \\
+& & 1 \\
+1, 1 + \beta; & & 
+\end{array} \right].$$
+
+We now turn to Theorem~30 with $a=1, b=1-\beta$. To see that
+
+$${}_3F_2 \left[ \begin{array}{rlr}
+-n, 1+n, \beta; & & \\
+& & 1 \\
+1+\beta, 1; & & 
+\end{array} \right] = \dfrac{(1-\beta)_n}{(1+\beta)_n}.$$
+
+Thus we get
+
+$$(1) \hspace{30pt} \displaystyle\int_{-1}^1 (1-x)^{\beta-1} P_n(x) \mathrm{d}x = \dfrac{2^{\beta}}{\beta} \dfrac{(1-\beta)_n}{(1+\beta)_n} - \dfrac{2^{\beta} (1-\beta)_n}{(\beta)_{n+1}}.$$
+
+Next choose $\beta=1$ in equation $(A)$. We thus get
+
+$$\begin{array}{ll}
+\displaystyle\int_{-1}^1 (1+x)^{\alpha-1} P_n(x) \mathrm{d}x &= 2^{\alpha} \dfrac{\Gamma(\alpha)\Gamma(1)}{\Gamma(\alpha+1)} F \left[ \begin{array}{rlr}
+-n, n+1, 1; & & \\
+& & 1 \\
+1, \alpha+1; & &
+\end{array} \right] \\
+&= \dfrac{2^{\alpha}}{\alpha} {}_2F_1 \left[ \begin{array}{rlr}
+-n,  n+1; & & \\
+& & 1 \\
+\alpha+1; & & 
+\end{array} \right] \\
+&= \dfrac{2^{\alpha}}{\alpha} \dfrac{\Gamma(\alpha+1) \Gamma(\alpha)}{\Gamma(\alpha+1+n)\Gamma(\alpha-n)} \\
+&= \dfrac{2^{\alpha} (-1)^n (1-\alpha)_n}{\alpha (1+\alpha)_n} \\
+&= \dfrac{(-1)^n 2^{\alpha} (1-\alpha)_n}{(\alpha)_{n+1}}.
+\end{array}$$
+
+Finally, we choose $\alpha+\beta=n+1$ in $(A)$ and obtain
+
+\begin{eqnarray*}
+\lefteqn{\displaystyle\int_{-1}^1 (1+x)^{\alpha-1} (1-x)^{n-\alpha} P_n(x) \mathrm{d}x} \\
+& & = 2^n \dfrac{\Gamma(\alpha) \Gamma(n+1-\alpha)}{\Gamma(n+1)} F \left[ \begin{array}{rlr}
+-n, n+1, n+1-\alpha; & & \\
+& & 1 \\
+1, n+1; & &
+\end{array} \right].
+\end{eqnarray*}
+
+Hence
+
+\begin{eqnarray*}
+\lefteqn{\displaystyle\int_{-1}^1 (1+x)^{\alpha-1} (1-x)^{n-\alpha} P_n(x) \mathrm{d}x} \\
+& &= \dfrac{2^n \Gamma(\alpha) \Gamma(1-\alpha)(1-\alpha)_n}{n!} {}_2F_1 \left[ \begin{array}{rlr}
+-n, n+1-\alpha; & & \\
+& & 1 \\
+1; & & 
+\end{array} \right] \\
+& &= \dfrac{2^n \Gamma(\alpha) \Gamma(1-\alpha) (1-\alpha)_n}{n!} \dfrac{(-1)^n (1+1-\alpha-1)_n}{(1)_n},
+\end{eqnarray*}
+
+in which we used Ex.5, page 119. Therefore we have
+
+$$\displaystyle\int_{-1}^1 (1+x)^{\alpha-1} (1-x)^{n-\alpha} P_n(x) \mathrm{d}x = \dfrac{(-1)^n 2^n \pi (1-\alpha)_n (1-\alpha)_n}{\sin(\pi \alpha) (n!)^2}.$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem11chapter10}
+Obtain from equation (5), page 168, the result
+
+$$(1+x)^{\frac{n}{2}} P_n \left( \sqrt{\dfrac{1+x}{2}} \right) = 2^{-\frac{n}{2}} \displaystyle\sum_{k=0}^n C_{n,k} P_k(x)$$
+
+and use it to evaluate the integral
+
+$$\displaystyle\int_{-1}^1 (1+x)^{\frac{n}{2}} P_n \left( \sqrt{ \dfrac{1+x}{2}} \right) P_m(x) \mathrm{d}x.$$
+\end{problem}
+\begin{solution}
+We put $\beta= 2 \alpha$ and $\cos \beta = x$ in the known relation
+
+$$(1) \hspace{30pt} P_n(\cos \alpha) = \left( \dfrac{\sin \alpha}{\sin \beta} \right)^n \displaystyle\sum_{k=0}^n C_{n,k} \left[ \dfrac{\sin(\beta - \alpha)}{\sin \alpha} \right]^{n-k} P_k(\cos \beta)$$
+
+to get
+
+$$P_n \left(\cos \dfrac{\beta}{2} \right) = \left( \dfrac{1}{2 \cos(\frac{\beta}{2})} \right)^n \displaystyle\sum_{k=0}^n C_{n, \alpha} P_k(\cos \beta),$$
+
+or
+
+$$(2) \hspace{30pt} [1+x]^{\frac{n}{2}} P_n \left( \sqrt{ \dfrac{1+x}{2} } \right) = 2^{-\frac{n}{2}} \displaystyle\sum_{k=0}^n C_{n,k} P_k(x).$$
+
+Then
+
+\begin{eqnarray*}
+\lefteqn{B = \displaystyle\int_{-1}^1 (1+x)^{\frac{n}{2}} P_n \left( \sqrt{ \dfrac{1+x}{2} } \right) P_m(x) \mathrm{d}x} \\
+&& = 2^{-\frac{n}{2}} \displaystyle\sum_{k=0}^n C_{n,k} \displaystyle\int_{-1}^1 P_k(x) P_m(x) \mathrm{d}x.
+\end{eqnarray*}
+
+If $n < m$, then $k < m$ and $\beta = 0$. If $n \geq m$,
+
+$$\begin{array}{ll}
+B &= 2^{1 - \frac{n}{2}} \displaystyle\sum_{k=0}^n \dfrac{(-1)^k (-n)_k (\frac{1}{2})_k}{k! (\frac{3}{2})_k} \\
+&= 2^{1 - \frac{n}{2}} {}_2F_1 \left[ \begin{array}{rlr}
+-n, \dfrac{1}{2}; & & \\
+& & -1 \\
+\dfrac{3}{2}; & & 
+\end{array} \right].
+\end{array}$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem12chapter10}
+Evaluate 
+
+$$\displaystyle\int_0^1 x^n P_{n-2k}(x)\mathrm{d}x = \dfrac{1}{2} \displaystyle\int_{-1}^1 x^n P_{n-2k}(x) \mathrm{d}x,$$
+
+and check your result by means of Theorem 65, page 181. Thus show that
+
+$$\displaystyle\int_0^1 x^n P_{n-2k}(x) \mathrm{d}x = \dfrac{n!}{2^n k! (\frac{3}{2})_{n-k}}$$
+
+and, equivalently, that
+
+$$\displaystyle\int_0^1 x^{n+2k}P_n(x) \mathrm{d}x = \dfrac{(n+2k)!}{2^{n+2k}k!(\frac{3}{2})_{n+k}}.$$
+\end{problem}
+\begin{solution}
+Consider
+
+$$A = \displaystyle\int_0^1 x^n P_{n-2k}(x)\mathrm{d}x = \dfrac{1}{2} \displaystyle\int_{-1}^1 x^n P_{n-2k}(x) \mathrm{d}x.$$
+
+We have
+
+$$A = \displaystyle\int_0^1 x^n {}_2F_1 \left[ \begin{array}{rlr}
+-n+2k, n-2k+1; & & \\
+& & \dfrac{1-x}{2} \\
+1; & & 
+\end{array} \right] \mathrm{d}x$$
+
+and we apply Theorem~37 with $\alpha=n+1$, $\beta=1$, $t=1$, $p=2$, $q=1$, $a_1=-n+2k$, $a_2=n-2k+1$, $b_1=1$, $c=\dfrac{1}{2}$, $k=0$, and $s=1.$ The result is
+
+$$\displaystyle\int_0^1 x^n P{n-2k}(x) \mathrm{d}x = B(n+1,1) F \left[ \begin{array}{rlr}
+-n+2k, n-2k+1, 1; & & \\
+& & \dfrac{1}{2} \\
+1, n+2; & & 
+\end{array} \right].$$
+
+By Example 3, page 39
+
+$${}_2F_1 \left[ \begin{array}{rlr}
+a, 1-a; & & \\
+& & \dfrac{1}{2} \\
+c; & & 
+\end{array} \right] = \dfrac{2^{1-c} \Gamma(c) \Gamma( \frac{1}{2} )}{\Gamma ( \frac{c+a}{2} ) \Gamma( \frac{c-a+1}{2} )},$$
+
+which we use with $a=-n+2k, 1-a=1+n-2k,c=n+2.$ Then
+
+$$\begin{array}{ll}
+\displaystyle\int_0^1 x^n P_{n-2k}(x) \mathrm{d}x &= \dfrac{\Gamma(n+1)\Gamma(1)}{\Gamma(n+2)} \dfrac{2^{-n-1} \Gamma(n+2) \Gamma( \frac{1}{2} )}{\Gamma( \frac{2k+2}{2} ) \Gamma ( \frac{2n-2k+3}{2} )} \\
+&= \dfrac{n!}{2^n} \dfrac{\Gamma(\frac{3}{2})}{k! \Gamma(n-k+\frac{3}{2})} \\
+&= \dfrac{n!}{2^n k! (\frac{3}{2})_{n-k}}.
+\end{array}$$
+
+Recall that we found in Theorem~65 that
+
+$$x^n = \dfrac{n!}{2^n} \displaystyle\sum_{s=0}^{[\frac{n}{2}]} \dfrac{(2n+4s+1)P_{n-2s}(x)}{s! (\frac{3}{2})_{n-s}}.$$
+
+We may then write
+
+$$\begin{array}{ll}
+\displaystyle\int_0^1 x^n P_{n-2k}(x) \mathrm{d}x &= \dfrac{1}{2} \displaystyle\int_{-1}^1 x^n P_{n-2k}(x) \mathrm{d}x \\
+&= \dfrac{n!}{2^{n+1}} \displaystyle\sum_{s=0}^{[\frac{n}{2}]} \dfrac{(2n-4s+1) \int_{-1}^1 P_{n-2k}(x) P_{n-2s}(x) \mathrm{d}x}{s! (\frac{3}{2})_{n-s}}.
+\end{array}.$$
+
+Only the term with $s=k$ remains. We get
+
+$$\displaystyle\int_0^1 x^n P_{n-2k}(x) \mathrm{d}x = \dfrac{n!}{2^{n+1}} \dfrac{2n-4k+1}{k! (\frac{3}{2})_{n-k}} \dfrac{2}{2n-4k+1} = \dfrac{n!}{2^n k! ( \frac{3}{2})_{n-k}}.$$
+
+Thus a check on the earlier result.
+
+A simple change from $n$ to $(n+2k)$ yields
+
+$$\displaystyle\int_0^1 x^{n+2k} P_n(x) \mathrm{d}x = \dfrac{(n+2k)!}{2^{n+2k} k! (\frac{3}{2})_{n+k}}.$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem13chapter10}
+Use the formula (5), page 104, to obtain the result
+
+$$\displaystyle\int_0^t \dfrac{x^n (1-x)^n \mathrm{d}x}{(1-x^2)^{n+1}} = \left( \dfrac{t}{2} \right)^n Q_n \left( \dfrac{1}{t} \right),$$
+
+where $Q_n(t)$ is the function given in (4), page 182.
+\end{problem}
+\begin{solution}
+Consider
+
+$$B_1 = \displaystyle\int_0^1 \dfrac{x^n (t-x)^n}{(1-x^2)^{n+1}} \mathrm{d}x = \displaystyle\int_0^t x^n (t-x)^n {}_1F_0(n+1;-;x^2) \mathrm{d}x.$$
+
+We may use Theorem~37 with $\alpha=n+1$, $\beta=n+1$, $p=1$, $q=0$, $a_1=n+1$,$c=1$,$k=2$,$s=0$ to get
+
+$$B_1 = B(n+1,n+1) t^{2n+1} F \left[ \begin{array}{rlr}
+n+1, \dfrac{n+1}{2}, \dfrac{n+2}{2}; & & \\
+& & t^2 \\
+\dfrac{2n+2}{2}, \dfrac{2n+3}{2}; & &
+\end{array} \right],$$
+
+or
+
+$$\begin{array}{ll}
+\displaystyle\int_0^t \dfrac{x^n (t-x)^n}{(1-x^2)^{n+1}} \mathrm{d}x &= \dfrac{\Gamma(n+1) \Gamma(n+1)}{\Gamma(2n+2)} t^{2n+1} F \left[ \begin{array}{rlr}
+\dfrac{n+1}{2}, \dfrac{n+2}{2}; & & \\
+& & t^2 \\
+n+ \dfrac{3}{2}; & & 
+\end{array} \right] \\
+&= \dfrac{(n!)^2 t^{2n+1}}{(2n+1)!} \dfrac{2^n (\frac{1}{t})^{n+1} (\frac{3}{2})_n}{n!} Q_n \left( \dfrac{1}{t} \right),
+\end{array}$$
+
+in terms of the $!_n(t)$ of page 182. We thus obtain, since $n! 2^{2n} (\frac{3}{2})_n = (2n+1)!,$
+
+$$\displaystyle\int_0^t \dfrac{x^n (t-x)^n}{(1-x^2)^{n+1}} \mathrm{d}x = \left( \dfrac{t}{2} \right)^n Q_n \left( \dfrac{1}{t} \right).$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem14chapter10}
+Show that
+
+$$P_n(x) = \dfrac{2^n (\frac{1}{2})_n (x-1)^n}{n!} F \left[ \begin{array}{rlr}
+-n,-n; & & \\
+& & \dfrac{2}{1-x} \\
+-2n; & &
+\end{array} \right].$$
+\end{problem}
+\begin{solution}
+We know that
+
+$$P_n(x) = {}_2F_1 \left(-n, n+1; 1 ; \dfrac{1-x}{2} \right) = \displaystyle\sum_{k=0}^n \dfrac{(-1)^k (n+k)! ( \frac{1-x}{2})^k}{(k!)^2 (n-k)!}.$$
+
+Reversing the order of the terms, we get
+
+$$\begin{array}{ll}
+P_n(x) &= \displaystyle\sum_{k=0}^n \dfrac{(-1)^{n-k} (2n-k)! (\frac{1-x}{2})^{n-k}}{k! [(n-k)!]^2} \\
+&= \left( \dfrac{x-1}{2} \right)^n \displaystyle\sum_{k=0}^n \dfrac{(2n)! (-n)_k (-n)_k (\frac{2}{1-x})^k}{(-2n)_k k! (n!)^2} \\
+&= \dfrac{2^n (\frac{1}{2})_n (x-1)^n}{n!} {}_2F_1 \left[ \begin{array}{rlr}
+-n,-n; & & \\
+& & \dfrac{2}{1-x} \\
+-2n; & & 
+\end{array} \right].
+\end{array}$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem15chapter10}
+Show that
+
+$$P_n(x) = \dfrac{2^n (\frac{1}{2})_n (x+1)^n}{n!} F \left[ \begin{array}{rlr}
+-n, -n; & & \\
+& & \dfrac{2}{1+x} \\
+-2n; & &
+\end{array} \right].$$
+\end{problem}
+\begin{solution}
+Since $P_n(x) = (-1)^n P_n(-x)$, it follows from the result in Exercise~\ref{problem14chapter10} that
+
+$$P_n(x) = \dfrac{2^n (\frac{1}{2})_n (x+1)^n}{n!} {}_2F_1 \left[ \begin{array}{rlr}
+-n, -n; & & \\
+& & \dfrac{2}{1+x} \\
+-2n; & &
+\end{array} \right].$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem16chapter10}
+Show that for $|t|$ sufficiently small
+
+$$\displaystyle\sum_{n=0}^{\infty} (2n+1)P_n(x)t^n = (1-t^2)(1-2xt+t^2)^{-\frac{3}{2}}.$$
+\end{problem}
+\begin{solution}
+From
+
+$$(1-2xt+t^2)^{-\frac{1}{2}} = \displaystyle\sum_{n=0}^{\infty} P_n(x) t^n$$
+
+we obtain
+
+$$t(1-2xt^2+t^4)^{-\frac{1}{2}} = \displaystyle\sum_{n=0}^{\infty} P_n(x) t^{2n+1}.$$
+
+We then differentiate both members with respect to $t$ to get
+
+$$\displaystyle\sum_{n=0}^{\infty} (2n+1)P_n(x) t^{2n} = (1-2xt^2+t^4)^{-\frac{1}{2}} + t(2xt-2t^3)(1-2xt^2+t^4)^{-\frac{3}{2}}.$$
+
+Now replace $t$ by $t^2$:
+
+$$\begin{array}{ll}
+\displaystyle\sum_{n=0}^{\infty} (2n+1)P_n(x)t^n &= (1-2xt+t^2)^{-\frac{1}{2}} + t(2x-2t)(1-2xt+t^2)^{-\frac{3}{2}} \\
+&= (1-2xt+t^2)^{-\frac{3}{2}} (1-2xt+t^2 +2xt-2t^2) \\
+&= (1-t^2)(1-2xt+t^2)^{-\frac{3}{2}},
+\end{array}$$
+
+as desired.
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem17chapter10}
+Use Theorem 48, page 137, with $c=1, x$ replaced by $\dfrac{1}{2} (1-x)$ and $\gamma_n = \dfrac{(\frac{1}{2})_n}{n!}$ to arrive at
+
+$$(1-x)^n = 2^n (n!)^2 \displaystyle\sum_{k=0}^n \dfrac{(-1)^k (2k+1) P_k(x)}{(n-k)! (n+k+1)!}.$$
+\end{problem}
+\begin{solution}
+We know the generating relation
+
+$$\begin{array}{ll}
+\displaystyle\sum_{n=0}^{\infty} P_n(x) t^n &= (1-2xt+t^2)^{-\frac{1}{2}} \\
+&= [(1-t)^2 - 2t(x-1)]^{-\frac{1}{2}} \\
+&= (1-t)^{-1} \left[ 1 - \dfrac{2t(x-1)}{(1-t)^2} \right]^{-\frac{1}{2}} \\
+&= (1-t)^{-1} {}_1F_0 \left( \dfrac{1}{2}; - ; \dfrac{2t(x-1)}{(1-t)^2} \right).
+\end{array}$$
+
+In the above, put $x=1-2v$ to get
+
+$$(1-t)^{-1} {}_1F_0 \left[ \begin{array}{rlr}
+\dfrac{1}{2}; & & \\
+& & \dfrac{-4vt}{(1-t)^2} \\
+-; & &
+\end{array} \right] = \displaystyle\sum_{n=0}^{\infty} P_n(1-2v)t^n.$$
+
+We may now use Theorem~48 with $\gamma_n = \dfrac{(\frac{1}{2})_n}{n!}$ and $c=1$. This yields
+
+$$v^n = \dfrac{2^{2n}n! (\frac{1}{2})_n n!}{2^{2n} (\frac{1}{2})_n} \displaystyle\sum_{k=0}^n \dfrac{(-1)^k (2k+1)P_k(1-2v)}{(n-k)! (n+k+1)!},$$
+
+or
+
+$$(1-x)^n = 2^n (n!)^2 \displaystyle\sum_{k=0}^n \dfrac{(-1)^k (2k+1) P_k(x)}{(n-k)! (n+k+1)!},$$
+
+as desired.
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem18chapter10}
+Use Theorem 48, page 137, to show that
+
+$$\begin{array}{ll}
+(1-x)P_n'(x) + nP_n(x) &= nP_{n-1}(x) - (1-x)P_{n-1}'(x) \\
+&= \displaystyle\sum_{k=0}^{n-1} P_k(x) - 2(1-x) \displaystyle\sum_{k=0}^{n-1} P_k'(x) \\
+&= \displaystyle\sum_{k=0}^{n-1} (-1)^{n-k+1} (1+2k)P_k(x).
+\end{array}$$
+\end{problem}
+\begin{solution}
+Using the transformation in Exercise~\ref{problem17chapter10} above we obtain
+
+$$\begin{array}{ll}
+v \dfrac{\mathrm{d}}{\mathrm{d}v} P_n(1-2v) - nP_n(1-2v) &= -nP_{n-1}(1-2v) - v \dfrac{d}{dv} P_{n-1}(1-2v) \\
+&= - \displaystyle\sum_{k=0}^{n-1} [P_k(1-2v) + 2v \dfrac{d}{dv} P_k(1-2v)] \\
+&= \displaystyle\sum_{k=0}^{n-1} (-1)^{n-k} (2k+1) P_k(1-2v).
+\end{array}$$
+
+Since $x = 1-2v$, we know that $v \dfrac{\mathrm{d}y}{\mathrm{d}v} = -(1-x) \dfrac{\mathrm{d}y}{\mathrm{d}x}.$
+
+Hence the above relations become
+
+$$(1-x)P_n'(x) + nP_n(x) = nP_{n-1}(x) - (1-x)P_{n-1}'(x),$$
+
+$$(1-x) P_n'(x) + nP_n(x) = \displaystyle\sum_{k=0}^{n-1} [P_k(x) - 2(1-x) P_k'(x)],$$
+
+$$(1-x)P_n'(x) + nP_n(x) = \displaystyle\sum_{k=0}^{n-1} (-1)^{n-k+1} (2k+1) P_k(x).$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem19chapter10}
+Use Rodrigues' formula, page 162, and successive integrations by parts to derive the orthogonality property for $P_n(x)$ and to show that 
+
+$$\displaystyle\int_{-1}^1 P_n^2(x) \mathrm{d}x = \dfrac{2}{2n+1}.$$
+\end{problem}
+\begin{solution}
+We know $P_n(x) = \dfrac{1}{2^n n!} \mathscr{D}^n (x^2-1)^n.$
+
+Then
+
+\begin{eqnarray*}
+\lefteqn{\displaystyle\int_{-1}^1 P_n(x) P_m(x) \mathrm{d}x} \\
+& &= \dfrac{1}{2^n n!} \displaystyle\int_{-1}^1 [\mathscr{D}^n (x^2-1)^n] P_m(x) \mathrm{d}x \\
+&&= \dfrac{1}{2^n n!} \left[\{\mathscr{D}^{n-1}(x^2-1)^n \} P_m(x) \right]_{-1}^1 - \dfrac{1}{2^n n!} \displaystyle\int_{-1}^1 [\mathscr{D}^{n-1}(x^2-1)^n] [\mathscr{D}P_m(x)] \mathrm{d}x \\
+&&= \ldots \\
+&&= \dfrac{(-1)^n}{2^n n!} \displaystyle\int_{-1}^1 [\mathscr{D}^0 (x^2-1)^n] [\mathscr{D}^n P_m(x) ] \mathrm{d}x.
+\end{eqnarray*}
+
+If $n > m, \mathscr{D}^n P_m(x) \equiv 0.$ Also the original integral is symmetric in $n$ and $m$. Hence for $m \neq n$,
+
+$$\displaystyle\int_{-1}^1 P_n(x) P_m(x) \mathrm{d}x = 0.$$
+
+But we also have
+
+$$\displaystyle\int_{-1}^1 P_n^2(x) \mathrm{d}x = \dfrac{(-1)^n}{2^n n!} \displaystyle\int_{-1}^1 (x^2-1)^n [ \mathscr{D}^n P_n(x) ] \mathrm{d}x.$$
+
+Now $P_n(x) = \dfrac{2^n (\frac{1}{2})_n x^n}{n!} + \pi_{n-1},$ so $\mathscr{D}^n P_n(x) = 2^n \left( \dfrac{1}{2} \right)_n.$
+
+Therefore
+
+$$\displaystyle\int_{-1}^1 P_n^2(x) \mathrm{d}x = \dfrac{(\frac{1}{2})_n}{n!} \displaystyle\int_{-1}^1 (1-x^2)^n \mathrm{d}x = \dfrac{(\frac{1}{2})_n}{n!} \displaystyle\int_{-1}^1 (1-x)^n (1+x)^n \mathrm{d}x.$$
+
+By Example 7, page 51, we have
+
+$$\begin{array}{ll}
+\displaystyle\int_{-1}^1 P_n^2(x) \mathrm{d}x &= \dfrac{(\frac{1}{2})_n}{n!} 2^{n+1+n+1-1} B(n+1,n+1) \\
+&= \dfrac{2^{2n+1} (\frac{1}{2})_n \Gamma(n+1) \Gamma(n+1)}{n! \Gamma(2n+2)}.
+\end{array}$$
+
+Hence
+
+$$\begin{array}{ll}
+\displaystyle\int_{-1}^1 P_n^2(x) \mathrm{d}x &= \dfrac{2^{2n+1} (\frac{1}{2})_n n!}{(2n+1)!} \\
+&= \dfrac{2^{2n+1} (\frac{1}{2})_n n!}{2^{2n} n! (\frac{3}{2})_n} \\
+&= \dfrac{2 \cdot \frac{1}{2}}{n + \frac{1}{2}} \\
+&= \dfrac{2}{2n+1}.
+\end{array}$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem20chapter10}
+Show that the polynomial $y_n(x) = (n!)^{-1}(1-x^2)^{\frac{n}{2}} P_n((1-x^2)^{-\frac{1}{2}})$ has the generating relation
+
+$$e^t {}_0F_1 \left( -;t;\dfrac{1}{4}x^2t^2 \right) = \displaystyle\sum_{n=0}^{\infty} y_n(x) t^n$$
+
+and that Theorem 45, page 133, is applicable to this $y_n(x)$. Translate the result into a property of $P_n(x)$, obtaining equation (7), page 159.
+\end{problem}
+\begin{solution}
+Consider the polynomial
+
+$$y_n(x) = \dfrac{(1-x^2)^{\frac{n}{2}}}{n!} P_n \left( \dfrac{1}{\sqrt{1-x^2}} \right).$$
+
+We find that
+
+$$\begin{array}{ll}
+\displaystyle\sum_{n=0}^{\infty} y_n(x) t^n &= \displaystyle\sum_{n=0}^{\infty} \dfrac{P_n \left(\frac{1}{\sqrt{1-x^2}} \right) (t \sqrt{1-x^2})^n}{n!} \\
+&= e^t {}_0F_1 \left[ \begin{array}{rlr}
+-; & & \\
+& & \dfrac{t^2 (1-x^2) \left[ \dfrac{1}{1-x^2} -1 \right]}{4} \\
+1; & &
+\end{array} \right] \\
+&= e^t {}_0F_1 \left[ \begin{array}{rlr}
+-; & & \\
+& & \dfrac{t^2x^2}{4} \\
+1; & & 
+\end{array} \right].
+\end{array}$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem21chapter10}
+Let the polynomials $w_n(x)$ be defined by
+
+$$e^{xt} \psi[t^2(x^2-1)] = \displaystyle\sum_{n=0}^{\infty} w_n(x) t^n,$$
+
+with
+\
+$$\psi(u) = \displaystyle\sum_{n=0}^{\infty} \gamma_n u^n.$$
+
+Show that 
+
+$$\displaystyle\sum_{n=0}^{\infty} (c)_n w_n(x) t^n = (1-xt)^{-c} \displaystyle\sum_{k=0}^{\infty} (c)_{2k \gamma_k} \left[ \dfrac{t^2(x^2-1)}{(1-xt)^2} \right]^k$$
+
+and thus obtain a result parallel to that in Theorem 46, page 134. Apply your new theorem to Legendre polynomials to derive equation (2), page 164.
+\end{problem}
+\begin{solution}(Solution by Leon Hall)
+Multiplication of series gives
+$$\begin{array}{ll}
+\displaystyle\sum_{n=0}^{\infty} w_n(x)t^n &= \left( \displaystyle\sum_{n=0}^{\infty} \dfrac{x^n t^n}{n!} \right) \left( \displaystyle\sum_{n=0}^{\infty} \gamma_n (x^2-1)^n t^{2n} \right) \\
+&= \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^n \dfrac{(2k+1+tx)}{(2k+1)!} \gamma_{n-k} x^{2k} (x^2-1)^{n-k} t^{2n},
+\end{array}$$
+and so
+$$w_{2n}(x) = \displaystyle\sum_{k=0}^n \dfrac{\gamma_{n-k}(x^2-1)^{n-k} x^{2k}}{(2k)!}$$
+and
+$$w_{2n+1}(x) = \displaystyle\sum_{k=0}^n \dfrac{\gamma_{n-k}(x^2-1)^{n-k}x^{2k+1}}{(2k+1)!}.$$
+An index shift gives
+$$w_{2n}(x) = \displaystyle\sum_{k=0}^n \dfrac{\gamma_k (x^2-1)^k x^{2n-2k}}{(2n-2k)!}$$
+and
+$$w_{2n+1}(x) = \displaystyle\sum_{k=0}^{\infty} \dfrac{\gamma_k (x^2-1)^k x^{2n-2k+1}}{(2n-2k+1)!}.$$
+Thus
+\begin{eqnarray*}
+\lefteqn{\displaystyle\sum_{n=0}^{\infty} (c)_n w_n(x) t^n} \\
+& &\!\!\!\!=\! \displaystyle\sum_{n=0}^{\infty}\! \sum_{k=0}^n\! \dfrac{(c)_{2n}\gamma_k (x^2-1)^k}{(2n-2k)!} x^{2n-2k}t^{2n}\! +\! \displaystyle\sum_{n=0}^{\infty} \sum_{k=0}^n \dfrac{(c)_{2n+1}\gamma_k (x^2-1)^k}{(2n-2k+1)!} x^{2n-2k+1} t^{2n+1}.
+\end{eqnarray*}
+If we expand the finite sum, the coefficient of $\gamma_k (x^2-1)^k$ for $k=0,1,\ldots,n$ is
+$$\displaystyle\sum_{n=k}^{\infty} \dfrac{(c)_{2n} x^{2n-2k}t^{2n}}{(2n-2k)!} + \displaystyle\sum_{n=k}^{\infty} \dfrac{(c)_{2n+1} x^{2n-2k+1}t^{2n+1}}{(2n-2k+1)!}.$$
+Noting that $(c)_{2n+2k} = (c+2k)_{2n}(c)_{2k}$ and $(c)_{2n+2k+1} = (c+2k)_{2n+1}(c)_{2k}$ we have
+\begin{eqnarray*}
+\lefteqn{\displaystyle\sum_{n=0}^{\infty} (c)_n w_n(x) t^n} \\
+&& = \displaystyle\sum_{k=0}^{\infty} (c)_{2k}\gamma_k (x^2-1)^k t^{2k} \left[ \displaystyle\sum_{n=0}^{\infty} \dfrac{(c+2k)_{2n}(xt)^{2n}}{(2n)!} + \displaystyle\sum_{n=0}^{\infty} \dfrac{(c+2k)_{2n+1} (xt)^{2n+1}}{(2n+1)!} \right]
+\end{eqnarray*}
+where the second factor is equivalent to 
+$$\displaystyle\sum_{n=0}^{\infty} \dfrac{(c+2k)_n (xt)^n}{n!} = \dfrac{1}{(1-xt)^{c+2k}}.$$
+(do a Taylor series around $0$ for $\dfrac{1}{(1-xt)^{c+2k}}$)
+Now we have
+$$\displaystyle\sum_{n=0}^{\infty} (c)_nw_n(x)t^n = (1-xt)^{-c} \displaystyle\sum_{k=0}^{\infty} (c)_{2k} \gamma_k \left[ \dfrac{t^2(x^2-1)}{(1-xt)^2} \right]^k,$$
+which is similar to the result of Theorem 46, pg. 134. For the second part, note that the formula (4) on pg.165 is
+$$\displaystyle\sum_{n=0}^{\infty} \dfrac{P_n(x)t^n}{n!} = e^{xt} {}_0F_1 \left(-;1,\frac{1}{4}t^2(x^2-1) \right),$$
+where $P_n$ is the Legendre polynomial of degree $n$. If we now let
+$$w_n(x) = \dfrac{P_n(x)}{n!}$$
+and
+$$\psi(u) = \displaystyle\sum_{k=0}^{\infty} \dfrac{u^k}{2^{2k}(k!)^2},$$
+we get $\gamma_k = \dfrac{1}{2^{2k}(k!)^2},$ and our result gives
+$$\displaystyle\sum_{n=0}^{\infty} \dfrac{(c)_nP_n(x)t^n}{n!} = (1-xt)^{-c} \displaystyle\sum_{n=0}^{\infty} \dfrac{(c)_{2n}}{2^{2n}(n!)^2} \left[ \dfrac{t^2(x^2-1)}{(1-xt)^2} \right]^n.$$
+Note that $\dfrac{(c)_{2n}}{2^{2n}} = \left( \dfrac{c}{2} \right)_n \left( \dfrac{c}{2} + \dfrac{1}{2} \right)_n$ and that
+$${}_2F_1 \left( \alpha_1,\alpha_2 ; 1 ; z \right) = 1  + \displaystyle\sum_{n=1}^{\infty} \dfrac{(\alpha_1)_n (\alpha_2)_n}{n!} \dfrac{z^n}{n!}.$$
+Thus, with $\alpha_1=\dfrac{c}{2}$, $\alpha_2 = \dfrac{c}{2}+\dfrac{1}{2}$, and $z=\dfrac{t^2(x^2-1)}{(1-xt)^2}$ we have
+$$\displaystyle\sum_{n=0}^{\infty} \dfrac{(c)_n P_n(x) t^n}{n!} = (1-xt)^{-c} {}_2F_1 \left( \dfrac{c}{2}, \dfrac{c}{2}+\dfrac{1}{2}; 1 ; \dfrac{t^2(x^2-1)}{(1-xt)^2} \right)$$
+which is equivalent to equation (2) on pg.164.
+
+\end{solution}

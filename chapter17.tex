@@ -1,0 +1,168 @@
+%%%%
+%%
+%%
+%%%%
+%%%% CHAPTER 17
+%%%% CHAPTER 17
+%%%%
+%%
+%%
+%%%%
+\section{Chapter 17 Solutions}
+\begin{center}\hyperref[toc]{\^{}\^{}}\end{center}
+\begin{center}\begin{tabular}{lllllllllllllllllllllllll}
+\hyperref[problem1chapter17]{P1} & \hyperref[problem2chapter17]{P2} & \hyperref[problem3chapter17]{P3} & \hyperref[problem4chapter17]{P4}
+\end{tabular}\end{center}
+\setcounter{problem}{0}
+\setcounter{solution}{0}
+\begin{problem}\label{problem1chapter17}
+Show that the Gegenbauer polynomial $C_n^v(x)$ and the Hermite polynomial $H_n(x)$ are related by
+
+$$C_n^v(x) = \displaystyle\sum_{k=0}^{[\frac{n}{2}]} {}_2F_0(-k,v+n-k;-;1) \dfrac{(-1)^k(v)_{n-k}H_{n-2k}(x)}{k! (n-2k)!}.$$
+\end{problem}
+\begin{solution}
+From
+
+$$C_n^v(x) = \displaystyle\sum_{s=0}^{[\frac{n}{2}]} \dfrac{(-1)^s (v)_{n-s} (2x)^{n-2s}}{s! (n-2s)!}$$
+
+we get
+
+$$\displaystyle\sum_{n=0}^{\infty} C_n^v(x) t^n = \displaystyle\sum_{n,s=0}^{\infty} \dfrac{(-1)^s (v)_{n+s} (2x)^n t^{n+2s}}{s! n!}.$$
+
+We know that
+
+$$\dfrac{(2x)^n}{n!} = \displaystyle\sum_{k=0}^{[\frac{n}{2}]} \dfrac{H_{n-2k}(x)}{k!(n-2k)!}.$$
+
+Then
+
+$$\begin{array}{ll}
+\displaystyle\sum_{n=0}^{\infty} C_n^v(x) t^n &= \displaystyle\sum_{n,s=0}^{\infty} \displaystyle\sum_{k=0}^{[\frac{n}{2}]} \dfrac{(-1)^s (v)_{n+s} H_{n-2k}(x) t^{n+2s}}{s! k! (n-2k)!} \\
+&= \displaystyle\sum_{n,k,s=0}^{\infty} \dfrac{(-1)^s (v)_{n+s+2k} H_n(x) t^{n+2k+2s}}{s!k!n!} \\
+&= \displaystyle\sum_{n,k=0}^{\infty} \displaystyle\sum_{s=0}^k \dfrac{(-1)^s (v)_{n+2k-s}}{s! (k-s)!} \dfrac{H_n(x) t^{n+2k}}{n!} \\
+&= \displaystyle\sum_{n,k=0}^{\infty} \displaystyle\sum_{s=0}^k \dfrac{(_1)^{k+s} (v)_{n+k+s}}{s! (k-s)!} \dfrac{H_n(x) t^{n+2k}}{n!} \\
+&= \displaystyle\sum_{n,k=0}^{\infty} {}_2F_0 \left[ \begin{array}{rlr}
+-k, v+n+k; & & \\
+& & 1 \\
+-; & &
+\end{array} \right] \dfrac{(-1)^k (v)_{n+k} H_n(x) t^{n+2k}}{k! n!} \\
+&= \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^{[\frac{n}{2}]} {}_2F_0(-k,v+n-k;-;1) \dfrac{(-1)^k (v)_{n-k} H_{n-2k}(x) t^n}{k! (n-2k)!}.
+\end{array}$$
+
+Hence
+
+$$C_n^v(x) = \displaystyle\sum_{k=0}^{[\frac{n}{2}]} {}_2F_0(-k,v+n-k;-;1) \dfrac{(-1)^k (v)_{n-k} H_{n-2k}(x)}{k! (n-2k)!}.$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem2chapter17}
+Show that
+
+$$\dfrac{H_n(x)}{n!} = \displaystyle\sum_{k=0}^{[\frac{n}{2}]} (-1)^k {}_1F_1(-k; 1+v+n-2k;1) \dfrac{(v+n-2k)C_{n-2k}^v(x)}{k! (v)_{n+1-2k}}.$$
+\end{problem}
+\begin{solution}
+Consider 
+
+$$\displaystyle\sum_{n=0}^{\infty} \dfrac{H_n(x) t^n}{n!} = \displaystyle\sum_{n,s=0}^{\infty} \dfrac{(-1)^s (2x)^n t^{n+2s}}{s! n!}.$$
+
+Now by equation $(36)$,
+
+
+$$\dfrac{(2x)^n}{n!} = \displaystyle\sum_{k=0}^{[\frac{n}{2}]} \dfrac{(v+n-2k)C_{n-2k}(x)}{v \cdot k! (v)_{n+1-k}}.$$
+
+Hence
+
+$$\begin{array}{ll}
+\displaystyle\sum_{n=0}^{\infty} \dfrac{H_n(x) t^n}{n!} &= \displaystyle\sum_{n,s=0}^{\infty} \displaystyle\sum_{k=0}^{[\frac{n}{2}]} \dfrac{(-1)^s (v+n-2k) C_{n-2k}^v(x) t^{n+2s}}{s! k! (v)_{n+1-k}} \\
+&= \displaystyle\sum_{n,k,s=0}^{\infty} \dfrac{(-1)^s (v+n) C_n^v(x) t^{n+2k+2s}}{s! k! (v)_{n+1+k}} \\
+&= \displaystyle\sum_{n,k=0}^{\infty} \displaystyle\sum_{s=0}^k \dfrac{(-1)^s (v+n) C_n^v(x) t^{n+2k}}{s! (k-s)! (v)_{n+1+k-s}} \\
+&= \displaystyle\sum_{n,k=0}^{\infty} \displaystyle\sum_{s=0}^k \dfrac{(-1)^{k-s} (v+n) C_n^v(x) t^{n+2k}}{s! (k-s)! (v)_{n+1+s}} \\
+&= \displaystyle\sum_{n,k=0}^{\infty} {}_1F_1(-k;1+v+n;1) \dfrac{(-1)^k (v+n) C_n^v(x) t^{n+2k}}{k! (v)_{n+1}}
+\end{array}$$
+
+Then
+
+$$\dfrac{H_n(x)}{n!} = \displaystyle\sum_{k=0}^{[\frac{n}{2}]} {}_1F_1(-k;1+v+n-2k;1) \dfrac{(_1)^k (v+n-2k) C_{n-2k}^v(x)}{k! (v)_{n+1-2k}}.$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem3chapter17}
+Show, using the modified Bessel function of Section 65, that
+
+$$e^{xt}= \left(\dfrac{1}{2}t \right)^{-v} \Gamma(v) \displaystyle\sum_{n=0}^{\infty} (v+n) I_{v+n}(t) C_n^v(x).$$
+\end{problem}
+\begin{solution}
+We know that
+
+$$\begin{array}{ll}
+I_{v+n}(t) &= \dfrac{(\frac{t}{2})^{v+n}}{\Gamma(1+v+n)} {}_0F_1 \left(-;1+v+n; \dfrac{t^2}{4} \right) \\
+&= \displaystyle\sum_{k=0}^{\infty} \dfrac{(\frac{t}{2})^{v+n+2k}}{k! \Gamma(1+v+n+k)}
+\end{array}$$
+
+Now
+
+$$\dfrac{x^n}{n!} = \displaystyle\sum_{k=0}^{[\frac{n}{2}]} \dfrac{(v+n-2k) C_{n-2k}^v(x)}{2^n k! (v)_{n+1-k}}.$$
+
+Hence
+
+$$\begin{array}{ll}
+C^{xt} &= \displaystyle\sum_{n=0}^{\infty} \dfrac{x^n t^n}{n!} \\
+&= \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^{[\frac{n}{2}]} \dfrac{(v+n-2k) C_{n-2k}^v(x) t^n}{2^n k! (v)_{n+1-k}} \\
+&= \displaystyle\sum_{n,k=0}^{\infty} \dfrac{(v+n) C_n^v(x) t^{n+2k}}{2^{n+2k} k! (v)_{n+1+k}} \\
+&= \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^{\infty} \dfrac{(\frac{t}{2})^{n+2k} \Gamma(v)}{k! \Gamma(v+n+1+k)} (v+n)C_n^v(x) \\
+&= \Gamma(v) \left( \dfrac{t}{2} \right)^{-v} \displaystyle\sum_{n=0}^{\infty} \dfrac{(\frac{t}{2})^{n+v+2k}}{k! \Gamma(v+n+1+k)} (v+n)C_n^v(x).
+\end{array}$$
+
+Therefore
+
+$$e^{xt} = |Gamma(v) \left( \dfrac{t}{2} \right)^{-v} \displaystyle\sum_{n=0}^{\infty} (v+n) I_{v+n}(t) C_n^v(x).$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem4chapter17}
+Show that
+
+$$C_n^v(x) = \displaystyle\sum_{k=0}^{[\frac{n}{2}]} \dfrac{(v-\frac{1}{2})_k(v)_{n-k}(1+2n-4k)P_{n-2k}(x)}{k! (\frac{3}{2})_{n-k}}.$$
+\end{problem}
+\begin{solution}
+From 
+
+$$C_n^v(x) = \displaystyle\sum_{k=0}^{[\frac{n}{2}]} \dfrac{(-1)^k (v)_{n-k} (2k)^{n-2k}}{k! (n-2k)!}$$
+
+and
+
+$$\dfrac{(2x)^n}{n!} = \displaystyle\sum_{k=0}^{[\frac{n}{2}]} \dfrac{(2n-4x+1) P_{n-2k}(x)}{k! (\frac{3}{2})_{n-k}}$$
+
+we obtain
+
+$$\begin{array}{ll}
+\displaystyle\sum_{n=0}^{\infty} C_n^v(x) t^n &= \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{s=0}^{[\frac{n}{2}]} \dfrac{(-1)^s (v)_{n-s} (2x)^{n-2s} t^n}{s! (n-2s)!} \\
+&= \displaystyle\sum_{n,s=0}^{\infty} \dfrac{(-1)^s (v)_{n+s} (2x)^n t^{n+2s}}{s! n!} \\
+&= \displaystyle\sum_{n,s=0}^{\infty} \displaystyle\sum_{k=0}^{[\frac{n}{2}]} \dfrac{(-1)^s (v)_{n+s} (2n+1) P_n(x) t^{n+2k+2s}}{s! k! (\frac{3}{2})_{n+k}} \\
+&= \displaystyle\sum_{n,k,s=0}^{\infty} \dfrac{(-1)^s (v) (2n+1) P_n(x) t^{n+2k+2s}}{s! k! (\frac{3}{2})_{n+k}} \\
+&= \displaystyle\sum_{n,k=0}^{\infty} \displaystyle\sum_{s=0}^k \dfrac{(-1)^s (v) (2n+1) P_n(x) t^{n+2k}}{s! (k-s)! (\frac{3}{2})_{n+k-s}} \\
+&= \displaystyle\sum_{n,k=0}^{\infty} \displaystyle\sum_{s=0}^k \dfrac{(-1)^{k-s} (v)_{n+k+s} (2n+1) P_n(x) t^{n+2k}}{s! (k-s)! (\frac{3}{2})_{n+s}} \\
+&= \displaystyle\sum_{n,k=0}^{\infty} {}_2F_1 \left[ \begin{array}{rlr}
+-k, v+n+k; & & \\
+& & 1 \\
+\dfrac{3}{2} + n; & &
+\end{array} \right] \dfrac{(-1)^k (v)_{n+k} (2n+1) P_n(x) t^{n+2k}}{k! (\frac{3}{2})_n}.
+\end{array}$$
+
+Therefore we get, using Example 5, page 69,
+
+$$\begin{array}{ll}
+\displaystyle\sum_{n=0}^{\infty} C_n^v(x) t^n &= \displaystyle\sum_{n,k=0}^{\infty} \dfrac{(-1)^k (\frac{3}{2})_n (v-\frac{1}{2})_k}{(\frac{3}{2})_{n+k}} \dfrac{(-1)^k (v)_{n+k} (2n+1) P_n(x) t^{n+2k}}{k! (\frac{3}{2})_n} \\
+&= \displaystyle\sum_{n,k=0}^{\infty} \dfrac{(v-\frac{1}{2})_k (v)_{n+k} (2n+1) P_n(x) t^{n+2k}}{k! (\frac{3}{2})_{n+k}} \\
+&=\displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^{[\frac{n}{2}]} \dfrac{(v - \frac{1}{2})_k (v)_{n-k} (2n-4k+1) P_{n-2k}(x) t^n}{k! (\frac{3}{2})_{n-k}}.
+\end{array}$$
+
+Hence
+
+$$C_n^v(x) = \displaystyle\sum_{k=0}^{[\frac{n}{2}]} \dfrac{(v-\frac{1}{2})_k (v)_{n-k} (2n-4k+1) P_{n-2k}(x)}{k! (\frac{3}{2})_{n-k}}.$$
+\end{solution}

@@ -1,0 +1,390 @@
+%%%%
+%%
+%%
+%%%%
+%%%% CHAPTER 15
+%%%% CHAPTER 15
+%%%%
+%%
+%%
+%%%%
+\section{Chapter 15 Solutions}
+\begin{center}\hyperref[toc]{\^{}\^{}}\end{center}
+\begin{center}\begin{tabular}{lllllllllllllllllllllllll}
+\hyperref[problem1chapter15]{P1} & \hyperref[problem2chapter15]{P2} & \hyperref[problem3chapter15]{P3} & \hyperref[problem4chapter15]{P4} & \hyperref[problem5chapter15]{P5} & \hyperref[problem6chapter15]{P6} & \hyperref[problem7chapter15]{P7} & \hyperref[problem8chapter15]{P8} & \hyperref[problem9chapter15]{P9} & \hyperref[problem10chapter15]{P10} & \hyperref[problem11chapter15]{P11} & \hyperref[problem12chapter15]{P12}
+\end{tabular}\end{center}
+\setcounter{problem}{0}
+\setcounter{solution}{0}
+In Exercises \ref{problem1chapter15}-\ref{problem8chapter15}, $H_n(x), P_n(x), L_n(x)$ denote the Hermite, Legendre, and simple Laguerre polynomials, respectively. Derive each of the stated symbolic relations.
+
+\begin{problem}\label{problem1chapter15}
+$$H_n(x+y) \doteqdot [H(x)+2y]^n.$$
+\end{problem}
+\begin{solution}
+Consider
+
+$$\begin{array}{ll}
+\displaystyle\sum_{n=0}^{\infty} \dfrac{H_n(x+y)t^n}{n!} &= \exp[2(x+y)t-t^2] \\
+&= \exp(2yt) \exp(2xt-t^2) \\
+&= \left( \displaystyle\sum_{n=0}^{\infty} \dfrac{(2y)^nt^n}{n!} \right) \left( \displaystyle\sum_{n=0}^{\infty} \dfrac{H_n(x)t^n}{n!} \right) \\
+&= \displaystyle\sum)_{n=0}^{\infty} \displaystyle\sum_{k=0}^n \dfrac{(2y)^{n-k}H_k(x)}{k!(n-k)!} t^n.
+\end{array}$$
+
+It follows that
+
+$$H_n(x+y) = \displaystyle\sum_{k=0}^n \dfrac{n! (2y)^{n-k} H_k(x)}{k! (n-k)!}$$
+
+or its equivalent
+
+$$H_n(x+y) \doteqdot \{ H(x) + 2y\}^n.$$
+
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem2chapter15}
+$$[H(x)+H(y)]^n \doteqdot 2^{\frac{n}{2}}H_n(2^{-\frac{1}{2}}(x+y)).$$
+\end{problem}
+\begin{solution}
+Consider
+
+$$\begin{array}{ll}
+\displaystyle\sum_{n=0}^{\infty} \dfrac{[H(x)+H(y)]^n t^n}{n!} &\doteqdot \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^n \dfrac{H_k(x)H_{n-k}(y)t^n}{k! (n-k)!} \\
+&= \left( \displaystyle\sum_{n=0}^{\infty} \dfrac{H_n(x) t^n}{n!} \right) \left( \displaystyle\sum_{n=0}^{\infty} \dfrac{H_n(y)t^n}{n!} \right) \\
+&= \exp(23xt-t^2) \exp(2yt-t^2) \\
+&= \exp[2(x+y)t - 2t^2] \\
+&= \exp \left[ 2 \left( \dfrac{x+y}{\sqrt{2}} \right)(\sqrt{2}t) - (\sqrt{2}t)^2 \right].
+\end{array}$$
+
+It follows that
+
+$$\displaystyle\sum_{n=0}^{\infty} \dfrac{[H(x)+H(y)]^n t^n}{n!} \doteqdot \displaystyle\sum_{n=0}^{\infty} \dfrac{H_n \left( \dfrac{x+y}{\sqrt{2}} \right) (\sqrt{2}t)^n}{},$$
+
+or
+
+$$\left\{H(x) + H(y) \right\}^n \doteqdot 2^{\frac{1}{2}n} H_n \left( \dfrac{x+y}{\sqrt{2}} \right).$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem3chapter15}
+$$P_n(x) \doteqdot n! \left[ L \left( \dfrac{1-x}{2} \right) - L \left( \dfrac{1+x}{2} \right) \right]^n$$
+\end{problem}
+\begin{solution}
+Consider
+
+$$\displaystyle\sum_{n=0}^{\infty} \dfrac{P_n(x)t^n}{(n!)^2} = {}_0F_1 \left(-;1;\dfrac{t(x-1)}{2} \right) {}_0F_1\left(-;1;\dfrac{t(x+1)}{2} \right).$$
+
+Now
+
+$$e^t {}_0F_1(-;1;-yt) = \displaystyle\sum_{n=0}^{\infty} \dfrac{\mathscr{L}_n(y)t^n}{n!}.$$
+
+Hence
+
+$$\begin{array}{ll}
+\displaystyle\sum_{n=0}^{\infty} \dfrac{P_n(x) t^n}{(n!)^2} &= e^t {}_0F_1 \left(-;1;\dfrac{t(x-1)}{2} \right) \cdot e^{-t} {}_0F_1 \left( -;1; \dfrac{t(x+1)}{2} \right) \\
+&= \left( \displaystyle\sum_{n=0}^{\infty} \dfrac{\mathscr{L}_n \left( \frac{1-x}{2} \right) t^n}{n!} \right) \left( \displaystyle\sum_{n=0}^{\infty} \dfrac{(-1)^n \mathscr{L}_n \left( \frac{1+x}{2} \right) t^n}{n!} \right) \\
+&= \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^n \dfrac{(-1)^k \mathscr{L}_k(\frac{1+x}{2})\mathscr{L}_{n-k} \left( \frac{1-x}{2} \right)}{k! (n-k)!} t^n.
+\end{array}$$
+
+Hence 
+
+$$P_n(x) = n! \displaystyle\sum_{k=)}^n \dfrac{n! (-1)^k \mathscr{L}(\frac{1+x}{2})\mathscr{L}_{n-k}(\frac{1-x}{2})}{k!(n-k)!},$$
+
+or
+
+$$P_n(x) \doteqdot n! \left\{ \mathscr{L} \left( \dfrac{1-x}{2} \right) - \mathscr{L} \left( \dfrac{1+x}{2} \right) \right\}^n.$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem4chapter15}
+$$H_n \left( \dfrac{1}{2}P(x) \right) \doteqdot [H(x) - P(x)]^n.$$
+\end{problem}
+\begin{solution}
+Consider
+
+$$\begin{array}{ll}
+\displaystyle\sum_{n=0}^{\infty} \dfrac{H_n\left(\frac{1}{2} P(x) \right) t^n}{n!} &\doteqdot \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^{[\frac{n}{2}]} \dfrac{(-1)^k P_{n-2k}(x) t^n}{k!(n-2k)!} \\
+&= \left( \displaystyle\sum_{n=0}^{\infty} \dfrac{(-1)^n t^{2n}}{n!} \right) \left( \displaystyle\sum_{n=0}^{\infty} \dfrac{P_n(x) t^n}{n!} \right) \\
+&= e^{-t^2} e^{xt} {}_0F_1 \left(-;1;\dfrac{t^2(x^2-1)}{4} \right) \\
+&= \left( \displaystyle\sum_{n=0}^{\infty} \dfrac{H_n(x)t^n}{n!} \right) \left( \displaystyle\sum_{n=0}^{\infty} \dfrac{(-1)^n P_n(x) t^n}{n!} \right) \\
+&= \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^n \dfrac{(-1)^k P_k(x) H_{n-k}(x) t^n}{k! (n-k)!}.
+\end{array}$$
+
+It follows that
+
+$$\begin{array}{ll}
+H_n \left( \dfrac{1}{2} P(x) \right) &\doteqdot \displaystyle\sum_{k=0}^n \dfrac{(-1)^k n! P_k(x) H_{n-k}(x)}{k! (n-k)!} \\
+&\doteqdot \left\{ H(x) - P(x) \right\}^n.
+\end{array}$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem5chapter15}
+$$[H(x)-2P(x)]^{2n+1} \doteqdot 0,$$
+
+$$[H(x)-2P(x)]^{2n} \doteqdot (-1)^n 2^{2n} \left( \dfrac{1}{2} \right)_n L_n(x^2-1).$$
+\end{problem}
+\begin{solution}
+Consider
+
+$$\begin{array}{ll}
+\psi &= \displaystyle\sum_{n=0}^{\infty} \dfrac{[1+(x)-2P(x)]^n t^n}{n!} \\
+&\doteqdot \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^n \dfrac{(-2)^k P_k(x) H_{n-k}(x) t^n}{k! (n-k)!} \\
+&= \left( \displaystyle\sum_{n=0}^{\infty} \dfrac{H_n(x) t^n}{n!} \right) \left( \displaystyle\sum_{n=0}^{\infty} \dfrac{P_n(x)(-2t)^n}{n!} \right) \\
+&= \exp(2xt-t^2) \exp(-2xt) {}_0F_1 \left(-;1;\dfrac{4t^2(x^2-1)}{4} \right) \\
+&= \exp(-t^2) {}_0F_1(-;1;t^2(x^2-1)) \\
+&= \displaystyle\sum_{n=0}^{\infty} \dfrac{(-1)^n \mathscr{L}_n(x^2-1)t^{2n}}{n!}.
+\end{array}$$
+
+It follows that
+
+$$[H(x)-2P(x)]^{2n+1} \doteqdot 0$$
+
+and
+
+$$[H(x)-2P(x)]^{2n} \doteqdot \dfrac{(-1)^n (2n)!}{n!} \mathscr{L}_n(x^2-1) = (-1)^n 2^{2n} \left( \dfrac{1}{2} \right)_n \mathscr{L}_n(x^2-1).$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem6chapter15}
+$$[H(x)-P(2x)]^{2n+1} \doteqdot 0,$$
+
+$$[H(x)-P(2x)]^{2n} \doteqdot (-1)^n 2^{2n} \left( \dfrac{1}{2} \right)_n L_n \left( x^2 - \dfrac{1}{4} \right).$$
+\end{problem}
+\begin{solution}
+Consider
+
+$$\begin{array}{ll}
+\displaystyle\sum_{n=0}^{\infty} \dfrac{[H(x)-P(2x)]^nt^n}{n!} &\doteqdot \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^n \dfrac{(-1)^k P_k(2x)H_{n-k}(x) t^n}{k! (n-k)!} \\
+&= \left( \displaystyle\sum_{n=0}^{\infty} \dfrac{H_n(x)t^n}{n!} \right) \left( \displaystyle\sum_{n=0}^{\infty} \dfrac{P_n(2x)(-t)^n}{n!} \right) \\
+&= \exp(2xt-t^2) \exp(-2xt) {}_0F_1 \left(-;1; \dfrac{t^2(4x^2-1)}{4} \right) \\
+&= \exp(-t^2) {}_0F_1 \left(-;1;-(-t^2)(x^2-\dfrac{1}{4}) \right) \\
+&= \displaystyle\sum_{n=0}^{\infty} \dfrac{(-1)^n \mathscr{L}_n(x^2 - \frac{1}{4}) t^{2n}}{n!}.
+\end{array}$$
+
+We may conclude that
+
+$$[H(x) - P(2x)]^{2n+1} \doteqdot 0$$
+
+and
+
+$$[H(x) - P(2x)]^{2n} \doteqdot \dfrac{(-1)^n (2n)! \mathscr{L}_n(x^2-\frac{1}{4})}{n!} = (-1)^n 2^{2n} \left( \dfrac{1}{2} \right)_n \mathscr{L}_n\left(x^2 - \dfrac{1}{4} \right).$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem7chapter15}
+$$H_n \left( \dfrac{1}{2} H(x) \right) \doteqdot 2^{\frac{n}{2}} H_n(2^{-\frac{1}{2}}x).$$
+\end{problem}
+\begin{solution}
+From
+
+$$\begin{array}{ll}
+\displaystyle\sum_{n=0}^{\infty} \dfrac{H_n(\frac{1}{2}H(x))t^n}{n!} &\doteqdot \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^{[\frac{n}{2}]} \dfrac{(-1)^k H_{n-2k}(x) t^n}{k! (n-2k)!} \\
+&= \left( \displaystyle\sum_{n=0}^{\infty} \dfrac{(-1)^n t^{2n}}{n!} \right) \left( \displaystyle\sum_{n=0}^{\infty} \dfrac{H_n(x) t^n}{n!} \right) \\
+&= \exp(-t^2) \exp(2xt-t^2) \\
+&= \exp(2xt-2t^2) \\
+&= \exp \left[ 2 \left( \dfrac{x}{\sqrt{2}} \right) \sqrt{2} t - (\sqrt{2}t)^2 \right] \\
+&= \displaystyle\sum_{n=0}^{\infty} \dfrac{H_n(\frac{x}{\sqrt{2}}) (\sqrt{2}t)^n}{n!}
+\end{array}$$
+
+we may conclude that
+
+$$H_n \left( \dfrac{1}{2} H(x) \right) \doteqdot 2^{\frac{n}{2}}H_n \left( \dfrac{x}{\sqrt{2}} \right).$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem8chapter15}
+$$H_n(xy) \doteqdot [H(x) + 2x(y-1)]^n.$$
+\end{problem}
+\begin{solution}
+From
+
+$$\begin{array}{ll}
+\displaystyle\sum_{n=0}^{\infty} \dfrac{H_n(xy)t^n}{n!} &= \exp(2xyt-t^2) \\
+&= \exp(2xt-t^2) \exp[2x(y-1)t] \\
+&= \left( \displaystyle\sum_{n=0}^{\infty} \dfrac{H_n(x)t^n}{n!} \right) \left( \displaystyle\sum_{n=0}^{\infty} \dfrac{[2x(y-1)]t^n}{n!} \right) \\
+&= \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^n \dfrac{[2x(y-1)]^k H_{n-k}(x) t^n}{k! (n-k)!},
+\end{array}$$
+
+it follows that
+
+$$H_n(xy) \doteqdot [H9x) + 2x(y-1)]^n.$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem9chapter15}
+Use Laplace's first integral for $P_n(x)$ to derive equation $(20)$, preceding these exercises.
+\end{problem}
+\begin{solution}
+We know that
+
+$$P_n(x) = \dfrac{1}{\Gamma} \displaystyle\int_0^{\pi} [x+\sqrt{x^2-1}\cos \phi]^n d \phi.$$
+
+We have defined $v_n(x)$ by
+
+$$v_n(x) \doteqdot \mathscr{L}_n \left( P(x) \right) = \displaystyle\sum_{k=0}^n \dfrac{(-1)^k n! P_k(x)}{(k!)^n(n-k)!}.$$
+
+Hence
+
+$$\begin{array}{ll}
+v_n(x) &= \dfrac{1}{\pi} \displaystyle\int_0^{\pi} \displaystyle\sum_{k=0}^n \dfrac{(-1)^k n! [x+\sqrt{x^2-1} \cos \phi}{(k!)^2 (n-k)!} d \phi \\
+&= \dfrac{1}{\pi} \displaystyle\int_0^{\pi} \mathscr{L}_n \left( x + \sqrt{x^2-1} \cos \phi \right) d \phi.
+\end{array}$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem10chapter15}
+For the $v_n(x)$ of equation $(15)$, page 251, evaluate
+
+$$\displaystyle\int_{-1}^1 v_m(x) P_k(x) dx,$$
+
+and use your result to establish equation $(21)$, preceding these exercises.
+\end{problem}
+\begin{solution}
+For the $v_n(x)$ of Exercise~\ref{problem9chapter15} we wish to evaluate $\displaystyle\int_{-1}^1 v_m(x) P_k(x)dx.$
+
+Now
+
+$$\displaystyle\int_{-1}^1 v_m(x) P_k(x) dx = \displaystyle\int_{-1}^1 P_k(x) \displaystyle\sum_{s=0}^m \dfrac{(-1)^s m! P_s(x) dx}{(s!)^2 (m-s)!}.$$
+
+Hence, if $m<k$, then $s<k$ and we obtain
+
+$$\displaystyle\int_{-1}^1 v_m(x) P_k(x) dx = 0, m<k.$$
+
+If $m \geq k$, we get
+
+$$\begin{array}{ll}
+\displaystyle\int_{-1}^1 v_m(x) P_k(x) dx &= \displaystyle\sum_{s=0}^m \dfrac{(-1)^sm!}{(s!)^2(m-s)!} \displaystyle\int_{-1}^1 P_k(x) P_s(x) dx \\
+&= \dfrac{(-1)^k m!}{(k!)^2 (m-k)!} \displaystyle\int_{-1}^1 P_k^2(x) dx \\
+&= \dfrac{(-1)^k 2m!}{(k!)^2(m-k)! (2k+1)}.
+\end{array}$$
+
+Now consider $\displaystyle\int_{-1}^1 v_N(x) v_m(x) dx.$
+
+Let $m \geq n$. Then
+
+$$\displaystyle\int_{-1}^1 v_n(x) v_m(x) dx = \displaystyle\int_{-1}^1 v_n(x) \displaystyle\sum_{k=0}^m \dfrac{(-1)^k m! P_k(x)}{(k!)^2 (m-k)!} dx.$$
+
+For $k>n$ the integrals involved in the sum are zero. We may therefore write
+
+$$\begin{array}{ll}
+\displaystyle\int_{-1}^1 v_n(x) v_m(x) dx &= \displaystyle\sum_{k=0}^n \dfrac{(-1)^k m!}{(k!)^2 (m-k)!} \displaystyle\int_{-1}^1 v_n(x) P_k(x) dx \\
+&= \displaystyle\sum_{k=0}^n \dfrac{(-1)^k m!}{(k!)^2 (m-k)!} \dfrac{(-1)^k 2 \cdot n!}{(k!)^2(n-k)! (2k+1)} \\
+&= \displaystyle\sum_{k=0}^n \dfrac{(-n)_k(-m)_k}{(k!)^4 (k + \frac{1}{2})} \\
+&= 2 \displaystyle\sum_{k=0}^n \dfrac{(-n)_k (-m)_k (\frac{1}{2})_k}{(k!)^4 (\frac{3}{2})_k}.
+\end{array}$$
+
+Hence, since $m$ and $n$ are interchangeable,
+
+$$\displaystyle\int_{-1}^1 v_n(x) v_m(x) dx = 2 {}_3F_4 \left[ \begin{array}{rlr}
+-n, -m, \dfrac{1}{2}; & & \\
+& & 1 \\
+1,1,1,\dfrac{3}{2}; & & 
+\end{array} \right].$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem11chapter15}
+Show that
+
+$$(y+x)^n P_n \left( \dfrac{y-x}{y+x} \right) \doteqdot n! \left\{ L(x) - L(y) \right\}^n.$$
+\end{problem}
+\begin{solution}
+Consider
+
+$$\begin{array}{ll}
+\displaystyle\sum_{n=0}^{\infty} \dfrac{(y+x)^n P_n(\frac{y-x}{y+x})t^n}{(n!)^2} &= {}_0F_1 \left( -;1;\dfrac{t(y+x)[\frac{y-x}{y+x}-1]}{2} \right) {}_0F_1 \left(-;1; \dfrac{t(y+x)[\frac{y-x}{y+x}+1]}{2} \right) \\
+&= {}_0F_1(-;1;-xt) {}_0F_1(-;1;yt) \\
+&= e^t {}_0F_1(-;1;-xt) e^{-t} {}_0F_1(-;1;-y(-t)) \\
+&= \left( \displaystyle\sum_{n=0}^{\infty} \dfrac{\mathscr{L}_n(x) t^4}{n!} \right) \left( \displaystyle\sum_{n=0}^{\infty} \dfrac{(-1)^n \mathscr{L}_n(y) t^n}{n!} \right) \\
+&= \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^n \dfrac{(-1)^k \mathscr{L}_k(y) \mathscr{L}_{n-k}(x) t^n}{k! (n-k)!}.
+\end{array}$$
+
+We may conclude that
+
+$$\begin{array}{ll}
+(y+x)^n P_n \left( \dfrac{y-x}{y+x} \right) &= n! \displaystyle\sum_{k=0}^n \dfrac{(-1)^k n! \mathscr{L}_k(y) \mathscr{L}_{n-k}(x)}{k! (n-k)!} \\
+&\doteqdot n! \left\{ \mathscr{L}(x) - \mathscr{L}(y) \right\}^n,
+\end{array}$$
+
+as desired.
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem12chapter15}
+Define polynomials $\phi_n(x,y)$ by
+
+$$\phi_n(x,y) \doteqdot H_n \left(xL(y) \right).$$
+
+Show that
+
+$$\displaystyle\sum_{n=0}^{\infty} \dfrac{\phi_n(x,y)t^n}{n!} = \exp(2xt-t^2) {}_0F_1(-;1;-2xyt).$$
+\end{problem}
+\begin{solution}
+We define $\phi_n(x,y)$ by
+
+$$\begin{array}{ll}
+\phi_n(x,y) &\doteqdot H_n(x\mathscr{L}(y)) \\
+&= \displaystyle\sum_{k=0}^{[\frac{n}{2}]} \dfrac{(-1)^k n! 2^{n-2k} x^{n-2k} \mathscr{L}_{n-2k}(y)}{k! (n-2k)!}.
+\end{array}$$
+
+Then
+
+$$\begin{array}{ll}
+\displaystyle\sum_{n=0}^{\infty} \dfrac{\phi_n(x,y)t^n}{n!} &= \displaystyle\sum_{n,k=0}^{\infty} \dfrac{(-1)^k (2x)^n \mathscr{L}_n(y) t^{n+2k}}{k!n!} \\
+&= \exp(-t^2) \displaystyle\sum_{n=0}^{\infty} \dfrac{\mathscr{L}_n(y) (2xt)^n}{n!} \\
+&= \exp(-t^2) \exp(2xt) {}_0F_1(-;1;-2xgt) \\
+&= \exp(2xt-t^2) {}_0F_1(-;1;-2xyt),
+\end{array}$$
+
+as desired.
+\end{solution}

@@ -1,0 +1,450 @@
+%%%%
+%%
+%%
+%%%%
+%%%% CHAPTER 16
+%%%% CHAPTER 16
+%%%%
+%%
+%%
+%%%%
+\section{Chapter 16 Solutions}
+\begin{center}\hyperref[toc]{\^{}\^{}}\end{center}
+\begin{center}\begin{tabular}{lllllllllllllllllllllllll}
+\hyperref[problem1chapter16]{P1} & \hyperref[problem2chapter16]{P2} & \hyperref[problem3chapter16]{P3} & \hyperref[problem4chapter16]{P4} & \hyperref[problem5chapter16]{P5} & \hyperref[problem6chapter16]{P6} & \hyperref[problem7chapter16]{P7} & \hyperref[problem8chapter16]{P8} & \hyperref[problem9chapter16]{P9}
+\end{tabular}\end{center}
+\setcounter{problem}{0}
+\setcounter{solution}{0}
+\begin{problem}\label{problem1chapter16}
+Let
+
+$$g_n(x) = \dfrac{(1+x)^n P_n^{(\alpha,\beta)} \left( \dfrac{1-x}{1+x} \right)}{(1+\alpha)_n (1+\beta)_n}.$$
+
+Use Bateman's generating function, page 256, to see that
+
+$$\displaystyle\sum_{n=0}^{\infty} g_n(x) t^n = {}_0F_1(-;1+\alpha;-xt) {}_0F_1(-;1+\beta;t)$$
+
+and thus show that, in the sense of Section 126, $g_n(x)$ is of $\sigma$-type zero with $\sigma=D(\theta+\alpha).$ Show also that $g_n(x)$ is of Sheffer $A$-type unity.
+\end{problem}
+\begin{solution}
+Let 
+
+$$g_n(x) =\dfrac{(1+x)^n P_n^{(\alpha,\beta)}(\frac{1-x}{1+x})}{(1+\alpha)_n (1+\beta)_n}.$$
+
+Then
+
+$$\begin{array}{ll}
+\displaystyle\sum_{n=0}^{\infty} g_n(x) t^n &= \displaystyle\sum_{n=0}^{\infty} \dfrac{P_n^{(\alpha,\beta)}(\frac{1-x}{1+x}) [t(1+x)]^n}{(1+\alpha)_n (1+\beta)_n} \\
+&= {}_0F_1 \left( -; 1+\alpha; \dfrac{t(1+x)}{2} \left( \dfrac{1-x}{1+x} -1 \right) \right) {}_0F_1 \left( - ; 1 + \beta; \dfrac{t(1+x) \left[\frac{1-x}{1+x}+1 \right]}{2} \right) \\
+&={}_0F_1(-;t+\alpha;-xt) {}_0F_1(-;1+\beta;t).
+\end{array}$$
+
+We now see that with $\sigma=\mathscr{D}(\theta+\alpha)$, $g_n(x)$ is of $\sigma$-type zero with $A(t) = {}_0F_1(-;1+\beta;t), H(t)=-t, J(t)=-t.$
+
+Since $\sigma g_n(x) = g_{n-1}(x)$, it follows that in the Sheffer classification notation
+
+$$\begin{array}{ll}
+J(x,\mathscr{D}) &= \mathscr{D}(\theta+\alpha) \\
+&= \mathscr{D}(x \mathscr{D}+\alpha) \\
+&= (1+\alpha)\mathscr{D} + x \mathscr{D}^2.
+\end{array}$$
+
+Thus $T_0(x) = 1+\alpha, T_1(x)=x, T_k(x) \equiv 0$ for $k \geq 2$. So $g_n(x)$ is of Sheffer $A$-type unity. 
+
+It might be of interest to see what we get on $P_n^{(\alpha,\beta)}(x)$ because of the fact that $g_n(x)$ is of $\sigma$-type zero.
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem2chapter16}
+Show that
+\begin{eqnarray*}
+\lefteqn{2x(\alpha+\beta+n)DP_n^{(\alpha,\beta)}(x) + [x(\alpha-\beta) - (\alpha+\beta+2n)]DP_{n-1}^{(\alpha,\beta)}(x)} \\
+&& = (\alpha+\beta+n)[2nP_n^{(\alpha,\beta)}(x)-(\alpha-\beta)P_{n-1}^{(\alpha,\beta)}(x)],
+\end{eqnarray*}
+
+which reduces to equation $(2)$, page 159, for $\alpha=\beta=0$.
+\end{problem}
+\begin{solution}
+From equation (3), page 457 and (6) page 450 we get, with $\mathscr{D} \equiv \dfrac{d}{dx},$
+
+\begin{eqnarray*}
+(1) \hspace{35pt} \lefteqn{(x-1)(\alpha+\beta+n)\mathscr{D}P_n^{(\alpha,\beta)}(x) + (x-1)(\alpha+n) \mathscr{D} P_{n-1}^{(\alpha,\beta)}(x)} \\
+&& = n(\alpha+\beta+n)P_n^{(\alpha,\beta)}(x) - (\alpha+n)(\alpha+\beta+n) P_{n-1}^{(\alpha,\beta)}(x),
+\end{eqnarray*}
+
+\begin{eqnarray*}
+\lefteqn{\hspace{-24pt} (2) \hspace{35pt} (x+1)(\alpha+\beta+n)\mathscr{D}P_n^{(\alpha,\beta)}(x) - (x+1)(\beta+n) \mathscr{D}P_{n-1}^{(\alpha,\beta)}(x)} \\
+&& = n(\alpha+\beta+n)P_n^{(\alpha,\beta)}(x) + (\beta+n)(\alpha+\beta+n) P_{n-1}^{(\alpha,\beta)}(x).
+\end{eqnarray*}
+
+We add $(1)$ and $(2)$ to get
+
+\begin{eqnarray*}
+\lefteqn{\hspace{-42pt} (3) \hspace{35pt} 2x(\alpha+\beta+n)\mathscr{D}P_n^{(\alpha,\beta)}(x) + [x(\alpha-\beta)-(\alpha+\beta+2n)]\mathscr{D} P_{n-1}^{(\alpha,\beta)}(x)} \\
+&& = (\alpha+\beta+n) [2n P_n^{(\alpha,\beta)}(x) - (\alpha-\beta)P_{n-1}^{(\alpha,\beta)}(x)].
+\end{eqnarray*}
+
+In $(3)$ put $\alpha=\beta=0$ to obtain
+
+$$nxP_n'(x) - nP_{n-1}'(x) = n^2P_n(x),$$
+
+or
+
+$$nP_n(x) = xP_n'(x) - P_{n-1}'(x)$$
+
+which is $(2)$, page 270.
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem3chapter16}
+Show that
+
+$$2(\alpha+\beta+n)DP_n^{(\alpha,\beta)}(x) + [\alpha-\beta-x(\alpha+\beta+2n)]D P_{n-1}^{(\alpha,\beta)}(x) = (\alpha+\beta+n)(\alpha+\beta+2n)P_{n-1}^{(\alpha,\beta)}(x),$$
+
+which reduces to equation $(6)$, page 159, for $\alpha=\beta=0$.
+\end{problem}
+\begin{solution}
+In Exercise~\ref{problem2chapter16} substract $(1)$ from $(2)$ to get
+
+$$2(\alpha+\beta+n) \mathscr{D}P_n^{(\alpha,\beta)}(x) + [\alpha-\beta-x(\alpha+\beta+2n)]\mathscr{D} P_{n-1}^{(\alpha,\beta)}(x) = (\alpha+\beta+n)(\alpha+\beta+2n) P_{n-1}^{(\alpha,\beta)}(x).$$
+
+In the above put $\alpha=\beta=0$ and divide by $2n$ to get
+
+$$P_n'(x) - xP_{n-1}'(x) = nP_{n-1}(x),$$
+
+which is $(6)$, page 271, with a shift of index.
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem4chapter16}
+Show that
+
+\begin{eqnarray*}
+\lefteqn{\phantom{=}2n(\alpha+\beta+n+1)DP_{n+1}^{(\alpha,\beta)}(x) + [(\alpha+\beta)(n+2)x+n(\alpha-\beta)]DP_n^{(\alpha,\beta)}(x)} \\
+&&+(n+1)[(\alpha-\beta)x-(\alpha+\beta+2n)]DP_{n-1}^{(\alpha,\beta)}(x) \\
+\lefteqn{=n[2(n+1)(\alpha+\beta+n)+(\alpha+\beta+n+1)(\alpha+\beta+2n+2)]P_n^{(\alpha,\beta)}(x)} \\
+&&-(\alpha-\beta)(n+1)(\alpha+\beta+n)P_{n-1}^{(\alpha,\beta)}(x),
+\end{eqnarray*}
+
+which reduces to equation $(5)$, page 159, for $\alpha=\beta=0$.
+\end{problem}
+\begin{solution}
+From Exercise~\ref{problem3chapter16} with a shift of index we get
+
+\begin{eqnarray*}
+\lefteqn{2(\alpha+\beta+n+1)\mathscr{D}P_{n+1}^{(\alpha,\beta)}(x) + [(\alpha-\beta)-x(\alpha+\beta+2n+2)]\mathscr{D}P_n^{(\alpha,\beta)}(x)}\\
+&&= (\alpha+\beta+n+1)(\alpha+\beta+2n+2)P_n^{(\alpha,\beta)}(x).
+\end{eqnarray*}
+
+From Exercise~\ref{problem2chapter16} we get
+
+$$2x(n+1)(\alpha+\beta+n)\mathscr{D} P_n^{(\alpha,\beta)}(x) +(n+1)[x(\alpha-\beta)-(\alpha+\beta+2n)]\mathscr{D}P_{n-1}^{(\alpha,\beta)}(x)$$
+$$=2n(n+1)(\alpha+\beta+n)P_n^{(\alpha,\beta)}(x) - (\alpha-\beta)(n=1)(\alpha+\beta+n)P_{n-1}^{(\alpha,\beta)}(x).$$
+
+Let us form $n$ times the first equation plus the second equation, we thus get
+
+$$2n(\alpha+\beta+n+1)\mathscr{D} P_{n+1}^{(\alpha,\beta)}(x)$$
+$$+[n(\alpha-\beta)+x(-n\alpha - n\beta - 2n^2 - 2n + 2n\alpha + 2n\beta + 2n^2 + 2\alpha + 2 \beta + 2n)] \mathscr{D} P_n^{(\alpha,\beta)}(x)$$
+$$+(n+1)[x(\alpha-\beta)-(\alpha+\beta+2n)]\mathscr{D}P_{n-1}^{(\alpha,\beta)}(x)$$
+$$=n[(\alpha+\beta+n+1)(\alpha+\beta+2n+2)+2(n+1)(\alpha+\beta+n)]P_n^{(\alpha,\beta)}(x) - (\alpha-\beta)(n+1)(\alpha+\beta+n) P_{n-1}^{(\alpha,\beta)}(x),$$
+
+\vspace{10pt} 
+or
+\vspace{10pt}
+
+\begin{eqnarray*}
+\lefteqn{2n(\alpha+\beta+n+1) \mathscr{D}P_{n+1}^{(\alpha,\beta)}(x) + [n(\alpha-\beta)+x(\alpha+\beta)(n+2)]\mathscr{D}P_n^{(\alpha,\beta)}(x)} \\
+&& +(n+1)[x(\alpha-\beta)-(\alpha+\beta+2n)]\mathscr{D}P_{n-1}^{(\alpha,\beta)}(x) \\ 
+\lefteqn{=n[(\alpha+\beta+n+1)(\alpha+\beta+2n+2)+2(n+1)(\alpha+\beta+n)]P_n^{(\alpha,\beta)}(x)} \\
+&& - (\alpha-\beta)(n+1)(\alpha+\beta+n)P_{n-1}^{(\alpha,\beta)}(x),
+\end{eqnarray*}
+
+which is the desired result.
+
+On the above equation put $\alpha=\beta=0$ and divide by $2n(n+1)$ to get
+
+$$P_{n+1}'(x) - P_{n-1}'(x) = (2n+1)P_n(x),$$
+
+which is equation 5, page 271.
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem5chapter16}
+Use the method of Section 142 to show that
+
+$$P_n^{(\alpha,\beta)}(x) = \dfrac{(1+\alpha)_n}{(1+\alpha+\beta)_n} \displaystyle\sum_{k=0}^n \dfrac{(-1)^{n-k}(\beta)_{n-k}(1+\alpha+\beta)_{n+k}(1+\alpha+2k)P_k^{(\alpha,0)}(x)}{(n-k)! (1+\alpha)_{n+k+1}}.$$
+\end{problem}
+\begin{solution}
+We wish to expand $P_n^{(\alpha,\beta)}(x)$ in a series involving $P_k^{(\alpha,\beta)}(x).$
+
+Now we have from $(2)$, page 457, with $p=0$,
+
+$$(1) \hspace{30pt} \left( \dfrac{1-x}{s} \right)^s = (1+\alpha)_s \displaystyle\sum_{k=0}^s \dfrac{(1+\alpha+2k)(1+\alpha)_k P_k^{(\alpha,0)}(x)}{(1+\alpha)_{s+1+k} (1+\alpha)_k} \dfrac{(-1)^k s!}{(s-k)!}$$
+
+and from $(2)$, page 476,
+
+$$(2) \hspace{30pt} \dfrac{(1+\alpha+\beta)_n P_n^{(\alpha,\beta)}(x)}{(1+\alpha)_n} = \displaystyle\sum_{s=0}^n \dfrac{(-1)^s (1+\alpha+\beta)_{n+s} (\frac{1-x}{s})^s}{s! (n-s)! (1+\alpha)_s}.$$
+
+Consider the series
+
+$$\begin{array}{ll}
+\psi(x,t) &= \displaystyle\sum_{n=0}^{\infty} \dfrac{(1+\alpha+\beta)_n P_n^{(\alpha,\beta)}(x) t^n}{(1+\alpha)_n} \\
+&= \displaystyle\sum_{n,s=0}^{\infty} \dfrac{(-1)^s (1+\alpha+\beta)_{n+2s} (\frac{1-x}{2})^s t^{n+s}}{s! n! (1+\alpha)_s} \\
+&= \displaystyle\sum_{n,s=0}^{\infty} \displaystyle\sum_{k=0}^s \dfrac{(-1)^k s! (1+\alpha+2k)(-1)^s (1+\alpha+\beta)_{n+2s}P_k^{(\alpha,0)}(x) t^{n+s}}{(s-k)! (1+\alpha)_{s+1+k} s! n!} \\
+&= \displaystyle\sum_{n,k,s=0}^{\infty} \dfrac{(-1)^s (1+\alpha+2k)(1+\alpha+\beta)_{n+2k+2s}P_k^{(\alpha,0)}(x) t^{n+s+k}}{s! (1+\alpha)_{s+1+2k}n!} \\
+&= \displaystyle\sum_{n,k=0}^{\infty} \displaystyle\sum_{s=0}^n \dfrac{(-1)^s (1+\alpha+\beta)_{n+2k+s} (1+\alpha+2k) P_k(x)^{(\alpha,0)} t^{n+k}}{s! (1+\alpha)_{2k+1+s}(n-s)!}
+\end{array}$$
+
+Then
+
+$$\begin{array}{ll}
+\psi(x,t) &= \displaystyle\sum_{n,k=0}^{\infty} {}_2F_1 \left[ \begin{array}{rlr} 
+-n, 1+\alpha+\beta+n+2k; & & \\
+& & 1 \\
+2+\alpha+2k; & & 
+\end{array} \right] \dfrac{(1+\alpha+\beta)_{n+2k} (1+\alpha+2k)P_k^{(\alpha,0)}(x) t^{n+k}}{n! (1+\alpha)_{2k+1}} \\
+&= \displaystyle\sum_{n,k=0}^{\infty} \dfrac{\Gamma(2+\alpha+2k) \Gamma(1-\beta) (1+\alpha+\beta)_{n+2k} (1+\alpha+2k) P_k^{(\alpha,0)}(x) t^{n+k}}{\Gamma(2+\alpha+2k+n) \Gamma(1-\beta-n) n! (1-\alpha)_{2k+1}} \\
+&= \displaystyle\sum_{n,k=0}^{\infty} \dfrac{(1+\alpha)_{2k+1}(-1)^n (\beta)_n (1+\alpha+\beta)_{n+2k} (1+\alpha+2k)P_k^{(\alpha,0)}(x) t^{n+k}}{(1+\alpha)_{n+2k+1}n! (1+\alpha)_{2k+1}} \\
+&= \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^n \dfrac{(-1)^{n-k} (\beta)_{n-k} (1+\alpha+\beta)_{n+k} (1+\alpha+2k) P_k^{(\alpha,0)}(x) t^n}{(n-k)! (1+\alpha)_{n+k+1}}.
+\end{array}$$
+
+We may now conclude that
+
+$$P_n^{(\alpha,\beta)}(x) = \dfrac{(1+\alpha)_n}{(1+\alpha+\beta)_n} \displaystyle\sum_{k=0}^n \dfrac{(-1)^{n-k} (\beta)_{n-k} (1+\alpha+\beta)_{n+k} (1+\alpha+2k) P_k^{(\alpha,0)}(x)}{(n-k)! (1+\alpha)_{n+k+1}}.$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem6chapter16}
+Use the result obtained in Section 142 to evaluate
+
+$$\displaystyle\int_{-1}^1 (1-x^2)^{\alpha}P_n^{(\alpha,\beta)}(x)P_k^{(\alpha,\alpha)}(x)dx.$$
+\end{problem}
+\begin{solution}
+We know from Section 142 that
+
+$$P_n^{(\alpha,\beta)}(x) = \dfrac{(1+\alpha)_n}{(1+\alpha+\beta)_n} \displaystyle\sum_{k=0}^n \dfrac{(-1)^{n-k} (\beta-\alpha)_{n-k} (1+\alpha+\beta)_{n+k} (1+2\alpha)_k (1+2\alpha+2k) P_k^{(\alpha,\alpha)}(x)}{(n-k)! (1+2\alpha)_{n+k+1} (1+\alpha)_k}.$$
+
+By using $\beta=\alpha$ in the orthogonality property of $P_n^{(\alpha,\beta)}(x)$ we get 
+
+$$\displaystyle\int_{-1}^1 (1-x2)^{\alpha} P_n^{(\alpha,\alpha)}(x) P_m^{(\alpha,\alpha)}(x)dx =0, m\neq n$$
+
+and from $(11)$, page 454,
+
+$$\displaystyle\int_{-1}^1 (1-x^2)^{\alpha} P_n^{(\alpha,\alpha)}(x)]^2 dx = \dfrac{2^{1+2\alpha}\Gamma(1+\alpha+n)\Gamma(1+\alpha+n)}{n! (1+2\alpha+2n)\Gamma(1+2\alpha+n)}.$$
+
+We may now write
+
+\begin{eqnarray*}
+\lefteqn{A(k,n) = \displaystyle\int_{-1}^1 (1-x^2)^{\alpha}P_n^{(\alpha,\beta)}(x) P_k^{(\alpha,\alpha)}(x) \mathrm{d}x} \\
+&&= \dfrac{(1+\alpha)_n}{(1+\alpha+\beta)_n} \displaystyle\sum_{s=0}^n \left[ \dfrac{(-1)^{n-s} (\beta-\alpha)_{n-s} (1+\alpha+\beta)_{n+s} (1+2\alpha)_s (1+2\alpha+2s)}{(n-s)! (1+2\alpha)_{n+s+1} (1+\alpha)_s} \right. \\
+&&\left.\phantom{=}\cdot\displaystyle\int_{-1}^1 (1-x^2)^{\alpha} P_s^{(\alpha,\alpha)}(x) P_k^{(\alpha,\alpha)}(x) \mathrm{d}x \right].
+\end{eqnarray*}
+
+If $k>n$, then $k>s$ and we get
+
+$$A(k,n)=0 \mathrm{\hspace{3pt} for \hspace{3pt}} k>n.$$
+
+If $0 \leq k \leq n,$ then the integrals in the sum are zero except for the one in which $s=k$. 
+
+We thus arrive at
+
+$$A(k,n) = \frac{(1+\alpha)_n (-1)^{n-k} (\beta - \alpha)_{n-k} (1+\alpha+\beta)_{n+k} (1+2\alpha)_k (1 + 2 \alpha+2k) 2^{1+2\alpha} \Gamma(1+\alpha+k)^2}{(n-k)! k! \Gamma(1+\alpha+\beta+n) \Gamma(1+2\alpha+n-k+1) \Gamma(1+\alpha+k) \Gamma(1+2\alpha+k)}$$
+
+or
+
+$$\hspace{-5pt} \begin{array}{ll}
+A(k,n) &= \dfrac{2^{2+2\alpha} (-1)^{n-k} (\beta - \alpha)_{n-k} \Gamma(1+\alpha+n) \Gamma(1+\alpha+\beta+n+k) \Gamma(1+2\alpha+k) \Gamma(1+\alpha+k)^2}{(n-k)! k! \Gamma(1+\alpha+\beta+n) \Gamma(1+2\alpha+n+k+1) \Gamma(1+\alpha+k) \Gamma(1+2 \alpha+k)} \\
+&= \dfrac{2^{1+2\alpha} (-1)^{n-k} (\beta - \alpha)_{n-k} \Gamma(1+\alpha+k) \Gamma(1+\alpha+n) \Gamma(1+\alpha+\beta+n+k)}{k! (n-k)! \Gamma(1+\alpha+\beta+n) \Gamma(2 + 2 \alpha + n + k}
+\end{array}$$
+
+for $0 \leq k \leq n$.
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem7chapter16}
+Use the result in Exercise~\ref{problem5chapter16} above to evaluate
+
+$$\displaystyle\int_{-1}^1 (1-x)^{\alpha}P_n^{(\alpha,\beta)}(x)P_k^{(\alpha,0)}(x)dx.$$
+\end{problem}
+\begin{solution}
+We wish to evaluate $\displaystyle\int_{-1}^1 (1-x)^{\alpha} P_n^{(\alpha,\beta)}(x) P_k^{(\alpha,0)}(x) \mathrm{d}x.$
+
+We know that
+
+$$\displaystyle\int_{-1}^1 (1-x)^{\alpha} P_k^{(\alpha,0)}(x) P_s^{(\alpha,0)}(x) dx  \left\{ \begin{array}{ll}
+&=0, \quad k\neq s \\
+&= \dfrac{2^{1+\alpha}\Gamma(1+\alpha+k) \Gamma(1+k)}{k! (1+\alpha+2k) \Gamma(1+\alpha+k)} = \dfrac{2^{1+\alpha}}{1+\alpha+2k}, \quad s=k
+\end{array} \right.$$
+
+Now, by Exercise~\ref{problem5chapter16} we get
+
+\begin{eqnarray*}
+\lefteqn{\displaystyle\int_{-1}^1 (1-x)^{\alpha} P_n^{(\alpha,\beta)}(x) P_k^{(\alpha,0)}(x) dx } \\
+&& = \dfrac{(1+\alpha)_n}{(1+\alpha+\beta)_n} \displaystyle\sum_{s=0}^n \left[ \dfrac{(-1)^{n-s} (\beta)_{n-s} (1+\alpha+\beta)_{n+s} (1+\alpha+2s)}{(n-s)! (1+\alpha)_{n+s+1}} \displaystyle\int_{-1}^1 (1-x)^{\alpha} P_s^{(\alpha,0)}(x) P_k^{(\alpha,0)}(x) dx \right].
+\end{eqnarray*}
+
+If $k>n$, then $k>s$, so we get
+
+$$\displaystyle\int_{-1}^1 (1-x)^{\alpha} P_n^{(\alpha,\beta)}(x) P_k^{(\alpha,0)}(x) dx = 0, k >n.$$
+
+If $0 \leq k \leq n$, each integral in the sum is zero except for the one in which $s=k$. Hence
+
+$$\displaystyle\int_{-1}^1 (1-x)^{\alpha} P_n^{(\alpha,\beta)}(x) P_k^{(\alpha,0)}(x) dx = \dfrac{(1+\alpha)_n (-1)^{n-k} (\beta)_{n-k} (1+\alpha+\beta)_{n+k} (1+\alpha+2k) 2^{1+\alpha}}{(1+\alpha+\beta)_n (n-k)! (1+\alpha)_{n+k+1} (1+\alpha+2k)}.$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem8chapter16}
+Use Theorem 84, page 269, with $y=x=-\dfrac{v}{1-v}$ to conclude that
+
+$${}_2F_1 \left[ \begin{array}{rlr}
+a,b; & & \\
+& & v\\
+c; & &
+\end{array} \right] {}_2F_1 \left[ \begin{array}{rlr}
+a,b; & & \\
+& & v \\
+1+a+b-c; & &
+\end{array} \right] = {}_4F_3 \left[ \begin{array}{rlr}
+a,b,\dfrac{1}{2}(a+b),\dfrac{1}{2}(a+b+1); & & \\
+& & 4v(1-v) \\
+a+b,c,1+a+b-c; & & 
+\end{array} \right].$$
+\end{problem}
+\begin{solution}
+Theorem 84 is 
+
+\begin{eqnarray*}
+\lefteqn{{}_2F_1 \left[ \begin{array}{rlr}
+a,b; & & \\
+& & \dfrac{-x}{1-x} \\
+c; & & 
+\end{array} \right] {}_2F_1 \left[ \begin{array}{rlr}
+a,b ; & & \\
+& & \dfrac{-y}{1-y} \\
+1-c+a+b; & & 
+\end{array} \right] }\\
+&& =F_4 \left(a,b;c,1-c+a+b; \dfrac{-x}{(1-x)(1-y)}, \dfrac{-y}{(1-x)(1-y)} \right).
+\end{eqnarray*}
+
+Now put $x=y=\dfrac{-x}{1-x}$. Then the above becomes
+
+$$\begin{array}{ll}
+\lefteqn{{}_2F_1 \left[ \begin{array}{rlr}
+a,b; & & \\
+& & v \\
+c; & &
+\end{array} \right] {}_2F_1 \left[ \begin{array}{rlr}
+a,b; & & \\
+& & v \\
+1-c+a+b; & &
+\end{array} \right]}\\
+&= F_4(a,b;c,1-c+a+b; v(1-v), v(1-v)) \\
+&= \displaystyle\sum_{n,k=0}^{\infty} \dfrac{(a)_{n+k} (b)_{n+k} v^{n+k} (1-v)^{n+k}}{k! n! (c)_k (1-c+a+b)_n} \\
+&= \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^n \dfrac{(a)_n (b)_n v^n (1-v)^n}{k! (n-k)! (c)_k (1-c+a+b)_{n-k}} \\
+&= \displaystyle\sum_{n=0}^{\infty} {}_2F_1 \left[ \begin{array}{rlr}
+-n, c-a-b-n; & & \\
+& & 1 \\
+c; & & 
+\end{array} \right] \dfrac{(a)_n (b)_n v^n (1-v)^n}{n! (1-c+a+b)_n} \\
+&= \displaystyle\sum_{n=0}^{\infty} \dfrac{\Gamma(c) \Gamma(a+b+2n) (a)_n (b)_n v^n (1-v)^n}{\Gamma(c+n) \Gamma(a+b+n) n! (1-c+a+b)_n} \\
+&= \displaystyle\sum_{n=0}^{\infty} \dfrac{(a+b)_{2n} (a)_n (b)_n v^n (1-v)^n}{(c)_n (a+b)_n n! (1-c+a+b)_n} \\
+&= {}_4F_3 \left[ \begin{array}{rlr}
+a,b,\dfrac{a+b}{2}, \dfrac{a+b+1}{2}; & & \\
+& & 4v(1-v) \\
+c,a+b,1-c+a+b; & & 
+\end{array} \right],
+\end{array}$$
+
+as desired.
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem9chapter16}
+Use the result in Exercise~\ref{problem8chapter16} above, and Theorem 25, page 67, to show that
+
+$$\left\{ {}_2F_1 \left[ \begin{array}{rlr}
+a,b; & & \\
+& & y \\
+a+b+\dfrac{1}{2}; & & 
+\end{array} \right] \right\}^2 = {}_3F_2 \left[ \begin{array}{rlr}
+2a,2b,a+b; & & \\
+& & y \\
+2a+2b, a+b+\dfrac{1}{2}; & &
+\end{array} \right].$$
+\end{problem}
+\begin{solution}
+In Exercise~\ref{problem8chapter16} above replace $a$ by $(2a)$, $b$ by $(2b)$, and then put $c=a+b+\dfrac{1}{2}$ to get (since $1+2a+2b-a-b-\dfrac{1}{2}=a + b + \dfrac{1}{2}$)
+
+$$\begin{array}{ll}
+\left\{ {}_2F_1 \left[ \begin{array}{rlr}
+2a, 2b; & & \\
+& & v \\
+a+b+\dfrac{1}{2}; & & 
+\end{array} \right] \right\}^2 &= {}_4F_3 \left[ \begin{array}{rlr}
+2a,2b,a+b,a+b+\dfrac{1}{2}; & & \\
+& & 4v(1-v) \\
+2a+2b, a+b +\dfrac{1}{2}, a+b+\dfrac{1}{2}; & & 
+\end{array} \right] \\
+&= {}_3F_2 \left[ \begin{array}{rlr}
+2a,2b,a+b; & & \\
+& & 4v(1-v) \\
+2a+2b, a+b + \dfrac{1}{2}; & & 
+\end{array} \right].
+\end{array}$$
+
+By Theorem 25, page 114, we may now write
+
+$$\left\{ {}_2F_1 \left[ \begin{array}{rlr}
+a,b; & & \\
+& & 4v(1-v) \\
+a + b + \dfrac{1}{2}; & & 
+\end{array} \right] \right\} = {}_3F_2 \left[ \begin{array}{rlr}
+2a, 2b, a+b; & & \\
+& & 4v(1-v) \\
+2a+2b, a+b+\dfrac{1}{2}; & & 
+\end{array} \right],$$
+
+or
+
+$$\left\{ {}_2F_1 \left[ \begin{array}{rlr}
+a,b; & & \\
+& & y \\
+a + b + \dfrac{1}{2}; & & 
+\end{array} \right] \right\} = {}_3F_2 \left[ \begin{array}{rlr}
+2a, 2b, a+b; & & \\
+& & y \\
+2a+2b, a+b + \dfrac{1}{2}; & & 
+\end{array} \right].$$
+\end{solution}

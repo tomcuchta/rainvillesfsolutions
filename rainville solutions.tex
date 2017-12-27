@@ -1,0 +1,100 @@
+\documentclass{amsart}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{mathrsfs}
+\usepackage{enumerate}
+\usepackage[hypertexnames=false]{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,pdfborder = {0 0 0.1}}
+
+\renewcommand{\Re}{\mathrm{Re}}
+\setcounter{MaxMatrixCols}{10}
+
+\newtheorem{theorem}{Theorem}%[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{counterexample}[theorem]{Counterexample}
+\newtheorem{xca}[theorem]{Exercise}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\numberwithin{equation}{section}
+\theoremstyle{plain}
+\newtheorem{acknowledgement}{Acknowledgement}
+\newtheorem{algorithm}{Algorithm}
+\newtheorem{axiom}{Axiom}
+\newtheorem{case}{Case}
+\newtheorem{claim}{Claim}
+\newtheorem{conclusion}{Conclusion}
+\newtheorem{condition}{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{falsehood}[theorem]{Falsehood}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}{Criterion}
+\newtheorem{exercise}{Exercise}
+\newtheorem{notation}{Notation}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{summary}{Summary}
+\theoremstyle{definition}
+\newtheorem{solution}{Solution}
+\newtheorem{problem}{Problem}
+
+\renewcommand{\Re}{\mathscr{R}} 
+\setcounter{section}{-1}
+
+\begin{document}
+\title{Solutions to Rainville's \textquotedblleft Special Functions" (1960)}
+\author{solutions by Sylvester J. Pagano and Leon Hall; ed. Tom Cuchta}
+
+\maketitle 
+
+%\addtocontents{toc}{\protect\hypertarget{toc}{}}
+\tableofcontents \label{toc}
+
+\date{\today}
+\newpage
+\section{Preface}
+Earl D. Rainville began giving lectures on Special Functions at the University of Michigan in 1946.  The course was well received, and his notes became the basis for his book, Special Functions, published in 1960.  Also in 1946, Sylvester J. Pagano received his B.S. degree in Electrical Engineering at the Missouri School of Mines and Metallurgy (MSM).  That fall, Pagano was appointed Instructor in Mathematics at MSM.  In 1950, Pagano, now Assistant Professor, spent the summer at Michigan, where he and Rainville presumably met.  In the summers of 1962, 1963, and 1964, Pagano was again at Michigan, this time as a National Science Foundation Science Faculty Fellow.  Rainville passed away in 1966, the same year Pagano was promoted to Professor at the University of Missouri--–Rolla (UMR, MSM under its new name).  In the spring of 1966, I was a sophomore at UMR and was taking Elementary Differential Equations; the textbook was the third edition or so of Rainville's Elementary Differential Equations.  This would be a better story if Pagano had been the instructor in that class, but he wasn't.  I did have a class from Pagano later, when I was a beginning graduate student; it was Operational Calculus, and we used the Operational Mathematics book by R.V. Churchill.  Churchill was Rainville's Ph.D. advisor (Michigan 1939), but I knew nothing of any of these connections at the time.  Pagano was a member of both my M.S. and Ph.D. committees at UMR.
+
+\begin{figure}[h]
+\includegraphics[scale=0.9]{images/rainville.jpg}
+\caption{Photograph of Earl D. Rainville from the \href{http://um2017.org/faculty-history/faculty/earl-david-rainville}{University of Michigan}.}
+\end{figure}
+\newpage Pagano retired in 1986, a year after I had returned to Rolla as a faculty member.  Somehow, in the process of him cleaning out his office, I got his collections of worked problems from Rainville's Special Functions, Rainville's Intermediate Differential Equations, and Churchill's Operational Mathematics.  The way I remember it is that I knew these problem solutions existed, and when Pagano retired, I asked him if I could have them, a request to which he graciously agreed.  As to how I knew he even had this material, I don't remember for sure.  These problem solutions (hand--written) almost certainly go back to the three summers Pagano spent at Michigan in the 1960s, and some might even date back to his earlier 1950 visit; Pagano continued to work on them as he taught the courses himself in the 1960s--1980s.  
+
+\begin{figure}
+\includegraphics[scale=0.7]{images/pagano2.png}\includegraphics[scale=0.4]{images/pagano1.png}\includegraphics[scale=0.3]{images/pagano3.png}
+\caption{These photographs are of Sylvester J. Pagano as a college senior in 1946.}
+\end{figure}
+Beginning in the mid--1990s I began to teach both Operational Calculus and Special Functions from time to time at UMR.  For Operational Calculus, I used Churchill's book, and Pagano's problem solutions were quite useful.  I developed my own notes for Special Functions because it was a summer course designed so our graduate students who taught in the summer would have something to take, and some of these students had not yet studied complex variables.  The last time I offered Special Functions was the summer of 2012, and I was able to talk Tom Cuchta, one of the students in that class, into working on transcribing Pagano's problem solutions from Rainville's Special Functions into electronic form using \LaTeX .  To my surprise and delight, Cuchta finished the job by the end of 2012!  We learned, however, that Pagano had not provided solutions to all the problems – he wrote up solutions to 196 out of 231 problems in the book.  That's 85$\%$, so is pretty good, but I decided I would work on finishing the job, and Cuchta agreed to keep adding to the \TeX file as more problems were completed.  As of now (April 2015), there are less than 10 problems left to finish.  The end is in sight.
+
+Sylvester Pagano was a good example of a type of mathematics professor that seems to be disappearing these days.  He didn't publish any papers, but he was an outstanding teacher and he kept building his knowledge of mathematics throughout his career.  When I talk with alumni from our department, and often with engineering graduates from other departments, the person they most frequently ask about is Professor Pagano; they fondly remember him as one of the good ones from their student days.  These alums are right---he was one of the good ones, and he should be remembered.  These problem solutions are mostly his, and the rest were inspired by him.  There is a lot of interesting mathematics here.  I hope you enjoy it.\vspace{10pt}\\
+Leon M. Hall \\
+Professor Emeritus, Mathematics\\
+Missouri S$\&$T
+\input{chapter1.tex}
+\input{chapter2.tex}
+\input{chapter3.tex}
+\input{chapter4.tex}
+\input{chapter5.tex}
+\input{chapter6.tex}
+\input{chapter7.tex}
+\input{chapter8.tex}
+\input{chapter9.tex}
+\input{chapter10.tex}
+\input{chapter11.tex}
+\input{chapter12.tex}
+\input{chapter13.tex}
+\input{chapter14.tex}
+\input{chapter15.tex}
+\input{chapter16.tex}
+\input{chapter17.tex}
+\input{chapter18.tex}
+\input{chapter19.tex}
+\input{chapter20.tex}
+\input{chapter21.tex}
+\end{document}

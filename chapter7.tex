@@ -1,0 +1,168 @@
+%%%%
+%%
+%%
+%%%%
+%%%% CHAPTER 7
+%%%% CHAPTER 7
+%%%%
+%%
+%%
+%%%%
+\section{Chapter 7 Solutions}
+\begin{center}\hyperref[toc]{\^{}\^{}}\end{center}
+\begin{center}\begin{tabular}{lllllllllllllllllllllllll}
+\hyperref[problem1chapter7]{P1} & \hyperref[problem2chapter7]{P2} & \hyperref[problem3chapter7]{P3} & \hyperref[problem4chapter7]{P4} & \hyperref[problem5chapter7]{P5} & \hyperref[problem6chapter7]{P6} 
+\end{tabular}\end{center}
+\setcounter{problem}{0}
+\setcounter{solution}{0}
+\begin{problem}\label{problem1chapter7}
+The function 
+
+$$\mathrm{erf}(x) = \dfrac{2}{\sqrt{\pi}} \displaystyle\int_0^x \exp(-t^2) \mathrm{d}t$$
+was defined on page 36. Show that
+$$\mathrm{erf}(x) = \dfrac{2x}{\sqrt{\pi}} {}_1F_1 \left( \dfrac{1}{2}; \dfrac{3}{2}; -x^2 \right).$$
+\end{problem}
+\begin{solution}
+Let 
+$$\mathrm{erf}(x) = \dfrac{2}{\sqrt{\pi}} \displaystyle\int_0^x \exp(-t^2) \mathrm{d}t.$$
+Then,
+$$\begin{array}{ll}
+\mathrm{erf}(x) &= \dfrac{2}{\sqrt{\pi}} \displaystyle\sum_{n=0}^{\infty} \dfrac{(-1)^n \displaystyle\int_0^x t^{2n} \mathrm{d}t}{n!} \\
+&= \dfrac{2}{\sqrt{\pi}} \displaystyle\sum_{n=0}^{\infty} \dfrac{(-1)^n x^{2n+1}}{n! (2n+1)} \\
+&= \dfrac{2x}{\sqrt{\pi}} \displaystyle\sum_{n=0}^{\infty} \dfrac{(-1)^n \left( \frac{1}{2} \right)_n x^{2n}}{n! \left( \frac{3}{2} \right)_n} \\
+&= \dfrac{2x}{\sqrt{\pi}} {}_1F_1 \left( \dfrac{1}{2}; \dfrac{3}{2}; -x^2 \right).
+\end{array}$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem2chapter7}
+The incomplete gamma function may be defined by the following equation for $\mathrm{Re}(\alpha)>0$:
+$$\gamma(\alpha,x) = \displaystyle\int_0^x e^{-t} t^{\alpha-1} \mathrm{d}t.$$
+Show that
+$$\gamma(\alpha, x) = \alpha^{-1} x^{\alpha} {}_1F_1(\alpha; \alpha+1; -x).$$
+\end{problem}
+\begin{solution}
+For $\mathrm{Re}(\alpha)>0$, let 
+$$\gamma(\alpha, x) = \displaystyle\int_0^x e^{-t} t^{\alpha -1} \mathrm{d}t.$$
+Then,
+$$\begin{array}{ll}
+\gamma(\alpha, x) &= \displaystyle\int_0^x \displaystyle\sum_{n=0}^{\infty} \dfrac{(-1)^n t^{n + \alpha - 1}}{n!} \mathrm{d}t \\
+&= \displaystyle\sum_{n=0}^{\infty} \dfrac{(-1)^n x^{n + \alpha}}{n! (\alpha + n)}.
+\end{array}$$
+Now, $(\alpha + n) = \dfrac{\alpha (\alpha+1)_n}{(\alpha)_n}.$ Hence
+$$\gamma(\alpha,x) = \alpha^{-1}x^{\alpha} \displaystyle\sum_{n=0}^{\infty} \dfrac{(-1)^n (\alpha)_n x^n}{n! (\alpha + 1)_n} = \alpha^{-1}x^{\alpha} {}_1F_1(\alpha; \alpha+1; -x).$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem3chapter7}
+Prove that
+$$(b)_k \dfrac{\mathrm{d}^k}{\mathrm{d}z^k} \left[ e^{-z} {}_1F_1(a;b;z) \right] = (-1)^k (b-a)_ke^{-z} {}_1F_1(a;b+k;z).$$
+You may find it helpful to use Kummer's formula, Theorem 42.
+\end{problem}
+\begin{solution}
+Let $\mathscr{D} = \dfrac{\mathrm{d}}{\mathrm{d}x}$. Consider $\mathscr{D}[e^{-z} {}_1F_1(a;b;z)].$ We know that
+$${}_1F_1(a;b;z) = e^z {}_1F_1(b-a;b;-z).$$
+Hence
+$$\begin{array}{ll}
+\mathscr{D}^k[e^{-z}{}_1F_1(a;b;z)] &= \mathscr{D}^k {}_1F_1(b-a;b;-z) \\
+&= \dfrac{(b-a)_k (-1)^k}{(b)_k} {}_1F_!(b-1+k;b+k;-z) \\
+&= \dfrac{(-1)^k (b-a)_k}{(b)_k} e^{-z} {}_1F_!(a ; b+k;z).
+\end{array}$$
+
+We used $\mathscr{D}{}_1F_1(a;b;z) = \dfrac{a}{b} {}_1F_1(a+1;b+1;z)$ $k$ times.
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem4chapter7}
+Show that
+
+$${}_1F_1(a;b;z) = \dfrac{1}{\Gamma(a)} \displaystyle\int_0^{\infty} e^{-t}t^{\alpha-1}{}_0F_1(-;b;zt) \mathrm{d}t.$$
+\end{problem}
+\begin{solution}
+We know that for $\mathrm{Re}(x)>0$,
+$$\Gamma(x) = \displaystyle\int_0^{\infty} e^{-t} t^{x-1} \mathrm{d}t.$$
+Then for $\mathrm{Re}(a)>0$,
+$$\begin{array}{ll}
+{}_1F_1(a;b;z) &= \displaystyle\sum_{n=0}^{\infty} \dfrac{(a)_n z^n}{n! (b)_n} \\
+&= \dfrac{1}{\Gamma(a)} \displaystyle\sum_{n=0}^{\infty} \dfrac{\Gamma(a+n)z^n}{n!(b)_n} \\
+&= \dfrac{1}{\Gamma(a)} \displaystyle\int_0^{\infty} e^{-t} \displaystyle\sum_{n=0}^{\infty} \dfrac{t^{a+n-1}z^n}{n! (b)_n} \mathrm{d}t \\
+&= \dfrac{1}{\Gamma(a)} \displaystyle\int_0^{\infty} e^{-t} t^{a-1} {}_0F_1(-;b;tz)\mathrm{d}t.
+\end{array}$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem5chapter7}
+Show, with the aid of the result in Exercise~\ref{problem4chapter7}, that
+$$\displaystyle\int_0^{\infty} \exp(-t^2) t^{2a-n-1}J_n(zt) \mathrm{d}t = \dfrac{\Gamma(a)z^n}{2^{n+1}\Gamma(n+1)} {}_1F_1 \left( a; n+1; -\dfrac{z^2}{4} \right).$$
+\end{problem}
+\begin{solution}
+We obtain
+$$\begin{array}{ll}
+A &= \displaystyle\int_0^{\infty} \exp(-t^2) t^{2a-n-1} J_n(zt) \mathrm{d}t \\
+&= \displaystyle\int_0^{\infty} \dfrac{e^{-t^2}t^{2a-n-1} z^n t^n}{2^n \Gamma(1+n)} {}_0F_1 \left( -;1+n;-\dfrac{z^2t^2}{4} \right) \mathrm{d}t.
+\end{array}$$
+Put $t^2=\beta$. Then
+$$\begin{array}{ll}
+A &= \dfrac{z^n}{2^n \Gamma(1+n)} \dfrac{1}{2} \displaystyle\int_0^{\infty} e^{-\beta} \beta^{a-1} {}_0F_1 \left( - ; 1+n; - \dfrac{z^2 \beta}{4} \right) \mathrm{d} \beta \\
+&= \dfrac{z^n}{2^{n+1}\Gamma(1+n)} \dfrac{\Gamma(a)}{1} {}_1F_! \left( a; 1+n; -\dfrac{z^2}{4} \right),
+\end{array}$$
+
+as desired.
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem6chapter7}
+If $k$ and $n$ are non-negative integers, show that
+
+$$\begin{array}{ll}
+F \left[ \begin{array}{rlr}
+-k, \alpha+n; & & \\
+& & 1 \\
+\alpha; & & 
+\end{array} \right] = \left\{
+\begin{array}{ll}
+0 &; k > n \\
+\dfrac{(-n)_k}{(\alpha)_k} &; 0 \leq k \leq n.
+\end{array}
+\right.
+\end{array}$$
+\end{problem}
+
+\begin{solution}
+Let $V(k,n) = F(-k,\alpha+n;\alpha;1).$ Then
+
+$$V(k,n) = \displaystyle\sum_{s=0}^k \dfrac{(-k)_s (\alpha+n)_s}{s! (\alpha)_s} = \displaystyle\sum_{s=0}^k \dfrac{(-1)^s k! (\alpha)_{n+s}}{s! (k-s)! (\alpha)_s (\alpha)_n}.$$
+
+Hence
+
+$$\begin{array}{ll}
+\psi &= \displaystyle\sum_{k=0}^{\infty} \dfrac{V(k,n)t^k}{k!} \\
+&= \displaystyle\sum_{k=0}^{\infty} \displaystyle\sum_{s=0}^k \dfrac{(-1)^s (\alpha)_{n+s} t^k}{s! (k-s)! (\alpha)_s (\alpha)_n} \\
+&= \displaystyle\sum_{k,j=0}^{\infty} \dfrac{(-1)^s (\alpha)_{n+s} t^{k+s}}{s! k! (\alpha)_s (\alpha)_n} \\
+&= e^t \displaystyle\sum_{s=0}^{\infty} \dfrac{(-1)^s (\alpha+n)_s t^s}{s! (\alpha)_s} \\
+&= e^t {}_1F_!(\alpha+n;\alpha;-t) \\
+&= e^t e^{-t} {}_1F_!(-n;\alpha;t) \\
+&= \displaystyle\sum_{k=0}^n \dfrac{(-n)_k t^k}{k! (\alpha)_k}.
+\end{array}$$
+
+Thus
+
+$$V(k,n) = \left\{ \begin{array}{ll}
+\dfrac{(-n)_k}{(\alpha)_k} &; 0 \leq k \leq n \\
+0 &; k > n.
+\end{array} \right.$$
+
+note: this method requires material in chapter 7 (on line 5)
+
+Can do by Chapter 4 if first show that $e^{-t} {}_1F_1(-n;\alpha;t) =  {}_1F_1(\alpha+n;\alpha;-t).$
+\end{solution}

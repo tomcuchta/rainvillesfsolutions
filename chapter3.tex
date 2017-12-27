@@ -1,0 +1,241 @@
+%%%%
+%%
+%%
+%%%%
+%%%% CHAPTER 3
+%%%% CHAPTER 3
+%%%%
+%%
+%%
+%%%%
+\section{Chapter 3 Solutions}
+\begin{center}\hyperref[toc]{\^{}\^{}}\end{center}
+\setcounter{problem}{0}
+\setcounter{solution}{0}
+\begin{center}\begin{tabular}{lllllllllllllllllllllllll}
+\hyperref[problem1chapter3]{P1} & \hyperref[problem2chapter3]{P2} & \hyperref[problem3chapter3]{P3} & \hyperref[problem4chapter3]{P4} & \hyperref[problem5chapter3]{P5} & \hyperref[problem6chapter3]{P6} & \hyperref[problem7chapter3]{P7}
+\end{tabular}\end{center}
+\begin{problem}\label{problem1chapter3}
+With the assumptions of Watson's lemma, show, with the aid of the convergence of the series $F(t) = \displaystyle\sum_{k=1}^{\infty} a_n \exp_t \left( \dfrac{k}{r} - 1 \right)$ in $|t| \leq a + \delta$, that for $0 \leq t \leq a$, there exists a positive constant $c_1$ such that 
+$$\left| F(t) - \displaystyle\sum_{k=1}^n a_k \exp_t \left(\dfrac{k}{r} - 1 \right) \right| < c_1 \exp_t \left( \dfrac{n+1}{r} - 1 \right).$$
+\end{problem}
+\begin{solution}
+We wish to show that there exists $c_1$ such that for $0 \leq t \leq a$ (see problem (2) for $t > a$), 
+$$\left| F(t) - \displaystyle\sum_{k=1}^n a_kt^{\frac{k}{r}-1} \right| < c_1 t^{\frac{n+1}{r} - 1}$$
+under the condition of Watson's lemma. 
+By the convergence of $\displaystyle\sum_{n=1}^{\infty} a_n t^{\frac{n}{r}-1} = F(t)$ in $|t| \leq a$ we write
+$$\begin{array}{ll}
+\left| F(t) - \displaystyle\sum_{k=1}^n a_k t^{\frac{k}{r}-1} \right| &= \left| \displaystyle\sum_{k=n+1}^{\infty} a_k t^{\frac{k}{r}-1} \right| \\
+&= t^{\frac{n+1}{r}-1} \left| \displaystyle\sum_{k=n+1}^{\infty} a_k t^{\frac{k-n-1}{r}} \right| \\
+&\leq t^{\frac{n+1}{r}-1} \left| \displaystyle\sum_{k=n+1}^{\infty} a_k a^{\frac{k-n-1}{r}} \right| \\
+&< c_1  t^{\frac{n+1}{r}-1},
+\end{array}$$
+where $c_1 > \left|\displaystyle\sum_{k=n+1}^{\infty} a_k a^{\frac{k-n-1}{r}} \right|$.
+Remember from Watson's lemma
+$$F(t) = \displaystyle\sum_{k=1}^{\infty} a_n t^{\frac{n}{r}-1}$$
+for $|t| \leq a+\delta$ where $\delta > 0.$ $\qed$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem2chapter3}
+With the assumptions of Watson's lemma, page 41, show that for $t > a$, there exist positive constants $c_2$ and $\beta$ such that
+$$\left| F(t) - \displaystyle\sum_{k=1}^n a_k \exp_t \left( \dfrac{k}{r} - 1 \right) \right| < c_2 \exp_t \left( \dfrac{n+1}{r} - 1 \right) e^{\beta t}.$$
+\end{problem}
+\begin{solution}
+Under the assumption of Watson's lemma we wish to show that for $t > a$, there exist constants $c_2, \beta$ such that
+$$\left| F(t) - \displaystyle\sum_{k=1}^n a_kt^{\frac{k}{r}-1} \right| < c_2 e^{\beta t} t^{\frac{n+1}{r} - 1}.$$
+Now for $t > 0$, we have given $|F(t)| < ke^{bt}.$ Hence
+$$\begin{array}{ll} \left| F(t) - \displaystyle\sum_{k=1}^n a_k t^{\frac{k}{r}-1} \right| &< k e^{bt} + t^{\frac{n+1}{r}-1} \left| \displaystyle\sum_{k=1}^n a_k t^{\frac{k-n-1}{r}} \right| \\
+&= k e^{bt} + \left| \displaystyle\sum_{k=1}^n a_kt^{\frac{k}{r}-1} \right|,
+\end{array}$$
+but $k-n-1 < 0$ and $t > a$, so
+$$\left| F(t) - \displaystyle\sum_{k=1}^n a_k t^{\frac{k}{r}-1} \right| < ke^{bt} + t^{\frac{n+1}{r}-1} \left| \displaystyle\sum_{k=1}^n a_k a^{\frac{k-n-1}{r}} \right|$$
+but $\left| \displaystyle\sum_{k=1}^{\infty} a_k a^{\frac{k}{r}} \right|$ converges. Hence, since $t > a$, there exist constants $M_1, M_2$ such that
+$$\begin{array}{ll}
+\left| F(t) - \displaystyle\sum_{k=1}^n a_k t^{\frac{k}{r}-1} \right| &< M_1 e^{bt} t^{\frac{n+1}{r}-1} \left( \dfrac{a}{t} \right)^{\frac{n+1}{r}-1} + M_2 t^{\frac{n+1}{r}-1} \\
+&< M_1 e^{bt} t^{\frac{n+1}{r}-1} + M_2 t^{\frac{n+1}{r}-1} e^{bt} \\
+&< c_1 e^{\beta t} t^{\frac{n+1}{r}-1}. \qed
+\end{array}$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem3chapter3}
+Derive the asymptotic expansion (6) immediately preceding these exercises by applying Watson's lemma to the function
+$$f'(x) = -\displaystyle\int_0^{\infty} \dfrac{te^{-xt}}{t+t^2} \mathrm{d}t$$
+and then integrating the resultant expansion term by term.
+\end{problem}
+\begin{solution}
+Consider Watson's lemma with $F(t) = \dfrac{-t}{1+t^2}$. Hence
+$$F(t) = \dfrac{-t}{1+t^2} = \displaystyle\sum_{n=0}^{\infty} (-1)^{n+1} t^{2n+1} = \displaystyle\sum_{n=1}^{\infty} (-1)^n t^{2n-1}; 0 \leq t < 1.$$
+Choose $r = \dfrac{1}{2}$, $a = \dfrac{1}{2}$, $\delta = \dfrac{1}{3}$. Also for $t \geq 0$, $e^t \geq 1$ and $\dfrac{t}{1+t^2} < \dfrac{1}{2}$. 
+
+Hence
+$$|F(t)| < 1 \cdot e^t; t \geq \dfrac{1}{2},$$
+satisfying condition (2) of Watson's Lemma, and
+$$F(t) = \displaystyle\sum_{n=1}^{\infty} (-1)^n t^{\frac{n}{1/2}-1}$$
+for $|t| \leq \dfrac{1}{2} + \dfrac{1}{3} = \dfrac{5}{6}$.
+
+Hence by Watson's lemma for $f'(x) = \displaystyle\int_0^{\infty} \dfrac{-te^{-xt}}{1+t^2} \mathrm{d}t$ we have
+$$f'(x) \sim \displaystyle\sum_{n=1}^{\infty} \dfrac{(-1)^n \Gamma \left( \dfrac{n}{1/2} \right)}{x^{2n}} = \displaystyle\sum_{n=1}^{\infty} \dfrac{(-1)^n (2n-1)!}{x^{2n}}.$$
+Then
+$$\displaystyle\int_x^{\infty} f'(s) \mathrm{d}s \sim \displaystyle\sum_{n=1}^{\infty} \displaystyle\int_x^{\infty} \dfrac{(-1)^n(2n-1)!}{s^{2n}} \mathrm{d}s.$$
+After integrating, this becomes
+$$(*) \hspace{5pt} \displaystyle\int_x^{\infty} f'(s) \mathrm{d}s \sim \displaystyle\sum_{n=1}^{\infty} \dfrac{(-1)^n (2n-2)!}{x^{2n-1}}.$$
+Now
+$$\dfrac{\mathrm{d}}{\mathrm{d}x} \displaystyle\int_0^{\infty} \dfrac{e^{-xt}}{1+t^2}\mathrm{d}t = \displaystyle\int_0^{\infty} \dfrac{-t e^{-xt}}{1+t^2} \mathrm{d}t \equiv f'(x).$$
+Let \textquotedblleft A\textquotedblright {} label the integral in the middle of the last formula. Hence 
+$$f(x) = \displaystyle\int_0^{\infty} \dfrac{e^{-xt}}{1+t^2} \mathrm{d}t,$$
+which we label as \textquotedblleft B\textquotedblright.
+Also note that integrals \textquotedblleft A\textquotedblright {} and \textquotedblleft B\textquotedblright {} are uniformly convergent. Hence
+$$\displaystyle\lim_{x \rightarrow \infty} f(x) = \displaystyle\int_0^{\infty} \displaystyle\lim_{x \rightarrow \infty} \dfrac{e^{-xt}}{1+t^2} \mathrm{d}t = 0.$$
+Therefore
+$$\displaystyle\int_x^{\infty} f'(s) \mathrm{d}s = f(s) \Bigm| _x^{\infty} = 0 - f(x).$$
+By $(*)$, for $\mathrm{Re}(x) > 0$ and as $|x| \rightarrow \infty$,
+$$0 - f(x) \sim \displaystyle\sum_{n=1}^{\infty} \dfrac{(-1)^n (2n-2)!}{x^{2n-1}}.$$
+So for $\mathrm{Re}(x)>0$ and as $|x| \rightarrow \infty$,
+$$\begin{array}{ll}
+f(x) &= \displaystyle\int_0^{\infty} \dfrac{e^{-xt}}{1+t^2} \mathrm{d}t \\
+&\sim - \displaystyle\sum_{n=1}^{\infty} \dfrac{(-1)^n(2n-2)!}{x^{2n-1}} \\
+&\sim \displaystyle\sum_{n=0}^{\infty} \dfrac{(-1)^n (2n)!}{x^{2n+1}}.
+\end{array}$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem4chapter3}
+Establish (6), page 43, directly, first showing that
+$$f(x) - \displaystyle\sum_{k=0}^n (-1)^k (2k)! x^{-2k-1} = (-1)^{n+1} \displaystyle\int_0^{\infty} \dfrac{e^{-xt}t^{2n+2}}{1+t^2} \mathrm{d}t,$$
+and thus obtain not only (6) but also a bound on the error made in computing with the series involved.
+\end{problem}
+\begin{solution}(Solution by Leon Hall)
+Because $\dfrac{1}{1+t^2} = \displaystyle\sum_{k=0}^{\infty} (-1)^k t^{2k}$, we have
+$$\begin{array}{ll}
+\dfrac{1}{1+t^2} &= \displaystyle\sum_{k=0}^n (-1)^k t^{2k} + \displaystyle\sum_{k=n+1}^{\infty} (-1)^k t^{2k} \\
+&=\displaystyle\sum_{k=0}^n (-1)^k t^{2k} + (-1)^{n+1} t^{2n+2} \displaystyle\sum_{k=0}^{\infty} (-1)^k t^{2k} \\
+&=\displaystyle\sum_{k=0}^n (-1)^k t^{2k} + (-1)^{n+1} \dfrac{t^{2n+2}}{1+t^2}.
+\end{array}$$
+So
+$$\begin{array}{ll}
+f(x) &= \displaystyle\int_0^{\infty} \dfrac{e^{-xt}}{1+t^2} \mathrm{d}t \\
+&= \displaystyle\int_0^{\infty} e^{-xt} \displaystyle\sum_{k=0}^n (-1)^k t^{2k} \mathrm{d}t + (-1)^{n+1} \displaystyle\int_0^{\infty} \dfrac{e^{-xt} t^{2n+2}}{1+t^2} \mathrm{d}t \\ 
+&=\displaystyle\sum_{k=0}^n (-1)^k \displaystyle\int_0^{\infty} e^{-xt}t^{2k}\mathrm{d}t + (-1)^{n+1} \displaystyle\int_0^{\infty} \dfrac{e^{-xt}t^{2n+2}}{1+t^2} \mathrm{d}t.
+\end{array}$$
+Integration by parts give the reduction formula (for $x$ as specified)
+$$\displaystyle\int_0^{\infty} e^{-xt}t^{2k} \mathrm{d}t = \dfrac{2k(2k-1)}{x^2} \displaystyle\int_0^{\infty}e^{-xt} t^{2k-2} \mathrm{d}t.$$
+This, plus the fact that $\displaystyle\int_0^{\infty}e^{-xt}\mathrm{d}t = \dfrac{1}{x}$, yields
+$$f(x) = \displaystyle\sum_{k=0}^n (-1)^k \dfrac{(2k)!}{x^{2k+1}} + (-1)^{n+1} \displaystyle\int_0^{\infty} \dfrac{e^{-xt} t^{2n+2}}{1+t^2} \mathrm{d}t.$$
+Then
+$$\begin{array}{ll}
+\left| f(x) - \displaystyle\sum_{k=0}^n (-1)^k \dfrac{(2k)!}{x^{2k+1}} \right| &= \left| \displaystyle\int_0^{\infty} \dfrac{e^{-xt} t^{2n+2}}{1+t^2} \mathrm{d}t \right| \\
+&< \displaystyle\int_0^{\infty} |e^{-xt}| t^{2n+2} \mathrm{d}t \\
+&< \displaystyle\int_0^{\infty} e^{-Re(x)t} t^{2n+2} \mathrm{d}t \\
+&= \dfrac{(2n+2)!}{[Re(x)]^{2n+3}}.
+\end{array}$$
+In the region $|\mathrm{arg \hspace{3pt}} x| \leq \dfrac{\pi}{2} - \Delta, \Delta > 0$, if $\mathrm{Re}(x) > N$, then $|x| > \dfrac{N}{\sin(\Delta)}$ and as $|x| \rightarrow \infty$,
+$$\dfrac{(2n+2)!}{[Re(x)]^{2n+3}} = \mathcal{O} \left( |x|^{-2n-2} \right).$$
+So
+$$f(x) \sim \displaystyle\sum_{n=0}^{\infty} (-1)^k \dfrac{(2k)!}{x^{2k+1}}$$
+as $|x| \rightarrow \infty$ in the sector $|\mathrm{arg \hspace{3pt}} x| < \dfrac{\pi}{2} - \Delta, \Delta > 0$.
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem5chapter3}
+Use integration by parts to establish that for real $x \rightarrow \infty$,
+$$\displaystyle\int_x^{\infty} e^{-t}t^{-1} \mathrm{d}t \sim e^{-x} \displaystyle\sum_{n=0}^{\infty} (-1)^n n! x^{-n-1}.$$
+\end{problem}
+\begin{solution}
+Consider $f(x) = \displaystyle\int_x^{\infty} \dfrac{e^{-t}}{t} \mathrm{d}t$ as $x \rightarrow \infty$.
+Using integration by parts,
+$$\begin{array}{ll|ll}
+u=\dfrac{1}{t} & \mathrm{d}v=e^{-t}\mathrm{d}t & f(x) = \left[ -\dfrac{1}{t}e^{-t} \right|_x^{\infty} - \displaystyle\int_x^{\infty} t^{-2} e^{-t}\mathrm{d}t \\
+u=-\dfrac{1}{t^2} & v = -e^{-t} & \phantom{f(x)}= \dfrac{1}{x} e^{-x} + \left[ \dfrac{1}{t^2}e^{-t} \right|_x^{\infty} + 2 \displaystyle\int_0^{\infty} \dfrac{1}{t^3}e^{-t}\mathrm{d}t \\
+u=\dfrac{1}{t^2} & \mathrm{d}v = e^{-t} \mathrm{d}t & \phantom{f(x)}=\!\left[ \dfrac{e^{-x}}{x} - \dfrac{e^{-x}}{x^2} \right]\!-\!\left[\dfrac{2e^{-t}}{t^3} \right]_x^{\infty}\!-\!\!2 \cdot 3\!\displaystyle\int_x^{\infty}\!\dfrac{1}{t^4}e^{-t}\mathrm{d}t \\
+\mathrm{d}u = -2\dfrac{1}{t^3} & v = -e^{-t} \\
+&= \ldots .
+\end{array}$$
+This pattern can clearly continue forever, so we can write
+$$f(x) = e^{-x} \displaystyle\sum_{k=0}^n \dfrac{(-1)^k k!}{x^{k+1}} + (-1)^{n+1}(n+1)! \displaystyle\int_x^{\infty} t^{-(n+2)}e^{-t} \mathrm{d}t.$$
+Now since $0 < x < t$,
+$$\begin{array}{ll}
+\left| e^x f(x) - \displaystyle\sum_{k=0}^n \dfrac{(-1)^k k!}{x^{k+1}} \right| &= (n+1)! e^x \displaystyle\int_x^{\infty} \dfrac{e^{-t}}{t^{n+2}} \mathrm{d}t \\
+&< \dfrac{(n-1)!}{x^{n+2}} e^x \displaystyle\int_x^{\infty} e^{-t} \mathrm{d}t \\
+&< \dfrac{(n+1)!}{x^{n+2}}.
+\end{array}$$
+Hence
+$$e^x f(x) - \displaystyle\sum_{k=0}^n \dfrac{(-1)^k k!}{x^{k+1}} = \mathcal{O} \left( \dfrac{1}{x^{n+2}} \right) = \mathcal{O} \left( \dfrac{1}{x^{n+1}} \right),$$
+so
+$$e^x f(x) \sim \displaystyle\sum_{k=0}^{\infty} \dfrac{(-1)^n n!}{x^{n+1}}$$
+or as $x \rightarrow \infty$,
+$$\displaystyle\int_x^{\infty} t^{-1}e^{-t} \mathrm{d}t \sim e^{-x} \displaystyle\sum_{n=0}^{\infty} \dfrac{(-1)^n n!}{x^{n+1}}.$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem6chapter3}
+Let the Hermite polynomials $H_n(x)$ be defined by 
+$$\exp(2xt-t^2) = \displaystyle\sum_{n=0}^{\infty} \dfrac{H_n(x)t^n}{n!}$$
+for all $x$ and $t$, as in Chapter 11. Also let the complementary error function $\mathrm{erfc \hspace{3pt}} x$ be defined by
+$$\mathrm{erfc \hspace{3pt}}x = 1 - \mathrm{erf \hspace{3pt}}x = \dfrac{2}{\sqrt{\pi}} \displaystyle\int_x^{\infty} \exp(-\beta^2) \mathrm{d}\beta.$$
+Apply Watson's lemma to the function $F(t)=\exp(2xt-t^2)$; obtain as $s \rightarrow \infty$,
+$$\exp \left( x-\dfrac{1}{2}s \right)^2 \displaystyle\int_{\frac{1}{2}s-x}^{\infty} \exp(-\beta^2) \mathrm{d} \beta \sim \displaystyle\sum_{n=0}^{\infty} H_n(x) s^{-n-1}$$
+and thus arrive at the result as $t \rightarrow 0^+$,
+$$\dfrac{1}{2} t^{-1} \sqrt{\pi} \exp \left[ \left( \dfrac{1}{2}t^{-1} - x \right)^2 \right] \mathrm{erfc}\left( \dfrac{1}{2}t^{-1} - x \right) \sim \displaystyle\sum_{n=0}^{\infty} H_n(x)t^n.$$
+\end{problem}
+\begin{solution}
+Because $\exp_t(n-1)=t^{n-1},$ and if 
+$$F(t) = \exp(2xt-t^2) = \displaystyle\sum_{n=0}^{\infty} \dfrac{H_n(x)}{n!} t^n,$$
+we can write
+$$F(t) = \displaystyle\sum_{n=1}^{\infty} \dfrac{H_{n-1}(x)}{(n-1)!} \exp_t(n-1)$$
+so the first condition in Watson's Lemma is satisfied for any fixed $x$ with $r=1$, $a=1$, and any $\delta > 0$. Also,
+$$F(t) = \exp(2xt-t^2) = e^{-t^2} e^{2xt} < 2e^{2xt}$$
+for $t \geq 0$, so the second condition in Watson's Lemma is satisfied with $k=2$ (or anything $>1$) and $b=2x$. Thus, we get
+$$\displaystyle\int_0^{\infty} e^{-st} F(t) \mathrm{d}t \sim \displaystyle\sum_{n=1}^{\infty} \dfrac{H_{n-1}(x) \Gamma(n)}{(n-1)!s^n}$$
+as $s \rightarrow \infty$, or
+$$\displaystyle\int_0^{\infty} \exp \left[-t^2+2 \left( x - \dfrac{1}{2}s \right)t \right]\mathrm{d}t \sim \displaystyle\sum_{n=0}^{\infty} H_n(x) s^{-n-1},$$
+as $s \rightarrow \infty$. Completing the square in the exponent leads to
+$$\exp \left[ x - \dfrac{1}{2}s \right] \displaystyle\int_0^{\infty} \exp \left[ - \left( t+\dfrac{1}{2}s - x \right)^2 \right] \mathrm{d}t \sim \displaystyle\sum_{n=0}^{\infty} H_n(x) s^{-n-1}$$
+as $s \rightarrow \infty$, and if we let $\beta = t + \dfrac{1}{2}s - x$ we get
+$$\exp \left[ \left( x - \dfrac{1}{2}s \right)^2 \right] \displaystyle\int_{\frac{1}{2}s - x}^{\infty} e^{-\beta^2} \mathrm{d} \beta \sim \displaystyle\sum_{n=0}^{\infty} H_n(x) s^{-n-1},$$
+as $s \rightarrow \infty$.
+
+Using the definition of $\mathrm{erfc}$, and then making the substitution $t = \dfrac{1}{s}$ (not the inverse Laplace transform) we get
+$$\dfrac{\sqrt{\pi}}{2}\exp \left[ \left(x - \dfrac{1}{2} s \right)^2 \right] \mathrm{erfc} \left( \dfrac{1}{2}s - x \right) \sim \displaystyle\sum_{n=0}^{\infty} H_n(x) s^{-n-2},$$
+as $s \rightarrow \infty$ or
+$$\dfrac{\sqrt{\pi}}{2t} \exp \left[ \left( x - \dfrac{1}{2t} \right)^2 \right] \mathrm{erfc} \left( \dfrac{1}{2t} - x \right) \sim \displaystyle\sum_{n=0}^{\infty} H_n(x) t^n,$$
+as $t \rightarrow 0^+$ as desired.
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem7chapter3}
+Use integration by parts to show that if $\mathrm{Re}(\alpha) > 0$, and if $x$ is real and $x \rightarrow \infty$,
+$$\displaystyle\int_x^{\infty} e^{-t}t^{-\alpha} \mathrm{d}t \sim x^{1 - \alpha} e^{-x} \displaystyle\sum_{n=0}^{\infty} \dfrac{(-1)^n (\alpha)_n}{x^{n+1}},$$
+of which Problem \ref{problem5chapter3} is the special case $\alpha=1$.
+\end{problem}
+\begin{solution}
+Integration by parts with $u=t^{-\alpha}$ and $\mathrm{d}v = e^{-t} \mathrm{d}t$ yields
+$$\displaystyle\int_x^{\infty} e^{-t}t^{-\alpha} \mathrm{d}t = e^{-x} x^{-\alpha} - \alpha \displaystyle\int_x^{\infty} e^{-t} t^{-(\alpha+1)}\mathrm{d}t.$$
+The same integration by parts with $\alpha$ replaced by $\alpha+1$ applied to the last integral gives
+$$\displaystyle\int_x^{\infty} e^{-t} t^{-\alpha} \mathrm{d}t = e^{-x} x^{-\alpha} \left[ 1 - \dfrac{\alpha}{x} \right] + \alpha(\alpha+1) \displaystyle\int_x^{\infty} e^{-t} t^{-(\alpha+2)}\mathrm{d}t.$$
+Continuing, after $n+1$ integrations by parts, we have
+$$\displaystyle\int_x^{\infty} e^{-t} t^{-\alpha} \mathrm{d}t = e^{-x} x^{-\alpha+1} \displaystyle\sum_{k=0}^n \dfrac{(-1)^k (\alpha)_k}{x^{k+1}} + (-1)^{n+1} (\alpha)_{n+1} \displaystyle\int_x^{\infty} e^{-t} t^{-(\alpha+n+1)}\mathrm{d}t$$
+or
+$$e^x x^{\alpha-1} \displaystyle\int_x^{\infty} e^{-t}t^{-\alpha} \mathrm{d}t - \displaystyle\sum_{k=0}^n \dfrac{(-1)^k (\alpha)_k}{x^{k+1}} = e^x x^{\alpha-1}(-1)^n (\alpha)_{n+1} \displaystyle\int_x^{\infty}e^{-t}t^{-(\alpha+n+1)} \mathrm{d}t.$$
+Thus, we have the desired asymptotic series if the right side of the last equation is $\mathcal{O} \left( \dfrac{1}{x^n}+1 \right)$ as $x \rightarrow \infty$. This is true because as $x \rightarrow \infty$,
+\begin{eqnarray*}
+\lefteqn{\left| e^x x^{\alpha-1} (-1)^n (\alpha)_{n+1} \displaystyle\int_x^{\infty} e^{-t} t^{-(\alpha+n+1)}\mathrm{d}t \right|} \\
+& &\leq \left| \dfrac{e^x x^{\alpha-1} (\alpha)_{n+1}}{x^{\alpha+n+1}}\displaystyle\int_x^{\infty} e^{-t} \mathrm{d}t \right| \\
+& &= \left| \dfrac{e^x (\alpha)_{n+1}}{x^{n+2}} e^{-x} \right| \\
+& &= \dfrac{\left| (\alpha)_{n+1} \right|}{x^{n+2}} \\
+& &= \mathcal{O} \left( \dfrac{1}{x^{n+1}} \right).
+\end{eqnarray*}
+\end{solution}

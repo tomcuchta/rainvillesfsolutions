@@ -1,0 +1,820 @@
+%%%%
+%%
+%%
+%%%%
+%%%% CHAPTER 4
+%%%% CHAPTER 4
+%%%%
+%%
+%%
+%%%%
+\section{Chapter 4 Solutions}
+\begin{center}\hyperref[toc]{\^{}\^{}}\end{center}
+\begin{center}\begin{tabular}{cccccccccccccc}
+\hyperref[problem1chapter4]{P1} & \hyperref[problem2chapter4]{P2} & \hyperref[problem3chapter4]{P3} & \hyperref[problem4chapter4]{P4} & \hyperref[problem5chapter4]{P5} & \hyperref[problem6chapter4]{P6} & \hyperref[problem7chapter4]{P7} & \hyperref[problem8chapter4]{P8} & \hyperref[problem9chapter4]{P9} & \hyperref[problem10chapter4]{P10} & \hyperref[problem11chapter4]{P11} & \hyperref[problem12chapter4]{P12} & \hyperref[problem13chapter4]{P13} \\
+\hyperref[problem14chapter4]{P14} & \hyperref[problem15chapter4]{P15} & \hyperref[problem16chapter4]{P16} & \hyperref[problem17chapter4]{P17} & \hyperref[problem18chapter4]{P18} & \hyperref[problem19chapter4]{P19} & \hyperref[problem20chapter4]{P20} & \hyperref[problem21chapter4]{P21} & \hyperref[problem22chapter4]{P22} & \hyperref[problem23chapter4]{P23} 
+\end{tabular}\end{center}
+
+\setcounter{problem}{0}
+\setcounter{solution}{0}
+
+\begin{problem}\label{problem1chapter4}
+Show that 
+$$\dfrac{\mathrm{d}}{\mathrm{d}x} F \left[ \begin{array}{rlr}
+a, b; & & \\
+& & x \\
+c; & & \end{array} \right] = \dfrac{ab}{c} F \left[ \begin{array}{rlr}
+a+1,b+1 ; & & \\
+& & x \\
+c+1; 
+\end{array} \right].$$
+\end{problem}
+\begin{solution}
+From
+$$F(a,b;c;1) \equiv \displaystyle\sum_{n=0}^{\infty} \dfrac{(a)_n (b)_n}{(c)_n n!},$$
+we get
+$$\begin{array}{ll}
+\dfrac{\mathrm{d}}{\mathrm{d}x} F(a,b;c;x) &= \displaystyle\sum_{n=1}^{\infty} \dfrac{(a)_n(b)_n x^{n-1}}{{(c)_n(c-1)!}} \\
+&= \displaystyle\sum_{n=0}^{\infty} \dfrac{(a)_{n+1} (b)_{n+1} x^n}{(c)_{n+1} n!} \\
+&= \dfrac{ab}{c} \displaystyle\sum_{n=0}^{\infty} \dfrac{(a+1)_n (b+1)_n x^n}{(c+1)_n n!} \\
+&= \dfrac{ab}{c} F(a+1,b+1; c+1; x).
+\end{array}$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem2chapter4}
+Show that
+$$F \left[ \begin{array}{rlr} 
+2a, 2b; & & \\
+& & \dfrac{1}{2} \\
+a + b + \dfrac{1}{2};
+\end{array} \right] = \dfrac{\Gamma \left( a + b + \dfrac{1}{2} \right) \Gamma \left( \dfrac{1}{2} \right)}{\Gamma \left( \dfrac{1}{2}c + \dfrac{1}{2}a \right) \Gamma \left( \dfrac{1}{2} c - \dfrac{1}{2} a + \dfrac{1}{2} \right) }.$$
+\end{problem}
+\begin{solution}
+Wish to evaluate $F \left[ \begin{array}{rlr}
+2a,2b; & & \\
+& & \dfrac{1}{2} \\
+a+b+\dfrac{1}{2}; & & 
+\end{array} \right]$. 
+From Chapter~4, Theorem~25, 
+$$F \left[ \begin{array}{rlr}
+2a,2b; & & \\
+& & x \\
+a+b+\dfrac{1}{2} & & 
+\end{array} \right] = F \left[ \begin{array}{rlr} 
+a, b ; & & \\
+& & 4x(1-x) \\
+a+ b + \dfrac{1}{2} & & 
+\end{array} \right]$$
+for $|x| < 1$, $|4x(1-x)| < 1$. We need to use $x = \dfrac{1}{2}$, but note that $\mathrm{Re}(a+b+\dfrac{1}{2}-a-b) > 0$. Hence, by Chapter~4, Theorem~18,
+$$F \left[ \begin{array}{rlr}
+2a,2b; & & \\
+& & \dfrac{1}{2} \\
+a+b+\dfrac{1}{2} & &
+\end{array} \right] = F \left[ \begin{array}{rlr}
+a,b; & & \\
+& & 1 \\
+a+b+\dfrac{1}{2} & &
+\end{array} \right] = \dfrac{\Gamma \left(a+b+\dfrac{1}{2} \right) \Gamma \left( \dfrac{1}{2} \right) }{\Gamma \left( b+ \dfrac{1}{2} \right) \Gamma \left( a + \dfrac{1}{2} \right)}.$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem3chapter4}
+Show that 
+$$F \left[ \begin{array}{rlr}
+a, 1-a; & & \\
+& & \dfrac{1}{2} \\
+c; & &
+\end{array} \right] = \dfrac{2^{1-c}\Gamma(c) \Gamma \left( \dfrac{1}{2} \right)}{\Gamma \left( \dfrac{1}{2}c + \dfrac{1}{2} a \right) \Gamma \left( \dfrac{c-a+1}{2} \right)}$$
+\end{problem}
+\begin{solution}
+Consider 
+$$F \left[ \begin{array}{rlr}
+a,1-a; & & \\
+& & x \\
+c; & & 
+\end{array} \right] = (1-x)^{c-1} F \left[ \begin{array}{rlr}
+\dfrac{c-1}{2}, \dfrac{c+a-1}{2}; & & \\
+& & 4x(1-x) \\
+c ; & & 
+\end{array} \right].$$
+By Chapter~4, Theorem~27, for $|x| < 1$, $|4x(1-x)| < 1$,
+$$F \left[ \begin{array}{rlr}
+a,1-a; & & \\
+& & x \\
+c; & &
+\end{array} \right] = (1-x)^{c-1} F \left[ \begin{array}{rlr}
+\dfrac{c-a}{2}, \dfrac{c+a-1}{2}; & & \\
+& & 4x(1-x) \\
+c; & &
+\end{array} \right].$$
+Since $\mathrm{Re} \left( c - \dfrac{c}{2} + \dfrac{a}{2} - \dfrac{c}{2} - \dfrac{a}{2} + \dfrac{1}{2} \right) > 0$, we may use Chapter~4, Theorem~18 to conclude that
+$$\begin{array}{ll}
+F \left[ \begin{array}{rlr}
+a,1-a; & & \\
+& & \dfrac{1}{2} \\
+c; & & 
+\end{array} \right] &= \left( \dfrac{1}{2} \right)^{c-1} F \left[ \begin{array}{rlr}
+\dfrac{c-1}{2}, \dfrac{c+a-1}{2}; & & \\
+& & 1 \\
+c; & & 
+\end{array} \right] \\
+&= \dfrac{ \Gamma(c) \Gamma \left( \dfrac{1}{2} \right)}{2^{c-1} \Gamma \left( \dfrac{c+a}{2} \right) \Gamma \left( \dfrac{c-a+1}{2} \right)},
+\end{array}$$
+as desired.
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem4chapter4}
+Obtain the result
+$$F \left[ \begin{array}{rlr}
+-n,b; & & \\
+& & 1 \\
+c; & &
+\end{array} \right] = \dfrac{(c-b)_n}{(c)_n}.$$
+\end{problem}
+\begin{solution}
+Consider $F(-n,b;c;1).$
+At once, if $\mathrm{Re}(c-b)>0$,
+$$F(-n,b;c;1) = \dfrac{\Gamma(c) \Gamma(c-b+n)}{\Gamma(c+n)\Gamma(c-b)} = \dfrac{(c-b)_n}{(c)_n}.$$
+Actually the condition $\mathrm{Re}(c-b)>0$ is not necessary because of the termination of the series involved.
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem5chapter4}
+Obtain the result 
+$$F \left[ \begin{array}{rlr}
+-n,a+n; & & \\
+& & 1 \\
+c; & 
+\end{array} \right] = \dfrac{(-1)^n (1+a-c)_n}{(c)_n}.$$
+\end{problem}
+\begin{solution}
+$$F \left[ \begin{array}{rlr}
+-n, a+n; & & \\
+& & 1 \\
+c; & &
+\end{array} \right] = \dfrac{\Gamma(c) \Gamma(c-a)}{\Gamma(c+n) \Gamma(c-a-n)}.$$
+By Exercise 9, Chapter 2, if $(c-a)$ is nonintegral,
+$$\dfrac{\Gamma(1-\alpha-n)}{\Gamma(1-\alpha)} = \dfrac{(-1)^n}{(\alpha)_n}.$$
+Hence,
+$$F \left[ \begin{array}{rlr}
+-n, a+n; & & \\
+& & 1 \\
+a; & &
+\end{array} \right] = \dfrac{(-1)^n ( 1-c+a)_n}{(c)_n},$$
+as desired.
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem6chapter4}
+Show that
+$$F \left[ \begin{array}{rlr}
+-n 1-b-n; & & \\
+& & 1 \\
+a; & &
+\end{array} \right] = \dfrac{(a+b-1)_{2n}}{(a)_n(a+b-1)_n}.$$
+\end{problem}
+\begin{solution}
+$$F \left[ \begin{array}{rlr}
+-n,1-b-n; & & \\
+& & 1 \\
+a; & & 
+\end{array} \right] = \dfrac{\Gamma(a) \Gamma(a-1+b+2n)}{\Gamma(a+n)\Gamma(a-1+b+n)} = \dfrac{(a-1+b)_{2n}}{(a)_n (a-1+b)_n}.$$
+Of course $a \neq$ nonpositive integer, as usual.
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem} \label{problem7chapter4}
+Prove that if $g_n = F(-n, \alpha; 1 +\alpha-n; 1)$ and $\alpha$ is not an integer, then $g_n=0$ for $n \geq 1, g_0=1$.
+\end{problem}
+\begin{solution}
+Let $g_n = F(-n,\alpha;1+\alpha-n;1).$
+Then
+$$g_n = \displaystyle\sum_{k=0}^n \dfrac{(-n)_k (\alpha)_k}{k! (1+\alpha-n)_k} = \displaystyle\sum_{k=0}^n \dfrac{n! (\alpha)_k (-\alpha)_k}{n! (n-k)! (\alpha)_n}.$$
+Hence, compute the series
+$$\begin{array}{ll}
+\displaystyle\sum_{n=0}^{\infty} \dfrac{(-\alpha)_n g_n t^n}{n!} &= \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^n \dfrac{(\alpha)_k (-\alpha)_{n-k} t^n}{k! (n-k)!} \\
+&= \left( \displaystyle\sum_{n=0}^{\infty} \dfrac{(\alpha)_n t^n}{n!} \right) \left( \displaystyle\sum_{n=0}^{\infty} \dfrac{(-\alpha)_n t^n}{n!} \right) \\
+&= (1-t)^{\alpha} (1-t)^{-\alpha} \\
+&= 1.
+\end{array}$$
+Therefore, $g_0=1$ and $g_n=0$ for $n \geq 1$.
+(Note: easiest to choose $\alpha$ to not be an integer; can actually do better than that probably.)
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem8chapter4}
+Show that
+$$\dfrac{\mathrm{d}^n}{\mathrm{d}x^n} \left[ x^{a-1+n} F(a,b;c;x) \right] = (a)_x x^{a-1} F(a+n, b; c; x).$$
+\end{problem}
+\begin{solution}
+Consider $\mathcal{D}^n[x^{a-1+n}F(a,b;c;x)]$ ($\mathcal{D} \equiv \dfrac{\mathrm{d}}{\mathrm{d}x}$).
+We have
+\begin{eqnarray*}
+\lefteqn{\mathcal{D}^n[x^{a-1+n}F(a,b;c;x)]} \\
+& &= \mathcal{D}^n \displaystyle\sum_{k=0}^{\infty} \dfrac{(a)_k (b)_k x^{n+k+a-1}}{(c)_k k!} \\
+& &= \displaystyle\sum_{k=0}^{\infty} \dfrac{(a)_k (n+k+a-1)(n+k+a-2) \ldots (k+a) x^{k+1-a} (b)_k}{(c)_k k!} \\
+& &= \displaystyle\sum_{k=0}^{\infty} \dfrac{(a)_k (a)_{n+k} x^{k+a-1}(b)_k}{(c)_k (a)_k k!} \\
+& &= \displaystyle\sum_{k=0}^{\infty} \dfrac{(a+k)_n (a)_n x^{k+a-1} (b)_k}{k! (c)_k} \\
+& &= (a)_n x^{a-1} F(a+n,b;c;x).
+\end{eqnarray*}
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem9chapter4}
+Use pg.~66 (2) with $z = -x, b=-n,$ in which $n$ is a non-negative integer, to conclude that
+$$F \left[ \begin{array}{rlr}
+-n,a; & & \\
+& & -x \\
+1+a+n;
+\end{array} \right] = (1-x)^{-a} F \left[ \begin{array}{rlr}
+\dfrac{1}{2}a,\dfrac{1}{2}a+\dfrac{1}{2}; & & \\
+& & \dfrac{-4x}{(1-x)^2} \\
+1+a+n ;
+\end{array} \right].$$
+\end{problem}
+\begin{solution}
+From pg.~66 (2), we get
+$$(1+z)^{-a} F \left[ \begin{array}{rlr}
+\dfrac{a}{2}, \dfrac{a+1}{2}; & & \\
+& & \dfrac{-4z}{(1+z)^2} \\
+1+a-b; & & 
+\end{array} \right] = F \left[ \begin{array}{rlr}
+a,b;
+& & z \\
+1+a-b;
+\end{array} \right].$$
+Use $z = -x$, $b = -n$ to arrive at 
+$$(1-x)^{-a} F \left[ \begin{array}{rlr}
+\dfrac{a}{2}, \dfrac{a+1}{2}; & & \\
+& & \dfrac{-4x}{(1-x)^2} \\
+1+a+n; & & 
+\end{array} \right] = F \left[ \begin{array}{rlr}
+a, -n; & & \\
+& & -x \\
+1+a+n; & &
+\end{array} \right],$$
+as desired. 
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem10chapter4}
+In Theorem~23, page~65, put $b= \gamma$, $a = \gamma + \dfrac{1}{2}$, $4x(1+x)^{-2} = z$ and thus prove that
+
+$$F \left[ \begin{array}{rlr}
+\gamma, \gamma + \dfrac{1}{2}; & & \\
+& & z \\
+2 \gamma
+\end{array} \right] = (1-z)^{\frac{1}{2}} \left[ \dfrac{2}{1+\sqrt{1-z}} \right]^{2 \gamma - 1}.$$
+\end{problem}
+\begin{solution}
+Chapter~4, Theorem~23 gives us 
+$$(1+x)^{-2a} F \left[ \begin{array}{rlr}
+a,b; & & \\
+& & \dfrac{4x}{(1+x)^2} \\
+ab; & &
+\end{array} \right] = F \left[ \begin{array}{rlr}
+a, a-b+\dfrac{1}{2}; & & \\
+& & x^2 \\
+b + \dfrac{1}{2}; & & 
+\end{array} \right].$$
+Put $b = \gamma$, $a = \gamma + \dfrac{1}{2}$ and
+$$\dfrac{4x}{(1+x)^2} = z.$$
+Then
+$$zx^2+2(z-2)x+z=0$$
+$$zx = 2 - 3 \pm \sqrt{z^2-4z+4-3^2} = 2-z \pm 2 \sqrt{1-z}.$$
+Now $x=0$ when $z=0$, so
+$$zx = 2 - z - 2 \sqrt{1-z} = 1 - z + 1 - 2\sqrt{1-z}$$
+or
+$$x = \dfrac{(1-\sqrt{1-z})^2}{z} = \dfrac{(1-\sqrt{1-z} [1 - (1-z)]}{z ( 1 + \sqrt{1-z})}.$$
+Thus
+$$x = \dfrac{1 - \sqrt{1-z}}{1 + \sqrt{1-z}}$$
+and
+$$1 + x = \dfrac{2}{1+\sqrt{1-z}}.$$
+Then we obtain
+$$\dfrac{4x}{(1+x)^2} = \dfrac{4(1-\sqrt{1-z})}{1+\sqrt{1-z}} \cdot \dfrac{(1+\sqrt{1-z})^2}{4} = z,$$
+a check. 
+Now with $b= \gamma, a = \gamma + \dfrac{1}{2}$, Chapter~4, Theorem~23 yields
+$$\begin{array}{ll}
+\left( \dfrac{2}{1+\sqrt{1-z}} \right)^{-2\gamma-1} F \left[ \begin{array}{rlr}
+\gamma + \dfrac{1}{2}, \gamma; & & \\
+& & z \\
+2 \gamma; & & 
+\end{array} \right] &= F \left[ \begin{array}{rlr}
+\gamma + \dfrac{1}{2}, 1; & & \\
+& & x^2 \\
+\gamma + \dfrac{1}{2}; & &
+\end{array} \right] \\
+&= _1 \!\!F_0 \left[ \begin{array}{rlr}
+1; & &\\
+& & x^2 \\
+-; & &
+\end{array} \right] \\
+&= (1-x^2)^{-1}.
+\end{array}$$
+Since $1 - x = \dfrac{2 \sqrt{1-z}}{1 + \sqrt{1-z}}$ and $1 + x = \dfrac{2}{1 + \sqrt{1-z}}$,
+$$(1-x^2) = \dfrac{4 \sqrt{1-z}}{(1+\sqrt{1-z})^2}.$$
+Thus we have
+$$\begin{array}{ll}
+F \left[ \begin{array}{rlr}
+\gamma, \gamma + \dfrac{1}{2}; & & \\
+& & z \\
+2 \gamma; & & 
+\end{array} \right] &= \left( \dfrac{2}{1 + \sqrt{1-z}} \right)^{2\gamma+1} \left( \dfrac{2}{1+\sqrt{1-z}} \right)^{-2} (1-z)^{-\frac{1}{2}} \\
+&= (1-z)^{-\frac{1}{2}} \left( \dfrac{2}{1+\sqrt{1-z}} \right)^{2 \gamma-1},
+\end{array}$$
+as defined. Now we use Chapter~4, Theorem~21 to see that
+$$F \left[ \begin{array}{rlr}
+\gamma, \gamma + \dfrac{1}{2}; & & \\
+& & 2 \\
+2 \gamma; & &
+\end{array} \right] = (1-z)^{-\frac{1}{2}} F \left[ \begin{array}{rlr}
+\gamma, \gamma - \dfrac{1}{2}; & & \\
+& & z \\
+2 \gamma; & &
+\end{array} \right]$$
+so that we also get
+$$F \left[ \begin{array}{rlr}
+\gamma, \gamma - \dfrac{1}{2}; & & \\
+& & z \\
+2 \gamma; & & 
+\end{array} \right] = \left( \dfrac{2}{1 + \sqrt{1-z}} \right)^{2 \gamma -1},$$
+as desired.
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem11chapter4}
+Use Chapter~4, Theorem~27 to show that
+\begin{eqnarray*}
+\lefteqn{(1-x)^{1-c} F \left[ \begin{array}{rlr}
+a, 1-a; & & \\
+& & x \\
+c; & 
+\end{array} \right]} \\
+&&  = (1-2x)^{a-c} F \left[ \begin{array}{rlr}
+\dfrac{1}{2}c - \dfrac{1}{2}a, \dfrac{1}{2}c - \dfrac{1}{2}a + \dfrac{1}{2}; & & \\
+& & \dfrac{4x(x-1}{(1-2x)^2} \\
+c;
+\end{array} \right].
+\end{eqnarray*}
+\end{problem}
+\begin{solution}
+By Chapter~4, Theorem~27,
+\begin{eqnarray*}
+\lefteqn{(1-x)^{1-c} F \left[ \begin{array}{rlr}
+a, 1-a; & & \\
+& & x \\
+a; & & 
+\end{array} \right]} \\
+& &= F \left[ \begin{array}{rlr}
+\dfrac{c-a}{2}, \dfrac{c+a-1}{2}; & & \\
+& & 4x(1-x) \\
+c; & & 
+\end{array} \right] \\
+& &= F \left[ \begin{array}{rlr}
+\dfrac{c-a}{2}, \dfrac{c+a-1}{2}; & & \\
+& & 1 - (1-2x)^2 \\
+c; & & 
+\end{array} \right] \\
+& &= (1-2x)^{2 \dfrac{a-c}{2}} F \left[ \begin{array}{rlr}
+\dfrac{c-a}{2}, c-\dfrac{c-a+1}{2}; & & \\
+& & \dfrac{-1 + (1-2x)^2}{(1-2x)^2} \\
+c; & & 
+\end{array} \right] \\
+& &= (1-2x)^{a-c} F \left[ \begin{array}{rlr}
+\dfrac{c-a}{2}, \dfrac{c-a+1}{2}; & & \\
+& & \dfrac{4x(x-1)}{(1-2x)^2} \\
+c; & &
+\end{array} \right],
+\end{eqnarray*}
+which we wished to obtain.
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem12chapter4}
+In the differential equation (3), page~54, for 
+$$w = F(a,b;c;z)$$
+introduce a new dependent variable $u$ by $w = (1-z)^{-a}u$, thus obtaining
+$$z(1-z)^2u'' + (1-z)[c+(a-b-1)z]u' + a(c-b)u = 0.$$
+Next change the independent variable to $x$ by putting $x = \dfrac{-z}{1-z}$. Show that the equation for $u$ in terms of $x$ is
+$$x(1-x)\dfrac{\mathrm{d}^2u}{\mathrm{d}x^2} + [ c - (a+c-b+1)x] \dfrac{\mathrm{d}u}{\mathrm{d}x} - a(c-b)u = 0,$$
+and thus derive the solution
+$$w = (1-z)^{-a} F \left[ \begin{array}{rlr}
+a, c-b; & & \\
+& & \dfrac{-z}{1-z} \\
+c; & &
+\end{array} \right].$$
+\end{problem}
+\begin{solution}
+We know that $w = F(a,b;c;z)$ is a solution of the equation
+$$(1) z(1-z)w'' + [c-(a+b+1)z]w' - abw = 0.$$
+In $(1)$ put $w = (1-z)^{-a}u$. Then
+$$w' = (1-z)^{-a}u' + a(1-z)^{-a-1}u,$$
+$$w'' = (1-z)^{-a}u'' + 2a(1-z)^{-a-1}u' + a(a+1)(1-z)^{-a-2}u.$$
+Hence the new equation is
+\begin{eqnarray*}
+\lefteqn{z(1-z)u'' + 2azu' + a(a+1)z(1-z)^{-1}u + cu' + ca(1-z)^{-1}u} \\
+& & - (a+b+1)zu' - a(a+b+1)z(1-z)^{-1}u - abu = 0,
+\end{eqnarray*}
+or
+$$z(1-z)u'' + [c - (b-a+1)z]u' + (1-z)^{-1} [(a^2+a)z + ca - (a^2+ab+a)z - ab(1-z)]u=0,$$
+or
+$$(2) z(1-z)^2u'' + (1-z)[c+(a-b-1)z] u' + a(c-b)u = 0.$$
+Now put $x = \dfrac{-z}{1-z}$. Then $z = \dfrac{-x}{1-x}, 1-z = \dfrac{1}{1-x},$ and we use equation (12) on page 12 of IDE for the change of variable.
+First, $\dfrac{\mathrm{d}x}{\mathrm{d}z} = \dfrac{-1}{(1-z)^2} = -(1-x)^2$: $\dfrac{\mathrm{d}^2x}{\mathrm{d}z^2} = \dfrac{-2}{(1-z)^3} = -2(1-x)^3.$
+The old equation $(2)$ above may be written
+$$\dfrac{\mathrm{d}^2u}{\mathrm{d}z^2} + \left[ \dfrac{c}{z(1-z)} + \dfrac{a-b-1}{1-z} \right] \dfrac{\mathrm{d}u}{\mathrm{d}t} + \dfrac{a(c-b)}{z(1-z)^2}u = 0,$$
+which then leads to the new equation
+\begin{eqnarray*}
+\lefteqn{(1-x)^4 \dfrac{\mathrm{d}^2u}{\mathrm{d}x^2} + \left[ -2(1-x)^3 \phantom{\dfrac{1}{1}} \right.} \\
+& & \left. - (1-x)^2 \left\{ \dfrac{c(1-x)^2}{-x} + (a-b-1)(1-x) \right\} \right] \dfrac{\mathrm{d}u}{\mathrm{d}x} - \dfrac{a(c-b)(1-x)^3}{x}u = 0,
+\end{eqnarray*}
+or
+$$x(1-x) \dfrac{\mathrm{d}^2u}{\mathrm{d}x^2} + \left[ -2x - \left\{ -c (1-x) + (a-b-1)x \right\} \right] \dfrac{\mathrm{d}u}{\mathrm{d}x} - a(c-b)u = 0,$$
+or
+$$(3) x(1-x) \dfrac{\mathrm{d}^2u}{\mathrm{d}x^2} + [x - (a-b+c+1)x ] \dfrac{\mathrm{d}u}{\mathrm{d}x} - a(c-b)u =0.$$
+Now $(3)$ is a hypergeometric equation with parameters $\gamma = c$, $\alpha + \beta + 1 = a - b + c + 1, \alpha \beta = a(c-b)$. 
+Hence $\alpha=a, \beta = c-b, \gamma =c$. One solution of $(3)$ is
+$$u = F(a,c-b;c;x),$$
+so one solution of equation $(1)$ is 
+$$W = (1-z)^{-a} F \left[ \begin{array}{rlr}
+a, c-b; & & \\
+& & \dfrac{-z}{1-z} \\
+c; & &
+\end{array} \right].$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem13chapter4}
+Use the result of Exercise 12 and the method of Section 40 to prove Chapter~4, Theorem~20. 
+\end{problem}
+\begin{solution}
+We know that in the region in common to $|z|<1$ and $\left| \dfrac{z}{1-z} \right| < 1$, there is a relation
+$$(1-z)^{-a} F \left[ \begin{array}{rlr}
+a,c-b; & & \\
+& & \dfrac{-z}{1-z} \\
+c; & & 
+\end{array} \right] = AF(a,b;c;z) + Bz^{1-c}F(a+1-c,b+1-c;z-c;z).$$
+Since $c$ is neither zero nor a negative integer, the last term is not analytic at $z=0$. Hence $B=0$. Then use $z=0$ to obtain $1 \cdot 1 = A \cdot 1$, so $A = 1$. Hence
+$$F(a;b;c;z) = (1-z)^{-a} F \left[ \begin{array}{rlr}
+a,c-b; & & \\
+& & \dfrac{-z}{1-z} \\
+c; & & 
+\end{array} \right].$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem14chapter4}
+Prove Chapter~4, Theorem~21 by the method suggested by Exercises 12 and 13. 
+\end{problem}
+\begin{solution}(Solution by Leon Hall)
+Note that the first two parameters in $F(a,b;c;z)$ are interchangeable, so results involving one of them also apply to the other. By Exercise~12,
+$$F(a,b;c;z) = (1-z)^{-a} F \left( a,c-b;c; \dfrac{-z}{1-z} \right).$$
+Let $w = \dfrac{-z}{1-z}$ so this becomes
+$$F(a,b;c;z) = (1-z)^{-a} F(a,c-b;c;w).$$
+Again, by Exercise~12, applied to the second parameter,
+$$F(a,b;c;z) = (1-z)^{-a}(1-w)^{-(c-b)}F \left(c-a,c-b;c; \dfrac{-w}{1-w} \right).$$
+But $1-w=(1-z)^{-1}$, and $\dfrac{-w}{1-w} = z$, so
+$$\begin{array}{ll}
+F(a,b;c;z) &= (1-z)^{-a}((1-z)^{-1})^{-(c-b)}F(c-a,c-b;c,z) \\
+&=(1-z)^{c-a-b}F(c-a,c-b;c;z)
+\end{array}$$
+as desired.
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem15chapter4}
+Use the method of Section 39 to prove that if both $|z|<1$ and $|1-z|<1$, and if $a,b,c$ are suitably restricted,
+$$\begin{array}{ll}
+F \left[ \begin{array}{rlr}
+a,b; & & \\
+& & z \\
+c; & &
+\end{array} \right] &= \dfrac{\Gamma(c)\Gamma(c-a-b)}{\Gamma(c-a)\Gamma(c-b)} F \left[ \begin{array}{rlr}
+a,b; & & \\
+& & 1-z \\
+1+b+1-c; & & 
+\end{array} \right] \\
+&+ \dfrac{\Gamma(c)\Gamma(a+b-c)(1-z)^{c-a-b}}{\Gamma(a)\Gamma(b)} F \left[ \begin{array}{rlr}
+c-a,c-b; & & \\
+& & 1-z \\
+c-a-b+1; & &
+\end{array} \right].
+\end{array}$$
+\end{problem}
+\begin{solution}(Solution by Leon Hall)
+We denote the hypergeometric differential equation:
+$$z(1-z)w''(z)+[c-(a+b+1)z]w'(z)-abw(z)=0$$
+by HGDE. If we make the change of variable $z = 1-y,$ then HGDE becomes
+$$y(1-y)w''(y)+[c*-(a+b+1)y]w'(y)-abw(y)=0$$
+where $c*=a+b+1-c$. Thus, two linearly independent solutions are
+$$F(a,b;c*;y)$$
+and
+$$y^{1-c*}F(a+1-c*,b+1-c*;2-c*;y).$$
+These solutions as function of $z$ are valid in $|1-z|<1$ and are
+$$F(a,b;a+b+1-c;1-z)$$
+and
+$$(1-z)^{c-a-b}F(c-a,c-b;c-a-b+1;1-z).$$
+Thus, in the region $D$ where both $|z|<1$ and $|1-z|<1$, 
+$$F(a,b;c;z)=AF(a,b;a+b+1-c;1-z) + B(1-z)^{c-a-b}F(c-a,c-b;c-a-b+1;1-z)$$
+for some constants $A$ and $B$.
+
+Assume $\mathrm{Re}(c-a-b)>0$ and $c \neq 0$ or a negative integer and let $z \rightarrow 1$ inside the region $D$ to get
+$$F(a,b;c;1)=A \cdot 1 + B \cdot 0.$$
+Thus, by Theorem~18, page 49, we get
+$$A = \dfrac{\Gamma(c) \Gamma(c-a-b)}{\Gamma(c-a) \Gamma(c-b)}.$$
+Now, let $z \rightarrow 0$ inside the region $D$ and assume $\mathrm{Re}(1-c)>0$ and neither $a+b+1-c$ nor $c-a-b+1$ is zero or a negative integer. Then
+$$1 = AF(a,b;a+b+1-c;1) + BF(c-a,c-b;c-a-b+1;1)$$
+and we get
+$$B = \dfrac{1 - AF(a,b;a+b+1-c;1)}{F(c-a,c-b;c-a-b+1;1)}.$$
+Again using Theorem~18, this becomes
+$$B = \dfrac{1 - \frac{\Gamma(c) \Gamma(c-a-b) \Gamma(a+b+1-c) \Gamma(1-c)}{\Gamma(c-a) \Gamma(c-b) \Gamma(b+1-c) \Gamma(a+1-c)}}{\frac{\Gamma(c-a-b+1) \Gamma(1-c)}{\Gamma(1-b) \Gamma(1-a)}}.$$
+By Exercise~15, page 32 the numerator is equal to
+$$\dfrac{\Gamma(2-c) \Gamma(c-1) \Gamma(c-a-b) \Gamma(a+b+1-c)}{\Gamma(a) \Gamma(1-a) \Gamma(b) \Gamma(1-b)}.$$
+Hence,
+$$\begin{array}{ll}
+B &= \dfrac{\Gamma(2-c) \Gamma(c-1) \Gamma(c-a-b) \Gamma(a+b+1-c)}{\Gamma(a)\Gamma(b) \Gamma(c-a-b+1) \Gamma(1-c)} \\
+&= \dfrac{(1-c) \Gamma(1-c) \frac{\Gamma(c)}{c-1} (a+b-c) \Gamma(a+b-c)}{\Gamma(a) \Gamma(b) (c-a-b) \Gamma(c-a-b) \Gamma(1-c)} \\
+&= \dfrac{\Gamma(c) \Gamma(a+b-c)}{\Gamma(a) \Gamma(b)}.
+\end{array}$$
+This yields the desired formula for $F(a,b;c;z)$ in terms of the given hypergeometric functions of $1-z$.
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem16chapter4}
+In a common notation for the Laplace transform
+$$L \{F(t)\} = \displaystyle\int_0^{\infty} e^{-st} F(t) dt = f(s); L^{-1}\{f(s)\} = F(t).$$
+Show that 
+$$L^{-1} \left\{ \dfrac{1}{s} F \left[ \begin{array}{rlr}
+a,b; & & \\
+& & z \\
+s+1; & & 
+\end{array} \right] \right\} = F \left[ \begin{array}{rlr}
+a, b; & & \\
+& & z(1-e^{-t}) \\
+1; & & 
+\end{array} \right].$$
+\end{problem}
+\begin{solution}
+Let $A = \mathscr{L}^{-1} \left\{ \dfrac{1}{s} F \left[ \begin{array}{rlr}
+a,b; & & \\
+& & z \\
+1+s;
+\end{array} \right] \right\}.$ We wish to evaluate $A$. Now
+$$A = \displaystyle\sum_{n=0}^{\infty} \dfrac{(a)_n (b)_n z^n}{n!} \mathscr{L}^{-1} \left\{ \dfrac{1}{s(1+s)_n} \right\}.$$
+But
+$$\begin{array}{ll}
+\dfrac{1}{s(s+1)_n} &= \dfrac{\Gamma(1+s)}{s \Gamma(1+s+n)} \\
+&= \dfrac{1}{s n!} \dfrac{\Gamma(1+s) \Gamma(1+n)}{\Gamma(1+s+n) \Gamma(1)} \\
+&= \dfrac{1}{n!s} F \left[ \begin{array}{rlr}
+-n, s; & & \\
+& & 1 \\
+1+s; & & 
+\end{array} \right] \\
+&= \dfrac{1}{n!s} \displaystyle\sum_{k=0}^n \dfrac{(-n)_k (s)_k}{k! (1+s)_k}.
+\end{array}$$
+Hence
+$$\dfrac{1}{s(s+1)_n} = \dfrac{1}{n!} \displaystyle\sum_{k=0}^n \dfrac{(-n)_k}{k!(s+k)}.$$
+Then
+$$\mathscr{L}^{-1} \left\{ \dfrac{1}{s(s+1)_n} \right\} = \dfrac{1}{n!} \displaystyle\sum_{k=0}^n \dfrac{(n)_k e^{-kt}}{k!} = \dfrac{1}{n!} (1 - e^{-t})^n.$$
+Therefore
+$$A = \displaystyle\sum_{n=0}^{\infty} \dfrac{(a)_n (b)_n z^n (1-e^{-t})^n}{n! n!} = F \left[ \begin{array}{rlr}
+a,b; & & \\
+& & z(1-e^{-t}) \\
+1; & & 
+\end{array} \right].$$
+There are many other ways of doing Exercise 16. Probably the easiest, but most undesirable, is to work from right to left in the result to be proved. It is hard to see any chance for \underline{discovering} the relation that way.
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem17chapter4}
+With that notation of Exercise 16 show that
+$$L \{t^n \sin at\} = \dfrac{a \Gamma(n+2)}{s^{n+2}} F \left[ \begin{array}{rlr}
+1 + \dfrac{n}{2}, \dfrac{3+n}{2}; & & \\
+& & -\dfrac{a^2}{s^2} \\
+\dfrac{3}{2}; 
+\end{array} \right].$$
+\end{problem}
+\begin{solution}
+We wish to obtain the Laplace Transform of $t^n \sin at$. Now
+$$t^n \sin at = \displaystyle\sum_{k=0}^{\infty} \dfrac{(-1)^k a^{2k+1} t^{n+2k+1}}{(2k+1)!}.$$
+and
+$$\mathscr{L} \left\{ t^m \right\} = \dfrac{\Gamma(m+1)}{s^{m+1}}.$$
+Hence
+$$\begin{array}{ll}
+\mathscr{L} \left\{ t^n \sin at \right\} &= \displaystyle\sum_{k=0}^{\infty} \dfrac{(-1)^k a^{2k+1} \Gamma(n+2k+2)}{(2k+1)! s^{n+2k+2}} \\
+&= \dfrac{a \Gamma(n+2)}{s^{n+2}} \displaystyle\sum_{k=0}^{\infty} \dfrac{(-1)^k (n+2)_{2k} a^{2k}}{(2)_{2k} s^{2k}} \\
+&= \dfrac{a \Gamma(n+2)}{s^{n+2}} \displaystyle\sum_{k=0}^{\infty} \dfrac{(-1)^k \left( \dfrac{n+2}{2} \right)_k \left( \dfrac{n+3}{2} \right)_k a^{2k}}{k! \left( \dfrac{3}{2} \right)_k s^{2k}} \\
+&= \dfrac{a \Gamma(n+2)}{s^{n+2}} F \left[ \begin{array}{rlr}
+\dfrac{n+2}{2}, \dfrac{n+3}{2}; & & \\
+& & \dfrac{-a^2}{s^2} \\
+\dfrac{3}{2}; & & 
+\end{array} \right].
+\end{array}$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem18chapter4}
+Obtain the results
+$$\log(1+x) = xF(1,1;2;-x),$$
+$$\arcsin x = xF \left(\dfrac{1}{2}, \dfrac{1}{2}; \dfrac{3}{2}; x^2 \right),$$
+$$\arctan x = x F \left( \dfrac{1}{2}, 1; \dfrac{3}{2}; -x^2 \right).$$
+\end{problem}
+\begin{solution}
+Using $\dfrac{n!}{(n+1)!} = \dfrac{(1)_n}{(2)_n}$ we know that 
+$$\begin{array}{ll}
+\log(1+x) &= \displaystyle\sum_{n=0}^{\infty} \dfrac{(-1)^n x^{n+1}}{n+1} \\
+&= x \displaystyle\sum_{n=0}^{\infty} \dfrac{(-1)^n (1)_n (1)_n x^n}{(2)_n n!} \\
+&= x F(1,1;2;-x).
+\end{array}$$
+Next, start with
+$$(1-y^2)^{-\frac{1}{2}} = \displaystyle\sum_{n=0}^{\infty} \dfrac{\left( \frac{1}{2} \right)_n y^{2n}}{n!}$$
+using $\dfrac{1}{2n+1} = \dfrac{\frac{1}{2}}{n+\frac{1}{2}} = \dfrac{\left(\frac{1}{2} \right)_n}{\left( \frac{3}{2} \right)_n}$ to get
+$$\displaystyle\int_0^x (1-y^2)^{-\frac{1}{2}} \mathrm{d}y = \displaystyle\sum_{n=0}^{\infty} \dfrac{\left( \frac{1}{2} \right)_n x^{2n+1}}{n! (2n+1)}.$$
+Thus we arrive at
+$$\begin{array}{ll}
+\arcsin x &= \displaystyle\sum_{n=0}^{\infty} \dfrac{\left( \frac{1}{2} \right)_n \left( \frac{1}{2} \right)_n x^{2n+1}}{\left( \frac{3}{2} \right)_n n!} \\
+&= x F \left( \dfrac{1}{2}, \dfrac{1}{2}; \dfrac{3}{2}; x^2 \right).
+\end{array}$$
+Finally form
+$$(1+y^2)^{-1} = \displaystyle\sum_{n=0}^{\infty} (-1)^n y^{2n}$$
+to obtain
+$$\displaystyle\int_0^x (1+y^2)^{-1} dy = \displaystyle\sum_{n=0}^{\infty} \dfrac{(-1)^n x^{2n+1}}{2n+1} = \displaystyle\sum_{n=0}^{\infty} \dfrac{(-1)^n \left( \frac{1}{2} \right)_n x^{2n+1}}{\left( \frac{3}{2} \right)_n} \cdot \dfrac{(1)_n}{n!}$$
+or
+$$\arctan x = x F \left( \dfrac{1}{2}, 1 ; \dfrac{3}{2}; -x^2 \right).$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem19chapter4}
+The complete elliptic integral of the first kind is
+$$K = \displaystyle\int_0^{\frac{\pi}{2}} \dfrac{\mathrm{d} \phi}{\sqrt{1-k^2 \sin^2\phi}}.$$
+Show that $K = \dfrac{\pi}{2} F \left( \dfrac{1}{2}, \dfrac{1}{2}; 1 ; k^2 \right).$
+\end{problem}
+\begin{solution}
+From $K = \displaystyle\int_0^{\frac{\pi}{2}} \dfrac{\mathrm{d} \phi}{\sqrt{1 - k^2 \sin^2 \phi}}$ we obtain
+$$K = \displaystyle\int_0^{\frac{\pi}{2}} \displaystyle\sum_{n=0}^{\infty} \dfrac{ \left(\frac{1}{2} \right)_n k^{2n} \sin^{2n} \phi \mathrm{d} \phi}{n!}.$$
+But
+$$\displaystyle\int_0^{\frac{\pi}{2}} \sin^{2n}\phi \mathrm{d}\phi = \dfrac{1}{2} B \left(n+\dfrac{1}{2}, \dfrac{1}{2} \right) = \dfrac{\Gamma \left( n + \frac{1}{2} \right) \Gamma \left( \frac{1}{2} \right)}{2 \Gamma(n+1)} = \dfrac{\Gamma^2 \left(\frac{1}{2} \right) \left( \frac{1}{2} \right)_n}{2n!} = \dfrac{\pi}{2} \dfrac{\left( \frac{1}{2} \right)_n}{n!}.$$
+Hence
+$$K = \dfrac{\pi}{2} \displaystyle\sum_{n=0}^{\infty} \dfrac{ \left( \frac{1}{2} \right)_n \left( \frac{1}{2} \right)_n k^{2n}}{n! n!} = \dfrac{\pi}{2} F \left(\dfrac{1}{2},\dfrac{1}{2};1;k^2 \right).$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem} \label{problem20chapter4}
+The complete elliptic integral of the second kind is 
+$$E = \displaystyle\int_0^{\frac{\pi}{2}} \sqrt{1 - k^2 \sin^2 \theta} \mathrm{d} \theta.$$
+Show that $E = \dfrac{\pi}{2} F \left(\dfrac{1}{2}, -\dfrac{1}{2};1;k^2 \right).$
+\end{problem}
+\begin{solution}
+From $E = \displaystyle\int_0^{\frac{\pi}{2}} \sqrt{1 - k^2 \sin^2 \theta} \mathrm{d} \theta$,
+we get
+$$\begin{array}{ll}
+E &= \displaystyle\int_0^{\frac{\pi}{2}} \displaystyle\sum_{n=0}^{\infty} \dfrac{ \left( -\frac{1}{2} \right)_n k^{2n} \sin^{2n} \phi \mathrm{d} \phi}{n!} \\
+&= \dfrac{\pi}{2} \displaystyle\sum_{n=0}^{\infty} \dfrac{ \left( -\frac{1}{2} \right)_n \left( \frac{1}{2} \right)_n k^{2n}}{n! n!}.
+\end{array}$$
+Hence
+$$E = \dfrac{\pi}{2} F \left( - \dfrac{1}{2}, \dfrac{1}{2}; 1 ; k^2 \right).$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem} \label{problem21chapter4}
+From the contiguous function relations 1-5 obtain the relations 6-10.
+\begin{enumerate}
+\item $(a-b)F = aF(a+) - bF(b+),$
+\item $(a-c+1)F = aF(a+) - (c-1)F(c-),$
+\item $[a+(b-c)z]F = a(1-z)F(a+) - c^{-1}(c-a)(c-b)zF(c+),$
+\item $(1-z)F = F(a-) - c^{-1}(c-b)zF(c+),$
+\item $(1-z)F = F(b-) - c^{-1}(c-a)zF(c+),$
+\item $[2a-c+(b-a)z]F = a(1-z)F(a+) - (c-a)F(a-),$
+\item $(a+b-c)F = a(1-z)F(a+) - (c-b)F(b-),$
+\item $(c-a-b)F = (c-a)F(a-) - b(1-z)F(b+),$
+\item $(b-a)(1-z)F = (c-a)F(a-)-b(1-z)F(b+),$
+\item $[1-z+(c-b-1)z]F = (c-a)F(a-) - (c-1)(1-z)F(c-),$
+\item $[2b-c+(a-b)z]F = b(1-z)F(b+) - (c-b)F(b-),$
+\item $[b+(a-c)z]F = b(1-z)F(b+) - c^{-1}(c-a)(c-b)zF(c+),$
+\item $(b-c+1)F = bF(b+) - (c-1)F(c-),$
+\item $[1-b+(c-a-1)z]F = (c-b)F(b-) - (c-1)(1-z)F(c-),$
+\item $[c-1+(a+b+1-2c)z]F = (c-1)(1-z)F(c-) - c^{-1}(c-a)(c-b)zF(c+).$
+\end{enumerate}
+\end{problem}
+\begin{solution}
+From $(3)$ and $(4)$ we get
+$$[a + (b-c)z - (c-a)(1-z)]F = a(1-z)F(a+)-(c-a)F(a-),$$
+or
+$$(6) \hspace{30pt} [2a-c + (b-a)z]F = a(1-z)F(a+) - (c-a) F(a-).$$
+From $(3)$ and $(5)$ we get
+$$[a + (b-c)z - (c-b)(1-z)]F = a(1-z)F(a+) - (c-b)F(b-),$$
+or
+$$(7) \hspace{30pt} [a+b-c]F = a(1-z)F(a+) - (c-b)F(b-).$$
+From $(1)$ and $(6)$ we get
+$$[(a-b)(1-z) - 2a + c - (b-a)z]F = (c-a)F(a-) - b(1-z)F(b+),$$
+or
+$$(8) \hspace{30pt} [c-a-b]F = (c-a)F(a-) - b(1-z)F(b+).$$
+From $(6)$ and $(7)$ we get
+$$(9) \hspace{30pt} (b-a)(1-z)F = (c-a)F(a-)-(c-b)F(b-).$$
+Use $(2)$ and $(6)$ to obtain
+$$[(a-c+1)(1-z)-2a+c - (b-a)z]F = (c-a) F(a-) - (c-1)(1-z)F(c-),$$
+or
+$$(10) \hspace{30pt} [1-a+(c-b-1)z] F = (c-a)F(a-) - (c-1)(1-z)F(c-).$$
+From $(1)$ and $(7)$ we get
+$$[a+b-c-(a-b)(1-z)]F = b(1-z)F(b+) - (c-b)F(b-),$$
+or
+$$(11) \hspace{30pt} [2b-c+(1-b)z]F = b(1-z)F(b+) - (c-b)F(b-),$$
+which checks with $(6)$. Easier method: in $(6)$ interchange $a$ and $b$.
+From $(1)$ and $(3)$ we get
+$$[a + (b-c)z - (a-b)(1-z)]F = b(1-z)F(b+) - c^{-1}(c-a)(c-b)zF(c+),$$
+or
+$$(12) \hspace{30pt} [b+(a-c)z]F = b(1-z)F(b+) - c^{-1}(c-a)(c-b)zF(c+),$$
+more easily found by changing $b$ to $a$ and $a$ to $b$ in $(3)$.
+In $(2)$ interchange $a$ and $b$ to get
+$$(13) \hspace{30pt} (b-c+1)F = bF(b+) - (c-1)F(c-).$$
+In $(10)$ interchange $a$ and $b$ to get
+$$(14) \hspace{30pt} [1-b+(c-a-1)z]F = (c-b)F(b-) - (c-1)(1-z)F(c-).$$
+From $(2)$ and $(3)$ we get
+$$[a+(b-c)z-(a-c+1)(1-z)]F = (c-1)(1-z)F(c-)-c^{-1}(c-a)(c-b)zF(c+),$$
+or
+$$(15) \hspace{30pt} [c-1+(a+b-2c+1)z]F = (c-1)(1-z)F(c-) - c^{-1}(c-a)(c-b)zF(c+).$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem22chapter4}
+The notation used in Exercise~\ref{problem21chapter4} and in Section~33 is often extended as in the examples
+$$F(a-,b+) = F(a-1,b+1;c;z),$$
+$$F(b+,c+) = F(a,b+1;c+1;z).$$
+Use the relations (4) and (5) of Exercise~\ref{problem21chapter4} to obtain
+$$F(a-) - F(b-) + c^{-1}(b-a)zF(c+) = 0$$
+and from it, by changing $b$ to $(b+1)$ to obtain the relation
+$$(c-1-b)F = (c-a)F(a-,b+) + (a-1-b)(1-z)F(b+),$$
+or
+$$(c-1-b)F(a,b;c;z) = (c-a)F(a-1,b+1;c;z) + (a-1-b)(1-z)F(a,b+1;c;z),$$
+another relation we wish to use in Chapter~16.
+\end{problem}
+\begin{solution}
+From Exercise~\ref{problem21chapter4} equation $(4)$ and $(5)$ we get
+$$(1) (1-z)F=F(a-)-c^{-1}(c-b)zF(c+),$$
+$$(2) (1-z)F = F(b-) - c^{-1}(c-a)zF(c+).$$
+From the above we get
+$$F(a-) - F(b-) + c^{-1}(b-a)zF(c+) = 0.$$
+Now replace $b$ by $b+1$ to write
+$$F(a-,b+) - F + c^{-1}(b+1-a)zF(b+,c+) = 0,$$
+or
+$$F(a,b;c;z) = F(a-1,b+1;c;z) + c^{-1}(b+1-a)zF(a,b+1;c+1;z).$$
+\end{solution}
+\begin{problem}\label{problem23chapter4}
+In equation $(9)$ of Exercise~\ref{problem21chapter4} shift $b$ to $b+1$ to obtain the relation
+$$(c-1-b)F = (c-a)F(c-,b+)+(a-1-b)(1-z)F(b+),$$
+or
+$$(c-1-b)F(a,b;c;z) = (c-a)F(a-1,b+1;c;z) + (a-1-b)(1-z)F(a,b+1;c;z),$$
+another relation we wish to use in Chapter 16.
+\end{problem}
+\begin{solution}
+Equation $(9)$ of Exercise~\ref{problem21chapter4} is
+$$(b-a)(1-z)F = (c-a)F(a-) - (c-b)F(b-)$$
+from which we may write
+$$(b+1-a)(1-z)F(b+) = (c-a)F(a-,b+) - (c-b-1)F,$$
+or
+$$(c-b-1)F(a,b;c;z) = (c-a)F(a-,b+1;c;z) + (a-1-b)(1-z)F(a,b+1;c;z).$$
+\end{solution}

@@ -1,0 +1,249 @@
+%%%%
+%%
+%%
+%%%%
+%%%% CHAPTER 1
+%%%% CHAPTER 1
+%%%%
+%%
+%%
+%%%%
+
+\section{Chapter 1 Solutions}
+\begin{center}\hyperref[toc]{\^{}\^{}}\end{center}
+\begin{center}\begin{tabular}{lllllllllllllllllllllllll}
+\hyperref[problem1chapter1]{P1} & \hyperref[problem2chapter1]{P2} & \hyperref[problem3chapter1]{P3} & \hyperref[problem4chapter1]{P4} & \hyperref[problem5chapter1]{P5} & \hyperref[problem6chapter1]{P6} & \hyperref[problem7chapter1]{P7} & \hyperref[problem8chapter1]{P8} & \hyperref[problem9chapter1]{P9} & \hyperref[problem10chapter1]{P10} & \hyperref[problem11chapter1]{P11} 
+\end{tabular}\end{center}
+\begin{problem}\label{problem1chapter1}
+Show that the following product converges and find its value: 
+$$\displaystyle\prod_{n=1}^{\infty} \left[ 1 + \dfrac{6}{(n+1)(2n+9)} \right].$$
+\end{problem}
+\begin{solution}(Solution by Leon Hall)
+By Theorem 3, page 3, this product converges absolutely because $\displaystyle\sum_{n=1}^{\infty} \dfrac{6}{(n+1)(2n+9)}$ converges absolutely.
+$$\begin{array}{ll}
+1 + \dfrac{6}{(n+1)(2n+9)} &= \dfrac{(n+1)(2n+9)+6}{(n+1)(2n+9)} \\
+&= \dfrac{2n^2+11n+15}{(n+1)(2n+9)} \\
+&= \dfrac{(2n+5)(n+3)}{(n+1)(2n+9)}.
+\end{array}$$
+So, if 
+$$\begin{array}{ll}
+P_n &= \displaystyle\prod_{k=1}^n \left[ 1 + \dfrac{6}{(k+1)(2k+9)} \right] \\
+&= \displaystyle\prod_{k=1}^n \dfrac{(2k+5)(k+3)}{(k+1)(2k+9)} \\
+&= \dfrac{[7 \cdot 9 \cdot  \cdot  \cdot (2n+5)][4 \cdot 5 \cdot  \cdot  \cdot (n+3)]}{[2 \cdot 3 \cdot  \cdot  \cdot (n+1)][11 \cdot 13 \cdot  \cdot  \cdot  (2n+9)]} \\
+&= \dfrac{[7 \cdot 9][(n+2) (n+3)]}{[2 \cdot 3][(2n+7) (2n+9)]} \\
+&= \dfrac{21}{2} \dfrac{(n+2)(n+3)}{(2n+7)(2n+9)}
+\end{array}$$
+then
+$$\displaystyle\lim_{n \rightarrow \infty} P_n = \displaystyle\lim_{n \rightarrow \infty} \dfrac{21}{2} \dfrac{n^2 + 5n+6}{4n^2+32n+63} = \dfrac{21}{8}.$$
+Note: The use of Theorem 3 is not needed because finding the value of the infinite product is sufficient itself to show convergence.
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\newpage
+\begin{problem}\label{problem2chapter1}
+Show that $\displaystyle\prod_{n=2}^{\infty} \left( 1 - \dfrac{1}{n^2} \right) = \dfrac{1}{2}$.
+\end{problem}
+\begin{solution}(Solution by Leon Hall)
+First compute
+$$1 - \dfrac{1}{n^2} = \dfrac{n^2-1}{n^2} = \dfrac{(n+1)(n-1)}{n^2}.$$
+Let
+$$\begin{array}{ll}
+P_n &= \displaystyle\prod_{k=2}^n \left( 1 - \dfrac{1}{k^2} \right) \\
+&= \displaystyle\prod_{k=2}^n \dfrac{(k+1)(k-1)}{k^2} \\
+&= \dfrac{[3 \cdot 4 \cdot  \cdot  \cdot (n+1)][1 \cdot 2 \cdot 3 \cdot  \cdot  \cdot (n-1)]}{(2 \cdot 3 \cdot 4 \cdot  \cdot  \cdot n)^2} \\
+&= \dfrac{(n+1)}{2n}. \\
+\end{array}$$
+Then,
+$$\begin{array}{ll}
+\displaystyle\lim_{n \rightarrow \infty} P_n &= \displaystyle\lim_{n \rightarrow \infty} \dfrac{n+1}{2n} \\ 
+&= \dfrac{1}{2} \\
+&= \displaystyle\prod_{n=2}^{\infty} \left( 1 - \dfrac{1}{n^2} \right).
+\end{array}$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem3chapter1}
+Show that $\displaystyle\prod_{n=2}^{\infty} \left( 1 - \dfrac{1}{n} \right)$ diverges to $0$.
+\end{problem}
+\begin{solution}(Solution by Leon Hall)
+$$P_n = \displaystyle\prod_{k=2}^n \left( \dfrac{k-1}{k} \right) = \dfrac{1 \cdot 2 \cdot 3 \cdot  \cdot  \cdot (k-1)}{2 \cdot 3 \cdot 4  \cdot  \cdot  \cdot  n} = \dfrac{1}{n}$$
+Since
+$$\displaystyle\lim_{n \rightarrow \infty} P_n = \displaystyle\lim_{n \rightarrow \infty} \dfrac{1}{n} = 0$$
+the product diverges to $0$. [The product does not converge to $0$ because none of the terms in the product are $0$.]
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem4chapter1}
+Investigate the product $\displaystyle\prod_{n=0}^{\infty} (1 + z^{2^n})$ in $|z| < 1$.
+\end{problem}
+\begin{solution}(Solution by Leon Hall)
+Let $P_n = \displaystyle\prod_{k=0}^n (1 + z^{2^k})$. Then
+$$P_0 = 1+z,$$
+$$P_1 = (1+z)(1+z^2)$$
+$$P_2 = (1+z)(1+z^2)(1+z^4) = (1+z)(1+z^2+z^4+z^6).$$
+Assume $P_n = (1+z) \displaystyle\sum_{k=0}^{2(2^n-1)} (z^2)^k = \displaystyle\sum_{k=0}^{2^{n+1}-2} (z^2)^k.$ Then
+$$\begin{array}{ll}
+P_{n+1} &= P_n(1+z^{2^{n+1}} ) \\
+&= P_n + z^{2^{n+1}}P_n \\
+&= (1+z) \left[ 1+ z^2 + \cdot \cdot \cdot + z^{2^{n+1}-2}+z^{2^{n+1}} + z^{2^{n+1}+2} + \cdot \cdot \cdot + z^{2^{n+2}-2} \right] \\
+&= (1+z) \displaystyle\sum_{k=0}^{2^{n+2}-2} (z^2)^k
+\end{array}$$
+So we have shown by induction that
+$$P_n = (1+z) \displaystyle\sum_{k=0}^{2^{n+1}-2} z^{2k},$$
+which is a geometric series converging to $(z+1) \dfrac{1}{1-z^2}$, for $|z|<1$. 
+$$|1+z^{2^n}| \leq 1 + |z|^{2^n}$$
+and same process works. Thus, $\displaystyle\prod_{n=0}^{\infty} (1+z^{2^n})$ converges absolutely to $\dfrac{1}{1-z}$.
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem5chapter1}
+Show that $\displaystyle\prod_{n=1}^{\infty} \exp \left( \dfrac{1}{n} \right)$ diverges.
+\end{problem}
+\begin{solution}(Solution by Leon Hall)
+Let $P_n = \displaystyle\prod_{k=1}^n \exp \left( \dfrac{1}{n} \right)$ and let 
+$$S_n = \log P_n = \displaystyle\sum_{k=1}^n \dfrac{1}{k}.$$
+$S_n$ is the $n$th partial sum of the harmonic series, which diverges. As in the proof of Theorem 2, page 3, $P_n = \exp S_n$ and
+$$\displaystyle\lim_{n \rightarrow \infty} P_n = \displaystyle\lim_{n \rightarrow \infty} \exp S_n = \exp \displaystyle\lim_{n \rightarrow \infty} S_n.$$
+Thus, because $\{S_n\}$ diverges, so does $\{P_n \}$.
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem6chapter1}
+Show that $\displaystyle\prod_{n=1}^{\infty} \exp \left( - \dfrac{1}{n} \right)$ diverges to $0$.
+\end{problem}
+\begin{solution}(Solution by Leon Hall)
+Let 
+$$\log P_n = S_n = \displaystyle\sum_{k=1}^n \left( - \dfrac{1}{k} \right) = - \displaystyle\sum_{k=1}^n \dfrac{1}{k}$$
+as in Problem 5. Then
+$$P_n = \exp S_n = \exp \left( -\displaystyle\sum_{k=1}^n \dfrac{1}{k} \right) = \dfrac{1}{\exp \left( \displaystyle\sum_{k=1}^n \dfrac{1}{k} \right)}.$$
+Because $\displaystyle\sum_{k=1}^{\infty} \dfrac{1}{k}$ diverges to $\infty$ we have
+$$\displaystyle\lim_{n \rightarrow \infty} P_n = 0$$
+and so
+$$\displaystyle\prod_{n=1}^{\infty} \exp \left( - \dfrac{1}{n} \right)$$
+diverges to $0$.
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem7chapter1}
+Test $\displaystyle\prod_{n=1}^{\infty} \left( 1 - \dfrac{z^2}{n^2} \right).$
+\end{problem}
+\begin{solution}(Solution by Leon Hall)
+The product diverges to $0$ for any $z$ such that $z = \pm m$, $m$ a positive integer. For all $z$ such that $1 - \dfrac{z^2}{n^2} \neq 0$, we have by Theorem 3, page 3, that $\displaystyle\prod_{n=1}^{\infty} \left( 1 - \dfrac{z^2}{n^2} \right)$ is absolutely convergent because $\displaystyle\sum_{n=1}^{\infty} \left( - \dfrac{z^2}{n^2} \right)$ is absolutely convergent. In fact,
+$$\displaystyle\sum_{n=1}^{\infty} \left( - \dfrac{z^2}{n^2} \right) = -\dfrac{z^2 \pi^2}{6}.$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem8chapter1}
+Show that $\displaystyle\prod_{n=1}^{\infty} \left[ 1 + \dfrac{(-1)^{n+1}}{n} \right]$ converges to unity.
+\end{problem}
+\begin{solution}(Solution by Leon Hall)
+Let $P_n = \displaystyle\prod_{k=1}^n \left[ 1 + \dfrac{(-1)^{k+1}}{k} \right]$.
+
+Case 1: $n$ is even. Then
+$$P_n = \left( \dfrac{1+1}{1} \right) \left( \dfrac{2-1}{2} \right) \left( \dfrac{3+1}{3} \right) \left( \dfrac{4-1}{4} \right) \cdot \cdot \cdot  \left( \dfrac{n}{n-1}  \right) \left( \dfrac{n-1}{n} \right)$$ 
+Rearranging, we get $P_n = \dfrac{n!}{n!} = 1$ for even $n$.
+
+Case 2: $n$ is odd. Then
+$$P_n = \left( \dfrac{1+1}{1} \right) \left( \dfrac{2-1}{2} \right) \left( \dfrac{3+1}{3} \right) \left( \dfrac{4-1}{4} \right)  \cdot \cdot \cdot \left( \dfrac{n-1}{n-2} \right) \left( \dfrac{n-2}{n-1} \right) \left( \dfrac{n+1}{n} \right)  = \dfrac{n+1}{n}.$$
+
+In both cases $\displaystyle\lim_{n \rightarrow \infty} P_n = 1$.
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem9chapter1}
+Test for convergence: $\displaystyle\prod_{n=2}^{\infty} \left( 1 - \dfrac{1}{n^p} \right)$ for real $p \neq 0$.
+\end{problem}
+\begin{solution}(Solution by Leon Hall)
+For $p>1$ the series of positive numbers $\displaystyle\sum_{n=2}^{\infty} \dfrac{1}{n^p}$ is known to be convergent (e.g., by the Integral Test). Thus, $\displaystyle\prod_{n=2}^{\infty} \left( 1 - \dfrac{1}{n^p} \right)$ is absolutely convergent by Theorem 3.
+
+For $0 < p \leq 1$, $1 - \dfrac{1}{n^p} > 0$ and so convergence and absolute convergence are the same. Because the series $\displaystyle\sum_{n=2}^{\infty} \dfrac{1}{n^p}$ diverges for $0 < p \leq 1$, our product diverges by Theorem 3.
+
+For $p < 0$, let $p = -q$ where $q > 0$. Then
+$$1 - \dfrac{1}{n^p} = 1 - n^q = 1 + (-n^q).$$
+But $\displaystyle\lim_{n \rightarrow \infty} (-n^q) \neq 0$, so in this case our product diverges by Theorem~1. 
+
+Summary: $\displaystyle\prod_{n=2}^{\infty} \left( 1 - \dfrac{1}{n^p} \right)$ diverges when $p \leq 1$ (an $p \neq 0$), and converges when $p > 1$.
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem10chapter1}
+Show that $\displaystyle\prod_{n=1}^{\infty} \dfrac{\sin ( \frac{z}{n})}{\frac{z}{n}}$ is absolutely convergent for all finite $z$ with the usual convention at $z=0$.
+\end{problem}
+\begin{solution}(Solution by Leon Hall)
+Let
+$$\dfrac{\sin(\frac{z}{n})}{\frac{z}{n}} = 1 + a_n(z).$$
+Then
+$$\begin{array}{ll}
+a_n(z) &= \dfrac{\sin(\frac{z}{n})}{\frac{z}{n}} - 1 \\
+&= -\dfrac{1}{3!} \dfrac{z^2}{n^2} + \dfrac{1}{5!} \dfrac{z^4}{n^4} - \dfrac{1}{7!} \dfrac{z^6}{n^6} + \ldots \\
+&= \dfrac{1}{n^2} \left[ -\dfrac{z^2}{6} + \mathcal{O} \left( \dfrac{1}{n^2} \right) \right].
+\end{array}$$
+Thus, there exists a constant $M$ such that
+$$|a_n(z)| < \dfrac{M}{n^2},$$
+and because $\displaystyle\sum_{n=1}^{\infty} \dfrac{M}{n^2}$ converges, the product
+$$\displaystyle\prod_{n=1}^{\infty} (1+a_n(z)) = \dfrac{\sin(\frac{z}{n})}{\frac{z}{n}}$$
+converges absolutely and uniformly for all finite $z$ by Theorems 3 and 4. 
+
+If $z=0$ the product is, with the usual convention,
+$$\displaystyle\prod_{n=1}^{\infty} 1 = 1.$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem11chapter1}
+Show that if $c$ is not a negative integer,
+$$\displaystyle\prod_{n=1}^{\infty} \left[ \left( 1 - \dfrac{z}{c+n} \right) \exp \left( \dfrac{z}{n} \right) \right]$$
+is absolutely convergent for all finite $z$.
+\end{problem}
+\begin{solution}
+Let
+\begin{eqnarray*}
+\lefteqn{1+a_n(z)} \\
+& &= \left( 1 - \dfrac{z}{c+n} \right) \exp \left( \dfrac{z}{n} \right) \\
+& &= \left( 1 + \dfrac{z}{n} + \dfrac{1}{2!} \dfrac{z^2}{n^2} + \dfrac{1}{3!} \dfrac{z^3}{n^3} + \ldots \right) - \dfrac{1}{c+n} \left( z + \dfrac{z^2}{n} + \dfrac{1}{2!} \dfrac{z^3}{n^2} + \dfrac{1}{3!} \dfrac{z^4}{n^3} + \ldots \right) \\
+& &= 1 + \left( \dfrac{1}{n} - \dfrac{1}{c+n} \right)z + \left( \dfrac{1}{2!n^2} - \dfrac{1}{n(c+n)} \right) z^2 \\
+& & \phantom{=}+ \left( \dfrac{1}{3!n^3} - \dfrac{1}{2! n^2(c+n)} \right) z^3 + \ldots \\
+& &= 1 + \dfrac{c}{n(c+n)}z + \dfrac{c-n}{2n^2(c+n)}z^2 + \displaystyle\sum_{k=3}^{\infty} \dfrac{c - (k-1)n}{k! n^k (c+n)} z^k \\
+& &= 1 + \dfrac{c}{n(c+n)}z - \dfrac{1}{2n(c+n)} z^2 + \mathcal{O} \left( \dfrac{1}{n^2} \right).
+\end{eqnarray*}
+Thus, for $c$ not a negative integer and for any finite $z$, there is a constant $M$ such that $|a_n(z)| \leq \dfrac{M}{n^2}$ and so by Theorems 3 and 4 the product converges absolutely and uniformly.
+\end{solution}

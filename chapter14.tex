@@ -1,0 +1,1115 @@
+%%%%
+%%
+%%
+%%%%
+%%%% CHAPTER 14
+%%%% CHAPTER 14
+%%%%
+%%
+%%
+%%%%
+\section{Chapter 14 Solutions}
+\begin{center}\hyperref[toc]{\^{}\^{}}\end{center}
+\begin{center}\begin{tabular}{lllllllllllllllllllllllll}
+\hyperref[problem1chapter14]{P1} & \hyperref[problem2chapter14]{P2} & \hyperref[problem3chapter14]{P3} & \hyperref[problem4chapter14]{P4} & \hyperref[problem5chapter14]{P5} & \hyperref[problem6chapter14]{P6} & \hyperref[problem7chapter14]{P7} & \hyperref[problem8chapter14]{P8} & \hyperref[problem9chapter14]{P9} & \hyperref[problem10chapter14]{P10} & \hyperref[problem11chapter14]{P11} & \hyperref[problem12chapter14]{P12} & \hyperref[problem13chapter14]{P13} \\
+\hyperref[problem14chapter14]{P14} & \hyperref[problem15chapter14]{P15} & \hyperref[problem16chapter14]{P16} & \hyperref[problem17chapter14]{P17} 
+\end{tabular}\end{center}
+\setcounter{problem}{0}
+\setcounter{solution}{0}
+\begin{problem}\label{problem1chapter14}
+Show that the Bateman's polynomial (see Section 146, page 285)
+
+$$Z_n(t) = {}_2F_2(-n,n+1;1,1;t)$$
+
+has the recurrence relation
+
+\begin{eqnarray*}
+\lefteqn{n^2(2n-3)Z_n(t) - (2n-1)[3n^2-6n+2-2(2n-3)t]Z_{n-1}(t)} \\
+& &  +(2n-3)[3n^2-6n+2+2(2n-1)t]Z_{n-2}(t) - (2n-1)(n-2)^2Z_{n-3}(t)=0.
+\end{eqnarray*}
+  
+\end{problem}
+\begin{solution}
+Let
+
+$$Z_n(t) = {}_2F_2(-n,N=1;1,1;t) = \displaystyle\sum_{k=0}^n \dfrac{(-1)^k (n+k)! t^k}{(k!)^3(n-k)!}$$
+
+or
+
+$$Z_n(t) = \displaystyle\sum_{k=0}^{\infty} \gamma(k,n).$$
+
+Then
+
+$$Z_{n-1}(t) = \displaystyle\sum_{k=0}^{\infty} \dfrac{(-1)^k (n-1+k)!t^k}{(k!)^3(n-1-k)!} = \displaystyle\sum_{k=0}^{\infty} \dfrac{n-k}{n+k} \gamma(k,n),$$
+
+$$Z_{n-2}(t) = \displaystyle\sum_{k=0}^{\infty} \dfrac{(n-k)(n-k-1)(n-k-2)}{(n+k)(n+k-1)(n+k-2)} \gamma(k,n).$$
+
+Also
+
+$$t Z_{n-1}(t) = \displaystyle\sum_{k=0}^{\infty} \dfrac{(-1)^k (n-1+k)! x^{k+1}}{(k!)^3(n-1-k)!} = \displaystyle\sum_{k=1}^{\infty} \dfrac{(-1)^{k-1}(n-2+k)! x^k}{[(k-1)!]^3(n-k)!}$$
+
+or
+
+$$t Z_{n-1}(t) = \displaystyle\sum_{k=0}^{\infty} \dfrac{-k^3}{(n+k)(n+k-1)} \gamma(k,n)$$
+
+$$t Z_{n-2}(t) = \displaystyle\sum_{k=0}^{\infty} \dfrac{(-1)^k (n-2+k)! x^{k+1}}{(k!)^3(n-2-k)!} = \displaystyle\sum_{k=1}^{\infty} \dfrac{(-1)^{k-1} (n-3+k)!x^k}{[(k-1)!]^3(n-1-k)!}$$
+
+$$t Z_{n-2}(t) = \displaystyle\sum_{k=0}^{\infty} \dfrac{-k^3(n-k)}{(n+k)(n+k-1)(n+k-2)} \gamma(k,n).$$
+
+We may now proceed to a recurrence relation of the form
+
+$$Z_n(t) + [A+Bt]Z_{n-1}(t) + [C+Dt]Z_{n-2}(t) + E Z_{n-3}(t)=0,$$
+
+in which $A,B,C,D,E$ depend upon $k$. For the determination of those coefficients we need to satisfy the identity in $k$:
+\begin{eqnarray*}
+\lefteqn{(n+k)(n+k-1)(n+k-2)+A(n-k)(n+k-1)(n+k-2)-Bk^3(n+k-2)} \\
+& & +C(n-k)(n-k-1)(n+k-2)-Dk^3(n-k)+E(n-k)(n-k-1)(n-k-2)=0.
+\end{eqnarray*}
+Use
+$$\begin{array}{l|l|l}
+k=n: & 2n(2n-1)(2n-2)-Bn^3(2n-2) = 0: & B= \dfrac{2(2n-1)}{n^2} \\
+\mathrm{coeff} \hspace{3pt} k^4: &-B+D=0: & D = \dfrac{2(2n-1)}{n^2} \\
+k=2-n: & -D (2-n)^3(2n-2) + E(2n-2)(2n-3)(2n-4)=0 \\
+& D(n-2)^3 + 2E(n-2)(2n-3)=0 & E = -\dfrac{(n-2)^2}{2(2n-3)}D  \\
+&& = -\dfrac{(2n-1)(n-2)^2}{n^2 (2n-3)} \\
+k=1-n: & -B(1-n)^3(-1) + C(2n-1)(2n-2)(-1) \\
+& -D(1-n)^3(2n-1)+E(2n-1)(2n-2)(2n-3)=0, \\
+& or \\
+& -B(n-1)^3 - 2C(n-1)(2n-1) + D(n-1)^3(2n-1) \\
+& + E \cdot 2 (n-1)(2n-1)(2n-3) =0
+\end{array}$$
+
+Thus we have
+
+$$\begin{array}{ll}
+2C(2n-1) &= 2E(2n-1)(2n-3) + D(n-1)^2(2n-1) -B(n-1)^2 \\
+&= -\dfrac{2(2n-1)^2(n-2)^2(2n-3)}{n^2(2n-3)} + \dfrac{2(n-1)^2(2n-1)^2}{n^2} - \dfrac{2(n-1)^2(2n-1)}{n^2}.
+\end{array}$$
+
+Then
+
+$$\begin{array}{ll}
+n^2C &= -(2n-1)(n-2)^2 + (n-1)^2(2n-1)-(n-1)^2 \\
+&= (2n-1)[-n^2+4n-4+n^2-2n+1]-(n-1)^2 \\
+&= (2n-1)(2n-3)-(n-1)^2 \\
+&= 4n^2-8n+3-n^2+2n-1 \\
+&= 3n^2-6n+2
+\end{array}$$
+
+Hence
+
+$$C = \dfrac{3n^2-6n+2}{n^2}.$$
+
+$$\begin{array}{ll}
+k=n-1: & (2n-1)(2n-2)(2n-3)+A(1)(2n-2)(2n-3) \\
+& -B(n-1)^3(2n-3)-D(n-1)^3(1)=0 \\
+& or \\
+& 2(2n-1)(2n-3) + 2A(2n-3) - B(n-1)^2(2n-3) \\
+& -D(n-1)^2=0, \\
+& or \\
+& 2A(2n-3) = -2(2n-1)(2n-3) + \dfrac{2(2n-1)(n-1)^2(2n-3)}{n^2} \\
+& + \dfrac{2(2n-1)(n-1)^2}{n^2}.
+\end{array}$$
+
+Hence we get
+
+$$\begin{array}{ll}
+n^2(2n-3)A &= -n^2(2n-1)(2n-3) + (2n-1)(n-1)^2(2n-3)+(2n-1)(n-1)^2 \\
+&= (2n-1)[(2n-3)(-n^2+n^2-2n+1) + (n-1)^2 ] \\
+&= (2n-1)[-4n^2+8n-3+n^2-2n+1] \\
+&= -(2n-1)(3n^2-6n+2).
+\end{array}$$
+
+We now have
+
+$$A = -\dfrac{(2n-1)(3n^2-6n+2)}{n^2(2n-3)}, B=\dfrac{2(2n-1)}{n^2},$$
+$$C+\dfrac{3n^2-6n+2}{n^2}, D = \dfrac{2(2n-1)}{n^2},$$
+and
+$$E = -\dfrac{(2n-1)(n-2)^2}{n^2(2n-3)}.$$
+
+The desired recurrence relation is therefore
+
+$$n^2(2n-3)Z_n(t) - (2n-1) \left[ 3n^2-6n+2-2(2n-3)t \right] Z_{n-1}(t)$$
+
+$$+(2n-3)[3n^2-6n+2+2(2n-1)t]Z_{n-2}(t) - (n-2)^2(2n-1)Z_{n-3}(t).$$
+
+
+Note the one sign change from that in Sister Celine's paper. The sign was correct in her thesis.
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem2chapter14}
+Show that Sister Celine's polynomial $f_n(a;-;x),$ or 
+
+$$F_n(x) = {}_3F_2 \left(-n,n+1,a;1,\dfrac{1}{2};x \right)$$
+
+has the recurrence relation
+
+$$nf_n(x) - [3n-2-4(n-1+a)x]f_{n-1}(x) + [3n-4-4(n-1-a)x]f_{n-2}(x)-(n-2)f_{n-3}(x)=0.$$
+\end{problem}
+\begin{solution}
+Consider
+
+$$f_n(x) = {}_3F_2 \left(-n,n+1,a;1, \dfrac{1}{2};x \right),$$
+
+for which we seek a pure recurrence relation.
+
+Now
+
+$$f_n(x) = \displaystyle\sum_{k=0}^n \dfrac{(-1)^k(n+k)!(a)_k x^k}{k! (n-k)!k! (k)_k} = \displaystyle\sum_{k=0}^n \dfrac{(-1)^k(n+k)!(a)_k(4x)^k}{k!(2k)!(n-k)!}.$$
+
+Put
+
+$$\epsilon(k,n) = \dfrac{(-1)^k(n+k)!(a)_k(4x)^k}{k!(2k)!(n-k)!}.$$
+
+Then
+
+$$f_n(x) = \displaystyle\sum_{k=0}^{\infty} \epsilon(k,n),$$
+
+$$f_{n-1}(x) = \displaystyle\sum_{k=0}^{\infty} \dfrac{(-1)^k (n-1+k)!(a)_k(4x)^k}{k!(2k)!(n-1-k)!} = \displaystyle\sum_{k=0}^{\infty} \dfrac{n-k}{n+k} \epsilon(k,n),$$
+
+$$f_{n-2}(x) = \displaystyle\sum_{k=0}^{\infty} \dfrac{(n-k)(n-k-1)}{(n+k)(n+k-1)}\epsilon(k,n),$$
+
+$$f_{n-3}(x) = \displaystyle\sum_{k=0}^{\infty} \dfrac{(n-k)(n-k-1)(n-k-2)}{(n+k)(n+k-1)(n+k-2)} \epsilon(k,n).$$
+
+Furthermore,
+
+$$\begin{array}{ll}
+(4x) f_{n-1}(x) &= \displaystyle\sum_{k=0}^{\infty} \dfrac{(-1)^k (n-1+k)! (a)_k (4x)^{k+1}}{k! (2k)! (n-1-k)!} \\
+&= \displaystyle\sum_{k=1}^{\infty} \dfrac{(-1)^{k-1}(n-2+k)!(a)_{k-1}(4x)^k}{(k-1)! (2k-2)! (n-k)!} \\
+&= \displaystyle\sum_{k=0}^{\infty} \dfrac{-k \cdot 2k(2k-1)}{(n+k)(n+k-1)(a+k-1)} \epsilon(k,n),
+\end{array}$$
+
+and
+
+$$(4x)f_{n-2}(x) = \displaystyle\sum_{k=0}^{\infty} \dfrac{(-1)^k (n-2+k)! (a)_k(4x)^{k+1}}{k! (2k)! (n-2-k)!} = \displaystyle\sum_{k=1}^{\infty} \dfrac{(-1)^{k-1}(n-3+k)! (a)_{n-1} (4x)^k}{(k-1)! (2k-2)! (n-1-k)!}$$
+
+or
+
+$$(4x)f_{n-2}(x) = \displaystyle\sum_{k=0}^{\infty} \dfrac{-k(2k)(2k-1)(n-k)}{(n+k)(n+k-1)(n+k-2)(a+k-1)} \epsilon(k,n).$$
+
+We therefore seek an identity of the form
+
+$$f_n(x) + [A+B(4x)]f_{n-1}(x) + [C+D(4x)]f_{n-2}(x)+E f_{n-3}(x) =0,$$
+
+in which $A,B,C,D,E$ may depend upon $n$. We are thus led to the identity (in $k$)
+
+$$(1) \hspace{30pt} 1 + A \dfrac{n-k}{n+k} - B \dfrac{2k^2(2k-1)}{(n+k)(n+k-1)(a+k-1)} + C \dfrac{(n-k)(n-k-1)}{(n+k)(n+k-1)}$$
+
+$$-D \dfrac{2k^2(2k-1)(n-k)}{(n+k)(n+k-1)(n+k-2)(a+k-1)} + E \dfrac{(n-k)(n-k-1)(n-k-2)}{(n+k)(n+k-1)(n+k-2)} \equiv 0,$$
+
+or
+
+$$(2) \hspace{30pt} (n+k)(n+k-1)(n+k-2)(a+k-1) + A( n-k)(n+k-1)(n+k-2)(a+k-1)$$
+
+$$-2Bk^2(2k-1)(n+k-2) + C(n-k)(n-k-1)(n+k-2)(a+k-1)$$
+
+$$-2Dk^2(2k-1)(n-k) + E(n-k)(n-k-1)(n-k-2)(a+k-1) \equiv 0.$$
+We need five equations for the determination of $A,B,C,D,E$. Use
+$$\begin{array}{lll}
+k=n: & 2n(2n-1)(2n-2)(a+n-1) \\
+& -2Bn^2(2n-1)(2n-2)=0, & \\
+& or \\
+& a+n-1 -Bn = 0 & B = \dfrac{a+n-1}{n}. \\
+& \\
+k=1-a: & -2B(1-a)^2(1-2a)(n-1-a) \\
+& -2D(1-a)^2(1-2a)(n-1+a)=0, \\
+& or \\
+& B(n-1-a)+D(n-1+a)=0 & D= - \dfrac{(n-1-a)B}{a+n-1} \\
+& & \phantom{D}=-\dfrac{n-1-a}{n} \\
+& \\
+k=2-n: & -2D(2-n)^2(3-2n)(2n-2) \\
+& + E(2n-2)(2n-3)(2n-4)(a-n+1) =0, \\
+& or \\
+& D(n-2)+E(a-n+1)=0; & E = -\dfrac{n-2}{1+a-n} \\
+& & \phantom{E}=-\dfrac{n-2}{n} \\
+& \\
+k=0: & n(n-1)(n-2)(a-1) \\
+& +An(n-1)(n-2)(a-1) \\
+& +Cn(n-1)(n-2)(a-1) \\
+& +En(n-1)(n-2)(a-1)=0 \\
+\mathrm{and} \\
+\mathrm{coeff \hspace{2pt}} k^4: & 1-a-4B+C+4D-E=0 \\
+k=0: & 1+A+C+E=0.
+\end{array}$$
+
+Hence 
+
+$$2+2C-4B+4D=0.$$
+
+Therefore we have
+
+$$\begin{array}{ll}
+C &= -1 + 2B - 2D \\
+&= -1 + \dfrac{2E + 2n-2}{n} + \dfrac{2n-2-2a}{n}
+\end{array}$$
+
+from which we get
+
+$$C = \dfrac{3n-4}{n}.$$
+
+Finally,
+
+$$A = -1-C-E = -1 - \dfrac{3n-4}{n} + \dfrac{n-2}{n}$$
+
+so
+
+$$A = -\dfrac{3n-2}{n}.$$
+
+Thus we obtain
+
+$$nf_n(x) - [(3n-2)-(4x)(a+n-1)]f_{n-1}(x) + [3n-4-4x(n-1-a)]f_{n-2}(x) - (n-2)f_{n-3}(x)=0.$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem3chapter14}
+Show that Rice's polynomial (see Section 147, page 287)
+
+$$H_n = H_n(\zeta,p,v) = {}_3F_2(-n,n+1,\zeta;1,p;v)$$
+
+satisfies the relation
+
+\begin{eqnarray*}
+\lefteqn{n(2n-3)(p+n-1)H_n - (2n-1)[(n-2)(p-n+1)+2(n-2)(2n-3)} \\
+& & -2(2n-3)(\zeta+n-1)v]H_{n-1}+(2n-3)[2(n-1)^2-n(p-n+1) \\
+& & +2(2n-1)(\zeta-n+1)v]H_{n-2}+(n-2)(2n-1)(p-n+1)H_{n-3}=0.
+\end{eqnarray*}
+\end{problem}
+\begin{solution}
+Now
+
+$$\begin{array}{ll}
+H_n(\zeta,p,v) &= {}_3F_2 (-n,n+1,\zeta;1,p;v) \\
+&= \displaystyle\sum_{k=0}^n \dfrac{(-1)^k (n+k)! (\zeta)_k v^k}{(k!)^2(n-k)! (p)_k} \\
+&= \displaystyle\sum_{k=0}^{\infty} \epsilon(k,n).
+\end{array}$$
+
+Then
+
+$$H_{n-1} = \displaystyle\sum_{k=0}^{\infty} \dfrac{(-1)^k (\zeta)_k (n-1+k)! v^k}{(k!)^2 (p)_k (n-1-k)!} = \displaystyle\sum_{k=0}^{\infty} \dfrac{n-k}{n+k} \epsilon(k,n),$$
+
+$$H_{n-2} = \displaystyle\sum_{k=0}^{\infty} \dfrac{(n-k)(n-k-1)}{(n+k)(n+k-1)} \epsilon(k,n),$$
+
+$$H_{n-3} = \displaystyle\sum_{k=0}^{\infty} \dfrac{(n-k)(n-k-1)(n-k-2)}{((n+k) (n+k-1)(n+k-2)} \epsilon(k,n),$$
+
+$$vH_{n-1} = \displaystyle\sum_{k=0}^{\infty} \dfrac{(-1)^k (\zeta)_k (n-1+k)! v^{k+1}}{(k!)^2(p)_k (n-1-k)!} = \displaystyle\sum_{k=1}^{\infty} \dfrac{(-1)^{k-1} (\zeta)_{k-1} (n-2+k)! v^k}{[(k-1)!]^2(p)_{k-1}(n-k)!}$$
+
+$$vH_{n-1} = \displaystyle\sum_{k=0}^{\infty} \dfrac{-k^2(p+k-1)}{(n+k)(n+k-1)(\zeta+k-1)} \epsilon(k,n),$$
+
+and
+
+$$vH_{n-2} = \displaystyle\sum_{k=0}^{\infty} \dfrac{-k^2(p+k-1)(n-k)}{(n+k)(n+k-1)(n+k-2)(\zeta+k-1)} \epsilon(k,n).$$
+
+Then there exists a relation
+
+$$H_n + (A+Bv)H_{n-1} + (C+Dv)H_{n-2} + EH_{n-3} =0,$$
+
+in which $A,B,C,D,E$ depend upon $n$ alone. We are led to the identity in $k$:
+$$\begin{array}{ll}
+(n+k)(n+k-1)(n+k-2)(\zeta+k-1)+A(n-k)(n+k-1)(n+k-2)(\zeta+k-1) \\
+-Bk^2(p+k-1(n+k-1) + C(n-k)(n-k-1)(n_k-1)(n+k-2)(\zeta+k-1) \\
+- Dk^2(p+k-1)(n-k)+E (n-k)(n-k-1)(n-k-2)(\zeta+k-1)=0
+\end{array}$$
+We now solve for $A,B,C,D,E:$
+$$\begin{array}{lll}
+k=1-\zeta: & -B(1-\zeta)^2(p-\zeta)(n-\zeta-1) \\
+& -D(1-\zeta)^2(p-\zeta)(n-1+\zeta) & D = \dfrac{-B(n-\zeta-1)}{n+\zeta-1}. \\
+k=n: & (2n)(2n-1)(2n-2)(\zeta+n-1) \\
+& -Bn^2(p+n-1)(2n-2)=0 & B= \dfrac{2(2n-1)(n+\zeta-1)}{n(n+p-1)} \\
+& & D = \dfrac{-2(2n-1)(n-\zeta-1)}{n(n+p-1)} \\
+k=2-n: & -D(2-n)^2(p+1-n)(2n-2) \\
+& +E(2n-2)(2n-3)(2n-4)(\zeta+1-n)=0 & E = \dfrac{(n-2)(p+1-n)}{2(2n-3)(\zeta+1-n)}D \\
+&& \phantom{E}=\dfrac{(n-2)(2n-1)(p+1-n)}{n(2n-3)(n+p-1)} \\
+k=1-n: & -B(1-n)^2(p-n)(-1) \\
+& + C(2n-1)(2n-2)(-1)(\zeta-n) \\
+& -D(1-n)^2(p-n)(2n-1) \\
+& +E(2n-1)(2n-2)(2n-3)(p-n)=0;
+\end{array}$$
+
+we have
+
+$$B(n-1)(p-n)-2C(2n-1)(\zeta-n)-D(n-1)(p-n)(2n-1)+2E(2n-1)(2n-3)(p-n)=0,$$
+
+or
+
+\begin{eqnarray*}
+\lefteqn{\dfrac{-(2n-1)(n+p-1)(n-1)(p-n)}{n(n+p-1)}} \\
+& & - 2C(2n-1)(\zeta-n) + \dfrac{2(2n-1)(n-\zeta-1)(n-1)(p-n)(2n-1)}{n(n+p-1)} \\
+& & + \dfrac{2(n-2)(2n-1)(p+1-n)(2n-1)(2n-3)(\zeta-n)}{n(2n-3)(n-p-1)} = 0,
+\end{eqnarray*}
+
+or
+
+\begin{eqnarray*}
+\lefteqn{n(\zeta-n)(n+p-1)C = (n+\zeta-1)(n-1)(p-n) + (n-\zeta-1)(n-1)(p-n)(2n-1)} \\ 
+& & + (n-2)(p+1-n)(2n-1)(p-n) \\
+&& =\lefteqn{(n-1)(p-n)[n+\zeta-1+(n-\zeta-1)(2n-1)]} \\
+&& +(n-2)(p+1-n)(2n-1)(\zeta-n) \\
+&&=-2(n-1)^2(p-n)(\zeta-n) + (n-2)(p+1-n)(2n-1)(\zeta-n).
+\end{eqnarray*}
+
+Hence
+
+$$\begin{array}{ll}
+n(n+p-1)C &= -2(n-1)^2(p-n)+(n-2)(2n-1)(p+1-n) \\
+&= -2(n-1)^2(p-n+1)+2(n-1)^2 + (n-2)(2n-1)(p+1-n) \\
+&= 2(n-1)^2+(p-n+1)[-2n^2+4n-2+2n^2-5n+2] \\
+&= 2(n-1)^2-n(p-n+1),
+\end{array}$$
+
+so
+
+$$C = \dfrac{2(n-1)^2-n(p-n+1)}{n(p+n-1)}.$$
+
+Finally,
+
+$$\mathrm{coeff \hspace{3pt}} k^4: 1-A-B+C+D-E=0.$$
+
+Then
+
+$$A = 1-B+C+D-E$$
+
+so
+
+\begin{eqnarray*}
+\lefteqn{n(2n-3)(p+n-1)A = n(2n-3)(p+n-1)-2(2n-3)(2n-1)(n+\zeta-1)} \\
+&&+ (2n-3)[2(n-1)^2-n(p-n+1)]-2(2n-3)(2n-2)(n-\zeta-1) \\
+&&- (n-2)(2n-1)(p+1-n),
+\end{eqnarray*}
+
+or
+
+$$\begin{array}{ll}
+n(2n-3)(p+n-1)A &= (2n-3)[pn+n^2-n+2n^2-4n+2-pn+n^2-n] \\
+&\phantom{=}- (2n-1)[2(2n-3)(n+\zeta-1) + 2(2n-3)(n-\zeta-1)\\
+&\phantom{=}+(n-2)(p+1-n)] \\
+&= 2(2n-3)(n-1)(2n-1) - 2(2n-1)(2n-3)(n+\zeta-1)\\
+&\phantom{=}-(2n-1)[2(2n-3)(n-p-1)+(1-2)(p+1-n)] \\
+&=(2n-1)[2(2n-3)(-n-\zeta+1-n+\zeta+1)+2(n-1)(2n-3) \\
+&\phantom{=}-(n-2)(p+1-n)] \\
+&= (2n-1)[-4(n-1)(2n-3) + 2(n-1)(2n-3) - (n-2)(p+1-n)] \\
+&=-(2n-1)[(n-2)(p+1-n)+2(n-1)(2n-3)].
+\end{array}$$
+
+Hence we arrive at the recurrence relation
+
+$$n(2n-3)(p+n-1)H_n$$
+
+$$-(2n-1)[(n-2)(p+1-n)+2(n-1)(2n-3)-2(2n-3)(n+p-1)v]H_{n-1}$$
+$$+(2n-3)[2(n-1)^2-n(p+1-n)-2(2n-1)(n-p-1)v]H_{n-2}$$
+$$+(n-3)(2n-1)9p+1-n)H_{n-3}=0.$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem4chapter14}
+Show that the polynomial
+
+$$f_n(x) = {}_1F_2(-n;1+\alpha,1+\beta;x),$$
+
+which is intimately related to Bateman's $J_n^{u,v}$ of Section 147, page 287, satisfies the relation
+\begin{eqnarray*}
+\lefteqn{(\alpha+n)(\beta+n)f_n(x) - [3n^2-3n+1+(2n-1)(\alpha+\beta)+\alpha \beta-x]f_{n-1}(x)}\\
+& & +(n-1)(3n-3+\alpha+\beta)f_{n-2}(x)-(n-1)(n-2)f_{n-3}(x)=0.
+\end{eqnarray*}
+\end{problem}
+\begin{solution}
+Let $f_n(x) = {}_1F_2(-m;1+\alpha,1+\beta;x) = \displaystyle\sum_{k=0}^n \dfrac{(-1)^k n x^k}{k! (1+\alpha)_k (1+\beta)_k(n-k)!}$.
+
+Put $g_n(x) = \dfrac{f_n(x)}{n!}$. Then
+
+$$g_n(x) = \displaystyle\sum_{k=0}^n \dfrac{(-1)^k x^k}{k! (1+\alpha)_k (1+\beta)_k(n-k)!} = \displaystyle\sum_{k=0}^{\infty} \epsilon(k,n).$$
+
+Now 
+
+$$g_{n-1}(x) = \displaystyle\sum_{k=0}^{\infty} \dfrac{(-1)^k x^k}{k!(1+\alpha)_k(1+\beta)_k(n-1-k)!} = \displaystyle\sum_{k=0}^{\infty} (n-k) \epsilon(k,n)$$
+
+and
+
+$$g_{n-2}(x) = \displaystyle\sum_{k=0}^{\infty} (n-k)(n-k-1) \epsilon(k,n)$$
+
+$$g_{n-3}(x) = \displaystyle\sum_{k=0}^{\infty} (n-k)(n-k-1)(n-k-2) \epsilon(k,n).$$
+
+Also
+
+$$x g_{n-1}(x) = \displaystyle\sum_{k=0}^{\infty} \dfrac{(-1)^k x^{k+1}}{k! (1+\alpha)-k (1+\beta)_k (n-1-k)!} = \displaystyle\sum_{k=1}^{\infty} \dfrac{(-1)^{k-1} x^k}{(k-1)! (1+\alpha)_{k-1} (1+\beta)_{k-1} (n-k)!}$$
+
+or
+
+$$x g_{n-1}(x) = \displaystyle\sum_{k=0}^{\infty} -k(\alpha+k)(\beta+k)\epsilon(k,n).$$
+
+Then there exists the relation
+
+$$g_n(x) + (A+Bx)g_{n-1}(x) + Cg_{n-2}(x) + Dg_{n-3}(x) =0,$$
+
+with $A,B,C,D$ dependent only on $n$.
+
+We are led to the identity in $k$
+
+$$1+A(n-k)-Bk(\alpha+k)(\beta+k) + C(n-k)(n-k-1)+D(n-k)(n-k-1)(n-k-2)=0.$$
+
+Then use
+
+$$\hspace{-20pt} \begin{array}{lll}
+k=n: & 1-Bn(a+n)(\beta+n) = 0; & B = \dfrac{1}{n(\alpha+n)(\beta+n)}. \\
+\mathrm{coeff \hspace{3pt}} k^3: & -B-D=0; & D = \dfrac{-1}{n(\alpha+n)(\beta+n)} \\
+k=n-1:& 1+A-B(n-1)(\alpha+n-1)(\beta+n-1)=0; & A = \dfrac{(n-1)(\alpha+n-1)(\beta+n-1)}{n(\alpha+n)(\beta+n)} \\
+&& \phantom{A=}-\dfrac{-n(\alpha+n)(\beta+n)}{n(\alpha+n)(\beta+n)} \\
+& & \phantom{A}=-\dfrac{3n^2-3n+1+(2n-1)(\alpha+\beta)+\alpha \beta}{n(\alpha+n)(\beta+n)} \\
+k=0: & 1+An+Cn(n-1)+Dn(n-1(n-2)=0
+\end{array}$$
+
+Then
+
+\begin{eqnarray*}
+\lefteqn{n(n-1)(\alpha+n)(\beta+n)C = -(\alpha+n)(\beta+n)+3n-3n+1+(\alpha+\beta)(2n-1)} \\
+&&\phantom{=}+\alpha \beta + (n-1)(n-2) \\
+&&= -n^2-(\alpha+\beta)_n - \alpha\beta + 3n^2 - 3n + 1 + (\alpha+\beta)(2n-1) + \alpha \beta + n^2 - 3n +2 \\
+&&= 3n^2-6n+3+(\alpha+\beta)(-n+2n-1) \\
+&&= 3(n-1)^2+(n-1)(\alpha+\beta) \\
+&&= (n-1)[3n-3+\alpha+\beta]
+\end{eqnarray*}
+
+So
+
+$$C = \dfrac{3n-3+\alpha+\beta}{n(\alpha+n)(\beta+n)}.$$
+
+We thus find that
+
+$$n(\alpha+n)(\beta+n)g_n(x) - [3n^2-3n+1+\beta n -1)(\alpha+\beta)+\alpha \beta - x] g_{n-1}(x)$$
+$$+(3n-3+\alpha+\beta)g_{n-2}(x) - g_{n-3}(x) =0.$$
+
+Now $g_n(x)=\dfrac{f_n(x)}{n!}.$ Hence we get
+
+\begin{eqnarray*}
+\lefteqn{\dfrac{(\alpha+n)(\beta+n)}{(n-1)!} f_n(x) - [3n^2-3n+1+\beta n -1)(\alpha+\beta)+\alpha \beta - x] \dfrac{f_{n-1}(x)}{(n-1)!}} \\
+& & + \dfrac{3n-3+\alpha+\beta}{(n-2)!} f_{n-2}(x) - \dfrac{f_{n-3}(x)}{(n-3)!}=0,
+\end{eqnarray*}
+
+or
+
+$$(\alpha+n)(\beta+n)f_n(x) - [3n^2-3n+1+(2n-1)(\alpha+\beta)+\alpha \beta-x]f_{n-1}(x)$$
+$$+(n-1)[3n-3+\alpha+\beta]f_{n-2}(x)-(n-1)(n-2)f_{n-3}(x)=0.$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem5chapter14}
+Define the polynomial $w_n(x)$ by
+
+$$w_n(x) = \displaystyle\sum_{k=0}^n \dfrac{(-1)^k n! L_k(x)}{(k!)^2 (n-k)!}$$
+
+in terms of the Laguerre polynomial $L_k(x)$. Show that $w_n(x)$ possesses the pure recurrence relation
+
+\begin{eqnarray*}
+\lefteqn{n^2 w_n(x) - [(n-1)(4n-3)+x]w_{n-1}(x)+(6n^2-19n+16+x)w_{n-2}(x)} \\
+& & -(n-2)(4n-9)w_{n-3}(x)+(n-2)(n-3)w_{n-4}(x)=0.
+\end{eqnarray*}
+\end{problem}
+\begin{solution}
+Let 
+
+$$w_n(x) = \displaystyle\sum_{k=0}^n \dfrac{(-1)^k n! \mathscr{L}_k(x)}{(k!)^2(n-k)!}$$
+
+in terms of the simple Laguerre polynomial. We know that
+
+$$(1) \hspace{30pt} n\mathscr{L}_n(x) - (2n-1-x)\mathscr{L}_{n-1}(x) + (n-1)\mathscr{L}_{n-2}(x) = 0$$
+
+and we seek a recurrence relation for $w_n(x).$
+
+Put $\dfrac{w_n(x)}{n!} = \phi_n(x)$ and $\dfrac{(-1)^k \mathscr{L}_k(x)}{(k!)^2} = g_k(x).$
+
+Then
+
+$$(-1)^k (k!)^2kg_k(x) - (-1)^{k-1}[(k-1)!]^2 (2k-1-x)g_{k-1}(x) + (-1)^{k-2}[(k-2)!]^2(k-1)g_{k-2}(x)=0,$$
+
+or
+
+$$k^3(k-1)g_k(x) +(k-1)(2k-1-x)g_{k-1}(x)+g_{k-2}(x)=0.$$
+
+Also
+
+$$\phi_n(x) = \displaystyle\sum_{k=0}^n \dfrac{g_k(x)}{(n-k)!} = \displaystyle\sum_{k=0}^{\infty} \dfrac{g_k(x)}{(n-k)!}.$$
+
+Then
+
+$$\begin{array}{ll}
+\phi_{n-1}(x) = \displaystyle\sum_{k=0}^{\infty} (n-k) \dfrac{g_k(x)}{(n-k)!}, \\
+\phi_{n-2}(x) = \displaystyle\sum_{k=0}^{\infty} (n-k(N-k-1) \dfrac{g_k(x)}{(n-k)!},\\
+\phi_{n-3}(x) = \displaystyle\sum_{k=0}^{\infty} (n-k)(n-k-1)(n-k-2) \dfrac{g_k(x)}{(n-k)!}, \\
+\phi_{n-4}(x) = \displaystyle\sum_{k=0}^{\infty} (n-k)(n-k-1)(n-k-2)(n-k-3) \dfrac{g_k(x)}{(n-k)!}.
+\end{array}$$
+
+We first wish to find $A,B,C,D,E$ so that
+
+\begin{eqnarray*}
+\lefteqn{A \phi_n(x) + B \phi_{n-1}(x) + C \phi_{n-2}(x) + D \phi_{n-3}(x)} \\
+& & + E \phi_{n-4}(x) = \displaystyle\sum_{k=0}^{\infty} \dfrac{k^3(k-1)g_k(x)}{(n-k)!}.
+\end{eqnarray*}
+
+The above requires that $A$ to $E$ satisfy the identity in $k$,
+
+\begin{eqnarray*}
+\lefteqn{A+B(n-k)+C(n-k)(n-k-1)+D(n-k)(n-k-1)(n-k-2)} \\
+& & +E(n-k)(n-k-1)(n-k-2)(n-k-3)=k^3(k-1).
+\end{eqnarray*}
+
+We thus get
+
+$$\begin{array}{ll}
+k=n: & A=n^3(n-1) \\
+\mathrm{coeff \hspace{3pt}} k^4: & E=1 \\
+\mathrm{coeff \hspace{3pt}} k^3: & -D-E (n+n-1+n-2+n-3)=-1 \\
+& or \\
+& D+4n-6=1; D=-(4n-7) \\
+k=n-1: & A+B(1)=(n-1)^3(n-2) \\
+& B=(n-1)^3(n-2)-n^3(n-1) = (n-1)[(n-1)^2(n-3)-n^3] \\
+& B=-(n-1)(4n^2-5n+2). \\
+k=n-2: & A+2B+2 \cdot 1 \cdot C = (n-2)^3 (n-3) \\
+& 2C = (n-2)^3 (n-3)-N^3(n-1)+2(n-1)(4n^2-5n+2) \\
+&\hspace{16pt} = 12n^2-30n+20
+\end{array}$$
+
+So $C=2n^2-15n+10$. We now have
+
+$$(1) \hspace{30pt} n^3(n-1)\phi_n(x) - (n-1)(4n^2-5n+2)\phi_{n-1}(x) + (5n^2-15n+10)\phi_{n-2}(x)$$
+$$ -(4n-7)\phi_{n-3}(x) + \phi_{n-4}(x) = \displaystyle\sum_{k=0}^{\infty} \dfrac{k^3(k-1)g_k(x)}{(n-k)!}.$$
+
+From
+
+$$\phi_{n-1}(x) = \displaystyle\sum_{k=0}^{\infty} \dfrac{g_k(x)}{(n-1-k)!},$$
+
+we get, with our usual convention that $g_s(x) \equiv 0$ for $s < 0$,
+
+$$\phi_{n-1}(x) = \displaystyle\sum_{k=0}^{\infty} \dfrac{g_{k-1}(x)}{(n-k)!}$$
+
+and in the same way
+
+$$\phi_{n-2}(x) = \displaystyle\sum_{k=0}^{\infty} \dfrac{(n-k)g_{k-1}(x)}{(n-k)!},$$
+
+$$\phi_{n-3}(x) = \displaystyle\sum_{k=0}^{\infty} (n-k)(n-k-1) \dfrac{g_{k-1}(x)}{(n-k)!},etc$$
+
+We now wish to find $F,G,H$, so that
+
+$$F \phi_{n-1}(x) + G \phi_{n-2}(x) + H \phi_{n-3}(x) = \displaystyle\sum_{k=0}^{\infty} (k-1)(2k-1) \dfrac{g_{k-1}(x)}{(n-k)!}.$$
+
+We thus arrive at the identity
+
+$$F + G(n-k)+H(n-k)(n-k-1) = (k-1)(2k-1).$$
+
+Hence
+
+$$\begin{array}{ll}
+k=n: & F=(n-1)(2n-1) \\
+\mathrm{coeff \hspace{3pt}} k^2: & H=2 \\
+\mathrm{coeff \hspace{3pt}} k: & -G -H(n+n-1) = -3 \\
+& G+2(2n-1) = 3 \\
+& G = -(4n-5)
+\end{array}$$
+
+Therefore we get
+
+$$(2) \hspace{30pt} (n-1)(2n-1)\phi_{n-1}(x) - (4n-5)\phi_{n-2}(x) + 2\phi_{n-3}(x) = \displaystyle\sum_{k=0}^{\infty} \dfrac{(k-1)(2k-1)g_{k-1}(x)}{(n-k)!}.$$
+
+From $A_1 \phi_{n-1}(x) + B_1 \phi_{n-2}(x) = \displaystyle\sum_{k=0}^{\infty} \dfrac{-(k-1)g_{k-1}(x)}{(n-k)!},$
+
+we determine $A_1$ and $B_1$ by
+
+$$A_1 + B_1(n-k) \equiv -(k-1).$$
+
+Then $A_1=-(n-1), B_1=1$. Hence
+
+$$(3) \hspace{30pt} -(n-1)\phi_{n-1}(x) + \phi_{n-2}(x) = \displaystyle\sum_{k=0}^{\infty} \dfrac{-(k-1)g_{k-1}(x)}{(n-k)!}.$$
+
+Also
+
+$$(4) \hspace{30pt} \phi_{n-2}(x) = \displaystyle\sum_{k=0}^{\infty} \dfrac{g_k(x)}{(n-2-k)!} = \displaystyle\sum_{k=0}^{\infty} \dfrac{g_{k-2}(x)}{(n-k)!}.$$
+
+Since
+
+$$\displaystyle\sum_{k=0}^{\infty} \dfrac{k^3(k-1)g_k(x)+(k-1)(2k-1-x)g_{k-1}(x)+g_{k-2}(x)}{(n-k)!} =0,$$
+
+we may combine $(1),(2),(3),(4)$ to get
+
+$$n^3(n-1)\phi_n(x) - (n-3)(4n^2-5n+2)\phi_{n-1}(x)+(6n^2-15n+10)\phi_{n-2}(x)$$
+$$-(4n-7)\phi_{n-3}(x) + \phi_{n-4}(x) + (n-1)(2n-1) \phi_{n-1}(x) - (4n-5)\phi_{n-3}(x)$$
+$$+2\phi_{n-3}(x) - (n-1)x\phi_{n-1}(x) + x\phi_{n-2}(x)+\phi_{n-2}(x)=0,$$
+
+or
+
+$$n^3(n-1)\phi_n(x)-(n-1)[(4n^2-7n+3+x]\phi_{n-1}(x)+ (6n^2-19n+16+x)\phi_{n-2}(x)$$
+$$-(4n-9)\phi_{n-3}(x) + \phi_{n-4}(x)=0$$
+
+We recall that $\phi_n(x) = \dfrac{w_n(x)}{n!}$ and use it to obtain the final result:
+
+\begin{eqnarray*}
+\lefteqn{n^2w_n(x) - (4n^2-7n+3+x)w_{n-1}(x) + (6n^2-19n+16+x)w_{n-2}(x)} \\
+&&-(n-2)(4n-9)w_{n-3}(x)+(n-2)(n-3)w_{n-4}(x)=0.
+\end{eqnarray*}
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem6chapter14}
+Show that the polynomial $w_n(x)$ of Exercise~\ref{problem5chapter14} may be written
+
+$$w_n(x)=\displaystyle\sum_{k=0}^n {}_1F_1 \left[ \begin{array}{rlr}
+-n+k; & & \\
+& & 1 \\
+1+k; & & 
+\end{array} \right] \dfrac{(-n)_k (-x)^k}{(k!)^3}.$$
+\end{problem}
+\begin{solution}
+Consider
+
+$$w_n(x) = \displaystyle\sum_{k=0}^n \dfrac{(-1)^kn! \mathscr{L}_k(x)}{(k!)^2(n-k)!}.$$
+
+Let us form
+
+$$\begin{array}{ll}
+\psi &= \displaystyle\sum_{n=0}^{\infty} \dfrac{w_n(x) t^n}{n!} \\
+&= \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{k=0}^n \dfrac{(-1)^k \mathscr{L}_k(x)t^n}{(k!)^2(n-k)!} \\
+&= \displaystyle\sum_{n,k=0}^{\infty} \dfrac{(-1)^k \mathscr{L}_k(x) t^{n+k}}{(k!)^2n!} \\
+&= \displaystyle\sum_{n,k=0}^{\infty} \displaystyle\sum_{s=0}^{\infty} \dfrac{(-1)^{k+s} x^s t^{n+k}}{k! n! (s!)^2(k-s)!} \\
+&= \displaystyle\sum_{k,s,n=0}^{\infty} \dfrac{(-1)^k x^s t^{n+k}}{(s!)^2k!k!(k+s)!}
+\end{array}$$
+
+Then
+
+$$\begin{array}{ll}
+\psi &= \displaystyle\sum_{n,s=0}^{\infty} \displaystyle\sum_{k=0}^n \dfrac{(-1)^k x^s t^{n+s}}{(s!)^2k! (n-k)! (k+s)!} \\
+&= \displaystyle\sum_{n,s=0}^{\infty} {}_1F_1 \left[ \begin{array}{rlr}
+-n; & & \\
+& & 1 \\
+1+s; & & 
+\end{array} \right] \dfrac{x^s t^{n+s}}{n! (s!)^3} \\
+&= \displaystyle\sum_{n=0}^{\infty} \displaystyle\sum_{s=0}^n {}_1F_1 \left[ \begin{array}{rlr}
+-n+s; & & \\
+& & 1 \\
+1+s; & & 
+\end{array} \right] \dfrac{x^s t^n}{(s!)^3 (n-s)!}.
+\end{array}$$
+
+Hence
+
+$$\begin{array}{ll}
+w_n(x) &= \displaystyle\sum_{s=0}^n {}_1F_1\left[ \begin{array}{rlr}
+-n+s; & & \\
+& & 1 \\
+1+s; & & 
+\end{array} \right] \dfrac{n! x^s}{(s!)^3(n-s)!} \\
+&= \displaystyle\sum_{s=0}^n {}_1F_1 \left[ \begin{array}{rlr}
+-n+s; & & \\
+& & 1 \\
+1+s; & &
+\end{array} \right] \dfrac{(-n)_s (-x)^s}{(s!)^3},
+\end{array}$$
+
+as desired.
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem7chapter14}
+Define the polynomial $v_n(x)$ by (see Section 131, page 251)
+
+$$v_n(x) = \displaystyle\sum_{k=0}^n \dfrac{(-1)^k n! P_k(x)}{(k!)^2 (n-k)!}$$
+
+in terms of the Legendre polynomial $P_k(x)$. Show that $v_n(x)$ satisfies the recurrence relation
+
+\begin{eqnarray*}
+\lefteqn{n^2v_n(x) - [4n^2-5n+2-(2n-1)x]v_{n-1}(x) + [6n^2-15n+11} \\
+&&-(4n-5)x]v_{n-2}(x) - (n-2)(4n-7-2x)v_{n-3}(x)+(n-2)(n-3)v_{n-4}(x)=0.
+\end{eqnarray*}
+\end{problem}
+\begin{solution}
+Consider
+
+$$v_n(x) = \displaystyle\sum_{k=0}^n \dfrac{(-1)^k n! P_k(x)}{(k!)^2(n-k)!}$$
+
+Put $\dfrac{v_n(x)}{n!} = \sigma_n(x)$ and $\dfrac{(-1)^k P_k(x)}{(k!)^2} = g_k(x).$
+
+We know that $P_k(x)$ satisfies the relation
+
+$$k P_k(X) - (2k-1)x P_{k-1}(x) + (k-1)P_{k-2}(x) = 0.$$
+
+Hence $g_k(x)$ satisfies
+
+$$(-1)^k k (k!)^2 g_k(x) - (-1)^{k-1}[(k-1)!]^2 (2k-1)xg_{k-1}(x) + (-1)^{k-2}(k-1)[(k-2)!]^2g_{k-2}(x)=0,$$
+
+or
+
+$$(1) \hspace{30pt} k^3(k-1)g_k(x) + (k-1)(2k-1)xg_{k-1}(x) + g_{k-2}(x) =0.$$
+
+Also
+
+$$(2)\hspace{30pt} \sigma_n(x) = \displaystyle\sum_{k=0}^{\infty} \dfrac{g_k(x)}{(n-k)!}.$$
+
+Because of the identity of form of equation $(2)$ with the corresponding relations of Exercise~\ref{problem5chapter14}, we may write immediately
+
+$$(3) \hspace{3pt} n^3(n-1)\sigma_n(x) - (n-1)(4n^2-5n+2)\sigma_{n-1}(x) + (6n^2-15n+10)\sigma_{n-2}(x)$$
+$$-(4n-7)\sigma_{n-3}(x) + \sigma_{n-4}(x) = \displaystyle\sum_{k=0}^{\infty} \dfrac{k^3(k-1)}{(n-k)!} g_k(x).$$
+
+In the same way we use the work in Exercise~\ref{problem5chapter14} to conclude that
+
+$$(4) \hspace{30pt} (n-1)(2n-1)\sigma_{n-1}(x)-(4n-5)\sigma_{n-2}(x)+2\sigma_{n-3}(x) = \displaystyle\sum_{k=0}^{\infty} \dfrac{(k-1)(2k-1)g_{k-1}(x)}{(n-k)!},$$
+
+and
+
+$$(5) \hspace{30pt} \sigma_{n-2}(x) = \displaystyle\sum_{k=0}^{\infty} \dfrac{g_{k-2}(x)}{(n-k)!}.$$
+
+Since
+
+$$\displaystyle\sum_{k=0}^{\infty} \dfrac{k^3(k-1)g_k(x)+(k-1)(2k-1)xg_{k-1}(x) + g_{k-2}9x)}{(n-k)!}=0,$$
+
+we get from $(3),(4),(5)$ that
+
+$$n^3(n-1)\sigma_n(x)-(n-1)[4n^2-5n+2-(2n-1)x]\sigma_{n-1}(x)$$
+$$+[6n^2-15n+11-(4n-5)x]\sigma_{n-2}(x) - [4n-7-2x]\sigma_{n-3}(x) + \sigma_{n-4}(x)=0.$$
+
+But $\sigma_n(x) = \dfrac{v_n(x)}{n!}$. Hence we arrive at the result
+
+$$n^2v_n(x) - [4n^2-5n+2-(2n-1)x]v_{n-1}(x)+[6n^2-15n+11-(4n-5)x]v_{n-2}(x)$$
+$$-(n-2)(4n-7-2x)v_{n-3}(x)+(n-2)(n-3)v_{n-4}(x)=0.$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem8chapter14}
+Show that the $v_n(x)$ of Exercise~\ref{problem7chapter14} satisfies the relations
+
+$$(1-x^2)v_n''(x)-2xv_n'(x)+n(n=1)v_n(x)=2n^2v_{n-1}9x)-n(n-1)v_{n-2}(x)$$
+
+and
+
+$$(1-x^2)v_n'(x)+nxv_n(x) = [(2n-1)x-1]v_{n-1}(x)-(n-1)xv_{n-2}(x)+(1-x^2)v_{n-1}'(x).$$
+\end{problem}
+\begin{solution}
+(solution by Donald Meyers) Let 
+\begin{align*}
+v_{n}(x) & =\sum_{k=0}^{n}\frac{(-1)^{k}n!P_{k}(x)}{(k!)^{2}(n-k)!}\\
+ & =\sum_{k=0}^{n}\frac{(-1)^{k}}{k!}\dbinom{n}{k}P_{k}(x).
+\end{align*}
+a) To save space, let 
+\[
+Q_{n}(x)=(1-x^{2})v_{n}^{\prime\prime}(x)-2xv_{n}^{\prime}(x)+n(n+1)v_{n}(x).
+\]
+The Legendre polynomials $P_{n}$ solve Legendre's ODE, so 
+\begin{align*}
+Q_{n}(x) & =\sum_{k=0}^{n}\frac{(-1)^{k}}{k!}\dbinom{n}{k}[(1-x^{2})P_{k}^{\prime\prime}(x)-2xP_{k}^{\prime}(x)+n(n+1)P_{k}(x)]\\
+ & =\sum_{k=0}^{n}\frac{(-1)^{k}}{k!}\dbinom{n}{k}[n(n+1)-k(k+1)]P_{k}(x)\\
+ & =\sum_{k=0}^{n-1}\frac{(-1)^{k}}{k!}\dbinom{n}{k}(n-k)(n+k+1)P_{k}(x)\\
+ & =n\sum_{k=0}^{n-1}\frac{(-1)^{k}}{k!}\dbinom{n-1}{k}(n+k+1)P_{k}(x)\\
+ & =n^{2}v_{n-1}(x)+n\sum_{k=0}^{n-1}\frac{(-1)^{k}}{k!}\dbinom{n-1}{k}(n-n+k+1)P_{k}(x)\\
+ & =2n^{2}v_{n-1}(x)-n\sum_{k=0}^{n-1}\frac{(-1)^{k}}{k!}\dbinom{n-1}{k}(n-k-1)P_{k}(x)\\
+ & =2n^{2}v_{n-1}(x)-n\sum_{k=0}^{n-2}\frac{(-1)^{k}}{k!}\dbinom{n-1}{k}(n-k-1)P_{k}(x)\\
+ & =2n^{2}v_{n-1}(x)-n(n-1)\sum_{k=0}^{n-2}\frac{(-1)^{k}}{k!}\dbinom{n-2}{k}P_{k}(x)\\
+ & =2n^{2}v_{n-1}(x)-n(n-1)v_{n-2}(x).
+\end{align*}
+b) We need to show that 
+\begin{align*}
+(1-x^{2})v_{n}^{\prime}(x)+nxv_{n}(x) & =[(2n-1)x-1]v_{n-1}(x)-(n-1)xv_{n-2}(x)+(1-x^{2})v_{n-1}^{\prime}(x).
+\end{align*}
+To save space let $u_{n}(x)=(1-x^{2})(v_{n}^{\prime}(x)-v_{n-1}^{\prime}(x)).$
+Then 
+\begin{align*}
+u_{n}(x) & =(1-x^{2})\left[\sum_{k=1}^{n}\frac{(-1)^{k}}{k!}\dbinom{n}{k}P_{k}^{\prime}(x)-\sum_{k=1}^{n-1}\frac{(-1)^{k}}{k!}\dbinom{n-1}{k}P_{k}^{\prime}(x)\right]\\
+ & =\sum_{k=1}^{n}\frac{(-1)^{k}}{k!}\dbinom{n}{k}k[P_{k-1}(x)-xP_{k}(x)]-\sum_{k=1}^{n-1}\frac{(-1)^{k}}{k!}\dbinom{n-1}{k}k[P_{k-1}(x)-xP_{k}(x)]\\
+ & =\frac{(-1)^{n}}{n!}n[P_{n-1}(x)-xP_{n}(x)]+\sum_{k=1}^{n-1}\frac{(-1)^{k}}{(k-1)!}\left[\dbinom{n}{k}-\dbinom{n-1}{k}\right][P_{k-1}(x)-xP_{k}(x)]\\
+ & =-nx\frac{(-1)^{n}}{n!}P_{n}(x)-\frac{(-1)^{n-1}}{(n-1)!}P_{n-1}(x)+\sum_{k=1}^{n-1}\frac{(-1)^{k}}{(k-1)!}\dbinom{n-1}{k-1}[P_{k-1}(x)-xP_{k}(x)]\\
+ & =-nx\frac{(-1)^{n}}{n!}P_{n}(x)-\frac{(-1)^{n-1}}{(n-1)!}P_{n-1}(x)-\sum_{k=0}^{n-2}\frac{(-1)^{k}}{k!}\dbinom{n-1}{k}[P_{k}(x)-xP_{k+1}(x)]\\
+ & =-nx\frac{(-1)^{n}}{n!}P_{n}(x)-\frac{(-1)^{n-1}}{(n-1)!}P_{n-1}(x)-x\frac{(-1)^{n-1}}{(n-1)!}(n-1)^{2}P_{n-1}(x)\\
+ & -\sum_{k=0}^{n-2}\frac{(-1)^{k}}{k!}\dbinom{n-1}{k}P_{k}(x)+x\sum_{k=0}^{n-3}\frac{(-1)^{k}}{k!}\dbinom{n-1}{k}P_{k+1}(x)\\
+ & =-nx\frac{(-1)^{n}}{n!}P_{n}(x)+\frac{(-1)^{n-1}}{(n-1)!}[n^{2}x+(2n-1)x-1]P_{n-1}(x)\\
+ & -\sum_{k=0}^{n-2}\frac{(-1)^{k}}{k!}\dbinom{n-1}{k}P_{k}(x)+x\sum_{k=0}^{n-3}\frac{(-1)^{k}}{k!}\dbinom{n-1}{k}P_{k+1}(x)\\
+ & =-nx\frac{(-1)^{n}}{n!}P_{n}(x)+\frac{(-1)^{n-1}}{(n-1)!}[n^{2}x+(2n-1)x-1]P_{n-1}(x)\\
+ & -x\sum_{k=1}^{n-2}\frac{(-1)^{k}}{(k-1)!}\left(\frac{(n-1)!}{(k-1)!(n-k)!}\right)P_{k}(x)-\sum_{k=0}^{n-2}\frac{(-1)^{k}}{k!}\dbinom{n-1}{k}P_{k}(x)\\
+ & =-nx\frac{(-1)^{n}}{n!}P_{n}(x)+\frac{(-1)^{n-1}}{(n-1)!}[n^{2}x+(2n-1)x-1]P_{n-1}(x)\\
+ & +\sum_{k=0}^{n-2}\frac{(-1)^{k}}{k!}\dbinom{n-1}{k}\left(\frac{1}{n-k}\right)\left[-k^{2}x-(n-k)\right]P_{k}(x)\\
+ & =-nx\frac{(-1)^{n}}{n!}P_{n}(x)+\frac{(-1)^{n-1}}{(n-1)!}[n^{2}x+(2n-1)x-1]P_{n-1}(x)\\
+ & +\sum_{k=0}^{n-2}\frac{(-1)^{k}}{k!}\dbinom{n-1}{k}\left[-nx\left(\frac{k}{n-k}\right)+kx-1\right]P_{k}(x)\\
+ & =-nx\frac{(-1)^{n}}{n!}P_{n}(x)+\frac{(-1)^{n-1}}{(n-1)!}[n^{2}x+(2n-1)x-1]P_{n-1}(x)\\
+ & +\sum_{k=0}^{n-2}\frac{(-1)^{k}}{k!}\dbinom{n-1}{k}\left[-nx\left(\frac{n-k+k}{n-k}\right)+[(2n-1)x-1]-(n-k-1)x\right]P_{k}(x)\\
+ & =-nx\frac{(-1)^{n}}{n!}P_{n}(x)+\frac{(-1)^{n-1}}{(n-1)!}[n^{2}x+(2n-1)x-1]P_{n-1}(x)\\
+ & +\sum_{k=0}^{n-2}\frac{(-1)^{k}}{k!}\dbinom{n-1}{k}\left[-nx\left(\frac{n}{n-k}\right)+[(2n-1)x-1]-(n-k-1)x\right]P_{k}(x)
+\end{align*}
+Continuing 
+\begin{align*}
+ & =-nx\left[\frac{(-1)^{n}}{n!}P_{n}(x)-\frac{(-1)^{n-1}}{(n-1)!}nP_{n-1}(x)\right]+[(2n-1)x-1]\frac{(-1)^{n-1}}{(n-1)!}P_{n-1}(x)\\
+ & +\sum_{k=0}^{n-2}\frac{(-1)^{k}}{k!}\left[-nx\dbinom{n}{k}+[(2n-1)x-1]\dbinom{n-1}{k}-(n-1)x\dbinom{n-2}{k}\right]P_{k}(x)\\
+ & =-nx\sum_{k=0}^{n}\frac{(-1)^{k}}{k!}\dbinom{n}{k}P_{k}(x)+[(2n-1)x-1]\sum_{k=0}^{n-1}\frac{(-1)^{k}}{k!}\dbinom{n-1}{k}P_{k}(x)\\
+ & -(n-1)x\sum_{k=0}^{n-2}\frac{(-1)^{k}}{k!}\dbinom{n-2}{k}P_{k}(x)\\
+ & =-nxv_{n}(x)+[(2n-1)x-1]v_{n-1}(x)-(n-1)xv_{n-2}(x).
+\end{align*}
+Rearranging yields 
+\[
+(1-x^{2})v_{n}^{\prime}(x)+nxv_{n}(x)=[(2n-1)x-1]v_{n-1}(x)-(n-1)xv_{n-2}(x)+(1-x^{2})v_{n-1}^{\prime}(x).
+\]
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem9chapter14}
+Let
+
+$$\gamma(k,n)= \dfrac{(-1)^k (\frac{1}{2})_{n-k} (2x)^{n-2k}}{k! (n-2k)!},$$
+
+so that the Legendre polynomial of Chapter 10 may be written
+
+$$P_n(x) = \displaystyle\sum_{k=0}^{\infty} \gamma(k,n).$$
+
+Show that
+
+$$\begin{array}{ll}
+xP_{n-1}(x)=\displaystyle\sum_{k=0}^{\infty} \dfrac{(n-2k)\gamma(k,n)}{2n-2k-1}, & P_{n-2}(x) = \displaystyle\sum_{k=0}^{\infty} \dfrac{-2k \gamma(k,n)}{2n-2k-1}, \\
+xP_n'(x) = \displaystyle\sum_{k=0}^{\infty} (n-2k)\gamma(k,n), & P_{n+1}'(x) = \displaystyle\sum_{k=0}^{\infty} (1+2n-2k) \gamma(k,n), \\
+P_{n-1}'(x) = \displaystyle\sum_{k=0}^{\infty} -2k\gamma(k,n), & etc.
+\end{array}$$
+
+Use Sister Celine's method to discover the various differential recurrence relations and the pure recurrence relation for $P_n(x)$.
+\end{problem}
+\begin{solution}
+Let $\gamma(x,n) = \dfrac{(-1)^k (\frac{1}{2})_{n-k} (2x)^{n-2k}}{k! (n-k)!}.$
+
+Then
+
+$$P_n(x) = \displaystyle\sum_{k=0}^{\infty} \gamma(k,n)$$
+
+with our usual conventions. Also
+
+$$x P_{n-1}(x) = \displaystyle\sum_{k=0}^{\infty} \dfrac{(-1)^k (\frac{1}{2})_{n-1-k}(2x)^{n-2k}}{2 \cdot k! (n-1-2k)!} = \displaystyle\sum_{k=0}^{\infty} \dfrac{n-2k}{2(n-k-\frac{1}{2}} \gamma(k,n)$$
+
+or
+
+$$x P_{n-1}(x) = \displaystyle\sum_{k=0}^{\infty} \dfrac{n-2k}{2n-2k-1} \gamma(k,n).$$
+
+Next
+
+$$\begin{array}{ll}
+P_{n-2}(x) &= \displaystyle\sum_{k=0}^{\infty} \dfrac{(-1)^k (\frac{1}{2})_{n-2-k} (2x)^{n-2-2k}}{k! (n-2-2k)!} \\
+&= \displaystyle\sum_{k=1}^{\infty} \dfrac{(-1)^{k-1} (\frac{1}{2})_{n-1-k} (2x)^{n-2k}}{(k-1)! (n-2k)!},
+\end{array}$$
+
+so that 
+
+$$P_{n-2}(x) = \displaystyle\sum_{k=0}^{\infty} \dfrac{-k}{n-k-\frac{1}{2}} \gamma(k,n) = \displaystyle\sum_{k=0}^{\infty} \dfrac{-2k}{2n-2k-1} \gamma(k,n).$$
+
+Now
+
+$$x P_n'(x) = \displaystyle\sum_{k=0}^{\infty} \dfrac{(-1)^k (\frac{1}{2})_{n-k} (2x)^{n-2k}}{k! (n-1-2k)!} = \displaystyle\sum_{k=0}^{\infty} (n-2k)\gamma(k,n),$$
+
+and
+
+$$P_{n+1}'(x) = \displaystyle\sum_{k=0}^{\infty} \dfrac{(-1)^k (\frac{1}{2})_{n+1-k} \cdot 2 (2x)^{n-2k}}{k! (n-2k)!} = \displaystyle\sum_{k=0}^{\infty} (2n-2k+1) \gamma(k,n).$$
+
+Finally,
+
+$$\begin{array}{ll}
+P_{n-1}'(x) &= \displaystyle\sum_{k=0}^{\infty} \dfrac{9-1)^k (\frac{1}{2})_{n-1-k} 2 (2x)^{n-2-2k}}{k! (n-2-2k)!} \\
+&= \displaystyle\sum_{k=1}^{\infty} \dfrac{(-1)^{k-1} (\frac{1}{2})_{N-k} 2 (2x)^{n-2k}}{(k-1)! (n-2k)!} \\
+&= \displaystyle\sum_{k=0}^{\infty} -2k \gamma(k,n).
+\end{array}$$
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem10chapter14}
+Apply sister Celine's method to discover relations satisfied by the Hermite polynomials of Chapter 11.
+\end{problem}
+\begin{solution}
+
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem11chapter14}
+Find the various relations of Section 114 on Laguerre polynomials by using Sister Celine's technique.
+\end{problem}
+\begin{solution}
+
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem12chapter14}
+Consider the pseudo-Laguerre polynomials (Boas and Buck [2;16]) $f_n(x)$ defined for nonintegral $\lambda$ by
+
+$$f_n(x) = \dfrac{(-\lambda)_n}{n!} {}_1F_1(-n;1+\lambda-n;x) = \displaystyle\sum_{k=0}^n \dfrac{(-\lambda)_{n-k} x^k}{k! (n-k)!}.$$
+
+Show that the polynomials $f_n(x)$ are not orthogonal with respect to any weight function over any interval because no relation of the form
+
+$$f_n(x) = (A_n + B_n x) f_{n-1}(x) + C_n f_{n-2}(x)$$
+
+is possible. Obtain the pure recurrence relation
+
+$$nf_n(x) = (x+n-1-\lambda)f_{n-1}(x) - xf_{n-2}(x).$$
+\end{problem}
+\begin{solution}
+Consider $f_n(x)$ defined by
+
+$$f_n(x) = \dfrac{(-\lambda)_n}{n!} {}_1F_1(-n; 1+\lambda-n;x) = \displaystyle\sum_{k=0}^n \dfrac{(-\lambda)_{n-k}x^k}{k!(n-k)!}.$$
+
+Put
+
+$$\epsilon(k,n) = \dfrac{(-\lambda)_{n-k} x^k}{k! (n-k)!}.$$
+
+Then
+
+$$f_n(x) = \displaystyle\sum_{k=0}^{\infty} \epsilon(k,n)$$
+
+$$f_{n-1}(x) = \displaystyle\sum_{k=0}^{\infty} \dfrac{(-\lambda)_{n-1-k} x^k}{k! (n-1-k)!} = \displaystyle\sum_{k=0}^{\infty} \dfrac{n-k}{\lambda+n-1-k} \epsilon(k,n)$$
+
+$$f_{n-2}(x) = \displaystyle\sum_{k=0}^{\infty} \dfrac{(n-k)(n-k-1)}{(-\lambda + n-1-k)(-\lambda+n-2-k)}\epsilon(k,n)$$
+
+and
+
+$$x f_{n-1}(x) = \displaystyle\sum_{k=0}^{\infty} \dfrac{(-\lambda)_{n-1-k}x^{k+1}}{k!(n-1-k)!} = \displaystyle\sum_{k=1}^{\infty} \dfrac{(-\lambda)_{n-k}x^k}{(k-1)!(n-k)!} = \displaystyle\sum_{k=0}^{\infty} k \epsilon(k,n)$$
+
+$$x f_{n-2}(x) = \displaystyle\sum_{k=0}^{\infty} \dfrac{(-\lambda)_{n-2-k} x^{k+1}}{k!(n-2-k)!} = \displaystyle\sum_{k=0}^{\infty} \dfrac{(-\lambda)_{n-1-k} x^k}{(k-1)! (n-1-k)!} = \displaystyle\sum_{k=0}^{\infty} \dfrac{k(n-k)}{-\lambda + n-1-k} \epsilon(k,n).$$
+
+Now consider
+
+$$T_n \equiv f_n(x) - A_n f_{n-1}9x) - B_nx f_{N-1}(x) - C_n f_{n-2}(x).$$
+
+At once
+
+$$T_n \equiv \displaystyle\sum_{k=0}^{\infty} \left[ 1 - A_n \dfrac{n-k}{-\lambda+n-1-k} - B_nk - C_n \dfrac{(n-k)(n-k-1)}{(-\lambda+n-1-k)(-\lambda+n-2-k)} \right] \epsilon(k,n).$$
+
+If $T_n \equiv 0$, then the following must be an identity in $k$ with $\lambda$ independent of $n$:
+
+\begin{eqnarray*}
+\lefteqn{(1) \hspace{35pt}(-\lambda+n-1-k)(-\lambda+n-2-k)+A_n(n-k)(-\lambda+n-2-k) } \\
+&& - B_nk(-\lambda+n-1-k)(\lambda+n-2-k)-C_n(n-k)(n-k-1) \equiv 0.
+\end{eqnarray*}
+
+From the coefficient of $k^3$ we see that $B_n=0$. Then $T_n \equiv 0$ is impossible because $f_{n-1}(x)$ and $f_{n-2}(x)$ are of lower degree than $f_n(x).$
+
+Now consider the identity
+
+$$f_n(x) - D_n x f_{n-1}(x) - E_n f_{n-1}(x) - F_nxf_{n-2}(x) =0.$$
+
+We need to determine $D_n, E_n, F_n$ to satisfy
+
+$$1 - D_nk - E_n \dfrac{n-k}{-\lambda +n-1-k} - F_n \dfrac{k(n-k)}{-\lambda+n-1-k} =0,$$
+
+or
+
+$$(2) \hspace{30pt} -\lambda+n-1-k - D_n k(-\lambda+n-1-k) -E_n(n-k)-F_nk(n-k)\equiv 0.$$
+
+$$\begin{array}{ll}
+k=n: & -\lambda-1 - D_n n(-\lambda-1) = 0; D_n = \dfrac{1}{n} \mathrm{\hspace{3pt} or \hspace{3pt}} \lambda=-1 \\
+\mathrm{coeff \hspace{3pt}} k^2: & D_n+F_n=0; F_n = -\dfrac{1}{n} \\
+k=-\lambda+n-1: & (-\lambda-1)E_n + (\lambda-1)F_n(-\lambda+n-1)=0; E_n = \dfrac{-\lambda+n-1}{n}.
+\end{array}$$
+
+Hence, either $\lambda=-1$ or
+
+$$nf_n(x) - xf_{n-1}(x) -(-\lambda+n-1)f_{n-1}(x) + xf_{n-2}(x) = 0,$$
+
+or
+
+$$nf_n(x) = [x+n-1-\lambda]f_{n-1}(x) - xf_{n-2}(x) =0,$$
+
+as desired.
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+%%%%
+%%
+%%
+%%%%
+For the polynomials in each of the following examples, use Sister Celine's technique to discover the pure recurrence relation and whatever mixed relations exist.
+
+\begin{problem}\label{problem13chapter14}
+The Bessel polynomials of Section 150.
+\end{problem}
+\begin{solution}
+
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem14chapter14}
+Bendient's polynomials $R_n$ of Section 151.
+\end{problem}
+\begin{solution}
+
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem15chapter14}
+Bendient's polynomials $G_n$ of Section 151.
+\end{problem}
+\begin{solution}
+
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem16chapter14}
+Shively's polynomials $R_n$ of Section 152.
+\end{problem}
+\begin{solution}
+
+\end{solution}
+%%%%
+%%
+%%
+%%%%
+\begin{problem}\label{problem17chapter14}
+Shively's polynomials $\sigma_n$ of Section 152.
+\end{problem}
+\begin{solution}
+
+\end{solution}
