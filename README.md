@@ -1,6 +1,6 @@
 # Solutions to Earl D. Rainville's "Special Functions"
 
-"Special Functions" by Rainville is a classic text in the theory of special functions. This document includes a mostly completed solution manual for the text.
+"Special Functions" by Rainville is a classic text in the theory of special functions. This document includes a mostly completed solution manual for the text. The solutions grew out of the solutions handwritten by Sylvester Pagano, furthered by Leon Hall, and typeset by Tom Cuchta.
 
 ## Getting Started
 
