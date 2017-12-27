@@ -11,4 +11,4 @@ If you can solve one of the remaining problems, please push your solution to the
 
 ## Compiling
 
-You will need to compile the tex file twice to get the table of contents to appear correctly.
+You will need to compile the "rainville solutions.tex" file twice to get the table of contents to appear correctly.
