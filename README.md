@@ -5,7 +5,7 @@
 ## Getting Started
 
 To get a full copy of the solutions, either download the zip file from the main github page or use a terminal and the following code:
-https://github.com/tomcuchta/rainvillesfsolutions.git
+<pre>git clone https://github.com/tomcuchta/rainvillesfsolutions.git</pre>
 
 If you can solve one of the remaining problems, please push your solution to the repository OR e-mail your solution to tomcuchta@gmail.com. Full credit will be given to whoever solves them. If mistakes are found in the document, please do the same and you will be credited with a contribution.
 
